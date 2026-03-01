@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>%TITLE%</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "primary-dark": "#0ea5e9",
+                        "accent": "#22d3ee",
+                        "background-dark": "#101f22",
+                        "surface-dark": "#16282c",
+                        "deep-navy": "#0c1a1d",
+                        "secondary": "#f97316",
+                        "success": "#22c55e"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #13c8ec05 1px, transparent 1px), linear-gradient(to bottom, #13c8ec05 1px, transparent 1px)",
+                        'blueprint': "linear-gradient(to right, #16282c 1px, transparent 1px), linear-gradient(to bottom, #16282c 1px, transparent 1px)"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #101f22;
+            color: #f8fafc;
+        }
+        .glass-panel {
+            background: rgba(16, 31, 34, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 200, 236, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 15px rgba(19, 200, 236, 0.3);
+        }
+        .tech-border {
+            position: relative;
+        }
+        .tech-border::before, .tech-border::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #13c8ec;
+            transition: all 0.3s ease;
+        }
+        .tech-border::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+        .tech-border::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+        .tech-border:hover::before, .tech-border:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+        .material-card {
+            background: linear-gradient(145deg, rgba(22, 40, 44, 0.7) 0%, rgba(12, 26, 29, 0.9) 100%);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/animations.css">
+</head>
+<body class="bg-background-dark text-slate-100 font-display selection:bg-primary selection:text-white">
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 z-0 bg-grid-pattern bg-[size:40px_40px] pointer-events-none"></div>
+    <div class="fixed inset-0 z-0 bg-gradient-to-b from-transparent via-background-dark/80 to-background-dark pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <!-- Top Bar -->
+        <div class="bg-deep-navy/80 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+                <div class="flex justify-between items-center text-xs">
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">language</span>
+                            <select id="language-select" class="bg-transparent text-slate-300 border-none text-xs focus:outline-none cursor-pointer">
+                                <option value="zh">中文</option>
+                                <option value="en">English</option>
+                                <option value="es">Español</option>
+                                <option value="de">Deutsch</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">payments</span>
+                            <select id="currency-select" class="bg-transparent text-slate-300 border-none text-xs focus:outline-none cursor-pointer">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="CNY">CNY (¥)</option>
+                                <option value="GBP">GBP (£)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="login.html" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                            <span>登录 / 注册</span>
+                        </a>
+                        <button id="chat-widget-btn" class="flex items-center gap-1 text-primary hover:text-accent transition-colors">
+                            <span class="material-symbols-outlined text-sm">chat</span>
+                            <span>在线客服</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Navigation -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
+                            <span class="material-symbols-outlined text-primary relative z-10">precision_manufacturing</span>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-white">晟通<span class="text-primary font-light ml-1">达</span></span>
+                    </a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-1 max-w-md mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="global-search" placeholder="搜索产品、型号、关键词..." 
+                               class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 pl-10 pr-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="product-catalog.html">产品中心</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="about.html">关于我们</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="news.html">新闻资讯</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="contact.html">联系我们</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button class="hidden lg:flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
+                        <span class="material-symbols-outlined text-sm">download</span> 产品目录
+                    </button>
+                    <a href="contact.html" class="bg-primary text-deep-navy px-5 py-2 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(19,200,236,0.4)] transition-all uppercase tracking-wide text-sm">
+                        立即咨询
+                    </a>
+                    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden md:hidden pb-4">
+                <div class="mb-4">
+                    <div class="relative">
+                        <input type="text" placeholder="搜索产品..." 
+                               class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 pl-10 pr-4 text-sm">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-3">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="product-catalog.html">产品中心</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="about.html">关于我们</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="news.html">新闻资讯</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="contact.html">联系我们</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="order-tracking.html">订单追踪</a>
+                    <div class="flex gap-2 pt-2">
+                        <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-sm">download</span> 产品目录
+                        </button>
+                        <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold bg-primary text-deep-navy rounded hover:bg-accent transition-all uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-sm">chat</span> 在线客服
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">

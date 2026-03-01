@@ -1,0 +1,160 @@
+name: "内容运营团队"
+description: "负责内容生成、营销和SEO优化的智能代理团队"
+version: "1.0.0"
+enabled: true
+
+# 团队成员
+team_members:
+  - name: "内容生成代理"
+    role: "content_generator"
+    description: "负责生成各种类型的内容"
+    skills:
+      - content_generator
+      - data_processor
+      - file_operations
+    config:
+      content_types: ["product_description", "marketing_copy", "article", "social_media"]
+      language: "zh"
+      tone: "professional"
+
+  - name: "营销策划代理"
+    role: "marketing_strategist"
+    description: "负责制定营销策略和内容计划"
+    skills:
+      - content_generator
+      - email_marketing
+      - social_media_api
+      - analytics
+    config:
+      marketing_channels: ["email", "social_media", "website"]
+      campaign_frequency: "weekly"
+      target_audience: "industry_professionals"
+
+  - name: "SEO优化代理"
+    role: "seo_specialist"
+    description: "负责优化内容的SEO"
+    skills:
+      - seo_optimizer
+      - data_processor
+      - analytics
+    config:
+      keyword_research: true
+      on_page_optimization: true
+      technical_seo: false
+      content_audit: true
+
+# 工作流程
+workflows:
+  - name: "内容创建流程"
+    description: "创建和优化内容"
+    steps:
+      - agent: "内容生成代理"
+        task: "generate_content"
+        config:
+          content_type: "article"
+          title: "研磨设备行业发展趋势"
+          length: 1000
+          keywords: ["研磨设备", "行业趋势", "技术创新"]
+
+      - agent: "SEO优化代理"
+        task: "optimize_content"
+        config:
+          seo_optimization: true
+          keyword_density: 2.0
+          meta_tags: true
+
+      - agent: "营销策划代理"
+        task: "distribute_content"
+        config:
+          channels: ["website", "social_media"]
+          schedule: "now"
+
+  - name: "产品内容更新流程"
+    description: "更新产品相关内容"
+    steps:
+      - agent: "内容生成代理"
+        task: "update_product_content"
+        config:
+          product_ids: []
+          all_products: true
+          content_types: ["description", "marketing_copy"]
+
+      - agent: "SEO优化代理"
+        task: "update_product_seo"
+        config:
+          product_ids: []
+          all_products: true
+
+      - agent: "营销策划代理"
+        task: "promote_products"
+        config:
+          products: []
+          campaign_type: "product_update"
+
+# 任务配置
+tasks:
+  - name: "weekly_content_plan"
+    description: "每周内容计划"
+    workflow: "内容创建流程"
+    schedule: "0 10 * * 1"  # 每周一早上10点
+    enabled: true
+
+  - name: "daily_social_media"
+    description: "每日社交媒体内容"
+    workflow: "内容创建流程"
+    schedule: "0 9 * * *"  # 每天早上9点
+    enabled: true
+    config:
+      content_type: "social_media"
+      length: 200
+      keywords: ["研磨设备", "行业动态", "技术分享"]
+
+  - name: "monthly_article"
+    description: "每月行业文章"
+    workflow: "内容创建流程"
+    schedule: "0 11 1 * *"  # 每月1日早上11点
+    enabled: true
+    config:
+      content_type: "article"
+      length: 1500
+      keywords: ["研磨设备行业", "技术趋势", "应用案例"]
+
+# 集成配置
+integrations:
+  - name: "email_service"
+    description: "邮件服务集成"
+    type: "smtp"
+    config:
+      smtp_server: "smtp.gmail.com"
+      smtp_port: 587
+      email_address: "marketing@shengtongda.com"
+
+  - name: "social_media"
+    description: "社交媒体集成"
+    type: "api"
+    config:
+      platforms: ["linkedin", "twitter", "facebook"]
+      posting_schedule: ["09:00", "14:00", "18:00"]
+
+  - name: "content_storage"
+    description: "内容存储集成"
+    type: "local_file"
+    config:
+      content_dir: "./data/content"
+      backup_enabled: true
+      backup_interval: 24  # 小时
+
+# 性能配置
+performance:
+  max_concurrent_tasks: 3
+  task_timeout: 3600
+  retry_attempts: 3
+  retry_delay: 60
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "openclaw/logs/content_operations.log"
+  rotation: "daily"
+  retention: 7  # 天

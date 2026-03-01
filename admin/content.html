@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内容管理 - STDMaterialAdmin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#13c8ec',
+                        'primary-dark': '#0ea5c0',
+                        'primary-light': '#5dd9f5',
+                        dark: {
+                            900: '#101f22',
+                            800: '#162326',
+                            700: '#1c2d31',
+                            600: '#24373b',
+                            500: '#2c4145'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(22, 35, 38, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(19, 200, 236, 0.1); }
+        .glass-light { background: rgba(28, 45, 49, 0.6); backdrop-filter: blur(8px); border: 1px solid rgba(19, 200, 236, 0.08); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #162326; }
+        ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
+    </style>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/api-config.js"></script>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-dark-800 border-r border-dark-600 flex flex-col">
+            <div class="p-6 border-b border-dark-600">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                        <span class="material-icons text-dark-900">science</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-white">STDMaterial</h1>
+                        <p class="text-xs text-gray-500">Admin Panel</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 p-4 space-y-1">
+                <a href="../dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="../products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">inventory_2</span>
+                    <span>Products</span>
+                </a>
+                <a href="../inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">mail</span>
+                    <span>Inquiries</span>
+                </a>
+                <a href="../orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">shopping_cart</span>
+                    <span>Orders</span>
+                </a>
+                <a href="../customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">people</span>
+                    <span>Customers</span>
+                </a>
+                <a href="../marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">campaign</span>
+                    <span>Marketing</span>
+                </a>
+                <a href="../statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">analytics</span>
+                    <span>Statistics</span>
+                </a>
+                <a href="../content.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                    <span class="material-icons text-xl">article</span>
+                    <span>内容管理</span>
+                </a>
+                <a href="../api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">api</span>
+                    <span>API Settings</span>
+                </a>
+                <a href="../settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">settings</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+            <header class="sticky top-0 z-40 glass border-b border-dark-600 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-semibold">内容管理</h1>
+                        <p class="text-gray-400 text-sm mt-1">管理网站内容</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="exportContent()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                            <span class="material-icons text-lg">download</span>
+                            <span>导出</span>
+                        </button>
+                        <button onclick="openContentModal()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                            <span class="material-icons text-lg">add</span>
+                            <span>添加内容</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-6">
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div class="glass rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">总内容数</p>
+                        <p class="text-2xl font-semibold mt-1" id="totalContent">0</p>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">已发布</p>
+                        <p class="text-2xl font-semibold mt-1 text-green-400" id="publishedContent">0</p>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">草稿</p>
+                        <p class="text-2xl font-semibold mt-1 text-yellow-400" id="draftContent">0</p>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <p class="text-gray-400 text-sm">文章</p>
+                        <p class="text-2xl font-semibold mt-1 text-blue-400" id="articleContent">0</p>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="glass rounded-xl p-4 mb-6">
+                    <div class="flex flex-wrap items-center gap-4">
+                        <div class="flex-1 min-w-[200px]">
+                            <div class="relative">
+                                <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+                                <input type="text" id="searchInput" placeholder="搜索内容..." 
+                                    class="w-full bg-dark-700 border border-dark-600 rounded-lg pl-10 pr-4 py-2.5 text-white placeholder-gray-500 focus:border-primary focus:outline-none"
+                                    oninput="filterContent()">
+                            </div>
+                        </div>
+                        <select id="typeFilter" onchange="filterContent()" class="bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                            <option value="">全部类型</option>
+                            <option value="article">文章</option>
+                            <option value="page">页面</option>
+                            <option value="news">新闻</option>
+                            <option value="marketing">营销内容</option>
+                        </select>
+                        <select id="statusFilter" onchange="filterContent()" class="bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                            <option value="">全部状态</option>
+                            <option value="published">已发布</option>
+                            <option value="draft">草稿</option>
+                            <option value="pending">待审核</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Content Table -->
+                <div class="glass rounded-xl overflow-hidden">
+                    <table class="w-full">
+                        <thead class="bg-dark-700">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">标题</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">类型</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">作者</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">时间</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">状态</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contentTableBody" class="divide-y divide-dark-600">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Content Modal -->
+    <div id="contentModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeContentModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl max-h-[90vh] overflow-auto">
+            <div class="glass rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold" id="modalTitle">添加内容</h2>
+                    <button onclick="closeContentModal()" class="text-gray-400 hover:text-white">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <form id="contentForm" onsubmit="saveContent(event)">
+                    <input type="hidden" id="contentId">
+                    <div class="mb-4">
+                        <label class="block text-sm text-gray-400 mb-1">标题</label>
+                        <input type="text" id="contentTitle" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">类型</label>
+                            <select id="contentType" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="article">文章</option>
+                                <option value="page">页面</option>
+                                <option value="news">新闻</option>
+                                <option value="marketing">营销内容</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">状态</label>
+                            <select id="contentStatus" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="draft">草稿</option>
+                                <option value="published">已发布</option>
+                                <option value="pending">待审核</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm text-gray-400 mb-1">作者</label>
+                        <input type="text" id="contentAuthor" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm text-gray-400 mb-1">内容</label>
+                        <textarea id="contentBody" rows="8" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm text-gray-400 mb-1">标签</label>
+                        <input type="text" id="contentTags" placeholder="用逗号分隔多个标签" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                    </div>
+                    <div class="flex justify-end gap-3">
+                        <button type="button" onclick="closeContentModal()" class="px-6 py-2.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300">取消</button>
+                        <button type="submit" class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Detail Modal -->
+    <div id="contentDetailModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeContentDetailModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl max-h-[90vh] overflow-auto">
+            <div class="glass rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold">内容详情</h2>
+                    <button onclick="closeContentDetailModal()" class="text-gray-400 hover:text-white">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <div id="contentDetailContent">
+                    <!-- Detail content will be inserted here -->
+                </div>
+                <div class="mt-6 flex justify-end gap-3">
+                    <button onclick="closeContentDetailModal()" class="px-6 py-2.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300">关闭</button>
+                    <button id="publishButton" class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium">发布</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let contentItems = [];
+        let filteredContent = [];
+
+        // Default content data
+        const defaultContent = [
+            {
+                id: 1,
+                title: "研磨设备行业发展趋势",
+                type: "article",
+                author: "管理员",
+                content: "本文分析了研磨设备行业的最新发展趋势，包括技术创新、市场需求变化以及未来发展方向。随着材料科学的不断进步，研磨设备也在向更高精度、更智能化的方向发展。",
+                tags: ["行业趋势", "技术创新", "研磨设备"],
+                status: "published",
+                created_at: "2024-01-15 10:30:00",
+                updated_at: "2024-01-15 10:30:00"
+            },
+            {
+                id: 2,
+                title: "关于我们",
+                type: "page",
+                author: "管理员",
+                content: "STDMaterial精密设备有限公司是一家专业从事研磨设备研发、生产和销售的高科技企业。公司拥有一支经验丰富的研发团队，致力于为客户提供高品质的研磨设备解决方案。",
+                tags: ["公司介绍", "关于我们"],
+                status: "published",
+                created_at: "2024-01-14 14:20:00",
+                updated_at: "2024-01-14 14:20:00"
+            },
+            {
+                id: 3,
+                title: "新产品发布：行星式球磨机PM-4",
+                type: "news",
+                author: "市场部",
+                content: "我公司最新推出的行星式球磨机PM-4，采用先进的行星运动技术，可实现纳米级材料的高效研磨。该产品具有研磨效率高、粒度分布均匀、操作简便等优点。",
+                tags: ["新产品", "行星式球磨机", "技术创新"],
+                status: "draft",
+                created_at: "2024-01-13 09:15:00",
+                updated_at: "2024-01-13 09:15:00"
+            },
+            {
+                id: 4,
+                title: "2024年营销策略",
+                type: "marketing",
+                author: "市场部",
+                content: "2024年，我公司将重点关注以下营销方向：1. 加强线上推广，提高品牌知名度；2. 参加行业展会，拓展客户群体；3. 推出系列技术文章，提升专业形象；4. 开展客户培训活动，增强客户粘性。",
+                tags: ["营销策略", "市场推广", "2024"],
+                status: "draft",
+                created_at: "2024-01-12 16:45:00",
+                updated_at: "2024-01-12 16:45:00"
+            }
+        ];
+
+        function init() {
+            const stored = localStorage.getItem('nanomech_content');
+            if (stored) {
+                contentItems = JSON.parse(stored);
+            } else {
+                contentItems = [...defaultContent];
+                saveContentItems();
+            }
+            filteredContent = [...contentItems];
+            renderContent();
+            updateStats();
+        }
+
+        function saveContentItems() {
+            localStorage.setItem('nanomech_content', JSON.stringify(contentItems));
+        }
+
+        function updateStats() {
+            document.getElementById('totalContent').textContent = contentItems.length;
+            document.getElementById('publishedContent').textContent = contentItems.filter(c => c.status === 'published').length;
+            document.getElementById('draftContent').textContent = contentItems.filter(c => c.status === 'draft').length;
+            document.getElementById('articleContent').textContent = contentItems.filter(c => c.type === 'article').length;
+        }
+
+        function renderContent() {
+            const tbody = document.getElementById('contentTableBody');
+            tbody.innerHTML = filteredContent.map(content => `
+                <tr class="hover:bg-dark-700/50">
+                    <td class="px-4 py-3">
+                        <span class="font-medium block">${content.title}</span>
+                        <p class="text-xs text-gray-400">${content.tags ? content.tags.join(', ') : ''}</p>
+                    </td>
+                    <td class="px-4 py-3">
+                        <span class="px-2 py-1 rounded-full text-xs bg-dark-600">${content.type}</span>
+                    </td>
+                    <td class="px-4 py-3 text-gray-300">${content.author}</td>
+                    <td class="px-4 py-3 text-gray-400">${content.created_at}</td>
+                    <td class="px-4 py-3">
+                        <span class="px-2 py-1 rounded-full text-xs ${getStatusClass(content)}">${getStatusText(content.status)}</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-2">
+                            <button onclick="viewContent(${content.id})" class="p-1.5 rounded hover:bg-dark-600 text-gray-400 hover:text-white">
+                                <span class="material-icons text-lg">visibility</span>
+                            </button>
+                            <button onclick="editContent(${content.id})" class="p-1.5 rounded hover:bg-dark-600 text-gray-400 hover:text-white">
+                                <span class="material-icons text-lg">edit</span>
+                            </button>
+                            <button onclick="deleteContent(${content.id})" class="p-1.5 rounded hover:bg-dark-600 text-gray-400 hover:text-red-400">
+                                <span class="material-icons text-lg">delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function getStatusClass(content) {
+            if (content.status === 'published') return 'bg-green-500/20 text-green-400';
+            if (content.status === 'draft') return 'bg-yellow-500/20 text-yellow-400';
+            return 'bg-blue-500/20 text-blue-400';
+        }
+
+        function getStatusText(status) {
+            if (status === 'published') return '已发布';
+            if (status === 'draft') return '草稿';
+            return '待审核';
+        }
+
+        function filterContent() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const type = document.getElementById('typeFilter').value;
+            const status = document.getElementById('statusFilter').value;
+
+            filteredContent = contentItems.filter(c => {
+                const matchSearch = !search || 
+                    c.title.toLowerCase().includes(search) || 
+                    (c.content && c.content.toLowerCase().includes(search)) ||
+                    (c.tags && c.tags.some(tag => tag.toLowerCase().includes(search)));
+                const matchType = !type || c.type === type;
+                const matchStatus = !status || c.status === status;
+                return matchSearch && matchType && matchStatus;
+            });
+
+            renderContent();
+        }
+
+        function openContentModal() {
+            document.getElementById('modalTitle').textContent = '添加内容';
+            document.getElementById('contentForm').reset();
+            document.getElementById('contentId').value = '';
+            document.getElementById('contentModal').classList.remove('hidden');
+        }
+
+        function closeContentModal() {
+            document.getElementById('contentModal').classList.add('hidden');
+        }
+
+        function editContent(id) {
+            const content = contentItems.find(c => c.id === id);
+            if (!content) return;
+
+            document.getElementById('modalTitle').textContent = '编辑内容';
+            document.getElementById('contentId').value = content.id;
+            document.getElementById('contentTitle').value = content.title;
+            document.getElementById('contentType').value = content.type;
+            document.getElementById('contentStatus').value = content.status;
+            document.getElementById('contentAuthor').value = content.author;
+            document.getElementById('contentBody').value = content.content;
+            document.getElementById('contentTags').value = content.tags ? content.tags.join(', ') : '';
+            
+            document.getElementById('contentModal').classList.remove('hidden');
+        }
+
+        function saveContent(event) {
+            event.preventDefault();
+            const id = document.getElementById('contentId').value;
+            const contentData = {
+                title: document.getElementById('contentTitle').value,
+                type: document.getElementById('contentType').value,
+                author: document.getElementById('contentAuthor').value,
+                content: document.getElementById('contentBody').value,
+                status: document.getElementById('contentStatus').value,
+                tags: document.getElementById('contentTags').value ? document.getElementById('contentTags').value.split(',').map(tag => tag.trim()) : []
+            };
+
+            if (id) {
+                const index = contentItems.findIndex(c => c.id == id);
+                if (index !== -1) {
+                    contentItems[index] = { ...contentItems[index], ...contentData, updated_at: new Date().toLocaleString() };
+                }
+            } else {
+                const newId = Math.max(...contentItems.map(c => c.id), 0) + 1;
+                contentItems.push({ 
+                    id: newId, 
+                    ...contentData, 
+                    created_at: new Date().toLocaleString(),
+                    updated_at: new Date().toLocaleString()
+                });
+            }
+
+            saveContentItems();
+            filteredContent = [...contentItems];
+            renderContent();
+            updateStats();
+            closeContentModal();
+        }
+
+        function deleteContent(id) {
+            if (confirm('确定要删除这个内容吗？')) {
+                contentItems = contentItems.filter(c => c.id !== id);
+                saveContentItems();
+                filteredContent = [...contentItems];
+                renderContent();
+                updateStats();
+            }
+        }
+
+        function viewContent(id) {
+            const content = contentItems.find(c => c.id === id);
+            if (!content) return;
+
+            const detailContent = document.getElementById('contentDetailContent');
+            detailContent.innerHTML = `
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">${content.title}</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${content.tags ? content.tags.map(tag => `<span class="px-2 py-1 rounded-full text-xs bg-dark-600">${tag}</span>`).join('') : ''}
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <p class="text-sm text-gray-400">类型</p>
+                            <p class="text-gray-300">${content.type}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">作者</p>
+                            <p class="text-gray-300">${content.author}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">状态</p>
+                            <p class="${getStatusClass(content)}">${getStatusText(content.status)}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">创建时间</p>
+                            <p class="text-gray-300">${content.created_at}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-400 mb-2">内容</p>
+                        <div class="bg-dark-700 p-4 rounded-lg text-gray-300 whitespace-pre-wrap">${content.content}</div>
+                    </div>
+                    ${content.updated_at ? `
+                        <div class="text-sm text-gray-400">
+                            最后更新: ${content.updated_at}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+
+            // Set up publish button
+            document.getElementById('publishButton').onclick = function() {
+                if (content.status !== 'published') {
+                    content.status = 'published';
+                    content.updated_at = new Date().toLocaleString();
+                    saveContentItems();
+                    renderContent();
+                    updateStats();
+                    alert('内容已发布');
+                    closeContentDetailModal();
+                } else {
+                    alert('内容已经是发布状态');
+                }
+            };
+
+            document.getElementById('contentDetailModal').classList.remove('hidden');
+        }
+
+        function closeContentDetailModal() {
+            document.getElementById('contentDetailModal').classList.add('hidden');
+        }
+
+        function exportContent() {
+            const csv = contentItems.map(c => `${c.title},${c.type},${c.author},${c.status},${c.created_at}`).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'content.csv';
+            a.click();
+        }
+
+        init();
+    </script>
+</body>
+</html>

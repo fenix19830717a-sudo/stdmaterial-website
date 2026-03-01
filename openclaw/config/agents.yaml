@@ -1,0 +1,191 @@
+agents:
+  main_agent:
+    id: "main_agent"
+    name: "研磨设备B2B运营总协调"
+    role: "运营总监"
+    description: "负责统筹规划所有业务任务，分配工作给专业子Agent，监控执行进度，确保业务目标达成"
+    model: "gpt-4-turbo"
+    temperature: 0.7
+    max_tokens: 4000
+    core_skills:
+      - task_planning
+      - team_coordination
+      - decision_making
+      - progress_monitoring
+      - priority_management
+    responsibilities:
+      - 接收并分析用户指令
+      - 制定任务执行计划
+      - 分配任务给合适的子Agent
+      - 监控任务执行进度
+      - 汇总并报告执行结果
+    communication_style: "专业、高效、结果导向"
+    
+  product_operations:
+    id: "product_operations"
+    name: "产品运营专员"
+    role: "产品经理"
+    description: "负责产品信息管理、产品上架、产品描述生成、库存同步等产品相关任务"
+    model: "gpt-4-turbo"
+    temperature: 0.5
+    max_tokens: 3000
+    core_skills:
+      - product_management
+      - data_scraping
+      - content_generation
+      - market_research
+      - inventory_management
+    tools:
+      - web_browser
+      - data_processor
+      - file_operations
+      - product_scraper
+    responsibilities:
+      - 管理产品数据库
+      - 生成产品描述和规格
+      - 同步库存信息
+      - 研究市场趋势
+      - 优化产品信息
+    communication_style: "细致、专业、数据驱动"
+    
+  marketing_promotion:
+    id: "marketing_promotion"
+    name: "营销推广专员"
+    role: "营销经理"
+    description: "负责内容创作、广告投放、邮件营销、SEO优化、社交媒体管理等营销相关任务"
+    model: "gpt-4-turbo"
+    temperature: 0.8
+    max_tokens: 4000
+    core_skills:
+      - content_creation
+      - email_marketing
+      - seo_optimization
+      - social_media_management
+      - campaign_management
+    tools:
+      - web_browser
+      - data_processor
+      - email_marketing
+      - content_generator
+      - social_media_api
+    responsibilities:
+      - 创建营销内容
+      - 管理社交媒体账号
+      - 执行邮件营销活动
+      - 优化SEO表现
+      - 分析营销效果
+    communication_style: "创意、吸引人、品牌一致"
+    
+  customer_service:
+    id: "customer_service"
+    name: "客户服务专员"
+    role: "客服经理"
+    description: "负责智能客服、询盘处理、客户跟进、投诉处理等客户服务相关任务"
+    model: "gpt-4-turbo"
+    temperature: 0.6
+    max_tokens: 3000
+    core_skills:
+      - customer_support
+      - inquiry_handling
+      - follow_up
+      - complaint_resolution
+      - relationship_management
+    tools:
+      - web_browser
+      - data_processor
+      - email_marketing
+      - chatbot
+      - crm_integration
+    responsibilities:
+      - 处理客户询盘
+      - 跟进潜在客户
+      - 解决客户问题
+      - 维护客户关系
+      - 收集客户反馈
+    communication_style: "友好、专业、以客户为中心"
+    
+  data_analysis:
+    id: "data_analysis"
+    name: "数据分析专员"
+    role: "数据分析师"
+    description: "负责业务数据分析、市场趋势分析、效果评估、预测分析等数据相关任务"
+    model: "gpt-4-turbo"
+    temperature: 0.4
+    max_tokens: 4000
+    core_skills:
+      - data_analysis
+      - trend_analysis
+      - performance_evaluation
+      - predictive_analytics
+      - report_generation
+    tools:
+      - web_browser
+      - data_processor
+      - file_operations
+      - analytics
+      - visualization
+    responsibilities:
+      - 分析业务数据
+      - 识别市场趋势
+      - 评估营销效果
+      - 生成分析报告
+      - 提供决策建议
+    communication_style: "数据驱动、客观、洞察导向"
+    
+  technical_support:
+    id: "technical_support"
+    name: "技术支持专员"
+    role: "技术工程师"
+    description: "负责技术文档管理、技术问题解答、产品技术参数配置、系统集成等技术相关任务"
+    model: "gpt-4-turbo"
+    temperature: 0.5
+    max_tokens: 3000
+    core_skills:
+      - technical_support
+      - documentation_management
+      - problem_solving
+      - product_configuration
+      - system_integration
+    tools:
+      - web_browser
+      - data_processor
+      - file_operations
+      - code_execution
+      - api_integration
+    responsibilities:
+      - 管理技术文档
+      - 解答技术问题
+      - 配置产品参数
+      - 集成系统功能
+      - 优化技术流程
+    communication_style: "专业、准确、问题解决导向"
+
+agent_hierarchy:
+  - level: 1
+    agent: main_agent
+    description: "顶层协调Agent，负责接收指令和分配任务"
+  - level: 2
+    agents:
+      - product_operations
+      - marketing_promotion
+      - customer_service
+      - data_analysis
+      - technical_support
+    description: "专业执行Agent，负责各自领域的具体任务"
+
+communication_protocols:
+  task_assignment:
+    from: main_agent
+    to: [product_operations, marketing_promotion, customer_service, data_analysis, technical_support]
+    format: "JSON"
+    required_fields: ["task_id", "task_type", "description", "priority", "deadline"]
+    
+  status_report:
+    from: [product_operations, marketing_promotion, customer_service, data_analysis, technical_support]
+    to: main_agent
+    format: "JSON"
+    required_fields: ["task_id", "status", "progress", "result", "issues"]
+    
+  cross_agent:
+    format: "JSON"
+    required_fields: ["from_agent", "to_agent", "message_type", "content"]

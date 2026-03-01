@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Services Configuration - NanoMech</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                        "secondary-dark": "#16282c",
+                        "ai-accent": "#8b5cf6",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #13c8ec05 1px, transparent 1px), linear-gradient(to bottom, #13c8ec05 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(16, 31, 34, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 200, 236, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .ai-glass-panel {
+            background: rgba(139, 92, 246, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 15px rgba(19, 200, 236, 0.3);
+        }
+        .ai-shadow {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+        }
+        .sidebar-item {
+            transition: all 0.2s ease;
+        }
+        .sidebar-item:hover {
+            background-color: rgba(19, 200, 236, 0.1);
+            border-left-color: rgba(19, 200, 236, 0.5);
+        }
+        .sidebar-item.active {
+            background-color: rgba(19, 200, 236, 0.1);
+            border-left-color: rgba(19, 200, 236, 1);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-2px);
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #374151;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .toggle-slider {
+            background-color: #13c8ec;
+        }
+        input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-200 font-display min-h-screen">
+    <div class="fixed inset-0 z-0 bg-grid-pattern bg-[size:40px_40px] pointer-events-none"></div>
+    <div class="fixed inset-0 z-0 bg-gradient-to-b from-transparent via-background-dark/80 to-background-dark pointer-events-none"></div>
+    
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-secondary-dark border-r border-white/5 flex flex-col">
+            <div class="p-6 border-b border-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center neon-shadow">
+                        <span class="material-icons text-white text-sm">admin_panel_settings</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">NanoMech</h1>
+                        <span class="text-xs text-slate-500">Admin Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+                <div class="mb-6">
+                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">Main</h2>
+                    <a href="../admin-dashboard.html" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">dashboard</span>
+                        <span class="text-sm font-medium text-slate-300">Dashboard</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">inventory</span>
+                        <span class="text-sm font-medium text-slate-300">Products</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">people</span>
+                        <span class="text-sm font-medium text-slate-300">Customers</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">receipt</span>
+                        <span class="text-sm font-medium text-slate-300">Orders</span>
+                    </a>
+                </div>
+                
+                <div class="mb-6">
+                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">AI Services</h2>
+                    <a href="../admin-ai-services.html" class="sidebar-item active flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-primary">
+                        <span class="material-icons text-primary text-sm">auto_awesome</span>
+                        <span class="text-sm font-medium text-white">AI Product Info</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">image</span>
+                        <span class="text-sm font-medium text-slate-300">AI Image Gen</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">chat</span>
+                        <span class="text-sm font-medium text-slate-300">AI Chatbot</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">campaign</span>
+                        <span class="text-sm font-medium text-slate-300">AI Marketing</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">language</span>
+                        <span class="text-sm font-medium text-slate-300">AI Translation</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">search</span>
+                        <span class="text-sm font-medium text-slate-300">AI SEO</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">people_alt</span>
+                        <span class="text-sm font-medium text-slate-300">AI Lead Gen</span>
+                    </a>
+                </div>
+                
+                <div class="mb-6">
+                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">Settings</h2>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">settings</span>
+                        <span class="text-sm font-medium text-slate-300">System Settings</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">users</span>
+                        <span class="text-sm font-medium text-slate-300">User Management</span>
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent">
+                        <span class="material-icons text-slate-400 text-sm">security</span>
+                        <span class="text-sm font-medium text-slate-300">Security</span>
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="p-4 border-t border-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center">
+                        <span class="material-icons text-white text-sm">person</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-sm font-medium text-white truncate">Admin User</h3>
+                        <p class="text-xs text-slate-500 truncate">admin@nanomech.com</p>
+                    </div>
+                    <button class="text-slate-400 hover:text-white transition-colors">
+                        <span class="material-icons text-sm">logout</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="h-16 bg-secondary-dark border-b border-white/5 flex items-center justify-between px-6">
+                <div class="flex items-center space-x-4">
+                    <button class="text-slate-400 hover:text-white transition-colors">
+                        <span class="material-icons">menu</span>
+                    </button>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-icons text-slate-500 text-sm">search</span>
+                        </span>
+                        <input type="text" placeholder="Search AI services..." class="pl-10 pr-4 py-2 rounded-lg bg-background-dark border border-slate-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="text-slate-400 hover:text-white transition-colors">
+                            <span class="material-icons">notifications</span>
+                        </button>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </div>
+                    <div class="relative">
+                        <button class="text-slate-400 hover:text-white transition-colors">
+                            <span class="material-icons">settings</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content Area -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-white mb-2">AI Services Configuration</h1>
+                    <p class="text-slate-400">Configure and manage all AI-powered services for your store.</p>
+                </div>
+                
+                <!-- AI Product Collection & Upload Section -->
+                <div class="ai-glass-panel rounded-xl p-6 mb-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <span class="material-icons text-ai-accent mr-2">inventory</span>
+                            AI Product Collection & Upload
+                        </h2>
+                        <div class="flex items-center">
+                            <span class="text-sm text-slate-400 mr-3">Status</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Product Information Crawling</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Crawl Sources</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Industry Websites</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Exhibition Info</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Supplier Catalogs</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Competitor Sites</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Crawl Frequency</label>
+                                    <select class="w-full bg-background-dark border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option>Daily</option>
+                                        <option>Weekly</option>
+                                        <option>Monthly</option>
+                                        <option>Manual Only</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Smart Product Classification</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Classification Criteria</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Technical Parameters</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Application Areas</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Specifications</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Industry Standards</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Custom Categories</label>
+                                    <input type="text" placeholder="Add custom category" class="w-full bg-background-dark border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Multi-language Product Description</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Supported Languages</label>
+                                    <div class="grid grid-cols-3 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">English</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Chinese</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">German</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">French</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Spanish</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Japanese</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Intelligent Pricing Suggestions</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Pricing Factors</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Market Data</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Competitor Prices</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Cost Analysis</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Demand Forecast</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Profit Margin Target</label>
+                                    <input type="range" min="10" max="100" value="30" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                                    <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                        <span>10%</span>
+                                        <span>30%</span>
+                                        <span>100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Marketing & SEO Section -->
+                <div class="ai-glass-panel rounded-xl p-6 mb-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <span class="material-icons text-ai-accent mr-2">campaign</span>
+                            AI Marketing & SEO
+                        </h2>
+                        <div class="flex items-center">
+                            <span class="text-sm text-slate-400 mr-3">Status</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Content Marketing</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Content Types</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Blog Posts</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Social Media</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Email Marketing</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Whitepapers</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Content Frequency</label>
+                                    <select class="w-full bg-background-dark border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option>Daily</option>
+                                        <option selected>Weekly</option>
+                                        <option>Bi-weekly</option>
+                                        <option>Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Advertising Optimization</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Ad Platforms</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Google Ads</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">LinkedIn</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Facebook</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Twitter</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Daily Ad Budget</label>
+                                    <input type="number" value="500" min="0" class="w-full bg-background-dark border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">SEO Optimization</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">SEO Features</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Keyword Research</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Content Optimization</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Multi-language SEO</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Link Building</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Target Regions</label>
+                                    <select class="w-full bg-background-dark border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option>Global</option>
+                                        <option>North America</option>
+                                        <option>Europe</option>
+                                        <option>Asia</option>
+                                        <option selected>Custom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Customer Service Section -->
+                <div class="ai-glass-panel rounded-xl p-6 mb-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <span class="material-icons text-ai-accent mr-2">chat</span>
+                            AI Customer Service
+                        </h2>
+                        <div class="flex items-center">
+                            <span class="text-sm text-slate-400 mr-3">Status</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">AI Chatbot</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Chatbot Features</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">24/7 Support</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Multi-language</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Technical Support</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Product Recommendations</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Supported Languages</label>
+                                    <div class="grid grid-cols-3 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">English</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Chinese</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Spanish</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Customer Relationship Management</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">CRM Features</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Customer Profiling</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Intent Scoring</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Personalized Follow-up</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Sales Prediction</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Lead Qualification Threshold</label>
+                                    <input type="range" min="0" max="100" value="70" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                                    <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                        <span>Low</span>
+                                        <span>70%</span>
+                                        <span>High</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Lead Generation Section -->
+                <div class="ai-glass-panel rounded-xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <span class="material-icons text-ai-accent mr-2">people_alt</span>
+                            AI Lead Generation
+                        </h2>
+                        <div class="flex items-center">
+                            <span class="text-sm text-slate-400 mr-3">Status</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Global Lead Identification</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Target Regions</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">North America</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Europe</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Asia</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Middle East</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Target Industries</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Manufacturing</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Pharmaceuticals</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Research Labs</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Mining</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-dark rounded-lg p-5">
+                            <h3 class="text-lg font-medium text-white mb-4">Precision Marketing</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Marketing Channels</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">Email</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary" checked>
+                                            <span class="text-sm text-slate-300">LinkedIn</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Direct Mail</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2">
+                                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                            <span class="text-sm text-slate-300">Telemarketing</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-2">Campaign Frequency</label>
+                                    <select class="w-full bg-background-dark border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option>Weekly</option>
+                                        <option selected>Bi-weekly</option>
+                                        <option>Monthly</option>
+                                        <option>Quarterly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Save Settings Button -->
+                <div class="flex justify-end">
+                    <button class="bg-primary hover:bg-primary/90 text-background-dark font-medium py-3 px-6 rounded-lg transition-colors flex items-center">
+                        <span class="material-icons text-sm mr-2">save</span>
+                        Save All Settings
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        // Sidebar active state
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Logout functionality
+        document.querySelector('button:has(.material-icons:contains("logout"))').addEventListener('click', function() {
+            window.location.href = 'admin-login.html';
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('button:has(.material-icons:contains("menu"))').addEventListener('click', function() {
+            // Implement mobile menu toggle logic here
+            console.log('Mobile menu toggled');
+        });
+        
+        // Save settings button
+        document.querySelector('button:has(.material-icons:contains("save"))').addEventListener('click', function() {
+            // Implement save settings logic here
+            alert('Settings saved successfully!');
+        });
+    </script>
+</body>
+</html>

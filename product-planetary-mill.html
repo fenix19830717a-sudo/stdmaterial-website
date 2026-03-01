@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM-400 Planetary Ball Mill | STDMaterial</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                        "secondary-dark": "#16282c",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #13c8ec05 1px, transparent 1px), linear-gradient(to bottom, #13c8ec05 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(16, 31, 34, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 200, 236, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .neon-shadow {
+            box-shadow: 0 0 15px rgba(19, 200, 236, 0.3);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 10px rgba(19, 200, 236, 0.5);
+        }
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display selection:bg-primary selection:text-background-dark min-h-screen flex flex-col overflow-x-hidden">
+    <div class="fixed inset-0 z-0 bg-grid-pattern bg-[size:40px_40px] pointer-events-none"></div>
+    <div class="fixed inset-0 z-0 bg-gradient-to-b from-transparent via-background-dark/80 to-background-dark pointer-events-none"></div>
+    
+    <!-- Navigation -->
+    <nav class="relative z-50 border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
+        <div class="w-full px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center neon-shadow">
+                        <span class="material-icons text-white text-sm">science</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-widest text-white uppercase">Nano<span class="text-primary">Mech</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                    <a class="text-primary hover:text-primary/80 transition-colors" href="index.html">Products</a>
+                    <a class="text-slate-400 hover:text-white transition-colors" href="#">AI Solutions</a>
+                    <a class="text-slate-400 hover:text-white transition-colors" href="#">Industries</a>
+                    <a class="text-slate-400 hover:text-white transition-colors" href="#">Support</a>
+                </div>
+                <div class="flex items-center space-x-4">
+    
+                    <button class="text-slate-400 hover:text-white transition-colors">
+                        <span class="material-icons">search</span>
+                    </button>
+                    <a class="hidden sm:inline-flex items-center justify-center px-6 py-2 border border-primary/30 rounded text-xs font-bold text-primary hover:bg-primary/10 transition-all uppercase tracking-wider" href="#contact">
+                        Get Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <!-- Main Content Area -->
+        <main class="flex-grow flex flex-col justify-start py-8 lg:py-12 w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <!-- Breadcrumbs -->
+                <nav aria-label="Breadcrumb" class="flex text-xs text-slate-500 mb-6">
+                    <ol class="flex items-center space-x-2">
+                        <li><a class="hover:text-primary" href="index.html">Home</a></li>
+                        <li><span class="material-icons text-[10px]">chevron_right</span></li>
+                        <li><a class="hover:text-primary" href="#products">Products</a></li>
+                        <li><span class="material-icons text-[10px]">chevron_right</span></li>
+                        <li class="font-medium text-white">Planetary Ball Mill</li>
+                    </ol>
+                </nav>
+                
+                <!-- Product Hero Section -->
+                <div class="flex flex-col xl:flex-row items-center gap-12 xl:gap-20 mb-16">
+                    <!-- Product Image -->
+                    <div class="w-full xl:w-1/2 relative group">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+                        <div class="relative z-10 aspect-square flex items-center justify-center animate-float">
+                            <img alt="High-tech industrial laboratory machine with metallic finish and cyan lighting" class="w-full h-full object-contain drop-shadow-2xl opacity-90 mix-blend-lighten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs0-wTw_otkm5-l2hKCT_EYHlP1emW1752XmNHRRP6xYHp7c6rZqj4jBmWQZzaa1iDrSNN4ljrorSF4wUclmpMP0ly6_V764FppUWkRtCcj0mSSMSjrFyNTqr41F5tPCWdQfjwUc1hrIdXFn9oPThJgTu3nTn76sQ57UOLupsZjmpyuN8WzOMgL26A3pK34RGueE0r9vShSKxniYOvpX4cBqfYlHCO5u9lMbZT5Quq-QDa-eFyn7KDX6VyVHbpkNUYnEGnMG8aWBQ" loading="lazy">
+                            <div class="absolute top-1/4 left-1/4 w-4 h-4 rounded-full border border-primary bg-primary/20 flex items-center justify-center cursor-pointer hover:scale-125 transition-transform animate-pulse group/hotspot">
+                                <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                <div class="absolute left-6 top-0 bg-secondary-dark border border-primary/30 px-2 py-1 text-[10px] text-white rounded opacity-0 group-hover/hotspot:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Drive Unit</div>
+                            </div>
+                            <div class="absolute bottom-1/3 right-1/4 w-4 h-4 rounded-full border border-primary bg-primary/20 flex items-center justify-center cursor-pointer hover:scale-125 transition-transform animate-pulse" style="animation-delay: 1s;">
+                                <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                <div class="absolute left-6 top-0 bg-secondary-dark border border-primary/30 px-2 py-1 text-[10px] text-white rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Grinding Station</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-4 z-20">
+                            <button class="flex items-center space-x-2 px-4 py-2 bg-secondary-dark/80 backdrop-blur border border-primary/30 rounded-full hover:bg-primary/20 hover:border-primary transition-all group-hover:neon-shadow">
+                                <span class="material-icons text-primary text-sm">3d_rotation</span>
+                                <span class="text-xs font-bold text-white uppercase tracking-wider">Rotate 360°</span>
+                            </button>
+                            <button class="flex items-center space-x-2 px-4 py-2 bg-secondary-dark/80 backdrop-blur border border-white/10 rounded-full hover:border-primary hover:text-primary transition-all text-slate-400">
+                                <span class="material-icons text-sm">visibility</span>
+                                <span class="text-xs font-bold uppercase tracking-wider">X-Ray View</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Info -->
+                    <div class="w-full xl:w-1/2 flex flex-col justify-center space-y-8">
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <span class="px-2 py-0.5 rounded bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest">Flagship Model</span>
+
+                                <span class="w-12 h-[1px] bg-primary/30"></span>
+                            </div>
+                            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight">
+                                PM-400 <br/>
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Planetary Ball Mill</span>
+                            </h1>
+                            <p class="text-slate-400 text-lg max-w-lg leading-relaxed">
+                                Engineered for ultra-fine grinding down to the nano-range. Features 4 grinding stations with AI-driven load balancing and centrifugal forces up to 100g.
+                            </p>
+                        </div>
+                        
+                        <!-- Technical Specs -->
+                        <div class="glass-panel p-6 rounded-xl relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 p-4 opacity-10">
+                                <span class="material-icons text-6xl text-primary">settings_suggest</span>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                                <div class="flex flex-col space-y-2">
+                                    <span class="text-xs uppercase tracking-widest text-slate-500">Speed (RPM)</span>
+                                    <div class="flex items-end space-x-1">
+                                        <span class="text-3xl font-bold text-white text-glow">600</span>
+                                        <span class="text-sm text-primary mb-1">MAX</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700/50 h-1 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[85%] neon-shadow"></div>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400">Range: 100 - 600</span>
+                                </div>
+                                <div class="flex flex-col space-y-2">
+                                    <span class="text-xs uppercase tracking-widest text-slate-500">Volume</span>
+                                    <div class="flex items-end space-x-1">
+                                        <span class="text-3xl font-bold text-white">4x500</span>
+                                        <span class="text-sm text-primary mb-1">mL</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700/50 h-1 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[100%]"></div>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400">Capacity: 2000mL Total</span>
+                                </div>
+                                <div class="flex flex-col space-y-2">
+                                    <span class="text-xs uppercase tracking-widest text-slate-500">Timing</span>
+                                    <div class="flex items-end space-x-1">
+                                        <span class="text-3xl font-bold text-white">9999</span>
+                                        <span class="text-sm text-primary mb-1">MIN</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700/50 h-1 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[60%]"></div>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400">Digital Control</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+                                <div class="flex space-x-4">
+                                    <div class="flex items-center space-x-1 text-xs text-slate-400">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                        <span>System Ready</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1 text-xs text-slate-400">
+                                        <span class="material-icons text-[14px]">wifi</span>
+                                        <span>Connected</span>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-slate-600 font-mono">FW_VER_2.4.0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Industry & Efficiency -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-secondary-dark/50 border border-white/5 rounded-lg p-4 flex flex-col justify-between">
+                                <h4 class="text-xs text-slate-400 uppercase tracking-wider mb-2">Industry Standard</h4>
+                                <div class="flex items-center space-x-3">
+                                    <div class="px-2 py-1 border border-white/20 rounded text-white text-xs font-bold">ISO 9001</div>
+                                    <div class="px-2 py-1 border border-white/20 rounded text-white text-xs font-bold">CE Certified</div>
+                                    <div class="px-2 py-1 border border-white/20 rounded text-white text-xs font-bold">RoHS</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button class="flex-1 bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 px-8 rounded-lg transition-all flex items-center justify-center space-x-2 group">
+                                <span>Request Demonstration</span>
+                                <span class="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </button>
+                            <button class="px-8 py-4 rounded-lg border border-slate-600 text-white font-bold hover:bg-slate-800 transition-colors flex items-center space-x-2">
+                                <span class="material-icons text-sm">file_download</span>
+                                <span>Datasheet</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Features -->
+                <section class="border-t border-white/5 pt-10 pb-8 grid grid-cols-1 md:grid-cols-3 gap-8 opacity-0 transform translateY(20px) transition-all 0.5s ease">
+                    <div class="md:col-span-2">
+                        <h3 class="text-xl font-bold text-white mb-4">Advanced Milling Performance</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            The PM-400 integrates high-energy planetary motion with intelligent sensor feedback loops. Unlike traditional ball mills, our advanced sensor system monitors jar temperature and vibration in real-time, adjusting RPM to prevent sample degradation.
+                        </p>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Ideal for mechanical alloying, colloidal grinding, and sample preparation for spectral analysis. Achieving fineness &lt;0.1µm has never been more consistent.
+                        </p>
+                    </div>
+                    <div class="bg-secondary-dark/30 border border-white/5 rounded-xl p-6">
+                        <h4 class="text-white font-bold mb-4 flex items-center gap-2">
+                            <span class="material-icons text-primary text-sm">library_books</span>
+                            Knowledge Base
+                        </h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a class="flex items-center justify-between group p-2 hover:bg-white/5 rounded transition-colors" href="#">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-icons text-slate-500 text-sm">description</span>
+                                        <div class="flex flex-col">
+                                            <span class="text-sm text-slate-300 group-hover:text-primary transition-colors">Nano-Grinding Whitepaper</span>
+                                            <span class="text-[10px] text-slate-500">PDF • 2.4 MB</span>
+                                        </div>
+                                    </div>
+                                    <span class="material-icons text-slate-600 text-sm group-hover:text-white">download</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex items-center justify-between group p-2 hover:bg-white/5 rounded transition-colors" href="#">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-icons text-slate-500 text-sm">science</span>
+                                        <div class="flex flex-col">
+                                            <span class="text-sm text-slate-300 group-hover:text-primary transition-colors">Battery Material Case Study</span>
+                                            <span class="text-[10px] text-slate-500">PDF • 1.8 MB</span>
+                                        </div>
+                                    </div>
+                                    <span class="material-icons text-slate-600 text-sm group-hover:text-white">download</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Compatible Grinding Jars -->
+                <section class="border-t border-white/5 pt-10 opacity-0 transform translateY(20px) transition-all 0.5s ease">
+                    <div class="flex justify-between items-end mb-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-1">Compatible Grinding Jars</h3>
+                            <p class="text-sm text-slate-400">Select material based on sample hardness and analysis requirements.</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="w-8 h-8 rounded-full border border-slate-700 text-slate-400 hover:text-white hover:border-primary flex items-center justify-center transition-colors">
+                                <span class="material-icons text-sm">chevron_left</span>
+                            </button>
+                            <button class="w-8 h-8 rounded-full border border-slate-700 text-slate-400 hover:text-white hover:border-primary flex items-center justify-center transition-colors">
+                                <span class="material-icons text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <!-- Jar 1 -->
+                        <div class="group relative bg-background-dark border border-white/5 rounded-lg p-4 hover:border-primary/50 transition-all cursor-pointer overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="aspect-square bg-gradient-to-b from-slate-800 to-background-dark rounded mb-4 flex items-center justify-center p-4">
+                                    <img alt="White ceramic cylindrical container" class="w-full h-full object-cover rounded opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI5QD3XW5A2WVG749c8A8QShj8oG6vw1q1mEgZUFKJnQdgXYPTOGETbYBamvx8QPInB4Yh7rNFMRZJ6EVtN3kIMGOvSCwDlOU3VUaSVTATxgrWJaSJrz-6NH1VY-8Mkr9vNix5byFWUK0LsQMrTJ9vEbrs2wNKhYoqK0Q3H9DHxoblkDkxlaUswjjWD8roruVU1y1OWOjBZMtpzxa0Z88mU-s4MaP5DRiiSBHytO8jTjr0qPkd4KbAx42Q-WfDGvMc6aIeg3kz_VA" loading="lazy">
+                                </div>
+                                <h4 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">Zirconia (ZrO2)</h4>
+                                <div class="flex items-center space-x-2 text-xs text-slate-400 mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">High Density</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">Wear Resistant</span>
+                                </div>
+                                <p class="text-xs text-slate-500 line-clamp-2">Ideal for paint, ink, geology, and metallurgy applications. Minimal contamination.</p>
+                            </div>
+                        </div>
+                        <!-- Jar 2 -->
+                        <div class="group relative bg-background-dark border border-white/5 rounded-lg p-4 hover:border-primary/50 transition-all cursor-pointer overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="aspect-square bg-gradient-to-b from-slate-800 to-background-dark rounded mb-4 flex items-center justify-center p-4">
+                                    <img alt="Smooth stone texture container" class="w-full h-full object-cover rounded opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7lfLv0jL6qT7oCH3LV6AgWjGzURolPYSzyHSPPVhUttMo645vgYNHKoUuZqCUJZnUHkVK0oIuPT8fAAXbxJMRHQOQLOE4B4yi6bKv25FYiWI4CwgtD0GIWh8XPA-c29kIKr6KCJ_v8-rK0ofJ7qRZMuKsj7L4xDRo0pdFXRDEwYWH29tnTX3phQddKTSfHW6nAaqVM9HpjKea7XRvIf48EIDeFOmwcfiDtg32kyxaJyoceMFo7dHWB3FIwzUv6a-buoNdLvERkvY" loading="lazy">
+                                </div>
+                                <h4 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">Agate</h4>
+                                <div class="flex items-center space-x-2 text-xs text-slate-400 mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">99.9% Purity</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">Acid Proof</span>
+                                </div>
+                                <p class="text-xs text-slate-500 line-clamp-2">Natural stone material. Perfect for contamination-free grinding in food &amp; pharma.</p>
+                            </div>
+                        </div>
+                        <!-- Jar 3 -->
+                        <div class="group relative bg-background-dark border border-white/5 rounded-lg p-4 hover:border-primary/50 transition-all cursor-pointer overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="aspect-square bg-gradient-to-b from-slate-800 to-background-dark rounded mb-4 flex items-center justify-center p-4">
+                                    <img alt="Dark metallic heavy container" class="w-full h-full object-cover rounded opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7HYua9Nl-S0mpt-gsV59jirNvgQPjg7SjSMLpTpMvQYHLmWN1XD2RtujdkZmH2G_EX_35ohG-nYj234j36ZI_rxs7-_aoytxXNQuroHIF_f_hQYnDqBPADO7t5cwoRor7bNIQa5KJIHIaj0xq53lj6I67WxmQCsglF_YmFDyQDjpJEYJyHjgJKzB96xokND97rFh5QDibz72SUiaVrT55LZXCSSkQIvzpyxZscs3P1JLMiPY60tuE0Aa325nDxVxKp71HuQKXsXg" loading="lazy">
+                                </div>
+                                <h4 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">Tungsten Carbide</h4>
+                                <div class="flex items-center space-x-2 text-xs text-slate-400 mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">Extreme Hardness</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">High Density</span>
+                                </div>
+                                <p class="text-xs text-slate-500 line-clamp-2">The hardest material available. For mechanical alloying and very hard samples.</p>
+                            </div>
+                        </div>
+                        <!-- Jar 4 -->
+                        <div class="group relative bg-background-dark border border-white/5 rounded-lg p-4 hover:border-primary/50 transition-all cursor-pointer overflow-hidden hidden lg:block">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="aspect-square bg-gradient-to-b from-slate-800 to-background-dark rounded mb-4 flex items-center justify-center p-4">
+                                    <img alt="Polished steel metal container" class="w-full h-full object-cover rounded opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqXHBVSLLiJMYIj0aJBMq_1DBoFkF3CPbPXBFV0E_fTY7kRT-Z8doW0VaUuFEsExR7gQS1Je3frNC9Nm5clEJnfMXlX6mkBdFLj9s186kI6Q1i34wUsVes25SjQhUFBuBG2a9jpHNrtz5idUPs1DY61Dg9OvhoZe1D1YaAb3Mn2SEFlXhm8iccxXUfmNKqyAdBGXkuqT4SvYAV33_A_h0NkwUzPC5IupQ9z0QOAYVgp4xsf_1Qy_LInwovRgWqLMhp9avy4kTV8RQ" loading="lazy">
+                                </div>
+                                <h4 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">Stainless Steel</h4>
+                                <div class="flex items-center space-x-2 text-xs text-slate-400 mb-3">
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">Cost Effective</span>
+                                    <span class="px-2 py-0.5 rounded bg-slate-800">Corrosion Resistant</span>
+                                </div>
+                                <p class="text-xs text-slate-500 line-clamp-2">Standard solution for general laboratory applications. Robust and easy to clean.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-background-dark border-t border-white/5 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center neon-shadow">
+                        <span class="material-icons text-white text-sm">science</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-widest text-white uppercase">Nano<span class="text-primary">Mech</span></span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms</a>
+                    <a class="hover:text-primary transition-colors" href="#">QC Protocol</a>
+                    <a class="hover:text-primary transition-colors" href="#">Sitemap</a>
+                </div>
+                <p class="text-xs text-slate-600 font-mono">© 2024 NanoMech Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // 3D Rotation Simulation
+        function simulate3DRotation() {
+            const productImage = document.querySelector('.animate-float img');
+            if (productImage) {
+                productImage.style.transition = 'transform 3s ease-in-out';
+                productImage.style.transform = 'rotateY(360deg)';
+                setTimeout(() => {
+                    productImage.style.transform = 'rotateY(0deg)';
+                }, 3000);
+            }
+        }
+        
+        // Event listener for 3D rotation button
+        document.querySelector('button:has(.material-icons:contains("3d_rotation"))')?.addEventListener('click', simulate3DRotation);
+        
+        // Add hover effects for action buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 0 15px rgba(19, 200, 236, 0.3)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Add scroll animations for content sections
+        function handleScrollAnimations() {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.8) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initialize scroll animations
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+        
+        // Add loading animation for page transitions
+        window.addEventListener('beforeunload', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+        });
+        
+        // Add animation for hotspot interactions
+        document.querySelectorAll('.group\/hotspot').forEach(hotspot => {
+            hotspot.addEventListener('mouseenter', function() {
+                const tooltip = this.querySelector('div:last-child');
+                if (tooltip) {
+                    tooltip.style.opacity = '1';
+                    tooltip.style.transform = 'translateX(0)';
+                    tooltip.style.transition = 'all 0.3s ease';
+                }
+            });
+            
+            hotspot.addEventListener('mouseleave', function() {
+                const tooltip = this.querySelector('div:last-child');
+                if (tooltip) {
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transform = 'translateX(-10px)';
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

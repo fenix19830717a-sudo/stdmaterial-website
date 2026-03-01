@@ -1,0 +1,40 @@
+name: "content_generator"
+description: "内容生成技能 - 用于生成产品描述、营销文案、文章等各种类型的内容"
+author: "traeAI"
+version: "1.0.0"
+enabled: true
+
+config:
+  # 内容配置
+  max_length: 5000
+  language: "zh"
+  tone: "professional"
+  styles:
+    - "professional"
+    - "casual"
+    - "technical"
+    - "marketing"
+  
+  # 数据存储
+  products_file: "./data/products.json"
+  output_dir: "./data/content"
+  
+  # 模板配置
+  templates:
+    product_description: true
+    marketing_content: true
+    article_generation: true
+  
+  # 生成配置
+  generate_images: false
+  image_api_key: ""
+  image_api_endpoint: "https://api.example.com/images/generate"
+  
+  # 内容质量
+  validate_content: true
+  min_description_length: 100
+  max_description_length: 500
+  
+  # 日志配置
+  log_level: "INFO"
+  log_file: "openclaw/logs/content_generator.log"

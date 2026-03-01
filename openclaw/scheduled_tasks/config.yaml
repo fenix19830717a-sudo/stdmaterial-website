@@ -1,0 +1,220 @@
+name: "定时任务配置"
+description: "配置系统的定时任务，包括日报、周报、产品同步等"
+version: "1.0.0"
+enabled: true
+
+# 任务配置
+tasks:
+  # 每日任务
+  - name: "daily_product_sync"
+    description: "每日产品同步"
+    command: "python openclaw/skills/product_scraper/product_scraper.py"
+    arguments:
+      - "--sync"
+      - "--daily"
+    schedule: "0 9 * * *"  # 每天早上9点
+    enabled: true
+    timeout: 3600
+    retry_count: 3
+    retry_delay: 60
+
+  - name: "daily_inquiry_summary"
+    description: "每日询盘汇总"
+    command: "python openclaw/skills/data_processor/process_inquiries.py"
+    arguments:
+      - "--summary"
+      - "--daily"
+      - "--output=reports/daily_inquiry_summary.md"
+    schedule: "0 18 * * *"  # 每天晚上6点
+    enabled: true
+    timeout: 1800
+    retry_count: 2
+    retry_delay: 30
+
+  - name: "daily_seo_check"
+    description: "每日SEO检查"
+    command: "python openclaw/skills/seo_optimizer/seo_optimizer.py"
+    arguments:
+      - "--check"
+      - "--daily"
+      - "--output=reports/daily_seo_report.md"
+    schedule: "0 10 * * *"  # 每天早上10点
+    enabled: true
+    timeout: 1800
+    retry_count: 2
+    retry_delay: 30
+
+  # 每周任务
+  - name: "weekly_product_analysis"
+    description: "每周产品分析"
+    command: "python openclaw/skills/data_processor/analyze_products.py"
+    arguments:
+      - "--weekly"
+      - "--output=reports/weekly_product_analysis.md"
+      - "--generate-charts"
+    schedule: "0 10 * * 1"  # 每周一早上10点
+    enabled: true
+    timeout: 7200
+    retry_count: 3
+    retry_delay: 60
+
+  - name: "weekly_marketing_plan"
+    description: "每周营销计划"
+    command: "python openclaw/skills/content_generator/generate_marketing_plan.py"
+    arguments:
+      - "--weekly"
+      - "--output=reports/weekly_marketing_plan.md"
+      - "--channels=email,social_media,website"
+    schedule: "0 11 * * 1"  # 每周一早上11点
+    enabled: true
+    timeout: 3600
+    retry_count: 2
+    retry_delay: 30
+
+  - name: "weekly_seo_audit"
+    description: "每周SEO审计"
+    command: "python openclaw/skills/seo_optimizer/seo_optimizer.py"
+    arguments:
+      - "--audit"
+      - "--weekly"
+      - "--output=reports/weekly_seo_audit.md"
+      - "--generate-sitemap"
+    schedule: "0 9 * * 1"  # 每周一早上9点
+    enabled: true
+    timeout: 3600
+    retry_count: 2
+    retry_delay: 30
+
+  - name: "weekly_content_calendar"
+    description: "每周内容日历"
+    command: "python openclaw/skills/content_generator/generate_content_calendar.py"
+    arguments:
+      - "--weekly"
+      - "--output=reports/weekly_content_calendar.md"
+      - "--content-types=article,social_media,email"
+    schedule: "0 14 * * 1"  # 每周一下午2点
+    enabled: true
+    timeout: 3600
+    retry_count: 2
+    retry_delay: 30
+
+  # 每月任务
+  - name: "monthly_business_report"
+    description: "每月业务报告"
+    command: "python openclaw/skills/data_processor/generate_business_report.py"
+    arguments:
+      - "--monthly"
+      - "--output=reports/monthly_business_report.md"
+      - "--include=products,inquiries,sales,seo"
+      - "--generate-pdf"
+    schedule: "0 10 1 * *"  # 每月1日早上10点
+    enabled: true
+    timeout: 10800
+    retry_count: 3
+    retry_delay: 60
+
+  - name: "monthly_product_update"
+    description: "每月产品更新"
+    command: "python openclaw/skills/product_scraper/product_scraper.py"
+    arguments:
+      - "--update"
+      - "--monthly"
+      - "--full-sync"
+    schedule: "0 12 1 * *"  # 每月1日中午12点
+    enabled: true
+    timeout: 14400
+    retry_count: 3
+    retry_delay: 120
+
+  - name: "monthly_industry_analysis"
+    description: "每月行业分析"
+    command: "python openclaw/skills/content_generator/generate_industry_report.py"
+    arguments:
+      - "--monthly"
+      - "--output=reports/monthly_industry_analysis.md"
+      - "--industry=grinding_equipment"
+    schedule: "0 14 1 * *"  # 每月1日下午2点
+    enabled: true
+    timeout: 7200
+    retry_count: 2
+    retry_delay: 60
+
+# 特殊任务
+  - name: "backup_data"
+    description: "数据备份"
+    command: "python openclaw/skills/file_operations/backup_data.py"
+    arguments:
+      - "--backup"
+      - "--target=all"
+      - "--output=backups/"
+      - "--retention=30"
+    schedule: "0 2 * * *"  # 每天凌晨2点
+    enabled: true
+    timeout: 3600
+    retry_count: 3
+    retry_delay: 60
+
+  - name: "cleanup_logs"
+    description: "日志清理"
+    command: "python openclaw/skills/file_operations/cleanup_logs.py"
+    arguments:
+      - "--cleanup"
+      - "--days=7"
+      - "--target=logs"
+    schedule: "0 3 * * 0"  # 每周日凌晨3点
+    enabled: true
+    timeout: 1800
+    retry_count: 2
+    retry_delay: 30
+
+# 通知配置
+notifications:
+  - name: "email_notification"
+    description: "邮件通知"
+    type: "email"
+    config:
+      smtp_server: "smtp.gmail.com"
+      smtp_port: 587
+      email_address: "admin@shengtongda.com"
+      send_reports: true
+      send_errors: true
+      send_success: false
+
+  - name: "local_notification"
+    description: "本地通知"
+    type: "file"
+    config:
+      output_dir: "notifications/"
+      format: "markdown"
+      max_files: 30
+
+# 执行配置
+execution:
+  max_concurrent_tasks: 3
+  task_timeout_default: 3600
+  retry_count_default: 2
+  retry_delay_default: 30
+  working_directory: "."
+  environment_variables:
+    - "PYTHONPATH=.:openclaw"
+    - "LOG_LEVEL=INFO"
+    - "OUTPUT_DIR=reports/"
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "openclaw/logs/scheduled_tasks.log"
+  rotation: "daily"
+  retention: 30  # 天
+
+# 监控配置
+monitoring:
+  enabled: true
+  health_check_interval: 300  # 秒
+  task_failure_threshold: 3
+  task_timeout_threshold: 3600  # 秒
+  alert_on_failure: true
+  alert_on_timeout: true
+  alert_recipients:
+    - "admin@shengtongda.com"

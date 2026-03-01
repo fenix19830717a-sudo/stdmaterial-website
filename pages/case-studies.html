@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成功案例 - 晟通达精密设备</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <script src="../assets/js/main.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "primary-dark": "#0ea5e9",
+                        "accent": "#22d3ee",
+                        "background-dark": "#101f22",
+                        "surface-dark": "#16282c",
+                        "deep-navy": "#0c1a1d",
+                        "secondary": "#f97316",
+                        "success": "#22c55e"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #101f22;
+            color: #f8fafc;
+        }
+        .glass-panel {
+            background: rgba(16, 31, 34, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 200, 236, 0.1);
+        }
+        .case-card:hover .case-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 导航栏 -->
+    <header class="fixed top-0 w-full z-50 glass-panel">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+                        <span class="font-display font-bold text-xl">晟通达</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-primary transition-colors">首页</a>
+                    <a href="product-catalog.html" class="text-gray-300 hover:text-primary transition-colors">产品中心</a>
+                    <a href="case-studies.html" class="text-primary font-medium">成功案例</a>
+                    <a href="news.html" class="text-gray-300 hover:text-primary transition-colors">新闻资讯</a>
+                    <a href="about.html" class="text-gray-300 hover:text-primary transition-colors">关于我们</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-primary transition-colors">联系我们</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-300 hover:text-primary transition-colors">登录</a>
+                    <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition-colors">
+                        立即咨询
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="pt-24 pb-12 bg-gradient-to-b from-deep-navy to-background-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-display text-4xl md:text-5xl font-bold mb-4">
+                    成功案例
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    来自全球合作伙伴的信赖与认可，见证晟通达的创新实力
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例筛选 -->
+    <section class="py-8 bg-surface-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-primary text-white" data-filter="all">
+                    全部案例
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-700 text-gray-300 hover:bg-primary hover:text-white transition-colors" data-filter="pharma">
+                    制药行业
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-700 text-gray-300 hover:bg-primary hover:text-white transition-colors" data-filter="chemical">
+                    化工行业
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-700 text-gray-300 hover:bg-primary hover:text-white transition-colors" data-filter="materials">
+                    新材料
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-700 text-gray-300 hover:bg-primary hover:text-white transition-colors" data-filter="mining">
+                    矿业冶金
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例列表 -->
+    <section class="py-16 bg-background-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 案例 1 -->
+                <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="pharma">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" 
+                             alt="制药行业纳米研磨" 
+                             class="case-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-primary/90 text-white text-sm rounded-full">制药行业</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">
+                            某制药企业纳米药物研磨系统
+                        </h3>
+                        <p class="text-gray-400 mb-4 line-clamp-2">
+                            为知名制药企业定制研发的纳米药物研磨系统，实现药物粒径D90&lt;100nm，显著提升药物生物利用度。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <span class="material-symbols-outlined text-sm mr-1">factory</span>
+                                    制药行业
+                                </span>
+                                <span>2025年</span>
+                            </div>
+                            <a href="product-detail.html" class="text-primary hover:text-accent transition-colors flex items-center">
+                                查看详情
+                                <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 案例 2 -->
+                <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="chemical">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop" 
+                             alt="化工颜料分散" 
+                             class="case-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-secondary/90 text-white text-sm rounded-full">化工行业</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">
+                            涂料颜料分散研磨生产线
+                        </h3>
+                        <p class="text-gray-400 mb-4 line-clamp-2">
+                            设计建造的自动化颜料分散研磨生产线，产能提升200%，能耗降低35%，达到国际领先水平。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <span class="material-symbols-outlined text-sm mr-1">factory</span>
+                                    化工行业
+                                </span>
+                                <span>2025年</span>
+                            </div>
+                            <a href="product-detail.html" class="text-primary hover:text-accent transition-colors flex items-center">
+                                查看详情
+                                <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 案例 3 -->
+                <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="materials">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" 
+                             alt="新材料石墨烯" 
+                             class="case-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-success/90 text-white text-sm rounded-full">新材料</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">
+                            石墨烯材料制备系统
+                        </h3>
+                        <p class="text-gray-400 mb-4 line-clamp-2">
+                            为科研机构定制的石墨烯规模化制备系统，采用高效剥离技术，产率提升至95%以上。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <span class="material-symbols-outlined text-sm mr-1">factory</span>
+                                    新材料
+                                </span>
+                                <span>2024年</span>
+                            </div>
+                            <a href="product-detail.html" class="text-primary hover:text-accent transition-colors flex items-center">
+                                查看详情
+                                <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 案例 4 -->
+                <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="mining">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop" 
+                             alt="矿物样品制备" 
+                             class="case-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-amber-600/90 text-white text-sm rounded-full">矿业冶金</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">
+                            矿物样品实验室研磨系统
+                        </h3>
+                        <p class="text-gray-400 mb-4 line-clamp-2">
+                            为矿山企业建设的实验室样品制备系统，实现从原矿到分析样品的全流程自动化处理。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <span class="material-symbols-outlined text-sm mr-1">factory</span>
+                                    矿业冶金
+                                </span>
+                                <span>2024年</span>
+                            </div>
+                            <a href="product-detail.html" class="text-primary hover:text-accent transition-colors flex items-center">
+                                查看详情
+                                <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 案例 5 -->
+                <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="pharma">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" 
+                             alt="中药超细粉碎" 
+                             class="case-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-primary/90 text-white text-sm rounded-full">制药行业</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">
+                            中药超细粉碎加工中心
+                        </h3>
+                        <p class="text-gray-400 mb-4 line-clamp-2">
+                            建设的超细粉碎加工中心，实现中药材细胞级粉碎，提高提取率30%以上。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <span class="material-symbols-outlined text-sm mr-1">factory</span>
+                                    制药行业
+                                </span>
+                                <span>2024年</span>
+                            </div>
+                            <a href="product-detail.html" class="text-primary hover:text-accent transition-colors flex items-center">
+                                查看详情
+                                <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 案例 6 -->
+                <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="chemical">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=600&h=400&fit=crop" 
+                             alt="电池材料研磨" 
+                             class="case-image w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-secondary/90 text-white text-sm rounded-full">化工行业</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">
+                            锂电池负极材料研磨系统
+                        </h3>
+                        <p class="text-gray-400 mb-4 line-clamp-2">
+                            为新能源企业定制的硅碳负极材料研磨系统，粒径分布窄，批次稳定性好。
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <span class="material-symbols-outlined text-sm mr-1">factory</span>
+                                    化工行业
+                                </span>
+                                <span>2024年</span>
+                            </div>
+                            <a href="product-detail.html" class="text-primary hover:text-accent transition-colors flex items-center">
+                                查看详情
+                                <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数字 -->
+    <section class="py-16 bg-surface-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">500+</div>
+                    <div class="text-gray-400">合作企业</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">30+</div>
+                    <div class="text-gray-400">国家地区</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">98%</div>
+                    <div class="text-gray-400">客户满意度</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">15+</div>
+                    <div class="text-gray-400">行业经验</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 CTA -->
+    <section class="py-16 bg-gradient-to-r from-primary-dark to-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-display text-3xl font-bold text-white mb-4">
+                打造您的专属解决方案
+            </h2>
+            <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                联系我们，获取定制化的研磨设备方案设计和报价
+            </p>
+            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-primary-dark font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                立即咨询
+                <span class="material-symbols-outlined ml-2">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-deep-navy py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+                        <span class="font-display font-bold text-xl">晟通达</span>
+                    </div>
+                    <p class="text-gray-400">
+                        专注于精密设备制造，为全球客户提供优质的工业研磨解决方案。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">产品中心</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="product-catalog.html" class="hover:text-primary transition-colors">行星式球磨机</a></li>
+                        <li><a href="product-catalog.html" class="hover:text-primary transition-colors">卧式砂磨机</a></li>
+                        <li><a href="product-catalog.html" class="hover:text-primary transition-colors">实验室设备</a></li>
+                        <li><a href="product-catalog.html" class="hover:text-primary transition-colors">配件耗材</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">解决方案</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="case-studies.html" class="hover:text-primary transition-colors">成功案例</a></li>
+                        <li><a href="news.html" class="hover:text-primary transition-colors">行业资讯</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">关于我们</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">联系我们</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <span class="material-symbols-outlined text-sm mr-2">location_on</span>
+                            广东省深圳市
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-symbols-outlined text-sm mr-2">phone</span>
+                            400-XXX-XXXX
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-symbols-outlined text-sm mr-2">email</span>
+                            info@shengtongda.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 晟通达精密设备. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 案例筛选功能
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 更新按钮状态
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-gray-700', 'text-gray-300');
+                });
+                btn.classList.remove('bg-gray-700', 'text-gray-300');
+                btn.classList.add('bg-primary', 'text-white');
+
+                // 筛选案例
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.case-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

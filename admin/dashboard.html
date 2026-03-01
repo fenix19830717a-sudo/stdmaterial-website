@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - STDMaterial Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#13c8ec',
+                        'primary-dark': '#0ea5c0',
+                        'primary-light': '#5dd9f5',
+                        dark: {
+                            900: '#101f22',
+                            800: '#162326',
+                            700: '#1c2d31',
+                            600: '#24373b',
+                            500: '#2c4145'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(22, 35, 38, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(19, 200, 236, 0.1); }
+        .glass-light { background: rgba(28, 45, 49, 0.6); backdrop-filter: blur(8px); border: 1px solid rgba(19, 200, 236, 0.08); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #162326; }
+        ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
+        .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-dark-800 border-r border-dark-600 flex flex-col">
+            <div class="p-6 border-b border-dark-600">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                        <span class="material-icons text-dark-900">science</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-white">STDMaterial</h1>
+                        <p class="text-xs text-gray-500">Admin Panel</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 p-4 space-y-1">
+                <a href="../dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                    <span class="material-icons text-xl">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="../products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">inventory_2</span>
+                    <span>Products</span>
+                </a>
+                <a href="../inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">mail</span>
+                    <span>Inquiries</span>
+                </a>
+                <a href="../orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">shopping_cart</span>
+                    <span>Orders</span>
+                </a>
+                <a href="../customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">people</span>
+                    <span>Customers</span>
+                </a>
+                <a href="../marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">campaign</span>
+                    <span>Marketing</span>
+                </a>
+                <a href="../statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">analytics</span>
+                    <span>Statistics</span>
+                </a>
+                <a href="../api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">api</span>
+                    <span>API Settings</span>
+                </a>
+                <a href="../settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">settings</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-dark-600">
+                <div class="flex items-center gap-3 px-4 py-3">
+                    <div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span class="material-icons text-primary text-lg">person</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">admin@precisiongrind.com</p>
+                    </div>
+                    <button onclick="logout()" class="text-gray-400 hover:text-white">
+                        <span class="material-icons text-xl">logout</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+            <!-- Header -->
+            <header class="sticky top-0 z-40 glass border-b border-dark-600 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-semibold">Dashboard</h1>
+                        <p class="text-gray-400 text-sm mt-1">Welcome back! Here is today's overview.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm text-gray-400" id="currentDate"></span>
+                        <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-400 hover:text-white transition-all relative">
+                            <span class="material-icons">notifications</span>
+                            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div class="glass rounded-xl p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Total Revenue</p>
+                                <p class="text-2xl font-semibold mt-1" id="statRevenue">¥0</p>
+                                <p class="text-xs text-green-400 mt-1 flex items-center gap-1">
+                                    <span class="material-icons text-[10px]">arrow_upward</span>
+                                    <span id="revenueChange">+0%</span> vs last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                                <span class="material-icons text-primary text-2xl">attach_money</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">总订单数</p>
+                                <p class="text-2xl font-semibold mt-1" id="statOrders">0</p>
+                                <p class="text-xs text-green-400 mt-1 flex items-center gap-1">
+                                    <span class="material-icons text-[10px]">arrow_upward</span>
+                                    <span id="ordersChange">+0%</span> vs last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                                <span class="material-icons text-purple-400 text-2xl">shopping_cart</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">新询盘数</p>
+                                <p class="text-2xl font-semibold mt-1" id="statInquiries">0</p>
+                                <p class="text-xs text-yellow-400 mt-1 flex items-center gap-1">
+                                    <span class="material-icons text-[10px]">remove</span>
+                                    <span id="inquiriesChange">0%</span> vs last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <span class="material-icons text-blue-400 text-2xl">mail</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">活跃客户数</p>
+                                <p class="text-2xl font-semibold mt-1" id="statCustomers">0</p>
+                                <p class="text-xs text-green-400 mt-1 flex items-center gap-1">
+                                    <span class="material-icons text-[10px]">arrow_upward</span>
+                                    <span id="customersChange">+0%</span> vs last month
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                                <span class="material-icons text-green-400 text-2xl">people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <!-- Revenue Chart -->
+                    <div class="lg:col-span-2 glass rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold">收入概览</h3>
+                            <select id="revenuePeriod" onchange="updateRevenueChart()" class="bg-dark-700 border border-dark-600 rounded-lg px-3 py-1 text-sm text-white focus:border-primary focus:outline-none">
+                                <option value="7">最近7天</option>
+                                <option value="30" selected>最近30天</option>
+                                <option value="90">最近90天</option>
+                            </select>
+                        </div>
+                        <div class="h-64">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Order Status -->
+                    <div class="glass rounded-xl p-6">
+                        <h3 class="text-lg font-semibold mb-4">订单状态</h3>
+                        <div class="h-48">
+                            <canvas id="orderStatusChart"></canvas>
+                        </div>
+                        <div class="mt-4 space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">待处理</span>
+                                <span class="text-yellow-400" id="pendingCount">0</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">处理中</span>
+                                <span class="text-blue-400" id="processingCount">0</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">已发货</span>
+                                <span class="text-primary" id="shippedCount">0</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">已送达</span>
+                                <span class="text-green-400" id="deliveredCount">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Top Products -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <!-- Recent Activity -->
+                    <div class="glass rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold">最近活动</h3>
+                            <a href="#" class="text-primary text-sm hover:underline">查看全部</a>
+                        </div>
+                        <div class="space-y-4" id="recentActivity">
+                            <!-- Activity items will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Top Products -->
+                    <div class="glass rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold">热门产品</h3>
+                            <a href="../products.html" class="text-primary text-sm hover:underline">查看全部</a>
+                        </div>
+                        <div class="space-y-3" id="topProducts">
+                            <!-- Products will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="glass rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-4">快速操作</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="../products.html" class="flex flex-col items-center p-4 bg-dark-700/50 rounded-lg hover:bg-dark-700 transition-colors">
+                            <span class="material-icons text-primary text-3xl mb-2">add_box</span>
+                            <span class="text-sm">添加产品</span>
+                        </a>
+                        <a href="../orders.html" class="flex flex-col items-center p-4 bg-dark-700/50 rounded-lg hover:bg-dark-700 transition-colors">
+                            <span class="material-icons text-purple-400 text-3xl mb-2">shopping_bag</span>
+                            <span class="text-sm">新建订单</span>
+                        </a>
+                        <a href="../inquiries.html" class="flex flex-col items-center p-4 bg-dark-700/50 rounded-lg hover:bg-dark-700 transition-colors">
+                            <span class="material-icons text-blue-400 text-3xl mb-2">mark_email_read</span>
+                            <span class="text-sm">回复询盘</span>
+                        </a>
+                        <a href="../customers.html" class="flex flex-col items-center p-4 bg-dark-700/50 rounded-lg hover:bg-dark-700 transition-colors">
+                            <span class="material-icons text-green-400 text-3xl mb-2">person_add</span>
+                            <span class="text-sm">添加客户</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDate();
+            loadDashboardData();
+            initCharts();
+        });
+
+        function updateDate() {
+            const date = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = date.toLocaleDateString('en-US', options);
+        }
+
+        function loadDashboardData() {
+            // Load data from localStorage
+            const orders = JSON.parse(localStorage.getItem('nanomech_orders') || '[]');
+            const inquiries = JSON.parse(localStorage.getItem('nanomech_inquiries') || '[]');
+            const customers = JSON.parse(localStorage.getItem('nanomech_customers') || '[]');
+            const products = JSON.parse(localStorage.getItem('nanomech_products') || '[]');
+
+            // Calculate stats
+            const totalRevenue = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+            const totalOrders = orders.length;
+            const newInquiries = inquiries.filter(i => i.status === 'new').length;
+            const activeCustomers = customers.filter(c => c.status === 'active').length;
+
+            // Update stats display
+            document.getElementById('statRevenue').textContent = '$' + totalRevenue.toLocaleString();
+            document.getElementById('statOrders').textContent = totalOrders;
+            document.getElementById('statInquiries').textContent = newInquiries;
+            document.getElementById('statCustomers').textContent = activeCustomers;
+
+            // Update order status counts
+            const pendingCount = orders.filter(o => o.status === 'pending').length;
+            const processingCount = orders.filter(o => o.status === 'processing').length;
+            const shippedCount = orders.filter(o => o.status === 'shipped').length;
+            const deliveredCount = orders.filter(o => o.status === 'delivered').length;
+
+            document.getElementById('pendingCount').textContent = pendingCount;
+            document.getElementById('processingCount').textContent = processingCount;
+            document.getElementById('shippedCount').textContent = shippedCount;
+            document.getElementById('deliveredCount').textContent = deliveredCount;
+
+            // Load recent activity
+            loadRecentActivity(orders, inquiries);
+
+            // Load top products
+            loadTopProducts(orders, products);
+        }
+
+        function loadRecentActivity(orders, inquiries) {
+            const container = document.getElementById('recentActivity');
+            const activities = [];
+
+            // Add recent orders
+            orders.slice(0, 3).forEach(order => {
+                activities.push({
+                    type: 'order',
+                    icon: 'shopping_cart',
+                    color: 'text-primary',
+                    bgColor: 'bg-primary/10',
+                    title: `New order ${order.id}`,
+                    subtitle: `$${order.total?.toFixed(2) || 0} - ${order.customer?.name || 'Unknown'}`,
+                    time: formatTime(order.createdAt)
+                });
+            });
+
+            // Add recent inquiries
+            inquiries.slice(0, 3).forEach(inquiry => {
+                activities.push({
+                    type: 'inquiry',
+                    icon: 'mail',
+                    color: 'text-blue-400',
+                    bgColor: 'bg-blue-500/10',
+                    title: `New inquiry from ${inquiry.name}`,
+                    subtitle: inquiry.product || 'General inquiry',
+                    time: formatTime(inquiry.date)
+                });
+            });
+
+            // Sort by time (most recent first) and take top 5
+            activities.sort((a, b) => new Date(b.time) - new Date(a.time));
+            const recentActivities = activities.slice(0, 5);
+
+            container.innerHTML = recentActivities.map(activity => `
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-lg ${activity.bgColor} flex items-center justify-center flex-shrink-0">
+                        <span class="material-icons ${activity.color} text-lg">${activity.icon}</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium truncate">${activity.title}</p>
+                        <p class="text-xs text-gray-400 truncate">${activity.subtitle}</p>
+                    </div>
+                    <span class="text-xs text-gray-500 flex-shrink-0">${activity.time}</span>
+                </div>
+            `).join('');
+        }
+
+        function loadTopProducts(orders, products) {
+            const container = document.getElementById('topProducts');
+            
+            // Calculate product sales
+            const productSales = {};
+            orders.forEach(order => {
+                order.items?.forEach(item => {
+                    if (!productSales[item.sku]) {
+                        productSales[item.sku] = { ...item, totalQty: 0, totalRevenue: 0 };
+                    }
+                    productSales[item.sku].totalQty += item.quantity;
+                    productSales[item.sku].totalRevenue += item.price * item.quantity;
+                });
+            });
+
+            // Sort by revenue and take top 5
+            const topProducts = Object.values(productSales)
+                .sort((a, b) => b.totalRevenue - a.totalRevenue)
+                .slice(0, 5);
+
+            container.innerHTML = topProducts.map((product, index) => `
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-dark-700 flex items-center justify-center text-sm font-bold text-gray-400">
+                        ${index + 1}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium truncate">${product.name}</p>
+                        <p class="text-xs text-gray-400">${product.totalQty} sold</p>
+                    </div>
+                    <span class="text-sm font-medium text-primary">$${product.totalRevenue.toFixed(2)}</span>
+                </div>
+            `).join('');
+        }
+
+        function formatTime(dateString) {
+            if (!dateString) return 'Just now';
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = Math.floor((now - date) / 1000);
+
+            if (diff < 60) return 'Just now';
+            if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+            return `${Math.floor(diff / 86400)}d ago`;
+        }
+
+        function initCharts() {
+            // Revenue Chart
+            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            window.revenueChart = new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [12000, 19000, 15000, 25000, 22000, 30000, 28000],
+                        borderColor: '#13c8ec',
+                        backgroundColor: 'rgba(19, 200, 236, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#9ca3af' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#9ca3af' }
+                        }
+                    }
+                }
+            });
+
+            // Order Status Chart
+            const statusCtx = document.getElementById('orderStatusChart').getContext('2d');
+            window.statusChart = new Chart(statusCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Pending', 'Processing', 'Shipped', 'Delivered'],
+                    datasets: [{
+                        data: [5, 8, 12, 25],
+                        backgroundColor: ['#fbbf24', '#3b82f6', '#13c8ec', '#22c55e'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        function updateRevenueChart() {
+            const period = document.getElementById('revenuePeriod').value;
+            // Update chart data based on period
+            // This would typically fetch data from the server
+            console.log('Updating chart for period:', period);
+        }
+
+        function logout() {
+            if (confirm('确定要Logout吗？')) {
+                localStorage.removeItem('nanomech_admin_token');
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+name: "product_scraper"
+description: "产品采集技能 - 用于从供应商网站爬取产品信息并更新到独立站数据库"
+author: "traeAI"
+version: "1.0.0"
+enabled: true
+
+config:
+  # 网络配置
+  timeout: 30
+  max_retries: 3
+  retry_delay: 2
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  
+  # 数据存储
+  products_file: "./data/products.json"
+  
+  # 目标网站配置
+  target_websites:
+    - name: "tencanmills"
+      url: "https://tencanmills.com"
+      categories: 
+        - "planetary-mill"
+        - "roller-mill"
+        - "stirred-mill"
+        - "grinding-media"
+    
+    - name: "other-supplier"
+      url: "https://other-supplier.com"
+      categories:
+        - "milling-equipment"
+        - "laboratory-equipment"
+
+  # 采集配置
+  scrape_interval: 3600  # 秒
+  max_products_per_category: 100
+  
+  # 数据处理
+  merge_strategy: "upsert"  # upsert, replace, append
+  validate_data: true
+  
+  # 日志配置
+  log_level: "INFO"
+  log_file: "openclaw/logs/product_scraper.log"

@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management - STDMaterial Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#13c8ec',
+                        'primary-dark': '#0ea5c0',
+                        'primary-light': '#5dd9f5',
+                        dark: {
+                            900: '#101f22',
+                            800: '#162326',
+                            700: '#1c2d31',
+                            600: '#24373b',
+                            500: '#2c4145'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(22, 35, 38, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(19, 200, 236, 0.1); }
+        .glass-light { background: rgba(28, 45, 49, 0.6); backdrop-filter: blur(8px); border: 1px solid rgba(19, 200, 236, 0.08); }
+        .tier-vip { background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.1)); border: 1px solid rgba(251, 191, 36, 0.3); }
+        .tier-enterprise { background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(139, 92, 246, 0.1)); border: 1px solid rgba(168, 85, 247, 0.3); }
+        .tier-premium { background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.1)); border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tier-standard { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #162326; }
+        ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        <aside class="w-64 bg-dark-800 border-r border-dark-600 flex flex-col">
+            <div class="p-6 border-b border-dark-600">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                        <span class="material-icons text-dark-900">science</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-white">NanoMech</h1>
+                        <p class="text-xs text-gray-500">Admin Panel</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 p-4 space-y-1">
+                <a href="../dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="../products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">inventory_2</span>
+                    <span>Products</span>
+                </a>
+                <a href="../inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">mail</span>
+                    <span>Inquiries</span>
+                </a>
+                <a href="../orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">shopping_cart</span>
+                    <span>Orders</span>
+                </a>
+                <a href="../customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                    <span class="material-icons text-xl">people</span>
+                    <span>Customers</span>
+                </a>
+                <a href="../marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">campaign</span>
+                    <span>Marketing</span>
+                </a>
+                <a href="../statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">analytics</span>
+                    <span>Statistics</span>
+                </a>
+                <a href="../settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">settings</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-dark-600">
+                <div class="flex items-center gap-3 px-4 py-3">
+                    <div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span class="material-icons text-primary text-lg">person</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">admin@precisiongrind.com</p>
+                    </div>
+                    <button class="text-gray-400 hover:text-white">
+                        <span class="material-icons text-xl">logout</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 overflow-auto">
+            <header class="sticky top-0 z-40 glass border-b border-dark-600 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-semibold">Customer Management</h1>
+                        <p class="text-gray-400 text-sm mt-1">Manage customer relationships and track engagement</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="exportCustomers()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                            <span class="material-icons text-lg">download</span>
+                            <span>Export</span>
+                        </button>
+                        <button onclick="openCreateModal()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                            <span class="material-icons text-lg">person_add</span>
+                            <span>Add Customer</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div class="glass rounded-xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Total Customers</p>
+                                <p class="text-2xl font-semibold mt-1" id="stat-total">0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                                <span class="material-icons text-primary text-2xl">people</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Active This Month</p>
+                                <p class="text-2xl font-semibold mt-1 text-green-400" id="stat-active">0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                                <span class="material-icons text-green-400 text-2xl">trending_up</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">VIP Customers</p>
+                                <p class="text-2xl font-semibold mt-1 text-yellow-400" id="stat-vip">0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center">
+                                <span class="material-icons text-yellow-400 text-2xl">star</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">Total Revenue</p>
+                                <p class="text-2xl font-semibold mt-1 text-primary" id="stat-revenue">$0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                                <span class="material-icons text-primary text-2xl">attach_money</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl p-4 mb-6">
+                    <div class="flex flex-wrap items-center gap-4">
+                        <div class="flex-1 min-w-[200px]">
+                            <div class="relative">
+                                <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+                                <input type="text" id="searchInput" placeholder="Search by name, company, email..." 
+                                    class="w-full bg-dark-700 border border-dark-600 rounded-lg pl-10 pr-4 py-2.5 text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-all"
+                                    oninput="filterCustomers()">
+                            </div>
+                        </div>
+                        <select id="tierFilter" onchange="filterCustomers()" class="bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                            <option value="">All Tiers</option>
+                            <option value="vip">VIP</option>
+                            <option value="enterprise">Enterprise</option>
+                            <option value="premium">Premium</option>
+                            <option value="standard">Standard</option>
+                        </select>
+                        <select id="statusFilter" onchange="filterCustomers()" class="bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="lead">Lead</option>
+                        </select>
+                        <select id="industryFilter" onchange="filterCustomers()" class="bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                            <option value="">All Industries</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="pharmaceuticals">Pharmaceuticals</option>
+                            <option value="ceramics">Ceramics</option>
+                            <option value="research">Research</option>
+                            <option value="mining">Mining</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4" id="customersGrid">
+                </div>
+
+                <div class="mt-6 flex items-center justify-between">
+                    <p class="text-sm text-gray-400">Showing <span id="showingCount">0</span> of <span id="totalCount">0</span> customers</p>
+                    <div class="flex items-center gap-2">
+                        <button onclick="prevPage()" class="px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all" id="prevBtn">
+                            <span class="material-icons text-lg">chevron_left</span>
+                        </button>
+                        <span class="text-sm text-gray-400">Page <span id="currentPage">1</span> of <span id="totalPages">1</span></span>
+                        <button onclick="nextPage()" class="px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all" id="nextBtn">
+                            <span class="material-icons text-lg">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="customerDetailModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeDetailModal()"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-2xl bg-dark-800 border-l border-dark-600 overflow-auto">
+            <div class="sticky top-0 z-10 glass border-b border-dark-600 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <button onclick="closeDetailModal()" class="text-gray-400 hover:text-white">
+                            <span class="material-icons">close</span>
+                        </button>
+                        <div>
+                            <h2 class="text-xl font-semibold" id="detailName">Customer Name</h2>
+                            <p class="text-sm text-gray-400" id="detailCompany">Company Name</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="sendEmail()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                            <span class="material-icons text-lg">email</span>
+                            <span>Email</span>
+                        </button>
+                        <button onclick="openEditFromDetail()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                            <span class="material-icons text-lg">edit</span>
+                            <span>Edit</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="glass rounded-xl p-5 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                            <span class="material-icons text-primary text-3xl">person</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-xl font-semibold" id="detailName2">Customer Name</span>
+                                <span class="px-2 py-0.5 rounded-full text-xs font-medium" id="detailTier">VIP</span>
+                            </div>
+                            <p class="text-gray-400" id="detailCompany2">Company Name</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="material-icons text-gray-400">email</span>
+                            <span id="detailEmail">email@example.com</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="material-icons text-gray-400">phone</span>
+                            <span id="detailPhone">+1 234 567 890</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="material-icons text-gray-400">location_on</span>
+                            <span id="detailCountry">Country</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="material-icons text-gray-400">business</span>
+                            <span id="detailIndustry">Industry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div class="glass rounded-xl p-4 text-center">
+                        <p class="text-gray-400 text-sm mb-1">Total Orders</p>
+                        <p class="text-2xl font-semibold text-primary" id="detailOrders">0</p>
+                    </div>
+                    <div class="glass rounded-xl p-4 text-center">
+                        <p class="text-gray-400 text-sm mb-1">Total Spent</p>
+                        <p class="text-2xl font-semibold text-green-400" id="detailSpent">$0</p>
+                    </div>
+                    <div class="glass rounded-xl p-4 text-center">
+                        <p class="text-gray-400 text-sm mb-1">Last Order</p>
+                        <p class="text-lg font-medium" id="detailLastOrder">-</p>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl p-5 mb-6">
+                    <h3 class="text-lg font-medium mb-4 flex items-center gap-2">
+                        <span class="material-icons text-primary">shopping_cart</span>
+                        Recent Orders
+                    </h3>
+                    <div class="space-y-3" id="detailOrderList">
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl p-5 mb-6">
+                    <h3 class="text-lg font-medium mb-4 flex items-center gap-2">
+                        <span class="material-icons text-primary">mail</span>
+                        Recent Inquiries
+                    </h3>
+                    <div class="space-y-3" id="detailInquiryList">
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl p-5">
+                    <h3 class="text-lg font-medium mb-4 flex items-center gap-2">
+                        <span class="material-icons text-primary">notes</span>
+                        Notes
+                    </h3>
+                    <div id="detailNotes" class="text-gray-400 text-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="customerModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl max-h-[90vh] overflow-auto">
+            <div class="glass rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold" id="modalTitle">Add Customer</h2>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <form id="customerForm" onsubmit="saveCustomer(event)">
+                    <input type="hidden" id="customerId">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Full Name *</label>
+                            <input type="text" id="customerName" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Email *</label>
+                            <input type="email" id="customerEmail" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Company</label>
+                            <input type="text" id="customerCompany" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Phone</label>
+                            <input type="tel" id="customerPhone" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Country</label>
+                            <input type="text" id="customerCountry" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Industry</label>
+                            <select id="customerIndustry" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="electronics">Electronics</option>
+                                <option value="pharmaceuticals">Pharmaceuticals</option>
+                                <option value="ceramics">Ceramics</option>
+                                <option value="research">Research</option>
+                                <option value="mining">Mining</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Customer Tier</label>
+                            <select id="customerTier" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="standard">Standard</option>
+                                <option value="premium">Premium</option>
+                                <option value="enterprise">Enterprise</option>
+                                <option value="vip">VIP</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Status</label>
+                            <select id="customerStatus" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="lead">Lead</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm text-gray-400 mb-1">Address</label>
+                        <textarea id="customerAddress" rows="2" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none"></textarea>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm text-gray-400 mb-1">Notes</label>
+                        <textarea id="customerNotes" rows="3" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none"></textarea>
+                    </div>
+                    <div class="flex justify-end gap-3">
+                        <button type="button" onclick="closeModal()" class="px-6 py-2.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                            Cancel
+                        </button>
+                        <button type="submit" class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                            Save Customer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeDeleteModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md">
+            <div class="glass rounded-2xl p-6">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-red-500 text-3xl">warning</span>
+                    </div>
+                    <h2 class="text-xl font-semibold">Delete Customer</h2>
+                    <p class="text-gray-400 mt-2">Are you sure you want to delete this customer? This action cannot be undone.</p>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <button onclick="closeDeleteModal()" class="px-6 py-2.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                        Cancel
+                    </button>
+                    <button onclick="confirmDelete()" class="px-6 py-2.5 rounded-lg bg-red-500 hover:bg-red-600 text-white font-medium transition-all">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let customers = [];
+        let filteredCustomers = [];
+        let currentPage = 1;
+        const itemsPerPage = 12;
+        let currentCustomerId = null;
+
+        const defaultCustomers = [
+            {
+                id: "CUS-001",
+                name: "John Smith",
+                email: "john.smith@techcorp.com",
+                company: "TechCorp Industries",
+                phone: "+1 (555) 123-4567",
+                country: "United States",
+                industry: "electronics",
+                tier: "vip",
+                status: "active",
+                address: "123 Industrial Park, Suite 456\nLos Angeles, CA 90001",
+                notes: "Key decision maker for grinding equipment procurement. Prefers email communication.",
+                totalOrders: 15,
+                totalSpent: 45680.00,
+                lastOrder: "2025-01-18",
+                createdAt: "2024-03-15"
+            },
+            {
+                id: "CUS-002",
+                name: "Maria Garcia",
+                email: "m.garcia@nanolabs.eu",
+                company: "NanoLabs Europe",
+                phone: "+34 912 345 678",
+                country: "Spain",
+                industry: "research",
+                tier: "enterprise",
+                status: "active",
+                address: "Calle Innovacion 42\n28001 Madrid, Spain",
+                notes: "Research institution with regular orders for specialized grinding media.",
+                totalOrders: 8,
+                totalSpent: 23450.00,
+                lastOrder: "2025-01-19",
+                createdAt: "2024-05-20"
+            },
+            {
+                id: "CUS-003",
+                name: "Wei Chen",
+                email: "wei.chen@sinotech.cn",
+                company: "SinoTech Materials",
+                phone: "+86 21 8888 9999",
+                country: "China",
+                industry: "ceramics",
+                tier: "enterprise",
+                status: "active",
+                address: "Building 5, Tech Park\nPudong, Shanghai 201203",
+                notes: "Large scale manufacturer. Requires bulk orders with LC payment.",
+                totalOrders: 22,
+                totalSpent: 89000.00,
+                lastOrder: "2025-01-20",
+                createdAt: "2023-11-10"
+            },
+            {
+                id: "CUS-004",
+                name: "Robert Johnson",
+                email: "r.johnson@americangrinding.com",
+                company: "American Grinding Solutions",
+                phone: "+1 (555) 987-6543",
+                country: "United States",
+                industry: "mining",
+                tier: "premium",
+                status: "active",
+                address: "456 Manufacturing Blvd\nChicago, IL 60601",
+                notes: "",
+                totalOrders: 5,
+                totalSpent: 12350.00,
+                lastOrder: "2025-01-12",
+                createdAt: "2024-08-05"
+            },
+            {
+                id: "CUS-005",
+                name: "Hans Mueller",
+                email: "h.mueller@germangrinding.de",
+                company: "German Grinding GmbH",
+                phone: "+49 30 1234 5678",
+                country: "Germany",
+                industry: "ceramics",
+                tier: "premium",
+                status: "inactive",
+                address: "Industriestrabe 78\n10115 Berlin, Germany",
+                notes: "Account temporarily inactive due to internal restructuring.",
+                totalOrders: 3,
+                totalSpent: 5670.00,
+                lastOrder: "2024-10-15",
+                createdAt: "2024-02-28"
+            },
+            {
+                id: "CUS-006",
+                name: "Sarah Williams",
+                email: "s.williams@pharmaresearch.co.uk",
+                company: "PharmaResearch UK",
+                phone: "+44 20 7123 4567",
+                country: "United Kingdom",
+                industry: "pharmaceuticals",
+                tier: "enterprise",
+                status: "active",
+                address: "100 Science Park\nLondon, SW1A 1AA",
+                notes: "GMP certified facility. Requires documentation for all products.",
+                totalOrders: 12,
+                totalSpent: 34500.00,
+                lastOrder: "2025-01-15",
+                createdAt: "2024-01-20"
+            },
+            {
+                id: "CUS-007",
+                name: "Takeshi Yamamoto",
+                email: "t.yamamoto@japantech.jp",
+                company: "JapanTech Corporation",
+                phone: "+81 3 1234 5678",
+                country: "Japan",
+                industry: "electronics",
+                tier: "vip",
+                status: "active",
+                address: "Tokyo Tech Center\nShibuya, Tokyo 150-0002",
+                notes: "Long-term partner. Interested in new product developments.",
+                totalOrders: 28,
+                totalSpent: 125000.00,
+                lastOrder: "2025-01-21",
+                createdAt: "2023-06-15"
+            },
+            {
+                id: "CUS-008",
+                name: "Pierre Dubois",
+                email: "p.dubois@francematerials.fr",
+                company: "France Materials SA",
+                phone: "+33 1 23 45 67 89",
+                country: "France",
+                industry: "research",
+                tier: "standard",
+                status: "lead",
+                address: "25 Avenue de l'Innovation\n75001 Paris, France",
+                notes: "New lead from trade show. Follow up required.",
+                totalOrders: 0,
+                totalSpent: 0,
+                lastOrder: null,
+                createdAt: "2025-01-10"
+            },
+            {
+                id: "CUS-009",
+                name: "Ahmed Hassan",
+                email: "a.hassan@middleeastmining.ae",
+                company: "Middle East Mining LLC",
+                phone: "+971 4 123 4567",
+                country: "UAE",
+                industry: "mining",
+                tier: "premium",
+                status: "active",
+                address: "Business Bay Tower\nDubai, UAE",
+                notes: "Growing mining operation in the region. Potential for expansion.",
+                totalOrders: 7,
+                totalSpent: 28900.00,
+                lastOrder: "2025-01-08",
+                createdAt: "2024-04-12"
+            },
+            {
+                id: "CUS-010",
+                name: "Lisa Anderson",
+                email: "l.anderson@ausminerals.com.au",
+                company: "AusMinerals Pty Ltd",
+                phone: "+61 2 9876 5432",
+                country: "Australia",
+                industry: "mining",
+                tier: "enterprise",
+                status: "active",
+                address: "50 Mining Road\nPerth, WA 6000",
+                notes: "Major mining company. Requires bulk orders with sea freight.",
+                totalOrders: 18,
+                totalSpent: 78000.00,
+                lastOrder: "2025-01-17",
+                createdAt: "2023-09-20"
+            }
+        ];
+
+        function init() {
+            const stored = localStorage.getItem('nanomech_customers');
+            if (stored) {
+                customers = JSON.parse(stored);
+            } else {
+                customers = [...defaultCustomers];
+                saveCustomers();
+            }
+            filteredCustomers = [...customers];
+            renderCustomers();
+            updateStats();
+        }
+
+        function saveCustomers() {
+            localStorage.setItem('nanomech_customers', JSON.stringify(customers));
+        }
+
+        function updateStats() {
+            const total = customers.length;
+            const active = customers.filter(c => c.status === 'active').length;
+            const vip = customers.filter(c => c.tier === 'vip' || c.tier === 'enterprise').length;
+            const revenue = customers.reduce((sum, c) => sum + c.totalSpent, 0);
+
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-active').textContent = active;
+            document.getElementById('stat-vip').textContent = vip;
+            document.getElementById('stat-revenue').textContent = '$' + revenue.toLocaleString();
+        }
+
+        function filterCustomers() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const tier = document.getElementById('tierFilter').value;
+            const status = document.getElementById('statusFilter').value;
+            const industry = document.getElementById('industryFilter').value;
+
+            filteredCustomers = customers.filter(customer => {
+                const matchSearch = !search || 
+                    customer.name.toLowerCase().includes(search) ||
+                    customer.company.toLowerCase().includes(search) ||
+                    customer.email.toLowerCase().includes(search);
+                
+                const matchTier = !tier || customer.tier === tier;
+                const matchStatus = !status || customer.status === status;
+                const matchIndustry = !industry || customer.industry === industry;
+                
+                return matchSearch && matchTier && matchStatus && matchIndustry;
+            });
+
+            currentPage = 1;
+            renderCustomers();
+        }
+
+        function renderCustomers() {
+            const container = document.getElementById('customersGrid');
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageCustomers = filteredCustomers.slice(start, end);
+
+            container.innerHTML = pageCustomers.map(customer => {
+                const tierClass = customer.tier === 'vip' ? 'tier-vip' : 
+                                  customer.tier === 'enterprise' ? 'tier-enterprise' : 
+                                  customer.tier === 'premium' ? 'tier-premium' : 'tier-standard';
+                const tierColor = customer.tier === 'vip' ? 'text-yellow-400' : 
+                                  customer.tier === 'enterprise' ? 'text-purple-400' : 
+                                  customer.tier === 'premium' ? 'text-blue-400' : 'text-green-400';
+                const statusColor = customer.status === 'active' ? 'bg-green-500' : 
+                                   customer.status === 'inactive' ? 'bg-gray-500' : 'bg-yellow-500';
+                
+                return `
+                    <div class="${tierClass} rounded-xl p-5 hover:scale-[1.02] transition-transform cursor-pointer" onclick="viewCustomer('${customer.id}')">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-icons text-primary">person</span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <h3 class="font-semibold">${customer.name}</h3>
+                                        <span class="w-2 h-2 rounded-full ${statusColor}"></span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">${customer.company}</p>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-medium ${tierColor} bg-opacity-20">
+                                ${customer.tier.toUpperCase()}
+                            </span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-400">
+                                <span class="material-icons text-lg">email</span>
+                                <span class="truncate">${customer.email}</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-400">
+                                <span class="material-icons text-lg">location_on</span>
+                                <span>${customer.country}</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-dark-600">
+                            <div>
+                                <p class="text-xs text-gray-500">Total Spent</p>
+                                <p class="font-semibold text-primary">$${customer.totalSpent.toLocaleString()}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-gray-500">Orders</p>
+                                <p class="font-semibold">${customer.totalOrders}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const totalPages = Math.ceil(filteredCustomers.length / itemsPerPage) || 1;
+            document.getElementById('currentPage').textContent = currentPage;
+            document.getElementById('totalPages').textContent = totalPages;
+            document.getElementById('showingCount').textContent = Math.min(end, filteredCustomers.length);
+            document.getElementById('totalCount').textContent = filteredCustomers.length;
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderCustomers();
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(filteredCustomers.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderCustomers();
+            }
+        }
+
+        function viewCustomer(id) {
+            const customer = customers.find(c => c.id === id);
+            if (!customer) return;
+            
+            currentCustomerId = id;
+            
+            document.getElementById('detailName').textContent = customer.name;
+            document.getElementById('detailName2').textContent = customer.name;
+            document.getElementById('detailCompany').textContent = customer.company;
+            document.getElementById('detailCompany2').textContent = customer.company;
+            document.getElementById('detailEmail').textContent = customer.email;
+            document.getElementById('detailPhone').textContent = customer.phone || '-';
+            document.getElementById('detailCountry').textContent = customer.country;
+            document.getElementById('detailIndustry').textContent = customer.industry.charAt(0).toUpperCase() + customer.industry.slice(1);
+            document.getElementById('detailOrders').textContent = customer.totalOrders;
+            document.getElementById('detailSpent').textContent = '$' + customer.totalSpent.toLocaleString();
+            document.getElementById('detailLastOrder').textContent = customer.lastOrder ? formatDate(customer.lastOrder) : '-';
+            document.getElementById('detailNotes').textContent = customer.notes || 'No notes available.';
+            
+            const tierEl = document.getElementById('detailTier');
+            tierEl.textContent = customer.tier.toUpperCase();
+            tierEl.className = `px-2 py-0.5 rounded-full text-xs font-medium ${
+                customer.tier === 'vip' ? 'bg-yellow-500/20 text-yellow-400' : 
+                customer.tier === 'enterprise' ? 'bg-purple-500/20 text-purple-400' : 
+                customer.tier === 'premium' ? 'bg-blue-500/20 text-blue-400' : 'bg-green-500/20 text-green-400'
+            }`;
+            
+            renderCustomerOrders(customer);
+            renderCustomerInquiries(customer);
+            
+            document.getElementById('customerDetailModal').classList.remove('hidden');
+        }
+
+        function renderCustomerOrders(customer) {
+            const container = document.getElementById('detailOrderList');
+            const orders = JSON.parse(localStorage.getItem('nanomech_orders') || '[]').filter(o => o.customer.email === customer.email);
+            
+            if (orders.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 text-sm">No orders found.</p>';
+                return;
+            }
+            
+            container.innerHTML = orders.slice(0, 5).map(order => `
+                <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <span class="material-icons text-primary">shopping_cart</span>
+                        </div>
+                        <div>
+                            <p class="font-medium">${order.id}</p>
+                            <p class="text-sm text-gray-400">${order.items.length} items</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium">$${order.total.toFixed(2)}</p>
+                        <span class="px-2 py-0.5 rounded-full text-xs font-medium status-${order.status}">
+                            ${order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderCustomerInquiries(customer) {
+            const container = document.getElementById('detailInquiryList');
+            const inquiries = JSON.parse(localStorage.getItem('nanomech_inquiries') || '[]').filter(i => i.email === customer.email);
+            
+            if (inquiries.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 text-sm">No inquiries found.</p>';
+                return;
+            }
+            
+            container.innerHTML = inquiries.slice(0, 5).map(inquiry => `
+                <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <span class="material-icons text-primary">mail</span>
+                        </div>
+                        <div>
+                            <p class="font-medium">${inquiry.product}</p>
+                            <p class="text-sm text-gray-400">${formatDate(inquiry.date)}</p>
+                        </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full text-xs font-medium status-${inquiry.status}">
+                        ${inquiry.status.charAt(0).toUpperCase() + inquiry.status.slice(1)}
+                    </span>
+                </div>
+            `).join('');
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        function closeDetailModal() {
+            document.getElementById('customerDetailModal').classList.add('hidden');
+            currentCustomerId = null;
+        }
+
+        function openCreateModal() {
+            document.getElementById('modalTitle').textContent = 'Add Customer';
+            document.getElementById('customerForm').reset();
+            document.getElementById('customerId').value = '';
+            document.getElementById('customerModal').classList.remove('hidden');
+        }
+
+        function editCustomer(id) {
+            const customer = customers.find(c => c.id === id);
+            if (!customer) return;
+            
+            document.getElementById('modalTitle').textContent = 'Edit Customer';
+            document.getElementById('customerId').value = customer.id;
+            document.getElementById('customerName').value = customer.name;
+            document.getElementById('customerEmail').value = customer.email;
+            document.getElementById('customerCompany').value = customer.company;
+            document.getElementById('customerPhone').value = customer.phone;
+            document.getElementById('customerCountry').value = customer.country;
+            document.getElementById('customerIndustry').value = customer.industry;
+            document.getElementById('customerTier').value = customer.tier;
+            document.getElementById('customerStatus').value = customer.status;
+            document.getElementById('customerAddress').value = customer.address;
+            document.getElementById('customerNotes').value = customer.notes;
+            
+            document.getElementById('customerModal').classList.remove('hidden');
+        }
+
+        function openEditFromDetail() {
+            closeDetailModal();
+            editCustomer(currentCustomerId);
+        }
+
+        function closeModal() {
+            document.getElementById('customerModal').classList.add('hidden');
+        }
+
+        function saveCustomer(event) {
+            event.preventDefault();
+            
+            const id = document.getElementById('customerId').value;
+            const customerData = {
+                name: document.getElementById('customerName').value,
+                email: document.getElementById('customerEmail').value,
+                company: document.getElementById('customerCompany').value,
+                phone: document.getElementById('customerPhone').value,
+                country: document.getElementById('customerCountry').value,
+                industry: document.getElementById('customerIndustry').value,
+                tier: document.getElementById('customerTier').value,
+                status: document.getElementById('customerStatus').value,
+                address: document.getElementById('customerAddress').value,
+                notes: document.getElementById('customerNotes').value
+            };
+            
+            if (id) {
+                const index = customers.findIndex(c => c.id === id);
+                if (index !== -1) {
+                    customers[index] = { ...customers[index], ...customerData };
+                }
+            } else {
+                const newId = `CUS-${String(customers.length + 1).padStart(3, '0')}`;
+                customers.unshift({
+                    id: newId,
+                    ...customerData,
+                    totalOrders: 0,
+                    totalSpent: 0,
+                    lastOrder: null,
+                    createdAt: new Date().toISOString().split('T')[0]
+                });
+            }
+            
+            saveCustomers();
+            filteredCustomers = [...customers];
+            renderCustomers();
+            updateStats();
+            closeModal();
+        }
+
+        function openDeleteModal(id) {
+            currentCustomerId = id;
+            document.getElementById('deleteModal').classList.remove('hidden');
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').classList.add('hidden');
+            currentCustomerId = null;
+        }
+
+        function confirmDelete() {
+            if (currentCustomerId) {
+                customers = customers.filter(c => c.id !== currentCustomerId);
+                saveCustomers();
+                filteredCustomers = [...customers];
+                renderCustomers();
+                updateStats();
+            }
+            closeDeleteModal();
+        }
+
+        function sendEmail() {
+            const customer = customers.find(c => c.id === currentCustomerId);
+            if (customer) {
+                window.location.href = `mailto:${customer.email}`;
+            }
+        }
+
+        function exportCustomers() {
+            const headers = ['ID', 'Name', 'Company', 'Email', 'Phone', 'Country', 'Industry', 'Tier', 'Status', 'Total Orders', 'Total Spent', 'Created Date'];
+            const rows = customers.map(c => [
+                c.id,
+                c.name,
+                c.company,
+                c.email,
+                c.phone,
+                c.country,
+                c.industry,
+                c.tier,
+                c.status,
+                c.totalOrders,
+                c.totalSpent.toFixed(2),
+                c.createdAt
+            ]);
+            
+            const csv = [headers, ...rows].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `customers_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        init();
+    </script>
+</body>
+</html>

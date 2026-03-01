@@ -1,0 +1,41 @@
+name: "seo_optimizer"
+description: "SEO优化技能 - 用于优化网站内容、元标签、关键词等，提高搜索引擎排名"
+author: "traeAI"
+version: "1.0.0"
+enabled: true
+
+config:
+  # 基础配置
+  language: "zh"
+  target_keywords: []
+  products_file: "./data/products.json"
+  output_dir: "./data/seo"
+  
+  # SEO 参数配置
+  max_keyword_density: 3.0
+  min_keyword_density: 0.5
+  title_length: 60
+  description_length: 160
+  heading_structure: true
+  image_alt_text: true
+  internal_links: true
+  external_links: true
+  
+  # 关键词配置
+  keyword_library: true
+  auto_generate_keywords: true
+  keyword_suggestions: true
+  
+  # 内容优化
+  content_optimization: true
+  meta_tags_optimization: true
+  url_optimization: true
+  
+  # 网站地图
+  generate_sitemap: true
+  sitemap_format: "json"
+  sitemap_update_interval: 24  # 小时
+  
+  # 日志配置
+  log_level: "INFO"
+  log_file: "openclaw/logs/seo_optimizer.log"

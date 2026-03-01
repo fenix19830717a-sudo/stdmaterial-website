@@ -1,0 +1,3514 @@
+{
+  "products": [
+    {
+      "id": "GJ-AL-500",
+      "name": "Alumina Ceramic Grinding Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Ceramic",
+      "material": "Alumina (Al2O3)",
+      "purity": "99.7%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "High-Energy Shaker"
+      ],
+      "description": "High-purity alumina ceramic grinding jar for laboratory use. Excellent wear resistance and minimal contamination.",
+      "features": [
+        "99.7% purity",
+        "High hardness",
+        "Low contamination",
+        "Chemical resistant"
+      ],
+      "applications": [
+        "Ceramics",
+        "Electronics",
+        "Pharmaceuticals",
+        "Mining"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "100 mm",
+        "Inner Diameter": "85 mm",
+        "Height": "120 mm",
+        "Weight": "850 g",
+        "Lid Type": "Screw-on with PTFE seal"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-SS-1000",
+      "name": "Stainless Steel Mill Container",
+      "category": "Grinding Jars",
+      "subcategory": "Metal",
+      "material": "Stainless Steel 304L",
+      "purity": "Industrial Grade",
+      "volume": "1000 ml",
+      "hardness": "N/A",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "Heavy-duty stainless steel grinding container for industrial-scale material processing.",
+      "features": [
+        "304L grade",
+        "O-ring gasket seal",
+        "High temperature resistance",
+        "Easy cleaning"
+      ],
+      "applications": [
+        "Metallurgy",
+        "Chemical Industry",
+        "Food Processing"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ss-1000.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "150 mm",
+        "Inner Diameter": "130 mm",
+        "Height": "180 mm",
+        "Weight": "2500 g",
+        "Lid Type": "Clamp-on with O-ring"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-ZR-250",
+      "name": "Zirconia (YSZ) Grinding Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Ceramic",
+      "material": "Yttria-Stabilized Zirconia (YSZ)",
+      "purity": "99.9%",
+      "volume": "250 ml",
+      "hardness": "8.5 Mohs",
+      "maxTemperature": "1000°C",
+      "equipment": [
+        "High-Energy Shaker",
+        "Planetary Mill"
+      ],
+      "description": "Premium zirconia grinding jar with exceptional wear resistance for high-energy milling applications.",
+      "features": [
+        "Y-stabilized",
+        "Exceptional wear resistance",
+        "High density",
+        "Low contamination"
+      ],
+      "applications": [
+        "Nano-materials",
+        "Pharmaceuticals",
+        "Electronics",
+        "Advanced Ceramics"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-zr-250.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "80 mm",
+        "Inner Diameter": "65 mm",
+        "Height": "100 mm",
+        "Weight": "650 g",
+        "Lid Type": "Screw-on with ceramic seal"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-NY-50",
+      "name": "Nylon High-Density Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Plastic",
+      "material": "Nylon PA66",
+      "purity": "FDA Compliant",
+      "volume": "50 ml",
+      "hardness": "N/A",
+      "maxTemperature": "120°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "FDA-compliant nylon grinding jar for food and pharmaceutical applications.",
+      "features": [
+        "FDA compliant",
+        "High chemical resistance",
+        "Lightweight",
+        "Cost-effective"
+      ],
+      "applications": [
+        "Food Processing",
+        "Pharmaceuticals",
+        "Chemical Analysis"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ny-500.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "50 mm",
+        "Inner Diameter": "40 mm",
+        "Height": "70 mm",
+        "Weight": "45 g",
+        "Lid Type": "Snap-on"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-WC-100",
+      "name": "Tungsten Carbide Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Metal",
+      "material": "Tungsten Carbide (WC-Co 6%)",
+      "purity": "Industrial Grade",
+      "volume": "100 ml",
+      "hardness": "9.5 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "High-Energy Shaker",
+        "Planetary Mill"
+      ],
+      "description": "Heavy-duty tungsten carbide grinding jar for extreme impact applications.",
+      "features": [
+        "WC-Co 6%",
+        "Extreme impact strength",
+        "High density",
+        "Maximum wear resistance"
+      ],
+      "applications": [
+        "Mining",
+        "Metallurgy",
+        "Hard Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-wc-100.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "70 mm",
+        "Inner Diameter": "55 mm",
+        "Height": "90 mm",
+        "Weight": "1200 g",
+        "Lid Type": "Screw-on with metal seal"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-PU-2000",
+      "name": "PU Roller Mill Container",
+      "category": "Grinding Jars",
+      "subcategory": "Plastic",
+      "material": "Polyurethane (PU)",
+      "purity": "Industrial Grade",
+      "volume": "2000 ml",
+      "hardness": "N/A",
+      "maxTemperature": "80°C",
+      "equipment": [
+        "Roller Mill"
+      ],
+      "description": "Large-capacity polyurethane container for continuous roller mill operations.",
+      "features": [
+        "Polyurethane construction",
+        "Large capacity",
+        "Wear resistant",
+        "Low noise"
+      ],
+      "applications": [
+        "Paint & Pigments",
+        "Coatings",
+        "Inks"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-pu-2000.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "200 mm",
+        "Inner Diameter": "180 mm",
+        "Height": "250 mm",
+        "Weight": "800 g",
+        "Lid Type": "Clamp-on"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-AG-150",
+      "name": "Natural Agate Grinding Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Natural",
+      "material": "Natural Agate (SiO2)",
+      "purity": "99.9%",
+      "volume": "150 ml",
+      "hardness": "7.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill"
+      ],
+      "description": "Premium natural agate grinding jar for mineral analysis and high-purity applications.",
+      "features": [
+        "Natural stone",
+        "99.9% SiO2 purity",
+        "Minimal contamination",
+        "Aesthetic appeal"
+      ],
+      "applications": [
+        "Mineral Analysis",
+        "Geology",
+        "Jewelry",
+        "High-Purity Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "Limited Stock",
+      "images": [
+        "assets/images/products/gj-ag-250.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "75 mm",
+        "Inner Diameter": "60 mm",
+        "Height": "85 mm",
+        "Weight": "400 g",
+        "Lid Type": "Screw-on with agate seal"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-PTFE-250",
+      "name": "PTFE Chemical-Resistant Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Plastic",
+      "material": "PTFE (Teflon)",
+      "purity": "Industrial Grade",
+      "volume": "250 ml",
+      "hardness": "N/A",
+      "maxTemperature": "260°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "Chemical-resistant PTFE grinding jar for aggressive chemical applications.",
+      "features": [
+        "Excellent chemical resistance",
+        "High temperature tolerance",
+        "Non-stick surface",
+        "Easy cleaning"
+      ],
+      "applications": [
+        "Chemical Processing",
+        "Pharmaceuticals",
+        "Laboratory Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-pt-100.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "85 mm",
+        "Inner Diameter": "70 mm",
+        "Height": "100 mm",
+        "Weight": "180 g",
+        "Lid Type": "Screw-on"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-TI-500",
+      "name": "Titanium Alloy Grinding Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Metal",
+      "material": "Titanium Alloy (Ti-6Al-4V)",
+      "purity": "Aerospace Grade",
+      "volume": "500 ml",
+      "hardness": "N/A",
+      "maxTemperature": "600°C",
+      "equipment": [
+        "Planetary Mill",
+        "High-Energy Shaker"
+      ],
+      "description": "Lightweight titanium alloy grinding jar with excellent corrosion resistance.",
+      "features": [
+        "Lightweight",
+        "Excellent corrosion resistance",
+        "High strength-to-weight ratio",
+        "Biocompatible"
+      ],
+      "applications": [
+        "Aerospace",
+        "Medical Devices",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ti-500.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "100 mm",
+        "Inner Diameter": "85 mm",
+        "Height": "120 mm",
+        "Weight": "450 g",
+        "Lid Type": "Screw-on with titanium seal"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-SN-300",
+      "name": "Silicon Nitride Ceramic Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Ceramic",
+      "material": "Silicon Nitride (Si3N4)",
+      "purity": "99.5%",
+      "volume": "300 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1800°C",
+      "equipment": [
+        "Planetary Mill",
+        "High-Energy Shaker"
+      ],
+      "description": "High-temperature resistant silicon nitride ceramic jar for extreme conditions.",
+      "features": [
+        "Ultra-high temperature resistance",
+        "High strength",
+        "Thermal shock resistant",
+        "Wear resistant"
+      ],
+      "applications": [
+        "Aerospace",
+        "Automotive",
+        "High-Temperature Processing"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-sn-250.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "90 mm",
+        "Inner Diameter": "75 mm",
+        "Height": "110 mm",
+        "Weight": "550 g",
+        "Lid Type": "Screw-on with ceramic seal"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-HDPE-1000",
+      "name": "HDPE High-Density Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Plastic",
+      "material": "High-Density Polyethylene (HDPE)",
+      "purity": "Food Grade",
+      "volume": "1000 ml",
+      "hardness": "N/A",
+      "maxTemperature": "80°C",
+      "equipment": [
+        "Roller Mill"
+      ],
+      "description": "Economical HDPE grinding jar for general-purpose applications.",
+      "features": [
+        "Economical",
+        "Good chemical resistance",
+        "Lightweight",
+        "Food grade"
+      ],
+      "applications": [
+        "Food Processing",
+        "General Laboratory",
+        "Education"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-hd-500.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "150 mm",
+        "Inner Diameter": "130 mm",
+        "Height": "180 mm",
+        "Weight": "150 g",
+        "Lid Type": "Snap-on"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GJ-HAS-200",
+      "name": "Hastelloy Corrosion-Resistant Jar",
+      "category": "Grinding Jars",
+      "subcategory": "Metal",
+      "material": "Hastelloy C-276",
+      "purity": "Industrial Grade",
+      "volume": "200 ml",
+      "hardness": "N/A",
+      "maxTemperature": "1000°C",
+      "equipment": [
+        "Planetary Mill",
+        "High-Energy Shaker"
+      ],
+      "description": "Premium Hastelloy grinding jar for extreme corrosion environments.",
+      "features": [
+        "Exceptional corrosion resistance",
+        "High temperature tolerance",
+        "Chemical processing grade",
+        "Long service life"
+      ],
+      "applications": [
+        "Chemical Processing",
+        "Oil & Gas",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "Limited Stock",
+      "images": [
+        "assets/images/products/gj-hs-250.jpg"
+      ],
+      "specifications": {
+        "Outer Diameter": "80 mm",
+        "Inner Diameter": "65 mm",
+        "Height": "95 mm",
+        "Weight": "800 g",
+        "Lid Type": "Screw-on with Hastelloy seal"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GM-AL-001",
+      "name": "Aluminum Oxide Grinding Media",
+      "category": "Grinding Media",
+      "subcategory": "Ceramic Balls",
+      "material": "Aluminum Oxide (Al2O3)",
+      "purity": "99.5%",
+      "volume": "Various Sizes",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill",
+        "Stirred Mill"
+      ],
+      "description": "High-purity alumina grinding balls for general-purpose grinding applications.",
+      "features": [
+        "99.5% purity",
+        "Multiple sizes available",
+        "Cost-effective",
+        "Low wear"
+      ],
+      "applications": [
+        "General Grinding",
+        "Ceramics",
+        "Electronics"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-al-20mm.jpg"
+      ],
+      "specifications": {
+        "Sizes Available": "0.5-20 mm",
+        "Density": "3.9 g/cm³",
+        "Packaging": "1kg, 5kg, 10kg bags",
+        "Color": "White"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GM-ZR-001",
+      "name": "Zirconia Grinding Media Beads",
+      "category": "Grinding Media",
+      "subcategory": "Ceramic Beads",
+      "material": "Yttria-Stabilized Zirconia (YSZ)",
+      "purity": "99.9%",
+      "volume": "Various Sizes",
+      "hardness": "8.5 Mohs",
+      "maxTemperature": "1000°C",
+      "equipment": [
+        "High-Energy Shaker",
+        "Stirred Mill",
+        "Planetary Mill"
+      ],
+      "description": "Premium zirconia grinding beads for high-energy milling applications.",
+      "features": [
+        "High density",
+        "Exceptional wear resistance",
+        "Multiple sizes",
+        "Low contamination"
+      ],
+      "applications": [
+        "Nano-materials",
+        "Pharmaceuticals",
+        "Electronics"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-zr-5mm.jpg"
+      ],
+      "specifications": {
+        "Sizes Available": "0.1-10 mm",
+        "Density": "6.0 g/cm³",
+        "Packaging": "500g, 1kg, 5kg containers",
+        "Color": "White/Ivory"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GM-SS-001",
+      "name": "Stainless Steel Grinding Media",
+      "category": "Grinding Media",
+      "subcategory": "Metal Balls",
+      "material": "Stainless Steel 304L",
+      "purity": "Industrial Grade",
+      "volume": "Various Sizes",
+      "hardness": "N/A",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "Heavy-duty stainless steel grinding balls for industrial applications.",
+      "features": [
+        "304L grade",
+        "High impact strength",
+        "Multiple sizes",
+        "Cost-effective"
+      ],
+      "applications": [
+        "Heavy-Duty Grinding",
+        "Metallurgy",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-10mm.jpg"
+      ],
+      "specifications": {
+        "Sizes Available": "1-25 mm",
+        "Density": "7.9 g/cm³",
+        "Packaging": "1kg, 5kg, 10kg bags",
+        "Finish": "Polished"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GM-WC-001",
+      "name": "Tungsten Carbide Grinding Media",
+      "category": "Grinding Media",
+      "subcategory": "Metal Balls",
+      "material": "Tungsten Carbide (WC-Co 6%)",
+      "purity": "Industrial Grade",
+      "volume": "Various Sizes",
+      "hardness": "9.5 Mohs",
+      "maxTemperature": "600°C",
+      "equipment": [
+        "High-Energy Shaker",
+        "Planetary Mill"
+      ],
+      "description": "Ultra-hard tungsten carbide grinding balls for extreme applications.",
+      "features": [
+        "Ultra-high density",
+        "Maximum hardness",
+        "Extreme wear resistance",
+        "Long service life"
+      ],
+      "applications": [
+        "Hard Materials",
+        "Mining",
+        "Metallurgy"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-wc-5mm.jpg"
+      ],
+      "specifications": {
+        "Sizes Available": "1-10 mm",
+        "Density": "14.9 g/cm³",
+        "Packaging": "100g, 500g, 1kg containers",
+        "Color": "Dark Gray"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "PM-001",
+      "name": "Planetary Ball Mill Machine",
+      "category": "Equipment",
+      "subcategory": "Planetary Mill",
+      "material": "Steel & Electronics",
+      "purity": "N/A",
+      "volume": "4×500 ml",
+      "hardness": "N/A",
+      "maxTemperature": "N/A",
+      "equipment": [],
+      "description": "High-performance planetary ball mill for nano-scale material processing.",
+      "features": [
+        "4 stations",
+        "Variable speed",
+        "Digital display",
+        "Safety interlock"
+      ],
+      "applications": [
+        "Nano-materials",
+        "Mechanical Alloying",
+        "Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "Made to Order",
+      "images": [
+        "assets/images/products/eq-pm-4x500.jpg"
+      ],
+      "specifications": {
+        "Max Speed": "600 RPM",
+        "Motor Power": "750W",
+        "Dimensions": "500×500×600 mm",
+        "Weight": "85 kg"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "SM-001",
+      "name": "High-Energy Shaker Mill",
+      "category": "Equipment",
+      "subcategory": "Shaker Mill",
+      "material": "Steel & Electronics",
+      "purity": "N/A",
+      "volume": "2×1000 ml",
+      "hardness": "N/A",
+      "maxTemperature": "N/A",
+      "equipment": [],
+      "description": "High-energy vibrating shaker mill for fast grinding operations.",
+      "features": [
+        "High frequency",
+        "Fast grinding",
+        "Compact design",
+        "Easy operation"
+      ],
+      "applications": [
+        "Fast Grinding",
+        "Mechanical Alloying",
+        "Sample Preparation"
+      ],
+      "price": "Contact for Quote",
+      "stock": "Made to Order",
+      "images": [
+        "assets/images/products/eq-sm-1.jpg"
+      ],
+      "specifications": {
+        "Frequency": "30 Hz",
+        "Motor Power": "1500W",
+        "Dimensions": "400×400×500 mm",
+        "Weight": "65 kg"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "RM-001",
+      "name": "Continuous Roller Mill",
+      "category": "Equipment",
+      "subcategory": "Roller Mill",
+      "material": "Steel & Electronics",
+      "purity": "N/A",
+      "volume": "5-20 L/h",
+      "hardness": "N/A",
+      "maxTemperature": "N/A",
+      "equipment": [],
+      "description": "Industrial-scale continuous roller mill for production applications.",
+      "features": [
+        "Continuous operation",
+        "Large capacity",
+        "Variable speed",
+        "Low maintenance"
+      ],
+      "applications": [
+        "Production",
+        "Paint & Coatings",
+        "Ceramics"
+      ],
+      "price": "Contact for Quote",
+      "stock": "Made to Order",
+      "images": [
+        "assets/images/products/eq-rm-2l.jpg"
+      ],
+      "specifications": {
+        "Roller Speed": "0-100 RPM",
+        "Motor Power": "2200W",
+        "Dimensions": "800×600×1200 mm",
+        "Weight": "180 kg"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "GA-001",
+      "name": "Grinding Jar Accessories Kit",
+      "category": "Accessories",
+      "subcategory": "Parts",
+      "material": "Various",
+      "purity": "N/A",
+      "volume": "N/A",
+      "hardness": "N/A",
+      "maxTemperature": "N/A",
+      "equipment": [
+        "All Jar Types"
+      ],
+      "description": "Complete accessories kit for grinding jar maintenance and operation.",
+      "features": [
+        "Multiple components",
+        "Universal compatibility",
+        "High-quality materials",
+        "Easy replacement"
+      ],
+      "applications": [
+        "Maintenance",
+        "Replacement Parts",
+        "New Installations"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/ac-lid-set.jpg"
+      ],
+      "specifications": {
+        "Contents": "Lids, Gaskets, Clamps, Seals",
+        "Compatibility": "All jar sizes",
+        "Material": "Various (PTFE, Rubber, Metal)",
+        "Packaging": "Complete kit"
+      },
+      "createdAt": "2024-01-15",
+      "updatedAt": "2024-02-14"
+    },
+    {
+      "id": "PROD_1771093817",
+      "name": "",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "250 ml",
+      "hardness": "",
+      "maxTemperature": "800°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093801_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093825",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Plastic",
+      "purity": "",
+      "volume": "1000 ml",
+      "hardness": "",
+      "maxTemperature": "400°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093822_0.jpg",
+        "assets/images/products/product_1771093824_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093832",
+      "name": "",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "",
+      "volume": "1000 ml",
+      "hardness": "",
+      "maxTemperature": "200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093831_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093839",
+      "name": "",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "100 ml",
+      "hardness": "",
+      "maxTemperature": "1600°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093837_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093846",
+      "name": "",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093844_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093852",
+      "name": "",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "",
+      "volume": "100 ml",
+      "hardness": "",
+      "maxTemperature": "200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093850_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093861",
+      "name": "",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "",
+      "volume": "100 ml",
+      "hardness": "",
+      "maxTemperature": "800°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093857_0.jpg",
+        "assets/images/products/product_1771093858_1.jpg",
+        "assets/images/products/product_1771093860_2.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093868",
+      "name": "",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Plastic",
+      "purity": "",
+      "volume": "1000 ml",
+      "hardness": "",
+      "maxTemperature": "1600°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093867_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093874",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "",
+      "volume": "50 ml",
+      "hardness": "",
+      "maxTemperature": "1200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093873_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093882",
+      "name": "",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Plastic",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093879_0.jpg",
+        "assets/images/products/product_1771093881_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093889",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "400°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093888_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093895",
+      "name": "",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "",
+      "volume": "250 ml",
+      "hardness": "",
+      "maxTemperature": "1600°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093894_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093902",
+      "name": "",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "1000 ml",
+      "hardness": "",
+      "maxTemperature": "200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093899_0.jpg",
+        "assets/images/products/product_1771093901_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093913",
+      "name": "",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "",
+      "volume": "250 ml",
+      "hardness": "",
+      "maxTemperature": "400°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093908_0.jpg",
+        "assets/images/products/product_1771093910_1.jpg",
+        "assets/images/products/product_1771093911_2.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093919",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "1000 ml",
+      "hardness": "",
+      "maxTemperature": "1600°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093918_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093925",
+      "name": "",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "",
+      "volume": "1000 ml",
+      "hardness": "",
+      "maxTemperature": "1600°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093924_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093935",
+      "name": "",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "",
+      "volume": "1000 ml",
+      "hardness": "",
+      "maxTemperature": "200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093930_0.jpg",
+        "assets/images/products/product_1771093931_1.jpg",
+        "assets/images/products/product_1771093933_2.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093944",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "800°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093941_0.jpg",
+        "assets/images/products/product_1771093942_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093949",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "400°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093948_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093956",
+      "name": "",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Plastic",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "1600°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093953_0.jpg",
+        "assets/images/products/product_1771093955_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093963",
+      "name": "",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "250 ml",
+      "hardness": "",
+      "maxTemperature": "1600°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093961_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093971",
+      "name": "",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "100 ml",
+      "hardness": "",
+      "maxTemperature": "800°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093968_0.jpg",
+        "assets/images/products/product_1771093970_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093978",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "",
+      "volume": "250 ml",
+      "hardness": "",
+      "maxTemperature": "1200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093977_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093986",
+      "name": "",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Plastic",
+      "purity": "",
+      "volume": "250 ml",
+      "hardness": "",
+      "maxTemperature": "800°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093982_0.jpg",
+        "assets/images/products/product_1771093984_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771093996",
+      "name": "",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "800°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771093993_0.jpg",
+        "assets/images/products/product_1771093994_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771094004",
+      "name": "",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "1200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771094001_0.jpg",
+        "assets/images/products/product_1771094003_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771094012",
+      "name": "",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "",
+      "volume": "500 ml",
+      "hardness": "",
+      "maxTemperature": "1200°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771094010_0.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "PROD_1771094020",
+      "name": "",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "",
+      "volume": "100 ml",
+      "hardness": "",
+      "maxTemperature": "400°C",
+      "equipment": [],
+      "description": "",
+      "features": [],
+      "applications": [],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/product_1771094016_0.jpg",
+        "assets/images/products/product_1771094018_1.jpg"
+      ],
+      "specifications": {},
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_28",
+      "name": "模拟产品 29",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_29",
+      "name": "模拟产品 30",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_30",
+      "name": "模拟产品 31",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_31",
+      "name": "模拟产品 32",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_32",
+      "name": "模拟产品 33",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_33",
+      "name": "模拟产品 34",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_34",
+      "name": "模拟产品 35",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_35",
+      "name": "模拟产品 36",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_36",
+      "name": "模拟产品 37",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_37",
+      "name": "模拟产品 38",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_38",
+      "name": "模拟产品 39",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_39",
+      "name": "模拟产品 40",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_40",
+      "name": "模拟产品 41",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_41",
+      "name": "模拟产品 42",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_42",
+      "name": "模拟产品 43",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_43",
+      "name": "模拟产品 44",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_44",
+      "name": "模拟产品 45",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_45",
+      "name": "模拟产品 46",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_46",
+      "name": "模拟产品 47",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_47",
+      "name": "模拟产品 48",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_48",
+      "name": "模拟产品 49",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_49",
+      "name": "模拟产品 50",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_50",
+      "name": "模拟产品 51",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_51",
+      "name": "模拟产品 52",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_52",
+      "name": "模拟产品 53",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_53",
+      "name": "模拟产品 54",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_54",
+      "name": "模拟产品 55",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_55",
+      "name": "模拟产品 56",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_56",
+      "name": "模拟产品 57",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_57",
+      "name": "模拟产品 58",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_58",
+      "name": "模拟产品 59",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_59",
+      "name": "模拟产品 60",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_60",
+      "name": "模拟产品 61",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_61",
+      "name": "模拟产品 62",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_62",
+      "name": "模拟产品 63",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_63",
+      "name": "模拟产品 64",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_64",
+      "name": "模拟产品 65",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_65",
+      "name": "模拟产品 66",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "50 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_66",
+      "name": "模拟产品 67",
+      "category": "Accessories",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_67",
+      "name": "模拟产品 68",
+      "category": "Grinding Jars",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "1000 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_68",
+      "name": "模拟产品 69",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_69",
+      "name": "模拟产品 70",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_70",
+      "name": "模拟产品 71",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_71",
+      "name": "模拟产品 72",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Stainless Steel",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_72",
+      "name": "模拟产品 73",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_73",
+      "name": "模拟产品 74",
+      "category": "Shaker Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_74",
+      "name": "模拟产品 75",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_75",
+      "name": "模拟产品 76",
+      "category": "Planetary Ball Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_76",
+      "name": "模拟产品 77",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Tungsten Carbide",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "800°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_77",
+      "name": "模拟产品 78",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "100 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_78",
+      "name": "模拟产品 79",
+      "category": "Roller Mills",
+      "subcategory": "",
+      "material": "Zirconia",
+      "purity": "99.5%",
+      "volume": "250 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1600°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    },
+    {
+      "id": "SIM_1771094023_79",
+      "name": "模拟产品 80",
+      "category": "Grinding Media",
+      "subcategory": "",
+      "material": "Alumina Ceramic",
+      "purity": "99.5%",
+      "volume": "500 ml",
+      "hardness": "9.0 Mohs",
+      "maxTemperature": "1200°C",
+      "equipment": [
+        "Planetary Mill",
+        "Roller Mill"
+      ],
+      "description": "这是一个模拟的研磨设备产品，用于实验室和工业应用。",
+      "features": [
+        "高品质材料",
+        "长使用寿命",
+        "易于维护",
+        "高效率"
+      ],
+      "applications": [
+        "实验室研究",
+        "工业生产",
+        "材料科学"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [],
+      "specifications": {
+        "Dimensions": "100×100×150 mm",
+        "Weight": "2.5 kg",
+        "Power": "220V",
+        "Speed": "0-1000 RPM"
+      },
+      "createdAt": "2026-02-15",
+      "updatedAt": "2026-02-15"
+    }
+  ],
+  "categories": [
+    {
+      "id": "grinding-jars",
+      "name": "研磨罐",
+      "description": "实验室研磨容器",
+      "subcategories": [
+        "陶瓷",
+        "金属",
+        "塑料"
+      ]
+    },
+    {
+      "id": "grinding-media",
+      "name": "研磨介质",
+      "description": "各种材质的研磨球和珠",
+      "subcategories": [
+        "陶瓷球",
+        "金属球"
+      ]
+    },
+    {
+      "id": "equipment",
+      "name": "设备",
+      "description": "工业研磨机器和磨机",
+      "subcategories": [
+        "行星球磨机",
+        "振动磨机",
+        "滚筒磨机"
+      ]
+    },
+    {
+      "id": "accessories",
+      "name": "配件",
+      "description": "研磨设备的零件和配件",
+      "subcategories": [
+        "零件",
+        "密封件",
+        "工具"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "id": "ceramic",
+      "name": "陶瓷",
+      "types": [
+        "氧化铝",
+        "氧化锆",
+        "氮化硅"
+      ]
+    },
+    {
+      "id": "metal",
+      "name": "金属",
+      "types": [
+        "不锈钢",
+        "碳化钨",
+        "钛合金"
+      ]
+    },
+    {
+      "id": "plastic",
+      "name": "塑料",
+      "types": [
+        "尼龙",
+        "PTFE",
+        "PU"
+      ]
+    }
+  ]
+}

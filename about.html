@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 | 晟通达材料 - 工业研磨设备</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06b6d4",
+                        "primary-dark": "#0891b2",
+                        "accent": "#22d3ee",
+                        "background-dark": "#0f172a",
+                        "surface-dark": "#1e293b",
+                        "deep-navy": "#020617",
+                        "secondary": "#f97316",
+                        "success": "#22c55e"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    backgroundImage: {
+                        'cyber-grid': "radial-gradient(circle, rgba(6,182,212,0.1) 1px, transparent 1px)",
+                        'blueprint': "linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-panel:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+        .blueprint-bg {
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+        .tech-border {
+            position: relative;
+        }
+        .tech-border::before, .tech-border::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #06b6d4;
+            transition: all 0.3s ease;
+        }
+        .tech-border::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+        .tech-border::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+        .tech-border:hover::before, .tech-border:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+        .material-card {
+            background: linear-gradient(145deg, rgba(30,41,59,0.7) 0%, rgba(15,23,42,0.9) 100%);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #06b6d4, #22d3ee);
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 20px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #06b6d4;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="assets/js/main.js"></script>
+</head>
+<body class="bg-deep-navy text-slate-100 font-display selection:bg-primary selection:text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
+                        <span class="material-symbols-outlined text-primary relative z-10">precision_manufacturing</span>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-white">STD<span class="text-primary text-glow font-light ml-1">GRIND</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#products">PRODUCTS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#applications">APPLICATIONS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#customization">CUSTOMIZATION</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#data-sheets">DATA SHEETS</a>
+                    <a class="text-sm font-medium text-primary border-b-2 border-primary transition-colors tracking-wide" href="about.html">ABOUT US</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="contact.html">CONTACT</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="hidden lg:flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
+                        <span class="material-symbols-outlined text-sm">download</span> Catalog
+                    </button>
+                    <button class="bg-primary text-deep-navy px-6 py-2.5 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide text-sm">
+                        Inquiry Now
+                    </button>
+                    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#products">PRODUCTS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#applications">APPLICATIONS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#customization">CUSTOMIZATION</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#data-sheets">DATA SHEETS</a>
+                    <a class="text-sm font-medium text-primary border-l-2 border-primary pl-3 transition-colors tracking-wide py-2" href="about.html">ABOUT US</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="contact.html">CONTACT</a>
+                    <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider w-fit">
+                        <span class="material-symbols-outlined text-sm">download</span> Catalog
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40 bg-deep-navy">
+        <div class="absolute inset-0 blueprint-bg opacity-20 pointer-events-none" style="background-image: linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px);"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 py-1 px-3 rounded border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Engineering Excellence
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
+                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-200 to-white text-glow">Story</span>
+                </h1>
+                <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto font-light border-l-2 border-primary/30 pl-6">
+                    For over 25 years, we've been at the forefront of grinding technology, delivering innovative solutions that redefine precision and efficiency in material processing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="py-24 bg-surface-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Our Legacy</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-white leading-tight">Engineering <br/><span class="text-primary">Excellence</span></h2>
+                    <p class="text-lg text-slate-400 mb-8 font-light">
+                        Founded in 1998, Precision Grind has evolved from a small engineering workshop to a global leader in advanced grinding technology. Our commitment to innovation and quality has driven us to develop cutting-edge solutions that meet the most demanding industrial requirements.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded bg-primary/20 border border-primary text-primary flex items-center justify-center shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+                                <span class="material-symbols-outlined text-[16px]">check</span>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm">25+ Years of Experience</h5>
+                                <p class="text-sm text-slate-500 mt-1">Pioneering grinding technology since 1998.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded bg-primary/20 border border-primary text-primary flex items-center justify-center shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+                                <span class="material-symbols-outlined text-[16px]">check</span>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm">Global Presence</h5>
+                                <p class="text-sm text-slate-500 mt-1">Serving customers in over 50 countries worldwide.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 flex-shrink-0 w-6 h-6 rounded bg-primary/20 border border-primary text-primary flex items-center justify-center shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+                                <span class="material-symbols-outlined text-[16px]">check</span>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm">ISO 9001 Certified</h5>
+                                <p class="text-sm text-slate-500 mt-1">Stringent quality management systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm">
+                        <img alt="Engineering Excellence" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5FsyaCBQncEm-IXAD63h3gsaiKmtXPESVMV3sg_L89ro39qL91YRFtsnaNpEIE3-K4xRMMkMyb687A5QZgBLsC7IitJnGm7xaqkS-1kqqFkp_dhTREXGezAkXwb3PqeVA5EtFx2TqhPUmD8Zabp5n-5hiupUEh89B638TN_CnI7ZeCOHTrqzQ89aHOEmmNjeiOCUFiH_pRO4EWAb32Bmj1z1uQU4HZFGEO_lUmzRyAu_KZtVGVVxWfYAqxb7CrUU2lXR2MHL93-Q" loading="lazy">
+                        <div class="absolute bottom-6 right-6 glass-panel p-4 rounded border-l-4 border-primary max-w-xs transform translate-y-2 opacity-90">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-mono text-primary">ESTABLISHED: 1998</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div>
+                                    <p class="text-white font-bold text-lg leading-none">Industry Leader</p>
+                                    <p class="text-slate-400 text-xs mt-1">Advanced Grinding Technology</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- R&D Capabilities -->
+    <section class="py-24 bg-deep-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Innovation Hub</span>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">R&D Capabilities</h2>
+                <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto">Our state-of-the-art research and development center drives innovation in grinding technology, pushing the boundaries of what's possible.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Advanced Materials Lab -->
+                <div class="group material-card p-1 rounded-2xl relative overflow-hidden transition-all hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="bg-surface-dark h-full p-6 rounded-xl border border-white/5 relative z-10 flex flex-col">
+                        <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 text-primary border border-white/10 shadow-inner">
+                            <span class="material-symbols-outlined text-3xl">layers</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">Advanced Materials Lab</h3>
+                        <p class="text-sm text-slate-400 mb-6 line-clamp-2">Developing new grinding media materials with enhanced durability and minimal contamination.</p>
+                        <div class="mt-auto">
+                            <button class="w-full py-3 bg-primary/10 border border-primary/30 text-primary rounded-lg font-bold hover:bg-primary/20 transition-colors group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Simulation & Design -->
+                <div class="group material-card p-1 rounded-2xl relative overflow-hidden transition-all hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="bg-surface-dark h-full p-6 rounded-xl border border-white/5 relative z-10 flex flex-col">
+                        <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 text-primary border border-white/10 shadow-inner">
+                            <span class="material-symbols-outlined text-3xl">3d_rotation</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">Simulation & Design</h3>
+                        <p class="text-sm text-slate-400 mb-6 line-clamp-2">Computer-aided design and simulation for optimal mill performance and energy efficiency.</p>
+                        <div class="mt-auto">
+                            <button class="w-full py-3 bg-primary/10 border border-primary/30 text-primary rounded-lg font-bold hover:bg-primary/20 transition-colors group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testing & Validation -->
+                <div class="group material-card p-1 rounded-2xl relative overflow-hidden transition-all hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="bg-surface-dark h-full p-6 rounded-xl border border-white/5 relative z-10 flex flex-col">
+                        <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 text-primary border border-white/10 shadow-inner">
+                            <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">Testing & Validation</h3>
+                        <p class="text-sm text-slate-400 mb-6 line-clamp-2">Comprehensive testing facilities to validate performance under extreme conditions.</p>
+                        <div class="mt-auto">
+                            <button class="w-full py-3 bg-primary/10 border border-primary/30 text-primary rounded-lg font-bold hover:bg-primary/20 transition-colors group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Process -->
+    <section class="py-24 bg-surface-dark border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Our Process</span>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Manufacturing Excellence</h2>
+                <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto">From raw materials to finished products, our manufacturing process ensures the highest quality standards.</p>
+            </div>
+            <div class="relative ml-10">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item relative mb-16 pl-12">
+                    <div class="glass-panel p-8 rounded-2xl tech-border">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/3">
+                                <div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
+                                    <span class="material-symbols-outlined text-4xl">inventory</span>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-4 text-white">Material Sourcing</h3>
+                                <p class="text-slate-400 mb-6">We source only the highest quality raw materials from trusted suppliers, ensuring consistency and reliability in every component.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">ISO Certified</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Traceable</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Sustainable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item relative mb-16 pl-12">
+                    <div class="glass-panel p-8 rounded-2xl tech-border">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/3">
+                                <div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
+                                    <span class="material-symbols-outlined text-4xl">precision_manufacturing</span>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-4 text-white">Precision Machining</h3>
+                                <p class="text-slate-400 mb-6">Our state-of-the-art CNC machines produce components with micron-level precision, ensuring optimal performance and durability.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">CNC Machining</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Micron Precision</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Quality Control</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item relative mb-16 pl-12">
+                    <div class="glass-panel p-8 rounded-2xl tech-border">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/3">
+                                <div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
+                                    <span class="material-symbols-outlined text-4xl">build</span>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-4 text-white">Assembly & Integration</h3>
+                                <p class="text-slate-400 mb-6">Skilled technicians assemble each machine with meticulous attention to detail, ensuring all components work together seamlessly.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Skilled Labor</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Quality Checks</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Traceability</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item relative pl-12">
+                    <div class="glass-panel p-8 rounded-2xl tech-border">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/3">
+                                <div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
+                                    <span class="material-symbols-outlined text-4xl">verified</span>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-4 text-white">Testing & Certification</h3>
+                                <p class="text-slate-400 mb-6">Each machine undergoes rigorous testing to ensure it meets our strict performance standards and industry certifications.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Performance Testing</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Safety Certification</span>
+                                    <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">Quality Assurance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Expertise -->
+    <section class="py-24 bg-deep-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Our Team</span>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Industry Experts</h2>
+                <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto">Our team of engineers and technicians bring decades of experience in grinding technology and material science.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Team Member 1 -->
+                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                    <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner mx-auto">
+                        <span class="material-symbols-outlined text-5xl">person</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1 text-white text-center">Dr. Michael Chen</h3>
+                    <p class="text-primary text-sm mb-4 text-center">Chief Technology Officer</p>
+                    <p class="text-sm text-slate-400 text-center">PhD in Materials Science with 20+ years of experience in grinding technology.</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                    <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner mx-auto">
+                        <span class="material-symbols-outlined text-5xl">person</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1 text-white text-center">Sarah Johnson</h3>
+                    <p class="text-primary text-sm mb-4 text-center">Head of R&D</p>
+                    <p class="text-sm text-slate-400 text-center">Expert in advanced materials development and grinding media innovation.</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                    <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner mx-auto">
+                        <span class="material-symbols-outlined text-5xl">person</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1 text-white text-center">David Kim</h3>
+                    <p class="text-primary text-sm mb-4 text-center">Manufacturing Director</p>
+                    <p class="text-sm text-slate-400 text-center">Specialist in precision machining and lean manufacturing processes.</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                    <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner mx-auto">
+                        <span class="material-symbols-outlined text-5xl">person</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1 text-white text-center">Emily Rodriguez</h3>
+                    <p class="text-primary text-sm mb-4 text-center">Quality Assurance Manager</p>
+                    <p class="text-sm text-slate-400 text-center">Ensures every product meets our strict quality standards and certifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-24 bg-deep-navy relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/10">
+                <div class="lg:w-1/2 p-12 bg-surface-dark/80 backdrop-blur-md">
+                    <h3 class="text-3xl font-bold mb-4 text-white">Get in Touch</h3>
+                    <p class="text-slate-400 mb-8">Have questions about our technology or want to learn more about our capabilities? Contact us today.</p>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Full Name</label>
+                                <input class="w-full bg-deep-navy border-slate-700 text-white rounded focus:ring-primary focus:border-primary placeholder-slate-600" placeholder="Your Name" type="text">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Email Address</label>
+                                <input class="w-full bg-deep-navy border-slate-700 text-white rounded focus:ring-primary focus:border-primary placeholder-slate-600" placeholder="your.email@company.com" type="email">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Subject</label>
+                            <select class="w-full bg-deep-navy border-slate-700 text-white rounded focus:ring-primary focus:border-primary">
+                                <option>General Inquiry</option>
+                                <option>Technical Question</option>
+                                <option>Partnership Opportunity</option>
+                                <option>Career Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Message</label>
+                            <textarea class="w-full bg-deep-navy border-slate-700 text-white rounded focus:ring-primary focus:border-primary placeholder-slate-600" placeholder="Your message here..." rows="4"></textarea>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-primary to-primary-dark text-white py-4 rounded font-bold text-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide" type="submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2 relative min-h-[400px]">
+                    <img alt="Contact Us" class="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk-drzsS_rhtYaiIP0kUiKECsukgoC_tlMrH8puiRAJ-2cXWF6fDsIvBaRxhGXz16JFjYy6ad-9c-Kw5juSKXRNj0b_Cg_U1f1i27OA4wcV-vUF9ccLXitArVE9UYQ_6VO9Fvao5JEcm-L0J-C01iw6-4cQDfLbeSk8LLkrH_QDk9HdfgGNogUhPukS_NT8oHF94B9L6tim59cIWOYIv3x8nWGVl9phH03qEPPofdITLD-oC41zpr-MDQo5P-tiGO6BT86B1lOUWs" loading="lazy">
+                    <div class="absolute inset-0 bg-primary/30 mix-blend-overlay"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-12 text-white">
+                        <div class="flex gap-4 mb-8">
+                            <div class="glass-panel p-4 rounded border-l-2 border-primary">
+                                <p class="text-3xl font-bold font-mono">25+</p>
+                                <p class="text-xs uppercase font-medium text-slate-300">Years Exp</p>
+                            </div>
+                            <div class="glass-panel p-4 rounded border-l-2 border-primary">
+                                <p class="text-3xl font-bold font-mono">12k+</p>
+                                <p class="text-xs uppercase font-medium text-slate-300">Global Units</p>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-4">Contact Information</h4>
+                        <div class="space-y-2">
+                            <p class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors cursor-pointer">
+                                <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                                <span>123 Technology Drive, Industrial Park, Shanghai, China</span>
+                            </p>
+                            <p class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors cursor-pointer">
+                                <span class="material-symbols-outlined text-sm text-primary">call</span>
+                                <span class="font-mono">+86 21 5555 8888</span>
+                            </p>
+                            <p class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors cursor-pointer">
+                                <span class="material-symbols-outlined text-sm text-primary">alternate_email</span>
+                                <span class="font-mono">info@precisiongrind.com</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy py-12 border-t border-white/5 relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-surface-dark border border-primary/50 rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-sm">precision_manufacturing</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white">STD<span class="text-primary font-light">GRIND</span></span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="hover:text-primary transition-colors" href="index.html#products">Products</a>
+                    <a class="hover:text-primary transition-colors" href="index.html#applications">Applications</a>
+                    <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+                    <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+                    <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms</a>
+                </div>
+                <p class="text-xs text-slate-600 font-mono">© 2024 PGJ INC. SYSTEM ONLINE.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <button class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:bg-accent transition-all group">
+            <span class="material-symbols-outlined text-white text-2xl group-hover:scale-110 transition-transform">smart_toy</span>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effects
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-gradient');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Form submission
+        document.querySelector('form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add form submission logic here
+            alert('Your message has been sent! We will contact you shortly.');
+        });
+    </script>
+</body>
+</html>

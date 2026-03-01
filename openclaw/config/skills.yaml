@@ -1,0 +1,216 @@
+skills:
+  web_browser:
+    name: "网页浏览器"
+    description: "用于浏览网页、搜索信息、提取内容"
+    enabled: true
+    config:
+      timeout: 30
+      max_pages: 10
+      user_agent: "OpenClaw/1.0 (+https://openclaw.dev)"
+      supported_actions:
+        - navigate
+        - search
+        - extract
+        - screenshot
+        
+  data_processor:
+    name: "数据处理器"
+    description: "用于处理、转换、分析各种格式的数据"
+    enabled: true
+    config:
+      supported_formats: ["csv", "json", "excel", "pdf", "xml"]
+      max_file_size: 10485760
+      operations:
+        - read
+        - write
+        - transform
+        - filter
+        - aggregate
+        - validate
+        
+  file_operations:
+    name: "文件操作"
+    description: "用于读取、写入、管理文件系统"
+    enabled: true
+    config:
+      allowed_paths:
+        - "./data"
+        - "./openclaw"
+        - "./assets"
+      read_only_paths:
+        - "./config"
+      max_file_size: 52428800
+      operations:
+        - read
+        - write
+        - delete
+        - copy
+        - move
+        - list
+        
+  code_execution:
+    name: "代码执行"
+    description: "用于执行Python、JavaScript等代码"
+    enabled: true
+    config:
+      timeout: 60
+      max_output: 10000
+      allowed_languages: ["python", "javascript"]
+      sandbox: true
+      
+  email_marketing:
+    name: "邮件营销"
+    description: "用于发送营销邮件、管理邮件列表"
+    enabled: true
+    config:
+      smtp_server: "smtp.gmail.com"
+      smtp_port: 587
+      email_address: "marketing@precisiongrind.com"
+      max_emails_per_hour: 100
+      templates_path: "./templates/emails"
+      
+  content_generator:
+    name: "内容生成器"
+    description: "用于生成各种类型的内容，如文章、描述、广告文案等"
+    enabled: true
+    config:
+      max_length: 5000
+      language: "en"
+      tone: "professional"
+      styles:
+        - professional
+        - casual
+        - technical
+        - marketing
+        
+  chatbot:
+    name: "聊天机器人"
+    description: "用于智能客服、自动回复"
+    enabled: true
+    config:
+      response_timeout: 30
+      max_history: 100
+      language: "en"
+      fallback_response: "I'm sorry, I don't have enough information to answer that question. Please contact our support team for assistance."
+      
+  analytics:
+    name: "数据分析"
+    description: "用于数据分析、可视化、报告生成"
+    enabled: true
+    config:
+      data_sources:
+        - website
+        - crm
+        - marketing
+        - sales
+      report_format: "pdf"
+      max_report_size: 50000
+      visualization_tools:
+        - charts
+        - graphs
+        - tables
+        
+  product_scraper:
+    name: "产品爬虫"
+    description: "用于从供应商网站爬取产品信息"
+    enabled: true
+    config:
+      target_websites:
+        - "https://supplier1.com"
+        - "https://supplier2.com"
+      scrape_interval: 3600
+      max_retries: 3
+      respect_robots_txt: true
+      
+  social_media_api:
+    name: "社交媒体API"
+    description: "用于管理社交媒体账号、发布内容"
+    enabled: true
+    config:
+      platforms:
+        - name: "LinkedIn"
+          enabled: true
+          api_version: "v2"
+        - name: "Twitter"
+          enabled: true
+          api_version: "v2"
+        - name: "Facebook"
+          enabled: false
+      posting_schedule:
+        - "09:00"
+        - "14:00"
+        - "18:00"
+        
+  crm_integration:
+    name: "CRM集成"
+    description: "用于与CRM系统交互，管理客户数据"
+    enabled: true
+    config:
+      crm_type: "custom"
+      api_endpoint: "/api/crm"
+      sync_interval: 300
+      
+  api_integration:
+    name: "API集成"
+    description: "用于与外部API交互"
+    enabled: true
+    config:
+      timeout: 30
+      retry_attempts: 3
+      rate_limit: 100
+      
+  visualization:
+    name: "数据可视化"
+    description: "用于创建图表、图形等可视化内容"
+    enabled: true
+    config:
+      output_formats: ["png", "svg", "html"]
+      chart_types:
+        - line
+        - bar
+        - pie
+        - scatter
+        - heatmap
+
+skill_groups:
+  product_management:
+    name: "产品管理技能组"
+    skills:
+      - web_browser
+      - data_processor
+      - file_operations
+      - product_scraper
+      - content_generator
+      
+  marketing:
+    name: "营销技能组"
+    skills:
+      - content_generator
+      - email_marketing
+      - social_media_api
+      - analytics
+      - web_browser
+      
+  customer_service:
+    name: "客户服务技能组"
+    skills:
+      - chatbot
+      - email_marketing
+      - crm_integration
+      - data_processor
+      
+  data_analysis:
+    name: "数据分析技能组"
+    skills:
+      - data_processor
+      - analytics
+      - visualization
+      - file_operations
+      
+  technical:
+    name: "技术支持技能组"
+    skills:
+      - code_execution
+      - api_integration
+      - file_operations
+      - web_browser

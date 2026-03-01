@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register | PrecisionGrind</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06b6d4",
+                        "primary-dark": "#0891b2",
+                        "accent": "#22d3ee",
+                        "background-dark": "#0f172a",
+                        "surface-dark": "#1e293b",
+                        "deep-navy": "#020617"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f8fafc; }
+        .glass-panel { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-deep-navy text-slate-100 font-['Space_Grotesk'] min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+                    </div>
+                    <span class="text-2xl font-bold text-white">STD<span class="text-primary font-light">GRIND</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="product-catalog.html">PRODUCTS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="about.html">ABOUT</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="news.html">NEWS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="contact.html">CONTACT</a>
+                </div>
+                <a href="contact.html" class="bg-primary text-deep-navy px-5 py-2 rounded font-bold hover:bg-accent transition-all text-sm">
+                    Inquiry Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center py-16 px-4">
+        <div class="w-full max-w-md">
+            <!-- Tab Buttons -->
+            <div class="flex mb-8 glass-panel rounded-lg p-1">
+                <button id="login-tab" class="flex-1 py-3 rounded-md font-medium text-sm transition-all bg-primary text-deep-navy" onclick="showLogin()">
+                    Sign In
+                </button>
+                <button id="register-tab" class="flex-1 py-3 rounded-md font-medium text-sm transition-all text-slate-300" onclick="showRegister()">
+                    Register
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form-container" class="glass-panel rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">person</span>
+                    <h1 class="text-2xl font-bold text-white mb-2">Welcome Back</h1>
+                    <p class="text-slate-400 text-sm">Sign in to access your account and orders</p>
+                </div>
+
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Email Address</label>
+                        <div class="relative">
+                            <input type="email" placeholder="your@email.com" 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 pl-12 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Password</label>
+                        <div class="relative">
+                            <input type="password" placeholder="••••••••" 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 pl-12 pr-12 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">lock</span>
+                            <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-white/20 bg-deep-navy text-primary focus:ring-primary">
+                            <span class="text-sm text-slate-400">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-primary hover:text-accent transition-colors">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-deep-navy py-3 rounded-lg font-bold hover:bg-accent transition-all flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">login</span>
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="mt-8 pt-6 border-t border-white/5">
+                    <p class="text-center text-slate-400 text-sm mb-4">Or continue with</p>
+                    <div class="flex gap-4">
+                        <button class="flex-1 flex items-center justify-center gap-2 py-3 bg-surface-dark rounded-lg text-slate-300 hover:text-primary hover:bg-surface-dark/80 transition-all">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Google
+                        </button>
+                        <button class="flex-1 flex items-center justify-center gap-2 py-3 bg-surface-dark rounded-lg text-slate-300 hover:text-primary hover:bg-surface-dark/80 transition-all">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form-container" class="glass-panel rounded-2xl p-8 hidden">
+                <div class="text-center mb-8">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">person_add</span>
+                    <h1 class="text-2xl font-bold text-white mb-2">Create Account</h1>
+                    <p class="text-slate-400 text-sm">Register to access exclusive B2B pricing and features</p>
+                </div>
+
+                <form id="register-form" class="space-y-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">First Name</label>
+                            <input type="text" placeholder="John" 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Last Name</label>
+                            <input type="text" placeholder="Smith" 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Company Name</label>
+                        <div class="relative">
+                            <input type="text" placeholder="Your Company Ltd." 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 pl-12 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">business</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Business Email</label>
+                        <div class="relative">
+                            <input type="email" placeholder="your@company.com" 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 pl-12 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Phone Number</label>
+                        <div class="relative">
+                            <input type="tel" placeholder="+1 (555) 000-0000" 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 pl-12 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">call</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Password</label>
+                        <div class="relative">
+                            <input type="password" placeholder="Min. 8 characters" 
+                                   class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 pl-12 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">lock</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="flex items-start gap-2 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-white/20 bg-deep-navy text-primary focus:ring-primary">
+                            <span class="text-sm text-slate-400">I agree to the <a href="#" class="text-primary hover:text-accent">Terms of Service</a> and <a href="#" class="text-primary hover:text-accent">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-deep-navy py-3 rounded-lg font-bold hover:bg-accent transition-all flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">person_add</span>
+                        Create Account
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-slate-400 text-sm">Already have an account? <a href="#" onclick="showLogin()" class="text-primary hover:text-accent font-medium">Sign In</a></p>
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="mt-8 glass-panel rounded-xl p-6">
+                <h3 class="text-white font-bold mb-4">Benefits of Registration</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-slate-300 text-sm">
+                        <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Access exclusive B2B pricing
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 text-sm">
+                        <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Track orders and shipments
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 text-sm">
+                        <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Save products to favorites
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 text-sm">
+                        <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Receive personalized recommendations
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy py-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs text-slate-600">© 2024 PrecisionGrind Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function showLogin() {
+            document.getElementById('login-form-container').classList.remove('hidden');
+            document.getElementById('register-form-container').classList.add('hidden');
+            document.getElementById('login-tab').classList.add('bg-primary', 'text-deep-navy');
+            document.getElementById('login-tab').classList.remove('text-slate-300');
+            document.getElementById('register-tab').classList.remove('bg-primary', 'text-deep-navy');
+            document.getElementById('register-tab').classList.add('text-slate-300');
+        }
+        
+        function showRegister() {
+            document.getElementById('login-form-container').classList.add('hidden');
+            document.getElementById('register-form-container').classList.remove('hidden');
+            document.getElementById('register-tab').classList.add('bg-primary', 'text-deep-navy');
+            document.getElementById('register-tab').classList.remove('text-slate-300');
+            document.getElementById('login-tab').classList.remove('bg-primary', 'text-deep-navy');
+            document.getElementById('login-tab').classList.add('text-slate-300');
+        }
+        
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            GrindingEquipmentB2B.showToast('Login successful! Redirecting...', 'success');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1500);
+        });
+        
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            GrindingEquipmentB2B.showToast('Account created successfully! Please sign in.', 'success');
+            setTimeout(() => {
+                showLogin();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+openclaw:
+  name: "研磨设备B2B独立站AI助手"
+  version: "1.0.0"
+  language: "zh-CN"
+  timezone: "Asia/Shanghai"
+  
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "/var/log/openclaw/openclaw.log"
+  
+storage:
+  type: "local"
+  path: "./data"
+  backup:
+    interval: 24
+    retention: 30
+    
+security:
+  api_key: "grinding-equipment-b2b-api-key-2024"
+  allowed_ips: ["127.0.0.1", "192.168.1.0/24", "10.0.0.0/8"]
+  rate_limit:
+    requests_per_minute: 100
+    burst: 20
+    
+website:
+  name: "晟通达精密设备"
+  url: "https://shengtongda.com"
+  admin_url: "https://admin.shengtongda.com"
+  api_endpoint: "/api"
+  language: "zh-CN"
+  timezone: "Asia/Shanghai"
+  currency: "CNY"
+  country: "China"
+  
+database:
+  products: "./data/products.json"
+  customers: "./data/customers.json"
+  orders: "./data/orders.json"
+  inquiries: "./data/inquiries.json"

@@ -1,0 +1,135 @@
+name: "产品运营团队"
+description: "负责产品管理、采集、优化和运营的智能代理团队"
+version: "1.0.0"
+enabled: true
+
+# 团队成员
+team_members:
+  - name: "产品采集代理"
+    role: "product_scraper"
+    description: "负责从供应商网站采集产品信息"
+    skills:
+      - web_browser
+      - data_processor
+      - file_operations
+      - product_scraper
+    config:
+      scrape_interval: 3600
+      max_products: 100
+      target_websites:
+        - "https://tencanmills.com"
+        - "https://other-supplier.com"
+  
+  - name: "产品优化代理"
+    role: "product_optimizer"
+    description: "负责优化产品信息和SEO"
+    skills:
+      - data_processor
+      - content_generator
+      - seo_optimizer
+    config:
+      auto_optimize: true
+      seo_check: true
+      content_enhance: true
+  
+  - name: "产品分析代理"
+    role: "product_analyzer"
+    description: "负责分析产品数据和市场趋势"
+    skills:
+      - data_processor
+      - analytics
+      - visualization
+    config:
+      report_generation: true
+      trend_analysis: true
+      competitor_analysis: false
+
+# 工作流程
+workflows:
+  - name: "产品采集流程"
+    description: "从供应商网站采集产品信息并导入系统"
+    steps:
+      - agent: "产品采集代理"
+        task: "scrape_products"
+        config:
+          websites: ["https://tencanmills.com"]
+          categories: ["planetary-mill", "roller-mill", "stirred-mill", "grinding-media"]
+      
+      - agent: "产品优化代理"
+        task: "optimize_products"
+        config:
+          seo_optimization: true
+          content_enhancement: true
+      
+      - agent: "产品分析代理"
+        task: "analyze_products"
+        config:
+          generate_report: true
+          save_to_file: true
+
+  - name: "产品更新流程"
+    description: "定期更新产品信息和SEO"
+    steps:
+      - agent: "产品采集代理"
+        task: "update_products"
+        config:
+          last_updated_days: 7
+      
+      - agent: "产品优化代理"
+        task: "refresh_seo"
+        config:
+          all_products: true
+          priority_products: []
+
+# 任务配置
+tasks:
+  - name: "daily_product_sync"
+    description: "每日产品同步"
+    workflow: "产品采集流程"
+    schedule: "0 9 * * *"  # 每天早上9点
+    enabled: true
+  
+  - name: "weekly_product_optimization"
+    description: "每周产品优化"
+    workflow: "产品更新流程"
+    schedule: "0 10 * * 1"  # 每周一早上10点
+    enabled: true
+  
+  - name: "monthly_product_analysis"
+    description: "每月产品分析"
+    workflow: "产品分析流程"
+    schedule: "0 11 1 * *"  # 每月1日早上11点
+    enabled: true
+
+# 集成配置
+integrations:
+  - name: "website_api"
+    description: "网站API集成"
+    type: "rest_api"
+    config:
+      base_url: "https://shengtongda.com/api"
+      timeout: 30
+      retry_count: 3
+  
+  - name: "data_storage"
+    description: "数据存储集成"
+    type: "local_file"
+    config:
+      products_file: "./data/products.json"
+      backup_enabled: true
+      backup_interval: 24  # 小时
+
+# 性能配置
+performance:
+  max_concurrent_tasks: 3
+  task_timeout: 3600
+  retry_attempts: 3
+  retry_delay: 60
+  
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "openclaw/logs/product_operations.log"
+  rotation: "daily"
+  retention: 7  # 天

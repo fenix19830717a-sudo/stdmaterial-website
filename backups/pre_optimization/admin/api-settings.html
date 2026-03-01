@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API配置管理 - 晟通达管理后台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#13c8ec',
+                        'primary-dark': '#0ea5c0',
+                        'primary-light': '#5dd9f5',
+                        dark: {
+                            900: '#101f22',
+                            800: '#162326',
+                            700: '#1c2d31',
+                            600: '#24373b',
+                            500: '#2c4145'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(22, 35, 38, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(19, 200, 236, 0.1); }
+        .glass-light { background: rgba(28, 45, 49, 0.6); backdrop-filter: blur(8px); border: 1px solid rgba(19, 200, 236, 0.08); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #162326; }
+        ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
+        .toggle-checkbox:checked { right: 0; border-color: #13c8ec; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #13c8ec; }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-dark-800 border-r border-dark-600 flex flex-col">
+            <div class="p-6 border-b border-dark-600">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                        <span class="material-icons text-dark-900">science</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-white">晟通达</h1>
+                        <p class="text-xs text-gray-500">管理面板</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 p-4 space-y-1">
+                <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">dashboard</span>
+                    <span>仪表盘</span>
+                </a>
+                <a href="products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">inventory_2</span>
+                    <span>产品管理</span>
+                </a>
+                <a href="inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">mail</span>
+                    <span>询盘管理</span>
+                </a>
+                <a href="orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">shopping_cart</span>
+                    <span>订单管理</span>
+                </a>
+                <a href="customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">people</span>
+                    <span>客户管理</span>
+                </a>
+                <a href="marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">campaign</span>
+                    <span>营销管理</span>
+                </a>
+                <a href="statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">analytics</span>
+                    <span>数据统计</span>
+                </a>
+                <a href="api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                    <span class="material-icons text-xl">api</span>
+                    <span>API配置</span>
+                </a>
+                <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">settings</span>
+                    <span>系统设置</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+            <header class="sticky top-0 z-40 glass border-b border-dark-600 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-semibold">API配置管理</h1>
+                        <p class="text-gray-400 text-sm mt-1">管理大模型API接入和AI服务配置</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-6">
+                <!-- API Status Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="glass rounded-xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">已配置API</p>
+                                <p class="text-2xl font-semibold mt-1" id="configuredApis">0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                                <span class="material-icons text-primary">api</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">活跃连接</p>
+                                <p class="text-2xl font-semibold mt-1 text-green-400" id="activeConnections">0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+                                <span class="material-icons text-green-400">check_circle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400 text-sm">本月调用次数</p>
+                                <p class="text-2xl font-semibold mt-1" id="monthlyCalls">0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                                <span class="material-icons text-blue-400">trending_up</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Providers -->
+                <div class="glass rounded-xl p-6 mb-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-semibold">API提供商配置</h2>
+                        <button onclick="testAllConnections()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                            <span class="material-icons text-lg">network_check</span>
+                            <span>测试所有连接</span>
+                        </button>
+                    </div>
+
+                    <div class="space-y-4" id="apiProvidersList">
+                        <!-- OpenAI -->
+                        <div class="glass-light rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
+                                        <span class="material-icons text-green-400">psychology</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">OpenAI</h3>
+                                        <p class="text-xs text-gray-400">GPT-4, GPT-3.5</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2 py-1 rounded-full text-xs bg-green-500/20 text-green-400" id="openai-status">未配置</span>
+                                    <button onclick="toggleProvider('openai')" class="p-2 rounded-lg hover:bg-dark-600 transition-all">
+                                        <span class="material-icons" id="openai-toggle">expand_more</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="openai-config" class="hidden space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">API Key</label>
+                                        <div class="relative">
+                                            <input type="password" id="openai-key" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none" placeholder="sk-...">
+                                            <button onclick="togglePassword('openai-key')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">
+                                                <span class="material-icons text-sm">visibility</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">默认模型</label>
+                                        <select id="openai-model" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                            <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                                            <option value="gpt-4">GPT-4</option>
+                                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">Temperature</label>
+                                        <input type="number" id="openai-temperature" step="0.1" min="0" max="2" value="0.7" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">Max Tokens</label>
+                                        <input type="number" id="openai-maxtokens" value="4000" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <button onclick="testConnection('openai')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                                        <span class="material-icons text-sm">network_check</span>
+                                        <span>测试连接</span>
+                                    </button>
+                                    <button onclick="saveProviderConfig('openai')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                                        <span class="material-icons text-sm">save</span>
+                                        <span>保存配置</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DeepSeek -->
+                        <div class="glass-light rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                                        <span class="material-icons text-blue-400">smart_toy</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">DeepSeek</h3>
+                                        <p class="text-xs text-gray-400">DeepSeek-V3, DeepSeek-Coder</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2 py-1 rounded-full text-xs bg-gray-500/20 text-gray-400" id="deepseek-status">未配置</span>
+                                    <button onclick="toggleProvider('deepseek')" class="p-2 rounded-lg hover:bg-dark-600 transition-all">
+                                        <span class="material-icons" id="deepseek-toggle">expand_more</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="deepseek-config" class="hidden space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">API Key</label>
+                                        <div class="relative">
+                                            <input type="password" id="deepseek-key" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none" placeholder="输入DeepSeek API Key">
+                                            <button onclick="togglePassword('deepseek-key')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">
+                                                <span class="material-icons text-sm">visibility</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">默认模型</label>
+                                        <select id="deepseek-model" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                            <option value="deepseek-chat">DeepSeek-V3</option>
+                                            <option value="deepseek-coder">DeepSeek-Coder</option>
+                                            <option value="deepseek-reasoner">DeepSeek-R1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <button onclick="testConnection('deepseek')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                                        <span class="material-icons text-sm">network_check</span>
+                                        <span>测试连接</span>
+                                    </button>
+                                    <button onclick="saveProviderConfig('deepseek')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                                        <span class="material-icons text-sm">save</span>
+                                        <span>保存配置</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Anthropic Claude -->
+                        <div class="glass-light rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                                        <span class="material-icons text-orange-400">chat</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Anthropic Claude</h3>
+                                        <p class="text-xs text-gray-400">Claude 3 Opus, Sonnet, Haiku</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2 py-1 rounded-full text-xs bg-gray-500/20 text-gray-400" id="anthropic-status">未配置</span>
+                                    <button onclick="toggleProvider('anthropic')" class="p-2 rounded-lg hover:bg-dark-600 transition-all">
+                                        <span class="material-icons" id="anthropic-toggle">expand_more</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="anthropic-config" class="hidden space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">API Key</label>
+                                        <div class="relative">
+                                            <input type="password" id="anthropic-key" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none" placeholder="sk-ant-...">
+                                            <button onclick="togglePassword('anthropic-key')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">
+                                                <span class="material-icons text-sm">visibility</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">默认模型</label>
+                                        <select id="anthropic-model" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                            <option value="claude-3-opus-20240229">Claude 3 Opus</option>
+                                            <option value="claude-3-sonnet-20240229">Claude 3 Sonnet</option>
+                                            <option value="claude-3-haiku-20240307">Claude 3 Haiku</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <button onclick="testConnection('anthropic')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                                        <span class="material-icons text-sm">network_check</span>
+                                        <span>测试连接</span>
+                                    </button>
+                                    <button onclick="saveProviderConfig('anthropic')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                                        <span class="material-icons text-sm">save</span>
+                                        <span>保存配置</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Silicon Flow -->
+                        <div class="glass-light rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                                        <span class="material-icons text-purple-400">bolt</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium">Silicon Flow</h3>
+                                        <p class="text-xs text-gray-400">硅基流动API聚合平台</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2 py-1 rounded-full text-xs bg-gray-500/20 text-gray-400" id="silicon-status">未配置</span>
+                                    <button onclick="toggleProvider('silicon')" class="p-2 rounded-lg hover:bg-dark-600 transition-all">
+                                        <span class="material-icons" id="silicon-toggle">expand_more</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="silicon-config" class="hidden space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">API Key</label>
+                                        <div class="relative">
+                                            <input type="password" id="silicon-key" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none" placeholder="sk-...">
+                                            <button onclick="togglePassword('silicon-key')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">
+                                                <span class="material-icons text-sm">visibility</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-gray-400 mb-1">默认模型</label>
+                                        <select id="silicon-model" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                            <option value="deepseek-ai/DeepSeek-V3">DeepSeek-V3</option>
+                                            <option value="deepseek-ai/DeepSeek-R1">DeepSeek-R1</option>
+                                            <option value="Qwen/Qwen2.5-72B-Instruct">Qwen2.5-72B</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <button onclick="testConnection('silicon')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                                        <span class="material-icons text-sm">network_check</span>
+                                        <span>测试连接</span>
+                                    </button>
+                                    <button onclick="saveProviderConfig('silicon')" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                                        <span class="material-icons text-sm">save</span>
+                                        <span>保存配置</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Default Model Settings -->
+                <div class="glass rounded-xl p-6 mb-6">
+                    <h2 class="text-lg font-semibold mb-4">默认模型设置</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">默认AI提供商</label>
+                            <select id="defaultProvider" onchange="updateDefaultProvider()" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="openai">OpenAI</option>
+                                <option value="deepseek">DeepSeek</option>
+                                <option value="anthropic">Anthropic Claude</option>
+                                <option value="silicon">Silicon Flow</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">默认模型</label>
+                            <select id="defaultModel" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="enableStreaming" class="rounded bg-dark-700 border-dark-600 text-primary focus:ring-primary" checked>
+                                <span class="text-sm text-gray-400">启用流式响应</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="enableCache" class="rounded bg-dark-700 border-dark-600 text-primary focus:ring-primary" checked>
+                                <span class="text-sm text-gray-400">启用响应缓存</span>
+                            </label>
+                        </div>
+                        <button onclick="saveDefaultSettings()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                            <span class="material-icons text-sm">save</span>
+                            <span>保存设置</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Usage Statistics -->
+                <div class="glass rounded-xl p-6">
+                    <h2 class="text-lg font-semibold mb-4">使用统计</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-dark-700">
+                                <tr>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">提供商</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">本月调用</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">Token使用</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">成功率</th>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">平均响应</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usageStatsBody" class="divide-y divide-dark-600">
+                                <tr>
+                                    <td class="px-4 py-3 text-gray-400" colspan="5">暂无数据</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 glass rounded-lg px-6 py-3 hidden transform transition-all duration-300 translate-y-10 opacity-0">
+        <div class="flex items-center gap-2">
+            <span class="material-icons" id="toastIcon">check_circle</span>
+            <span id="toastMessage">操作成功</span>
+        </div>
+    </div>
+
+    <script src="../assets/js/api-config.js"></script>
+    <script>
+        // Provider configuration templates
+        const providerModels = {
+            openai: [
+                { value: 'gpt-4-turbo', label: 'GPT-4 Turbo' },
+                { value: 'gpt-4', label: 'GPT-4' },
+                { value: 'gpt-3.5-turbo', label: 'GPT-3.5 Turbo' }
+            ],
+            deepseek: [
+                { value: 'deepseek-chat', label: 'DeepSeek-V3' },
+                { value: 'deepseek-coder', label: 'DeepSeek-Coder' },
+                { value: 'deepseek-reasoner', label: 'DeepSeek-R1' }
+            ],
+            anthropic: [
+                { value: 'claude-3-opus-20240229', label: 'Claude 3 Opus' },
+                { value: 'claude-3-sonnet-20240229', label: 'Claude 3 Sonnet' },
+                { value: 'claude-3-haiku-20240307', label: 'Claude 3 Haiku' }
+            ],
+            silicon: [
+                { value: 'deepseek-ai/DeepSeek-V3', label: 'DeepSeek-V3' },
+                { value: 'deepseek-ai/DeepSeek-R1', label: 'DeepSeek-R1' },
+                { value: 'Qwen/Qwen2.5-72B-Instruct', label: 'Qwen2.5-72B' }
+            ]
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadApiConfigs();
+            updateStats();
+        });
+
+        function toggleProvider(provider) {
+            const config = document.getElementById(`${provider}-config`);
+            const toggle = document.getElementById(`${provider}-toggle`);
+            
+            if (config.classList.contains('hidden')) {
+                config.classList.remove('hidden');
+                toggle.textContent = 'expand_less';
+            } else {
+                config.classList.add('hidden');
+                toggle.textContent = 'expand_more';
+            }
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        function updateDefaultProvider() {
+            const provider = document.getElementById('defaultProvider').value;
+            const modelSelect = document.getElementById('defaultModel');
+            
+            modelSelect.innerHTML = providerModels[provider].map(m => 
+                `<option value="${m.value}">${m.label}</option>`
+            ).join('');
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastIcon = document.getElementById('toastIcon');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toastIcon.textContent = type === 'success' ? 'check_circle' : 'error';
+            toastIcon.className = `material-icons ${type === 'success' ? 'text-green-400' : 'text-red-400'}`;
+            
+            toast.classList.remove('hidden', 'translate-y-10', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-10', 'opacity-0');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 3000);
+        }
+
+        async function testConnection(provider) {
+            showToast(`正在测试 ${provider} 连接...`, 'info');
+            
+            // Simulate API test
+            setTimeout(() => {
+                const success = Math.random() > 0.3;
+                if (success) {
+                    document.getElementById(`${provider}-status`).textContent = '已连接';
+                    document.getElementById(`${provider}-status`).className = 'px-2 py-1 rounded-full text-xs bg-green-500/20 text-green-400';
+                    showToast(`${provider} 连接成功`);
+                } else {
+                    showToast(`${provider} 连接失败，请检查API Key`, 'error');
+                }
+            }, 1500);
+        }
+
+        async function testAllConnections() {
+            const providers = ['openai', 'deepseek', 'anthropic', 'silicon'];
+            showToast('正在测试所有连接...', 'info');
+            
+            for (const provider of providers) {
+                await testConnection(provider);
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+        }
+
+        function saveProviderConfig(provider) {
+            const config = {
+                apiKey: document.getElementById(`${provider}-key`).value,
+                model: document.getElementById(`${provider}-model`).value,
+                temperature: parseFloat(document.getElementById(`${provider}-temperature`)?.value || 0.7),
+                maxTokens: parseInt(document.getElementById(`${provider}-maxtokens`)?.value || 4000)
+            };
+            
+            if (!config.apiKey) {
+                showToast('请输入API Key', 'error');
+                return;
+            }
+            
+            // Save to localStorage (encrypted in production)
+            const configs = JSON.parse(localStorage.getItem('llm_configs') || '{}');
+            configs[provider] = config;
+            localStorage.setItem('llm_configs', JSON.stringify(configs));
+            
+            document.getElementById(`${provider}-status`).textContent = '已配置';
+            document.getElementById(`${provider}-status`).className = 'px-2 py-1 rounded-full text-xs bg-green-500/20 text-green-400';
+            
+            showToast(`${provider} 配置已保存`);
+            updateStats();
+        }
+
+        function saveDefaultSettings() {
+            const settings = {
+                defaultProvider: document.getElementById('defaultProvider').value,
+                defaultModel: document.getElementById('defaultModel').value,
+                enableStreaming: document.getElementById('enableStreaming').checked,
+                enableCache: document.getElementById('enableCache').checked
+            };
+            
+            localStorage.setItem('llm_default_settings', JSON.stringify(settings));
+            showToast('默认设置已保存');
+        }
+
+        function loadApiConfigs() {
+            const configs = JSON.parse(localStorage.getItem('llm_configs') || '{}');
+            const settings = JSON.parse(localStorage.getItem('llm_default_settings') || '{}');
+            
+            // Load provider configs
+            Object.keys(configs).forEach(provider => {
+                const config = configs[provider];
+                const keyInput = document.getElementById(`${provider}-key`);
+                const modelSelect = document.getElementById(`${provider}-model`);
+                const tempInput = document.getElementById(`${provider}-temperature`);
+                const maxTokensInput = document.getElementById(`${provider}-maxtokens`);
+                
+                if (keyInput) keyInput.value = config.apiKey || '';
+                if (modelSelect) modelSelect.value = config.model || '';
+                if (tempInput) tempInput.value = config.temperature || 0.7;
+                if (maxTokensInput) maxTokensInput.value = config.maxTokens || 4000;
+                
+                if (config.apiKey) {
+                    document.getElementById(`${provider}-status`).textContent = '已配置';
+                    document.getElementById(`${provider}-status`).className = 'px-2 py-1 rounded-full text-xs bg-green-500/20 text-green-400';
+                }
+            });
+            
+            // Load default settings
+            if (settings.defaultProvider) {
+                document.getElementById('defaultProvider').value = settings.defaultProvider;
+                updateDefaultProvider();
+            }
+            if (settings.defaultModel) {
+                document.getElementById('defaultModel').value = settings.defaultModel;
+            }
+            if (settings.enableStreaming !== undefined) {
+                document.getElementById('enableStreaming').checked = settings.enableStreaming;
+            }
+            if (settings.enableCache !== undefined) {
+                document.getElementById('enableCache').checked = settings.enableCache;
+            }
+        }
+
+        function updateStats() {
+            const configs = JSON.parse(localStorage.getItem('llm_configs') || '{}');
+            const configuredCount = Object.keys(configs).filter(k => configs[k].apiKey).length;
+            
+            document.getElementById('configuredApis').textContent = configuredCount;
+            document.getElementById('activeConnections').textContent = configuredCount;
+            
+            // Simulate monthly calls
+            const monthlyCalls = Math.floor(Math.random() * 5000) + 1000;
+            document.getElementById('monthlyCalls').textContent = monthlyCalls.toLocaleString();
+        }
+    </script>
+</body>
+</html>
