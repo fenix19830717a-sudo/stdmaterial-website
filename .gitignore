@@ -1,0 +1,47 @@
+# 忽略图片文件
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.webp
+*.ico
+products-images/
+assets/images/
+
+# 忽略数据库文件
+*.db
+*.sqlite
+*.sqlite3
+data/*.json
+
+# 忽略下载的备份文件
+downloads/
+*.tar.gz
+*.zip
+*.tar
+
+# 忽略日志文件
+*.log
+logs/
+log/
+
+# 忽略 Node 模块
+node_modules/
+npm-debug.log*
+
+# 忽略环境配置
+.env
+.env.local
+
+# 忽略临时文件
+*.tmp
+.DS_Store
+
+# 忽略编辑器配置
+.vscode/
+.idea/
+*.swp
+
+# 忽略测试报告
+test_report.md
