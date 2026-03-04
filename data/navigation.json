@@ -1,0 +1,80 @@
+{
+  "navigation": {
+    "engineer": [
+      {
+        "id": "1",
+        "title": "PRODUCTS",
+        "url": "product-catalog.html",
+        "visible": true
+      },
+      {
+        "id": "2",
+        "title": "ABOUT",
+        "url": "about.html",
+        "visible": true
+      },
+      {
+        "id": "3",
+        "title": "设备模拟器",
+        "url": "simulator.html",
+        "visible": true
+      },
+      {
+        "id": "4",
+        "title": "选型指南",
+        "url": "selection/index.html",
+        "visible": true
+      },
+      {
+        "id": "5",
+        "title": "NEWS",
+        "url": "news.html",
+        "visible": true
+      },
+      {
+        "id": "6",
+        "title": "CONTACT",
+        "url": "contact.html",
+        "visible": true
+      }
+    ],
+    "purchaser": [
+      {
+        "id": "1",
+        "title": "PRODUCTS",
+        "url": "product-catalog.html",
+        "visible": true
+      },
+      {
+        "id": "2",
+        "title": "ABOUT",
+        "url": "about.html",
+        "visible": true
+      },
+      {
+        "id": "3",
+        "title": "成功案例",
+        "url": "case-studies.html",
+        "visible": true
+      },
+      {
+        "id": "4",
+        "title": "订单跟踪",
+        "url": "order-tracking.html",
+        "visible": true
+      },
+      {
+        "id": "5",
+        "title": "NEWS",
+        "url": "news.html",
+        "visible": true
+      },
+      {
+        "id": "6",
+        "title": "CONTACT",
+        "url": "contact.html",
+        "visible": true
+      }
+    ]
+  }
+}

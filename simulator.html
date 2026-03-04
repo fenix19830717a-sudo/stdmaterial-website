@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grinding Process Simulator | Precision Grinding Solutions</title>
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Interactive grinding process simulator for planetary ball mills. Configure material types, set target fineness, and simulate the grinding process with real-time visualization." />
+    <meta name="keywords" content="grinding simulator, planetary ball mill simulation, material processing, nano-material grinding" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Hunan Shengtongda Materials Technology Co., Ltd." />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06b6d4",
+                        "primary-dark": "#0891b2",
+                        "accent": "#22d3ee",
+                        "background-dark": "#0f172a",
+                        "surface-dark": "#1e293b",
+                        "deep-navy": "#020617",
+                        "secondary": "#f97316",
+                        "success": "#22c55e",
+                        "purple": "#a855f7"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    backgroundImage: {
+                        'cyber-grid': "radial-gradient(circle, rgba(6,182,212,0.1) 1px, transparent 1px)",
+                        'blueprint': "linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-panel:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+        .blueprint-bg {
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+        .tech-border {
+            position: relative;
+        }
+        .tech-border::before, .tech-border::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #06b6d4;
+            transition: all 0.3s ease;
+        }
+        .tech-border::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+        .tech-border::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+        .tech-border:hover::before, .tech-border:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+        .material-card {
+            background: linear-gradient(145deg, rgba(30,41,59,0.7) 0%, rgba(15,23,42,0.9) 100%);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        /* Toggle switch styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #06b6d4;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #06b6d4;
+        }
+        /* Slider styles */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: #1e293b;
+            border-radius: 5px;
+            background-image: linear-gradient(#06b6d4, #06b6d4);
+            background-repeat: no-repeat;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #06b6d4;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #06b6d4;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+        /* Canvas styles */
+        #grinding-canvas {
+            background: radial-gradient(circle, #0f172a 0%, #020617 100%);
+            border-radius: 0.5rem;
+        }
+        /* Progress bar styles */
+        .progress-bar {
+            background: linear-gradient(90deg, #06b6d4 var(--progress), #1e293b var(--progress));
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body class="bg-deep-navy text-slate-100 font-display selection:bg-primary selection:text-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <!-- Top Bar -->
+        <div class="bg-deep-navy/80 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+                <div class="flex justify-between items-center text-xs">
+                    <div class="flex items-center gap-4">
+                        <div class="language-switch">
+                            <button data-lang="en" class="active">EN</button>
+                            <button data-lang="zh">中文</button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">payments</span>
+                            <select id="currency-select" class="bg-transparent text-slate-300 border-none text-xs focus:outline-none cursor-pointer">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="CNY">CNY (¥)</option>
+                                <option value="GBP">GBP (£)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">person</span>
+                            <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                                <input type="checkbox" id="role-switch" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                <label for="role-switch" class="toggle-label block overflow-hidden h-6 rounded-full bg-primary/30 cursor-pointer"></label>
+                            </div>
+                            <span id="role-label" class="text-xs text-slate-300">工程师模式</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="login.html" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                            <span>Login / Register</span>
+                        </a>
+                        <button id="chat-widget-btn" class="flex items-center gap-1 text-primary hover:text-accent transition-colors">
+                            <span class="material-symbols-outlined text-sm">chat</span>
+                            <span>Live Chat</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Navigation -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
+                            <span class="material-symbols-outlined text-primary relative z-10">precision_manufacturing</span>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-white">HUNAN SHENGTONGDA<span class="text-primary text-glow font-light ml-1">MATERIALS</span></span>
+                    </a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-1 max-w-md mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="global-search" placeholder="Search products, SKU, keywords..." 
+                               class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 pl-10 pr-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6" id="engineer-nav">
+                    <!-- 导航项将通过JavaScript动态生成 -->
+                </div>
+                <div class="hidden md:flex items-center space-x-6" id="purchaser-nav">
+                    <!-- 导航项将通过JavaScript动态生成 -->
+                </div>
+                <div class="flex items-center gap-2 md:gap-3">
+                    <button class="hidden lg:flex items-center gap-2 px-3 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
+                        <span class="material-symbols-outlined text-sm">download</span> Catalog
+                    </button>
+                    <a href="contact.html" class="bg-primary text-deep-navy px-4 py-2 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide text-sm">
+                        Inquiry Now
+                    </a>
+                    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden md:hidden pb-4">
+                <div class="mb-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." 
+                               class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 pl-10 pr-4 text-sm">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-3" id="mobile-engineer-nav">
+                    <!-- 导航项将通过JavaScript动态生成 -->
+                </div>
+                <div class="flex flex-col space-y-3 hidden" id="mobile-purchaser-nav">
+                    <!-- 导航项将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Simulator Section -->
+    <section class="py-12 md:py-20 bg-deep-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-2 text-sm text-slate-400 mb-8">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <span class="material-symbols-outlined text-xs">chevron_right</span>
+                <a href="products.html" class="hover:text-primary transition-colors">Products</a>
+                <span class="material-symbols-outlined text-xs">chevron_right</span>
+                <span class="text-primary">Grinding Simulator</span>
+            </div>
+
+            <!-- Simulator Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-200 to-white text-glow">Grinding Process Simulator</span>
+                </h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Configure your grinding parameters and simulate the process to optimize your material processing workflow
+                </p>
+            </div>
+
+            <!-- Simulator Container -->
+            <div class="glass-panel rounded-2xl p-6 md:p-8">
+                <!-- Step 1: Material Type Selection -->
+                <div id="step-1" class="simulator-step">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2 class="text-2xl font-bold text-white">
+                            <span class="text-primary">步骤 1/3</span> 选择您的物料类型
+                        </h2>
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-primary"></span>
+                            <span class="w-3 h-3 rounded-full bg-slate-700"></span>
+                            <span class="w-3 h-3 rounded-full bg-slate-700"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="material-card rounded-xl p-4 border border-white/10 cursor-pointer hover:border-primary transition-all" data-material="矿石" data-feature="硬度高">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                                    <span class="material-symbols-outlined text-2xl text-primary">circle</span>
+                                </div>
+                                <h3 class="font-bold text-white mb-1">矿石</h3>
+                                <p class="text-sm text-slate-400">硬度高</p>
+                            </div>
+                        </div>
+                        <div class="material-card rounded-xl p-4 border border-white/10 cursor-pointer hover:border-primary transition-all" data-material="陶瓷" data-feature="脆性">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                                    <span class="material-symbols-outlined text-2xl text-primary">radio_button_unchecked</span>
+                                </div>
+                                <h3 class="font-bold text-white mb-1">陶瓷</h3>
+                                <p class="text-sm text-slate-400">脆性</p>
+                            </div>
+                        </div>
+                        <div class="material-card rounded-xl p-4 border border-white/10 cursor-pointer hover:border-primary transition-all" data-material="金属粉末" data-feature="延展性">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                                    <span class="material-symbols-outlined text-2xl text-primary">settings</span>
+                                </div>
+                                <h3 class="font-bold text-white mb-1">金属粉末</h3>
+                                <p class="text-sm text-slate-400">延展性</p>
+                            </div>
+                        </div>
+                        <div class="material-card rounded-xl p-4 border border-white/10 cursor-pointer hover:border-primary transition-all" data-material="化工" data-feature="腐蚀性">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                                    <span class="material-symbols-outlined text-2xl text-primary">science</span>
+                                </div>
+                                <h3 class="font-bold text-white mb-1">化工</h3>
+                                <p class="text-sm text-slate-400">腐蚀性</p>
+                            </div>
+                        </div>
+                        <div class="material-card rounded-xl p-4 border border-white/10 cursor-pointer hover:border-primary transition-all" data-material="医药" data-feature="洁净度">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                                    <span class="material-symbols-outlined text-2xl text-primary">medical_services</span>
+                                </div>
+                                <h3 class="font-bold text-white mb-1">医药</h3>
+                                <p class="text-sm text-slate-400">洁净度</p>
+                            </div>
+                        </div>
+                        <div class="material-card rounded-xl p-4 border border-white/10 cursor-pointer hover:border-primary transition-all" data-material="电池材料" data-feature="纳米级">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                                    <span class="material-symbols-outlined text-2xl text-primary">battery_full</span>
+                                </div>
+                                <h3 class="font-bold text-white mb-1">电池材料</h3>
+                                <p class="text-sm text-slate-400">纳米级</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel rounded-xl p-4 mb-8">
+                        <h3 class="font-bold text-white mb-2">其他物料（输入）</h3>
+                        <input type="text" id="custom-material" placeholder="请输入物料类型" class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 px-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                    </div>
+                    
+                    <div class="glass-panel rounded-xl p-4 mb-8">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="material-symbols-outlined text-primary">lightbulb</span>
+                            <h3 class="font-bold text-white">智能建议</h3>
+                        </div>
+                        <div id="material-recommendation" class="text-slate-300">
+                            <p>已选择: <span id="selected-material" class="text-primary font-bold">锂电正极材料</span></p>
+                            <p>推荐研磨罐: <span class="text-primary">氧化锆（防污染）</span></p>
+                            <p>推荐磨球: <span class="text-primary">氧化锆球 Ø5mm</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <button id="step-1-next" class="bg-primary text-deep-navy px-6 py-3 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center gap-2">
+                            下一步 <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Target Fineness Setting -->
+                <div id="step-2" class="simulator-step hidden">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2 class="text-2xl font-bold text-white">
+                            <span class="text-primary">步骤 2/3</span> 设定目标细度
+                        </h2>
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-primary"></span>
+                            <span class="w-3 h-3 rounded-full bg-primary"></span>
+                            <span class="w-3 h-3 rounded-full bg-slate-700"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <p class="text-slate-400 mb-2">初始粒度: <span class="text-white">500μm（典型值）</span></p>
+                        <p class="text-slate-400 mb-4">目标细度:</p>
+                        
+                        <div class="relative mb-6">
+                            <input type="range" id="fineness-slider" min="0.01" max="1000" step="0.01" value="0.5" class="w-full">
+                            <div class="flex justify-between text-xs text-slate-500 mt-2">
+                                <span>100nm</span>
+                                <span>10μm</span>
+                                <span>100μm</span>
+                                <span>1mm</span>
+                            </div>
+                            <div class="flex justify-between text-xs font-bold text-white mt-1">
+                                <span>纳米级</span>
+                                <span>超细粉碎</span>
+                                <span>细粉碎</span>
+                                <span>粗粉碎</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <button class="preset-btn bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded text-sm hover:bg-primary/20 transition-all" data-value="0.5">锂电正极材料: 0.5μm</button>
+                            <button class="preset-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="10">陶瓷釉料: 10μm</button>
+                            <button class="preset-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="75">矿石分析: 75μm</button>
+                            <button class="preset-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="0.05">纳米材料: 50nm</button>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel rounded-xl p-4 mb-8">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="material-symbols-outlined text-primary">info</span>
+                            <h3 class="font-bold text-white">当前选择</h3>
+                        </div>
+                        <p>当前选择: <span id="current-fineness" class="text-primary font-bold">0.5μm（亚微米级）</span></p>
+                        <p>预计研磨时间: <span class="text-primary">45分钟</span></p>
+                        <p>推荐机型: <span class="text-primary">STD-Nano 800</span></p>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button id="step-2-back" class="glass-panel text-white px-6 py-3 rounded font-bold hover:bg-white/10 transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined">arrow_back</span> 上一步
+                        </button>
+                        <button id="step-2-next" class="bg-primary text-deep-navy px-6 py-3 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center gap-2">
+                            开始模拟 <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Production and Working Conditions -->
+                <div id="step-3" class="simulator-step hidden">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2 class="text-2xl font-bold text-white">
+                            <span class="text-primary">步骤 3/3</span> 产量与工况设置
+                        </h2>
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-primary"></span>
+                            <span class="w-3 h-3 rounded-full bg-primary"></span>
+                            <span class="w-3 h-3 rounded-full bg-primary"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="font-bold text-white mb-4">处理量/批次</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="capacity-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="lab">实验室 <1kg</button>
+                                <button class="capacity-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="pilot">中试 1-10kg</button>
+                                <button class="capacity-btn bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded text-sm hover:bg-primary/20 transition-all" data-value="production">生产 10-100kg</button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-white mb-4">运行模式</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="mode-btn bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded text-sm hover:bg-primary/20 transition-all" data-value="continuous">连续运行（标准）</button>
+                                <button class="mode-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="intermittent">间歇运行（热敏物料）</button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-white mb-4">冷却需求</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="cooling-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="air">标准风冷</button>
+                                <button class="cooling-btn bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded text-sm hover:bg-primary/20 transition-all" data-value="water">水冷循环（推荐）</button>
+                                <button class="cooling-btn bg-surface-dark border border-white/10 text-slate-300 px-4 py-2 rounded text-sm hover:bg-surface-dark/80 transition-all" data-value="none">无需冷却</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel rounded-xl p-4 mb-8">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="material-symbols-outlined text-primary">lightbulb</span>
+                            <h3 class="font-bold text-white">智能建议</h3>
+                        </div>
+                        <p class="text-slate-300">基于锂电正极材料特性:</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 pl-4">
+                            <li>建议采用水冷循环防止热损伤</li>
+                            <li>建议间歇运行模式，每15分钟暂停5分钟</li>
+                            <li>预计批次产量: 15kg（单罐3.75kg × 4罐）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button id="step-3-back" class="glass-panel text-white px-6 py-3 rounded font-bold hover:bg-white/10 transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined">arrow_back</span> 上一步
+                        </button>
+                        <button id="start-simulation" class="bg-primary text-deep-navy px-6 py-3 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center gap-2">
+                            启动模拟器 <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Simulation Interface -->
+                <div id="simulation-interface" class="hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <button id="reconfigure-btn" class="flex items-center gap-2 text-primary hover:text-accent transition-colors">
+                            <span class="material-symbols-outlined">arrow_back</span> 重新配置
+                        </button>
+                        <h2 class="text-2xl font-bold text-white">STD研磨过程模拟器</h2>
+                        <div class="flex items-center gap-3">
+                            <button class="flex items-center gap-1 text-slate-300 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">save</span> 保存
+                            </button>
+                            <button class="flex items-center gap-1 text-slate-300 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">description</span> 生成报告
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                        <!-- Grinding Chamber Visualization -->
+                        <div class="lg:col-span-1">
+                            <div class="glass-panel rounded-xl p-4 h-full">
+                                <h3 class="font-bold text-white mb-4">研磨舱可视化</h3>
+                                <div class="relative aspect-square">
+                                    <canvas id="grinding-canvas" class="w-full h-full rounded-lg"></canvas>
+                                    <div class="absolute bottom-4 left-4 flex gap-2">
+                                        <button class="glass-panel text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all">旋转</button>
+                                        <button class="glass-panel text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all">缩放</button>
+                                        <button class="glass-panel text-white px-3 py-1 rounded text-xs hover:bg-white/10 transition-all">剖面</button>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <p class="text-sm text-slate-400">🔵 研磨球（白色）</p>
+                                    <p class="text-sm text-slate-400">🟡 物料颗粒（黄色）</p>
+                                    <p class="text-sm text-slate-400">🔴 能量场（碰撞闪烁）</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Real-time Monitoring Panel -->
+                        <div class="lg:col-span-2">
+                            <div class="glass-panel rounded-xl p-4 h-full">
+                                <h3 class="font-bold text-white mb-4">实时监控面板</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                    <div>
+                                        <p class="text-slate-400 text-sm mb-1">转速: <span class="text-white">800 RPM</span></p>
+                                        <div class="h-2 bg-surface-dark rounded-full mb-4">
+                                            <div class="h-2 bg-primary rounded-full" style="width: 80%"></div>
+                                        </div>
+                                        <p class="text-slate-400 text-sm">目标: <span class="text-white">1000 RPM</span></p>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="text-slate-400 text-sm mb-1">温度: <span class="text-white">42°C</span> <span class="text-secondary">↑</span></p>
+                                        <div class="h-2 bg-surface-dark rounded-full mb-4">
+                                            <div class="h-2 bg-secondary rounded-full" style="width: 60%"></div>
+                                        </div>
+                                        <p class="text-slate-400 text-sm">正常范围: <span class="text-white">25-60°C</span></p>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="text-slate-400 text-sm mb-1">细度进度: <span class="text-white">0.8μm</span></p>
+                                        <div class="h-2 bg-surface-dark rounded-full mb-4">
+                                            <div class="h-2 bg-primary rounded-full" style="width: 62%"></div>
+                                        </div>
+                                        <p class="text-slate-400 text-sm">目标: <span class="text-white">0.5μm</span></p>
+                                    </div>
+                                    
+                                    <div>
+                                        <p class="text-slate-400 text-sm mb-1">累计能耗: <span class="text-white">8.5 kWh</span></p>
+                                        <p class="text-slate-400 text-sm">预估成本: <span class="text-white">$12/批次</span></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="glass-panel rounded-lg p-3 mb-4">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="material-symbols-outlined text-secondary">warning</span>
+                                        <h4 class="font-bold text-white">智能提示</h4>
+                                    </div>
+                                    <p class="text-slate-300 text-sm">温升正常，建议保持转速</p>
+                                    <p class="text-slate-300 text-sm">预计28分钟后达标</p>
+                                </div>
+                                
+                                <div class="flex gap-2">
+                                    <button class="glass-panel text-white px-4 py-2 rounded text-sm hover:bg-white/10 transition-all">加速模拟</button>
+                                    <button class="glass-panel text-white px-4 py-2 rounded text-sm hover:bg-white/10 transition-all">暂停</button>
+                                    <button class="glass-panel text-white px-4 py-2 rounded text-sm hover:bg-white/10 transition-all">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Control -->
+                    <div class="glass-panel rounded-xl p-4 mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-white">时间轴控制</h3>
+                            <div class="flex gap-2">
+                                <button class="glass-panel text-white p-2 rounded hover:bg-white/10 transition-all">
+                                    <span class="material-symbols-outlined">skip_previous</span>
+                                </button>
+                                <button class="glass-panel text-white p-2 rounded hover:bg-white/10 transition-all">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                </button>
+                                <button class="glass-panel text-white p-2 rounded hover:bg-white/10 transition-all">
+                                    <span class="material-symbols-outlined">skip_next</span>
+                                </button>
+                                <button class="glass-panel text-white p-2 rounded hover:bg-white/10 transition-all">
+                                    <span class="material-symbols-outlined">flash_on</span> 2x
+                                </button>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="h-1 bg-surface-dark rounded-full"></div>
+                            <div class="h-1 bg-primary rounded-full absolute top-0 left-0" style="width: 50%"></div>
+                            <div class="w-4 h-4 bg-primary rounded-full absolute top-1/2 -translate-y-1/2" style="left: 50%"></div>
+                            <div class="flex justify-between text-xs text-slate-400 mt-2">
+                                <span>0min</span>
+                                <span>30min</span>
+                                <span>60min</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Real-time Graph -->
+                    <div class="glass-panel rounded-xl p-4">
+                        <h3 class="font-bold text-white mb-4">实时曲线图（细度/温度/能耗）</h3>
+                        <div class="h-64">
+                            <canvas id="simulation-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Complete -->
+                <div id="simulation-complete" class="hidden text-center py-12">
+                    <div class="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="material-symbols-outlined text-4xl text-success">check_circle</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">模拟完成 - 工艺方案验证通过</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto mb-8">
+                        您的研磨工艺参数已优化完成，以下是详细的模拟结果和建议
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="glass-panel rounded-xl p-4">
+                            <h3 class="font-bold text-white mb-2">最终细度</h3>
+                            <p class="text-3xl font-bold text-primary">0.48μm</p>
+                            <p class="text-slate-400 text-sm">目标: 0.5μm</p>
+                        </div>
+                        <div class="glass-panel rounded-xl p-4">
+                            <h3 class="font-bold text-white mb-2">总能耗</h3>
+                            <p class="text-3xl font-bold text-primary">12.8 kWh</p>
+                            <p class="text-slate-400 text-sm">成本: $15.36</p>
+                        </div>
+                        <div class="glass-panel rounded-xl p-4">
+                            <h3 class="font-bold text-white mb-2">总耗时</h3>
+                            <p class="text-3xl font-bold text-primary">42分钟</p>
+                            <p class="text-slate-400 text-sm">效率提升: 6.7%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel rounded-xl p-6 mb-8">
+                        <h3 class="font-bold text-white mb-4">工艺建议</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>采用水冷循环系统，保持温度在45°C以下</li>
+                            <li>使用氧化锆研磨罐和磨球，防止物料污染</li>
+                            <li>建议采用间歇运行模式，每15分钟暂停5分钟</li>
+                            <li>优化转速曲线：前10分钟800RPM，中间20分钟1000RPM，最后12分钟900RPM</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="bg-primary text-deep-navy px-6 py-3 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined">download</span> 下载工艺报告
+                        </button>
+                        <button class="glass-panel text-white px-6 py-3 rounded font-bold hover:bg-white/10 transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined">refresh</span> 重新模拟
+                        </button>
+                        <a href="contact.html" class="bg-secondary text-white px-6 py-3 rounded font-bold hover:bg-orange-600 hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined">contact_mail</span> 咨询方案
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-primary/20 border border-primary/50 rounded flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">HUNAN SHENGTONGDA</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Professional manufacturer of planetary ball mills and grinding equipment for laboratory and industrial applications.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">facebook</span>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">linkedin</span>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">youtube</span>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">mail</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
+                        <li><a href="simulator.html" class="hover:text-primary transition-colors">Grinding Simulator</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Product Categories</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">Planetary Ball Mills</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Grinding Jars</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Grinding Media</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Laboratory Equipment</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Accessories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                            <span>湖南省长沙市高新技术产业开发区</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">phone</span>
+                            <span>+86 17873228918</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">mail</span>
+                            <span>admin@stdmaterial.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm mb-4 md:mb-0">
+                    © 2026 Hunan Shengtongda Materials Technology Co., Ltd. All rights reserved.
+                </p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation toggle
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        }
+
+        // Step navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Step 1 navigation
+            document.getElementById('step-1-next').addEventListener('click', function() {
+                document.getElementById('step-1').classList.add('hidden');
+                document.getElementById('step-2').classList.remove('hidden');
+            });
+
+            // Step 2 navigation
+            document.getElementById('step-2-back').addEventListener('click', function() {
+                document.getElementById('step-2').classList.add('hidden');
+                document.getElementById('step-1').classList.remove('hidden');
+            });
+
+            document.getElementById('step-2-next').addEventListener('click', function() {
+                document.getElementById('step-2').classList.add('hidden');
+                document.getElementById('step-3').classList.remove('hidden');
+            });
+
+            // Step 3 navigation
+            document.getElementById('step-3-back').addEventListener('click', function() {
+                document.getElementById('step-3').classList.add('hidden');
+                document.getElementById('step-2').classList.remove('hidden');
+            });
+
+            document.getElementById('start-simulation').addEventListener('click', function() {
+                document.getElementById('step-3').classList.add('hidden');
+                document.getElementById('simulation-interface').classList.remove('hidden');
+                initSimulation();
+            });
+
+            // Reconfigure button
+            document.getElementById('reconfigure-btn').addEventListener('click', function() {
+                document.getElementById('simulation-interface').classList.add('hidden');
+                document.getElementById('step-1').classList.remove('hidden');
+            });
+
+            // Material selection
+            const materialCards = document.querySelectorAll('.material-card');
+            materialCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active state from all cards
+                    materialCards.forEach(c => c.classList.remove('border-primary', 'bg-primary/5'));
+                    // Add active state to clicked card
+                    this.classList.add('border-primary', 'bg-primary/5');
+                    // Update selected material
+                    const material = this.dataset.material;
+                    const feature = this.dataset.feature;
+                    document.getElementById('selected-material').textContent = material;
+                });
+            });
+
+            // Fineness slider
+            const finenessSlider = document.getElementById('fineness-slider');
+            const currentFineness = document.getElementById('current-fineness');
+            
+            finenessSlider.addEventListener('input', function() {
+                const value = parseFloat(this.value);
+                let unit = 'μm';
+                let classification = '';
+                
+                if (value < 0.1) {
+                    unit = 'nm';
+                    classification = '纳米级';
+                } else if (value < 10) {
+                    classification = '超细粉碎';
+                } else if (value < 100) {
+                    classification = '细粉碎';
+                } else {
+                    classification = '粗粉碎';
+                }
+                
+                const displayValue = value < 0.1 ? (value * 1000).toFixed(0) : value.toFixed(1);
+                currentFineness.innerHTML = `${displayValue}${unit}（${classification}）`;
+                
+                // Update slider background
+                const percent = ((value - 0.01) / (1000 - 0.01)) * 100;
+                this.style.backgroundSize = `${100 - percent}% 100%`;
+            });
+
+            // Preset buttons
+            const presetBtns = document.querySelectorAll('.preset-btn');
+            presetBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active state from all buttons
+                    presetBtns.forEach(b => {
+                        b.classList.remove('bg-primary/10', 'border-primary/30', 'text-primary');
+                        b.classList.add('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    });
+                    // Add active state to clicked button
+                    this.classList.remove('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    this.classList.add('bg-primary/10', 'border-primary/30', 'text-primary');
+                    // Set slider value
+                    const value = parseFloat(this.dataset.value);
+                    finenessSlider.value = value;
+                    // Trigger input event
+                    finenessSlider.dispatchEvent(new Event('input'));
+                });
+            });
+
+            // Capacity buttons
+            const capacityBtns = document.querySelectorAll('.capacity-btn');
+            capacityBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active state from all buttons
+                    capacityBtns.forEach(b => {
+                        b.classList.remove('bg-primary/10', 'border-primary/30', 'text-primary');
+                        b.classList.add('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    });
+                    // Add active state to clicked button
+                    this.classList.remove('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    this.classList.add('bg-primary/10', 'border-primary/30', 'text-primary');
+                });
+            });
+
+            // Mode buttons
+            const modeBtns = document.querySelectorAll('.mode-btn');
+            modeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active state from all buttons
+                    modeBtns.forEach(b => {
+                        b.classList.remove('bg-primary/10', 'border-primary/30', 'text-primary');
+                        b.classList.add('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    });
+                    // Add active state to clicked button
+                    this.classList.remove('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    this.classList.add('bg-primary/10', 'border-primary/30', 'text-primary');
+                });
+            });
+
+            // Cooling buttons
+            const coolingBtns = document.querySelectorAll('.cooling-btn');
+            coolingBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active state from all buttons
+                    coolingBtns.forEach(b => {
+                        b.classList.remove('bg-primary/10', 'border-primary/30', 'text-primary');
+                        b.classList.add('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    });
+                    // Add active state to clicked button
+                    this.classList.remove('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                    this.classList.add('bg-primary/10', 'border-primary/30', 'text-primary');
+                });
+            });
+        });
+
+        // Initialize simulation
+        function initSimulation() {
+            // Initialize 3D visualization
+            initGrindingVisualization();
+            // Initialize chart
+            initSimulationChart();
+        }
+
+        // Initialize grinding visualization
+        function initGrindingVisualization() {
+            const canvas = document.getElementById('grinding-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            // Simulation variables
+            let balls = [];
+            let particles = [];
+            let time = 0;
+            
+            // Initialize balls
+            for (let i = 0; i < 20; i++) {
+                balls.push({
+                    x: canvas.width / 2 + (Math.random() - 0.5) * 100,
+                    y: canvas.height / 2 + (Math.random() - 0.5) * 100,
+                    radius: 5 + Math.random() * 3,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    color: '#ffffff'
+                });
+            }
+            
+            // Initialize particles
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x: canvas.width / 2 + (Math.random() - 0.5) * 150,
+                    y: canvas.height / 2 + (Math.random() - 0.5) * 150,
+                    radius: 1 + Math.random() * 2,
+                    vx: (Math.random() - 0.5) * 1,
+                    vy: (Math.random() - 0.5) * 1,
+                    color: '#facc15'
+                });
+            }
+            
+            // Animation loop
+            function animate() {
+                // Clear canvas
+                ctx.fillStyle = 'radial-gradient(circle, #0f172a 0%, #020617 100%)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw grinding jar
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, 120, 0, Math.PI * 2);
+                ctx.strokeStyle = 'rgba(6, 182, 212, 0.3)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Update and draw balls
+                balls.forEach(ball => {
+                    // Update position
+                    ball.x += ball.vx;
+                    ball.y += ball.vy;
+                    
+                    // Collision with walls
+                    const distance = Math.sqrt(
+                        Math.pow(ball.x - canvas.width / 2, 2) + 
+                        Math.pow(ball.y - canvas.height / 2, 2)
+                    );
+                    
+                    if (distance > 120 - ball.radius) {
+                        // Calculate normal vector
+                        const nx = (ball.x - canvas.width / 2) / distance;
+                        const ny = (ball.y - canvas.height / 2) / distance;
+                        
+                        // Reflect velocity
+                        const dotProduct = ball.vx * nx + ball.vy * ny;
+                        ball.vx = ball.vx - 2 * dotProduct * nx;
+                        ball.vy = ball.vy - 2 * dotProduct * ny;
+                        
+                        // Move ball inside the jar
+                        ball.x = canvas.width / 2 + (120 - ball.radius) * nx;
+                        ball.y = canvas.height / 2 + (120 - ball.radius) * ny;
+                    }
+                    
+                    // Draw ball
+                    ctx.beginPath();
+                    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = ball.color;
+                    ctx.fill();
+                });
+                
+                // Update and draw particles
+                particles.forEach(particle => {
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Collision with walls
+                    const distance = Math.sqrt(
+                        Math.pow(particle.x - canvas.width / 2, 2) + 
+                        Math.pow(particle.y - canvas.height / 2, 2)
+                    );
+                    
+                    if (distance > 120 - particle.radius) {
+                        // Calculate normal vector
+                        const nx = (particle.x - canvas.width / 2) / distance;
+                        const ny = (particle.y - canvas.height / 2) / distance;
+                        
+                        // Reflect velocity
+                        const dotProduct = particle.vx * nx + particle.vy * ny;
+                        particle.vx = particle.vx - 2 * dotProduct * nx;
+                        particle.vy = particle.vy - 2 * dotProduct * ny;
+                        
+                        // Move particle inside the jar
+                        particle.x = canvas.width / 2 + (120 - particle.radius) * nx;
+                        particle.y = canvas.height / 2 + (120 - particle.radius) * ny;
+                    }
+                    
+                    // Draw particle
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = particle.color;
+                    ctx.fill();
+                });
+                
+                // Draw energy field (collision effects)
+                if (Math.random() > 0.7) {
+                    const collisionX = canvas.width / 2 + (Math.random() - 0.5) * 200;
+                    const collisionY = canvas.height / 2 + (Math.random() - 0.5) * 200;
+                    const distance = Math.sqrt(
+                        Math.pow(collisionX - canvas.width / 2, 2) + 
+                        Math.pow(collisionY - canvas.height / 2, 2)
+                    );
+                    
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.arc(collisionX, collisionY, 10, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(239, 68, 68, 0.6)';
+                        ctx.fill();
+                    }
+                }
+                
+                // Update time
+                time += 0.01;
+                
+                // Request next frame
+                requestAnimationFrame(animate);
+            }
+            
+            // Start animation
+            animate();
+        }
+
+        // Initialize simulation chart
+        function initSimulationChart() {
+            const ctx = document.getElementById('simulation-chart').getContext('2d');
+            
+            // Generate sample data
+            const labels = Array.from({length: 13}, (_, i) => i * 5);
+            const finenessData = [500, 400, 300, 200, 100, 50, 25, 15, 10, 5, 2, 1, 0.48];
+            const temperatureData = [25, 28, 32, 36, 39, 41, 42, 43, 44, 43, 42, 41, 40];
+            const energyData = [0, 1.2, 2.5, 3.8, 5.1, 6.4, 7.5, 8.5, 9.4, 10.2, 11.0, 11.8, 12.8];
+            
+            // Create chart
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: '细度 (μm)',
+                            data: finenessData,
+                            borderColor: '#06b6d4',
+                            backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                            tension: 0.4,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: '温度 (°C)',
+                            data: temperatureData,
+                            borderColor: '#f97316',
+                            backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                            tension: 0.4,
+                            yAxisID: 'y1'
+                        },
+                        {
+                            label: '能耗 (kWh)',
+                            data: energyData,
+                            borderColor: '#22c55e',
+                            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                            tension: 0.4,
+                            yAxisID: 'y2'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    stacked: false,
+                    scales: {
+                        y: {
+                            type: 'logarithmic',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: '细度 (μm)'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: '温度 (°C)'
+                            },
+                            grid: {
+                                drawOnChartArea: false,
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        },
+                        y2: {
+                            type: 'linear',
+                            display: false,
+                            position: 'right'
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

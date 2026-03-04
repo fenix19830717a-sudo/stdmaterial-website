@@ -39,7 +39,7 @@
                     <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center">
                         <span class="material-symbols-outlined text-primary">precision_manufacturing</span>
                     </div>
-                    <span class="text-2xl font-bold text-white">PRECISION<span class="text-primary font-light">GRIND</span></span>
+                    <span class="text-2xl font-bold text-white">HUNAN SHENGTONGDA<span class="text-primary font-light">MATERIALS</span></span>
                 </a>
                 <div class="hidden md:flex items-center space-x-6">
                     <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="product-catalog.html">PRODUCTS</a>
@@ -269,15 +269,289 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        document.getElementById('tracking-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const orderNumber = document.getElementById('order-number').value;
-            const email = document.getElementById('tracking-email').value;
-            
-            if (orderNumber && email) {
-                document.getElementById('order-result').classList.remove('hidden');
-                document.getElementById('order-result').scrollIntoView({ behavior: 'smooth' });
+        /**
+         * 订单追踪系统
+         * 实现实时物流追踪功能
+         */
+        const OrderTracker = {
+            trackingData: {
+                'ORD-2024-001': {
+                    status: 'delivered',
+                    placedDate: '2024-02-01',
+                    processDate: '2024-02-02',
+                    shippedDate: '2024-02-04',
+                    deliveredDate: '2024-02-08',
+                    carrier: 'DHL Express',
+                    trackingNumber: 'TRK123456789',
+                    shippingAddress: 'Building 1, Industrial Park\nBeijing 100000, China',
+                    items: [
+                        {
+                            name: 'Planetary Ball Mill - 4L Capacity',
+                            sku: 'PBM-4L',
+                            quantity: 1,
+                            price: 12500
+                        }
+                    ],
+                    subtotal: 12500,
+                    shipping: 500,
+                    total: 14000,
+                    paymentStatus: 'completed'
+                },
+                'ORD-2024-002': {
+                    status: 'shipped',
+                    placedDate: '2024-02-03',
+                    processDate: '2024-02-04',
+                    shippedDate: '2024-02-06',
+                    deliveredDate: null,
+                    carrier: 'FedEx',
+                    trackingNumber: 'FDX987654321',
+                    shippingAddress: '123 Business Street\nShanghai 200000, China',
+                    items: [
+                        {
+                            name: 'Zirconia Grinding Jar - 250ml',
+                            sku: 'GJ-ZR-250',
+                            quantity: 4,
+                            price: 680
+                        }
+                    ],
+                    subtotal: 2720,
+                    shipping: 200,
+                    total: 2920,
+                    paymentStatus: 'completed'
+                },
+                'ORD-2024-003': {
+                    status: 'processing',
+                    placedDate: '2024-02-05',
+                    processDate: '2024-02-06',
+                    shippedDate: null,
+                    deliveredDate: null,
+                    carrier: null,
+                    trackingNumber: null,
+                    shippingAddress: '456 Industrial Road\nGuangzhou 510000, China',
+                    items: [
+                        {
+                            name: 'Planetary Ball Mill - 16L Capacity',
+                            sku: 'PBM-16L',
+                            quantity: 1,
+                            price: 25000
+                        },
+                        {
+                            name: 'Tungsten Carbide Grinding Media - 8mm',
+                            sku: 'GM-WC-8',
+                            quantity: 100,
+                            price: 80
+                        }
+                    ],
+                    subtotal: 33000,
+                    shipping: 1500,
+                    total: 34500,
+                    paymentStatus: 'completed'
+                }
+            },
+
+            init: function() {
+                this.setupEventListeners();
+            },
+
+            setupEventListeners: function() {
+                const form = document.getElementById('tracking-form');
+                if (form) {
+                    form.addEventListener('submit', (e) => this.handleTrackingSubmit(e));
+                }
+            },
+
+            handleTrackingSubmit: function(e) {
+                e.preventDefault();
+                const orderNumber = document.getElementById('order-number').value;
+                const email = document.getElementById('tracking-email').value;
+                
+                if (orderNumber && email) {
+                    this.trackOrder(orderNumber);
+                } else {
+                    this.showError('Please enter both order number and email');
+                }
+            },
+
+            trackOrder: function(orderNumber) {
+                // 模拟API请求延迟
+                const loadingElement = document.createElement('div');
+                loadingElement.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+                loadingElement.innerHTML = `
+                    <div class="glass-panel p-8 rounded-2xl flex flex-col items-center">
+                        <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+                        <p class="text-white">Tracking order...</p>
+                    </div>
+                `;
+                document.body.appendChild(loadingElement);
+
+                // 模拟API请求
+                setTimeout(() => {
+                    document.body.removeChild(loadingElement);
+                    
+                    if (this.trackingData[orderNumber]) {
+                        this.displayOrderResult(orderNumber, this.trackingData[orderNumber]);
+                    } else {
+                        this.showError('Order not found. Please check your order number.');
+                    }
+                }, 1500);
+            },
+
+            displayOrderResult: function(orderNumber, orderData) {
+                const resultSection = document.getElementById('order-result');
+                if (!resultSection) return;
+
+                // 更新订单信息
+                document.querySelector('#order-result h2').textContent = `Order #${orderNumber}`;
+                document.querySelector('#order-result p.text-slate-400').textContent = `Placed on ${this.formatDate(orderData.placedDate)}`;
+
+                // 更新状态
+                const statusElement = document.querySelector('#order-result .text-green-400');
+                const statusText = this.getStatusText(orderData.status);
+                statusElement.textContent = statusText;
+
+                // 更新时间线
+                this.updateTimeline(orderData);
+
+                // 更新订单商品
+                this.updateOrderItems(orderData.items);
+
+                // 更新物流信息
+                this.updateShippingDetails(orderData);
+
+                // 更新支付信息
+                this.updatePaymentSummary(orderData);
+
+                // 显示结果
+                resultSection.classList.remove('hidden');
+                resultSection.scrollIntoView({ behavior: 'smooth' });
+            },
+
+            updateTimeline: function(orderData) {
+                const timelineSteps = [
+                    { key: 'placedDate', label: 'Order Placed' },
+                    { key: 'processDate', label: 'Processing' },
+                    { key: 'shippedDate', label: 'Shipped' },
+                    { key: 'deliveredDate', label: 'Delivered' }
+                ];
+
+                const timelineElements = document.querySelectorAll('#order-result .flex.flex-col.items-center');
+                timelineElements.forEach((element, index) => {
+                    if (index < timelineSteps.length) {
+                        const step = timelineSteps[index];
+                        const date = orderData[step.key];
+                        
+                        if (date) {
+                            element.querySelector('.w-10.h-10').className = 'w-10 h-10 bg-primary rounded-full flex items-center justify-center z-10';
+                            element.querySelector('.text-xs.text-slate-400').textContent = step.label;
+                            element.querySelector('.text-xs.text-slate-500').textContent = this.formatShortDate(date);
+                        } else {
+                            element.querySelector('.w-10.h-10').className = 'w-10 h-10 bg-surface-dark rounded-full flex items-center justify-center z-10';
+                            element.querySelector('.text-xs.text-slate-400').textContent = step.label;
+                            element.querySelector('.text-xs.text-slate-500').textContent = 'Pending';
+                        }
+                    }
+                });
+            },
+
+            updateOrderItems: function(items) {
+                const itemsContainer = document.querySelector('#order-result .space-y-4');
+                if (!itemsContainer) return;
+
+                itemsContainer.innerHTML = '';
+                items.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'flex items-center gap-4 p-4 bg-surface-dark/50 rounded-lg';
+                    itemElement.innerHTML = `
+                        <div class="w-16 h-16 bg-surface-dark rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-white font-medium">${item.name}</h4>
+                            <p class="text-slate-400 text-sm">SKU: ${item.sku} • Qty: ${item.quantity}</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-white font-bold">$${item.price.toLocaleString()}</p>
+                        </div>
+                    `;
+                    itemsContainer.appendChild(itemElement);
+                });
+            },
+
+            updateShippingDetails: function(orderData) {
+                const shippingSection = document.querySelector('#order-result .glass-panel:nth-child(2)');
+                if (!shippingSection) return;
+
+                shippingSection.querySelector('p:nth-of-type(2)').textContent = orderData.carrier || 'Pending';
+                shippingSection.querySelector('p.text-primary.font-mono').textContent = orderData.trackingNumber || 'Pending';
+                shippingSection.querySelector('p:nth-of-type(6)').innerHTML = orderData.shippingAddress.replace(/\n/g, '<br>');
+
+                const trackLink = shippingSection.querySelector('a');
+                if (orderData.trackingNumber) {
+                    trackLink.classList.remove('hidden');
+                    trackLink.href = `https://www.dhl.com/cn-en/home/tracking/tracking-express.html?submit=1&tracking-id=${orderData.trackingNumber}`;
+                } else {
+                    trackLink.classList.add('hidden');
+                }
+            },
+
+            updatePaymentSummary: function(orderData) {
+                const paymentSection = document.querySelector('#order-result .glass-panel:nth-child(3)');
+                if (!paymentSection) return;
+
+                paymentSection.querySelector('.flex.justify-between:nth-child(2) span:nth-child(2)').textContent = `$${orderData.subtotal.toLocaleString()}`;
+                paymentSection.querySelector('.flex.justify-between:nth-child(3) span:nth-child(2)').textContent = `$${orderData.shipping.toLocaleString()}`;
+                paymentSection.querySelector('.flex.justify-between.pt-3 span:nth-child(2)').textContent = `$${orderData.total.toLocaleString()}`;
+            },
+
+            getStatusText: function(status) {
+                const statusMap = {
+                    'placed': 'Order Placed',
+                    'processing': 'Processing',
+                    'shipped': 'Shipped',
+                    'delivered': 'Delivered',
+                    'cancelled': 'Cancelled'
+                };
+                return statusMap[status] || status;
+            },
+
+            formatDate: function(dateString) {
+                if (!dateString) return 'Pending';
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            },
+
+            formatShortDate: function(dateString) {
+                if (!dateString) return 'Pending';
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric'
+                });
+            },
+
+            showError: function(message) {
+                // 显示错误提示
+                const errorElement = document.createElement('div');
+                errorElement.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50';
+                errorElement.textContent = message;
+                document.body.appendChild(errorElement);
+
+                setTimeout(() => {
+                    errorElement.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => {
+                        document.body.removeChild(errorElement);
+                    }, 500);
+                }, 3000);
             }
+        };
+
+        // 初始化订单追踪系统
+        document.addEventListener('DOMContentLoaded', function() {
+            OrderTracker.init();
         });
     </script>
 </body>

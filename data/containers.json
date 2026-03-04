@@ -1,0 +1,383 @@
+{
+  "containers": [
+    {
+      "id": "CON-SS-01",
+      "name": "304不锈钢标准容器",
+      "material": "304不锈钢",
+      "materialFeatures": [
+        "耐腐蚀",
+        "高强度",
+        "易清洁",
+        "食品级安全"
+      ],
+      "capacities": [
+        {
+          "size": "100ml",
+          "dimensions": {
+            "diameter": "50mm",
+            "height": "70mm",
+            "weight": "250g"
+          }
+        },
+        {
+          "size": "250ml",
+          "dimensions": {
+            "diameter": "65mm",
+            "height": "85mm",
+            "weight": "450g"
+          }
+        },
+        {
+          "size": "500ml",
+          "dimensions": {
+            "diameter": "80mm",
+            "height": "100mm",
+            "weight": "750g"
+          }
+        },
+        {
+          "size": "1000ml",
+          "dimensions": {
+            "diameter": "100mm",
+            "height": "120mm",
+            "weight": "1200g"
+          }
+        }
+      ],
+      "interface": {
+        "type": "标准螺纹接口",
+        "compatibility": [
+          "PBM-4L",
+          "PBM-16L",
+          "SJM-2L"
+        ],
+        "connection": "M24螺纹"
+      },
+      "sealing": {
+        "type": "硅胶O型圈",
+        "features": [
+          "耐高温200°C",
+          "耐腐蚀",
+          "良好的密封性能"
+        ]
+      },
+      "safety": {
+        "features": [
+          "压力释放阀",
+          "防过热保护",
+          "安全锁定机制"
+        ],
+        "certifications": [
+          "ISO 9001",
+          "FDA认证"
+        ]
+      },
+      "applications": [
+        "食品加工",
+        "化学分析",
+        "医药研发"
+      ],
+      "images": [
+        "assets/images/products/gj-ss-1000.jpg"
+      ]
+    },
+    {
+      "id": "CON-AL-01",
+      "name": "氧化铝陶瓷容器",
+      "material": "99.7%氧化铝陶瓷",
+      "materialFeatures": [
+        "高硬度",
+        "低污染",
+        "耐高温",
+        "化学稳定性"
+      ],
+      "capacities": [
+        {
+          "size": "50ml",
+          "dimensions": {
+            "diameter": "40mm",
+            "height": "60mm",
+            "weight": "180g"
+          }
+        },
+        {
+          "size": "150ml",
+          "dimensions": {
+            "diameter": "55mm",
+            "height": "75mm",
+            "weight": "350g"
+          }
+        },
+        {
+          "size": "250ml",
+          "dimensions": {
+            "diameter": "65mm",
+            "height": "85mm",
+            "weight": "550g"
+          }
+        },
+        {
+          "size": "500ml",
+          "dimensions": {
+            "diameter": "80mm",
+            "height": "100mm",
+            "weight": "850g"
+          }
+        }
+      ],
+      "interface": {
+        "type": "标准卡口接口",
+        "compatibility": [
+          "PBM-4L",
+          "PBM-V-0.4L",
+          "SJM-2L"
+        ],
+        "connection": "标准卡口"
+      },
+      "sealing": {
+        "type": "PTFE密封垫",
+        "features": [
+          "耐高温260°C",
+          "化学惰性",
+          "低摩擦系数"
+        ]
+      },
+      "safety": {
+        "features": [
+          "防破裂设计",
+          "温度监控",
+          "压力平衡孔"
+        ],
+        "certifications": [
+          "ISO 9001",
+          "CE认证"
+        ]
+      },
+      "applications": [
+        "陶瓷材料",
+        "电子元件",
+        "医药制剂"
+      ],
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ]
+    },
+    {
+      "id": "CON-AG-01",
+      "name": "天然玛瑙容器",
+      "material": "天然玛瑙(SiO2)",
+      "materialFeatures": [
+        "高纯度99.9%",
+        "极低污染",
+        "自然美观",
+        "耐磨蚀"
+      ],
+      "capacities": [
+        {
+          "size": "50ml",
+          "dimensions": {
+            "diameter": "40mm",
+            "height": "60mm",
+            "weight": "200g"
+          }
+        },
+        {
+          "size": "150ml",
+          "dimensions": {
+            "diameter": "55mm",
+            "height": "75mm",
+            "weight": "400g"
+          }
+        },
+        {
+          "size": "250ml",
+          "dimensions": {
+            "diameter": "65mm",
+            "height": "85mm",
+            "weight": "600g"
+          }
+        }
+      ],
+      "interface": {
+        "type": "精密螺纹接口",
+        "compatibility": [
+          "PBM-4L",
+          "PBM-V-0.4L"
+        ],
+        "connection": "M18精密螺纹"
+      },
+      "sealing": {
+        "type": "玛瑙密封盖",
+        "features": [
+          "天然密封",
+          "无添加物",
+          "与容器材质一致"
+        ]
+      },
+      "safety": {
+        "features": [
+          "防震设计",
+          "温度控制",
+          "压力释放孔"
+        ],
+        "certifications": [
+          "ISO 9001",
+          "矿产认证"
+        ]
+      },
+      "applications": [
+        "矿物分析",
+        "珠宝加工",
+        "高纯度材料"
+      ],
+      "images": [
+        "assets/images/products/gj-ag-150.jpg"
+      ]
+    },
+    {
+      "id": "CON-ZR-01",
+      "name": "氧化锆陶瓷容器",
+      "material": "钇稳定氧化锆(YSZ)",
+      "materialFeatures": [
+        "高硬度",
+        "优异耐磨性",
+        "高密度",
+        "低污染"
+      ],
+      "capacities": [
+        {
+          "size": "100ml",
+          "dimensions": {
+            "diameter": "50mm",
+            "height": "70mm",
+            "weight": "350g"
+          }
+        },
+        {
+          "size": "250ml",
+          "dimensions": {
+            "diameter": "65mm",
+            "height": "85mm",
+            "weight": "650g"
+          }
+        },
+        {
+          "size": "500ml",
+          "dimensions": {
+            "diameter": "80mm",
+            "height": "100mm",
+            "weight": "1000g"
+          }
+        }
+      ],
+      "interface": {
+        "type": "快速连接接口",
+        "compatibility": [
+          "PBM-4L",
+          "PBM-16L",
+          "SJM-2L"
+        ],
+        "connection": "快速卡口"
+      },
+      "sealing": {
+        "type": "陶瓷密封环",
+        "features": [
+          "耐高温1000°C",
+          "优异的密封性能",
+          "与容器材质一致"
+        ]
+      },
+      "safety": {
+        "features": [
+          "防热冲击",
+          "压力监控",
+          "安全锁定"
+        ],
+        "certifications": [
+          "ISO 9001",
+          "RoHS认证"
+        ]
+      },
+      "applications": [
+        "纳米材料",
+        "医药研发",
+        "电子元件"
+      ],
+      "images": [
+        "assets/images/products/gj-zr-250.jpg"
+      ]
+    },
+    {
+      "id": "CON-PTFE-01",
+      "name": "PTFE化学容器",
+      "material": "聚四氟乙烯(PTFE)",
+      "materialFeatures": [
+        "优异的化学稳定性",
+        "宽温度范围",
+        "不粘表面",
+        "FDA认证"
+      ],
+      "capacities": [
+        {
+          "size": "100ml",
+          "dimensions": {
+            "diameter": "50mm",
+            "height": "70mm",
+            "weight": "120g"
+          }
+        },
+        {
+          "size": "250ml",
+          "dimensions": {
+            "diameter": "65mm",
+            "height": "85mm",
+            "weight": "180g"
+          }
+        },
+        {
+          "size": "500ml",
+          "dimensions": {
+            "diameter": "80mm",
+            "height": "100mm",
+            "weight": "280g"
+          }
+        }
+      ],
+      "interface": {
+        "type": "标准螺纹接口",
+        "compatibility": [
+          "PBM-4L",
+          "SJM-2L"
+        ],
+        "connection": "M20螺纹"
+      },
+      "sealing": {
+        "type": "PTFE密封盖",
+        "features": [
+          "耐高温260°C",
+          "化学惰性",
+          "良好的密封性能"
+        ]
+      },
+      "safety": {
+        "features": [
+          "压力释放阀",
+          "温度监控",
+          "防泄漏设计"
+        ],
+        "certifications": [
+          "FDA认证",
+          "ISO 9001"
+        ]
+      },
+      "applications": [
+        "化学分析",
+        "医药研发",
+        "食品工业"
+      ],
+      "images": [
+        "assets/images/products/gj-ptfe-250.jpg"
+      ]
+    }
+  ]
+}

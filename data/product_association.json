@@ -1,0 +1,157 @@
+{
+  "associations": [
+    {
+      "material": "荧光粉",
+      "equipment": "行星球磨机",
+      "jar": "刚玉罐",
+      "media": "氧化锆球",
+      "speed": "500转/分钟",
+      "time": "2小时",
+      "process": "干磨",
+      "note": "30分钟后正反转交替运行"
+    },
+    {
+      "material": "矿石",
+      "equipment": "行星球磨机",
+      "jar": "不锈钢罐",
+      "media": "不锈钢球",
+      "speed": "150转/分钟",
+      "time": "180分钟",
+      "process": "干磨",
+      "note": ""
+    },
+    {
+      "material": "矿物盐",
+      "equipment": "行星球磨机",
+      "jar": "不锈钢罐",
+      "media": "不锈钢球",
+      "speed": "550转/分钟",
+      "time": "240分钟",
+      "process": "干磨",
+      "note": ""
+    },
+    {
+      "material": "石墨",
+      "equipment": "行星球磨机",
+      "jar": "不锈钢罐",
+      "media": "不锈钢球",
+      "speed": "150转/分钟",
+      "time": "180分钟",
+      "process": "干磨",
+      "note": ""
+    },
+    {
+      "material": "二氧化硅",
+      "equipment": "行星球磨机",
+      "jar": "刚玉罐",
+      "media": "氧化锆球",
+      "speed": "480转/分钟",
+      "time": "30分钟",
+      "process": "干磨",
+      "note": "过80目筛"
+    },
+    {
+      "material": "陶瓷",
+      "equipment": "滚筒球磨机",
+      "jar": "陶瓷刚玉滚筒罐",
+      "media": "氧化锆球",
+      "speed": "380转/分钟",
+      "time": "6小时",
+      "process": "湿磨",
+      "note": ""
+    }
+  ],
+  "equipment_types": [
+    {
+      "type": "行星球磨机",
+      "description": "行星球磨机是一种高效的细磨设备，通过行星运动原理实现物料的研磨。",
+      "models": ["PBM-4L", "PBM-16L", "PBM-V-0.4L", "PBM-C-0.2L"],
+      "suitable_for": ["荧光粉", "矿石", "矿物盐", "石墨", "二氧化硅"]
+    },
+    {
+      "type": "滚筒球磨机",
+      "description": "滚筒球磨机是一种传统的研磨设备，通过滚筒的旋转实现物料的研磨。",
+      "models": ["RBM-10L", "RBM-50L", "RBM-100L"],
+      "suitable_for": ["陶瓷", "矿石", "矿物盐"]
+    },
+    {
+      "type": "振动球磨机",
+      "description": "振动球磨机是一种通过振动实现物料研磨的设备，适合细磨和超微粉碎。",
+      "models": ["VBM-1L", "VBM-5L", "VBM-10L"],
+      "suitable_for": ["荧光粉", "二氧化硅", "陶瓷"]
+    },
+    {
+      "type": "搅拌球磨机",
+      "description": "搅拌球磨机是一种通过搅拌器带动磨球运动实现物料研磨的设备，适合湿磨和超细粉碎。",
+      "models": ["SJM-2L", "SJM-5L", "SJM-10L"],
+      "suitable_for": ["陶瓷", "二氧化硅", "荧光粉"]
+    }
+  ],
+  "jar_types": [
+    {
+      "type": "刚玉罐",
+      "material": "刚玉(Al2O3)",
+      "purity": "99.7%",
+      "suitable_for": ["荧光粉", "二氧化硅", "陶瓷"],
+      "models": ["GJ-AL-100", "GJ-AL-250", "GJ-AL-500", "GJ-AL-1000"]
+    },
+    {
+      "type": "不锈钢罐",
+      "material": "不锈钢304L",
+      "purity": "工业级",
+      "suitable_for": ["矿石", "矿物盐", "石墨"],
+      "models": ["GJ-SS-250", "GJ-SS-500", "GJ-SS-1000", "GJ-SS-2000"]
+    },
+    {
+      "type": "氧化锆罐",
+      "material": "氧化锆(YSZ)",
+      "purity": "99.9%",
+      "suitable_for": ["荧光粉", "二氧化硅", "陶瓷"],
+      "models": ["GJ-ZR-100", "GJ-ZR-250", "GJ-ZR-500"]
+    },
+    {
+      "type": "PTFE罐",
+      "material": "聚四氟乙烯",
+      "purity": "工业级",
+      "suitable_for": ["腐蚀性物料", "食品级物料"],
+      "models": ["GJ-PTFE-100", "GJ-PTFE-250", "GJ-PTFE-500"]
+    },
+    {
+      "type": "玛瑙罐",
+      "material": "天然玛瑙",
+      "purity": "99.9%",
+      "suitable_for": ["高纯度物料", "矿物分析"],
+      "models": ["GJ-AG-50", "GJ-AG-100", "GJ-AG-150"]
+    }
+  ],
+  "media_types": [
+    {
+      "type": "氧化锆球",
+      "material": "氧化锆(YSZ)",
+      "purity": "99.9%",
+      "suitable_for": ["荧光粉", "二氧化硅", "陶瓷"],
+      "sizes": ["2mm", "5mm", "8mm", "10mm"]
+    },
+    {
+      "type": "刚玉球",
+      "material": "刚玉(Al2O3)",
+      "purity": "99.7%",
+      "suitable_for": ["陶瓷", "二氧化硅"],
+      "sizes": ["3mm", "5mm", "8mm"]
+    },
+    {
+      "type": "不锈钢球",
+      "material": "不锈钢304",
+      "purity": "工业级",
+      "suitable_for": ["矿石", "矿物盐", "石墨"],
+      "sizes": ["5mm", "8mm", "10mm", "12mm"]
+    },
+    {
+      "type": "碳化钨球",
+      "material": "碳化钨(WC-Co)",
+      "purity": "工业级",
+      "suitable_for": ["硬质物料", "金属材料"],
+      "sizes": ["3mm", "6mm", "8mm"]
+    }
+  ]
+}

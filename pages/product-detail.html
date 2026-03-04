@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../assets/css/animations.css">
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/products.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../assets/js/product-simulator.js"></script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -41,6 +43,19 @@
         }
         .neon-shadow { box-shadow: 0 0 15px rgba(19, 200, 236, 0.3); }
         .thumbnail-active { border-color: #13c8ec !important; }
+        
+        /* WCAG 2.1 AA Compliance */
+        .text-slate-100 { color: #f1f5f9; } /* 对比度: 14.7:1 */
+        .text-slate-300 { color: #cbd5e1; } /* 对比度: 7.1:1 */
+        .text-slate-400 { color: #94a3b8; } /* 对比度: 4.6:1 */
+        .text-white { color: #ffffff; } /* 对比度: 15.8:1 */
+        .text-primary { color: #13c8ec; } /* 对比度: 4.8:1 */
+        
+        /* 确保所有按钮尺寸不小于44×44px */
+        button { min-height: 44px; min-width: 44px; }
+        .feature-btn { min-height: 44px; }
+        input[type="range"] { min-height: 44px; }
+        select { min-height: 44px; }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
@@ -112,6 +127,25 @@
                     <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 bg-secondary-dark">
                         <img class="w-full h-full object-cover" src="assets/images/products/eq-pm-4x500.jpg" alt="Thumbnail 2">
                     </button>
+                </div>
+                
+                <!-- Product Simulator -->
+                <div class="mt-6">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <span class="material-icons text-primary">3d_rotation</span> Interactive Product Simulator
+                        </h3>
+                        <a href="../simulator.html" class="text-sm text-primary hover:underline flex items-center gap-1" target="_blank">
+                            <span class="material-icons text-xs">open_in_new</span> Full Simulator
+                        </a>
+                    </div>
+                    <div class="relative aspect-square bg-secondary-dark rounded-xl overflow-hidden border border-white/5" id="product-simulator-container"></div>
+                    <div class="mt-4 text-center">
+                        <a href="../simulator.html" class="inline-flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary font-medium px-4 py-2 rounded-lg transition-colors" target="_blank">
+                            <span class="material-icons text-sm">play_circle</span>
+                            Run Full Equipment Simulation
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -334,171 +368,136 @@
     </footer>
 
     <script>
-        const productsData = {
-            "GJ-AL-500": {
-                id: "GJ-AL-500",
-                name: "Alumina Ceramic Grinding Jar",
-                category: "Grinding Jars",
-                subcategory: "Ceramic",
-                material: "Alumina (Al2O3)",
-                purity: "99.7%",
-                volume: "500 ml",
-                hardness: "9.0 Mohs",
-                maxTemperature: "1600°C",
-                equipment: ["Planetary Mill", "High-Energy Shaker"],
-                description: "High-purity alumina ceramic grinding jar for laboratory use. Excellent wear resistance and minimal contamination.",
-                features: ["99.7% purity", "High hardness", "Low contamination", "Chemical resistant"],
-                applications: ["Ceramics", "Electronics", "Pharmaceuticals", "Mining"],
-                price: "Contact for Quote",
-                stock: "In Stock",
-                images: ["assets/images/products/gj-al-500.jpg"],
-                specifications: {
-                    "Outer Diameter": "100 mm",
-                    "Inner Diameter": "85 mm",
-                    "Height": "120 mm",
-                    "Weight": "850 g",
-                    "Lid Type": "Screw-on with PTFE seal"
-                }
-            },
-            "GJ-SS-1000": {
-                id: "GJ-SS-1000",
-                name: "Stainless Steel Mill Container",
-                category: "Grinding Jars",
-                subcategory: "Metal",
-                material: "Stainless Steel 304L",
-                purity: "Industrial Grade",
-                volume: "1000 ml",
-                hardness: "N/A",
-                maxTemperature: "1200°C",
-                equipment: ["Planetary Mill", "Roller Mill"],
-                description: "Heavy-duty stainless steel grinding container for industrial-scale material processing.",
-                features: ["304L grade", "O-ring gasket seal", "High temperature resistance", "Easy cleaning"],
-                applications: ["Metallurgy", "Chemical Industry", "Food Processing"],
-                price: "Contact for Quote",
-                stock: "In Stock",
-                images: ["assets/images/products/eq-pm-4x500.jpg"],
-                specifications: {
-                    "Outer Diameter": "150 mm",
-                    "Inner Diameter": "130 mm",
-                    "Height": "180 mm",
-                    "Weight": "2500 g",
-                    "Lid Type": "Clamp-on with O-ring"
-                }
-            },
-            "GJ-ZR-250": {
-                id: "GJ-ZR-250",
-                name: "Zirconia (YSZ) Grinding Jar",
-                category: "Grinding Jars",
-                subcategory: "Ceramic",
-                material: "Yttria-Stabilized Zirconia (YSZ)",
-                purity: "99.9%",
-                volume: "250 ml",
-                hardness: "8.5 Mohs",
-                maxTemperature: "1000°C",
-                equipment: ["High-Energy Shaker", "Planetary Mill"],
-                description: "Premium zirconia grinding jar with exceptional wear resistance for high-energy milling applications.",
-                features: ["Y-stabilized", "Exceptional wear resistance", "High density", "Low contamination"],
-                applications: ["Nano-materials", "Pharmaceuticals", "Electronics", "Advanced Ceramics"],
-                price: "Contact for Quote",
-                stock: "In Stock",
-                images: ["assets/images/products/gj-al-500.jpg"],
-                specifications: {
-                    "Outer Diameter": "80 mm",
-                    "Inner Diameter": "65 mm",
-                    "Height": "100 mm",
-                    "Weight": "650 g",
-                    "Lid Type": "Screw-on with ceramic seal"
-                }
-            }
-        };
-
         function getProductIdFromUrl() {
             const params = new URLSearchParams(window.location.search);
             return params.get('id') || 'GJ-AL-500';
         }
 
-        function loadProduct() {
+        async function loadProduct() {
             const productId = getProductIdFromUrl();
-            const product = productsData[productId] || productsData['GJ-AL-500'];
-            
-            document.getElementById('breadcrumb-category').textContent = product.category;
-            document.getElementById('breadcrumb-product').textContent = product.name;
-            document.getElementById('product-sku').textContent = `SKU: ${product.id}`;
-            document.getElementById('product-name').textContent = product.name;
-            document.getElementById('product-description').textContent = product.description;
-            document.getElementById('spec-volume').textContent = product.volume;
-            document.getElementById('spec-material').textContent = product.material;
-            document.getElementById('spec-hardness').textContent = product.hardness;
-            document.getElementById('spec-temp').textContent = product.maxTemperature;
-            document.getElementById('product-price').textContent = product.price;
-            
-            const stockStatus = document.getElementById('stock-status');
-            if (product.stock === 'In Stock') {
-                stockStatus.innerHTML = '<span class="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span> In Stock';
-                stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/30 text-emerald-400';
-            } else if (product.stock === 'Limited Stock') {
-                stockStatus.innerHTML = '<span class="w-2 h-2 bg-amber-400 rounded-full mr-2"></span> Limited Stock';
-                stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-900/30 text-amber-400';
-            } else {
-                stockStatus.innerHTML = '<span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span> Out of Stock';
-                stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-900/30 text-red-400';
+            try {
+                const response = await fetch(`/api/products/${productId}`);
+                if (!response.ok) {
+                    throw new Error('Product not found');
+                }
+                const product = await response.json();
+                
+                document.getElementById('breadcrumb-category').textContent = product.category;
+                document.getElementById('breadcrumb-product').textContent = product.name;
+                document.getElementById('product-sku').textContent = `SKU: ${product.id}`;
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-description').textContent = product.description;
+                document.getElementById('spec-volume').textContent = product.volume || 'N/A';
+                document.getElementById('spec-material').textContent = product.material || 'N/A';
+                document.getElementById('spec-hardness').textContent = product.hardness || 'N/A';
+                document.getElementById('spec-temp').textContent = product.maxTemperature || 'N/A';
+                document.getElementById('product-price').textContent = product.price || 'Contact for Quote';
+                
+                const stockStatus = document.getElementById('stock-status');
+                const stock = product.stock || 'In Stock';
+                if (stock === 'In Stock') {
+                    stockStatus.innerHTML = '<span class="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span> In Stock';
+                    stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/30 text-emerald-400';
+                } else if (stock === 'Limited Stock') {
+                    stockStatus.innerHTML = '<span class="w-2 h-2 bg-amber-400 rounded-full mr-2"></span> Limited Stock';
+                    stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-900/30 text-amber-400';
+                } else {
+                    stockStatus.innerHTML = '<span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span> Out of Stock';
+                    stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-900/30 text-red-400';
+                }
+                
+                const featuresList = document.getElementById('features-list');
+                featuresList.innerHTML = (product.features || []).map(f => `
+                    <li class="flex items-center gap-2 text-slate-300">
+                        <span class="material-icons text-primary text-sm">check_circle</span> ${f}
+                    </li>
+                `).join('');
+                
+                const applicationsList = document.getElementById('applications-list');
+                applicationsList.innerHTML = (product.applications || []).map(a => `
+                    <span class="px-3 py-1 bg-secondary-dark rounded-full text-xs text-slate-300">${a}</span>
+                `).join('');
+                
+                const equipmentList = document.getElementById('equipment-list');
+                equipmentList.innerHTML = (product.equipment || []).map(e => `
+                    <span class="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-xs text-primary">${e}</span>
+                `).join('');
+                
+                const specsTable = document.getElementById('specs-table');
+                const specifications = product.specifications || {};
+                specsTable.innerHTML = Object.entries(specifications).map(([key, value]) => `
+                    <tr>
+                        <td class="px-6 py-4 text-slate-400 w-1/3">${key}</td>
+                        <td class="px-6 py-4 text-white font-medium">${value}</td>
+                    </tr>
+                `).join('');
+                
+                document.getElementById('inquiry-product-id').value = product.id;
+                document.getElementById('inquiry-product-name').value = product.name;
+                
+                document.title = `${product.name} - NanoMech`;
+                
+                // 初始化产品模拟器
+                if (window.ProductSimulator) {
+                    setTimeout(async () => {
+                        try {
+                            await window.initProductSimulator('product-simulator-container', product);
+                            console.log('Product simulator initialized successfully');
+                        } catch (error) {
+                            console.error('Error initializing product simulator:', error);
+                        }
+                    }, 100);
+                }
+                
+                await loadRelatedProducts(product);
+            } catch (error) {
+                console.error('Error loading product:', error);
+                // 显示错误信息
+                const mainContent = document.querySelector('main');
+                mainContent.innerHTML = `
+                    <div class="text-center py-16">
+                        <h2 class="text-2xl font-bold text-white mb-4">Product Not Found</h2>
+                        <p class="text-slate-400 mb-8">The product you are looking for could not be found.</p>
+                        <a href="product-catalog.html" class="bg-primary hover:bg-primary/90 text-background-dark font-bold px-6 py-3 rounded-lg transition-colors">
+                            Back to Products
+                        </a>
+                    </div>
+                `;
             }
-            
-            const featuresList = document.getElementById('features-list');
-            featuresList.innerHTML = product.features.map(f => `
-                <li class="flex items-center gap-2 text-slate-300">
-                    <span class="material-icons text-primary text-sm">check_circle</span> ${f}
-                </li>
-            `).join('');
-            
-            const applicationsList = document.getElementById('applications-list');
-            applicationsList.innerHTML = product.applications.map(a => `
-                <span class="px-3 py-1 bg-secondary-dark rounded-full text-xs text-slate-300">${a}</span>
-            `).join('');
-            
-            const equipmentList = document.getElementById('equipment-list');
-            equipmentList.innerHTML = product.equipment.map(e => `
-                <span class="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-xs text-primary">${e}</span>
-            `).join('');
-            
-            const specsTable = document.getElementById('specs-table');
-            specsTable.innerHTML = Object.entries(product.specifications).map(([key, value]) => `
-                <tr>
-                    <td class="px-6 py-4 text-slate-400 w-1/3">${key}</td>
-                    <td class="px-6 py-4 text-white font-medium">${value}</td>
-                </tr>
-            `).join('');
-            
-            document.getElementById('inquiry-product-id').value = product.id;
-            document.getElementById('inquiry-product-name').value = product.name;
-            
-            document.title = `${product.name} - NanoMech`;
-            
-            loadRelatedProducts(product);
         }
 
-        function loadRelatedProducts(currentProduct) {
+        async function loadRelatedProducts(currentProduct) {
             const relatedContainer = document.getElementById('related-products');
-            const related = Object.values(productsData).filter(p => p.id !== currentProduct.id).slice(0, 4);
-            
-            relatedContainer.innerHTML = related.map(p => `
-                <a href="product-detail.html?id=${p.id}" class="group bg-background-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl transition-all flex flex-col">
-                    <div class="relative aspect-square bg-secondary-dark overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.images[0]}" alt="${p.name}">
-                        <div class="absolute top-2 left-2">
-                            <span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-0.5 rounded">${p.subcategory.toUpperCase()}</span>
+            try {
+                const response = await fetch('/api/products');
+                if (!response.ok) {
+                    throw new Error('Failed to load related products');
+                }
+                const allProducts = await response.json();
+                const related = allProducts.filter(p => p.id !== currentProduct.id && p.category === currentProduct.category).slice(0, 4);
+                
+                relatedContainer.innerHTML = related.map(p => `
+                    <a href="product-detail.html?id=${p.id}" class="group bg-background-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl transition-all flex flex-col">
+                        <div class="relative aspect-square bg-secondary-dark overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.images && p.images.length > 0 ? p.images[0] : 'https://via.placeholder.com/400x300?text=No+Image'}" alt="${p.name}">
+                            <div class="absolute top-2 left-2">
+                                <span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-0.5 rounded">${(p.subcategory || '').toUpperCase()}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-4 flex-1 flex flex-col">
-                        <span class="text-[10px] font-mono text-primary font-bold tracking-widest">SKU: ${p.id}</span>
-                        <h3 class="text-sm font-bold mt-1 group-hover:text-primary transition-colors text-white">${p.name}</h3>
-                        <div class="mt-2 text-xs text-slate-400">${p.volume}</div>
-                        <button class="mt-auto w-full py-2 bg-primary/10 text-primary text-xs font-bold rounded hover:bg-primary hover:text-background-dark transition-colors">
-                            View Details
-                        </button>
-                    </div>
-                </a>
-            `).join('');
+                        <div class="p-4 flex-1 flex flex-col">
+                            <span class="text-[10px] font-mono text-primary font-bold tracking-widest">SKU: ${p.id}</span>
+                            <h3 class="text-sm font-bold mt-1 group-hover:text-primary transition-colors text-white">${p.name}</h3>
+                            <div class="mt-2 text-xs text-slate-400">${p.volume || 'N/A'}</div>
+                            <button class="mt-auto w-full py-2 bg-primary/10 text-primary text-xs font-bold rounded hover:bg-primary hover:text-background-dark transition-colors">
+                                View Details
+                            </button>
+                        </div>
+                    </a>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading related products:', error);
+                relatedContainer.innerHTML = '';
+            }
         }
 
         function openInquiryModal() {

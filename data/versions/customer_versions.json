@@ -1,0 +1,50 @@
+{
+  "versions": [
+    {
+      "id": "52bc5806-47aa-40a2-9a54-e131e82f4705",
+      "itemId": "CUS-202603-CB849A",
+      "data": {
+        "id": "CUS-202603-CB849A",
+        "company": "Test Company",
+        "contactPerson": "Test Person",
+        "email": "test@example.com",
+        "phone": "",
+        "country": "",
+        "address": "",
+        "industry": "",
+        "customerType": "Enterprise",
+        "status": "Active",
+        "totalOrders": 0,
+        "totalSpent": "$0",
+        "lastOrderDate": "",
+        "createdAt": "2026-03-05",
+        "notes": ""
+      },
+      "createdAt": "2026-03-04T17:39:53.312095",
+      "version": 1
+    },
+    {
+      "id": "d748a63f-ddbe-4a8a-a8ff-471742119804",
+      "itemId": "CUS-202603-965E09",
+      "data": {
+        "id": "CUS-202603-965E09",
+        "company": "Test Company",
+        "contactPerson": "Test Person",
+        "email": "test@example.com",
+        "phone": "",
+        "country": "",
+        "address": "",
+        "industry": "",
+        "customerType": "Enterprise",
+        "status": "Active",
+        "totalOrders": 0,
+        "totalSpent": "$0",
+        "lastOrderDate": "",
+        "createdAt": "2026-03-05",
+        "notes": ""
+      },
+      "createdAt": "2026-03-04T17:43:46.505956",
+      "version": 2
+    }
+  ]
+}

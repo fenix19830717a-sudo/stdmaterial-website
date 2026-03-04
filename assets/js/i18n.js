@@ -1,0 +1,14 @@
+class I18n{constructor(){this.translations={};this.currentLanguage='en';this.init();}
+async init(){await this.loadTranslations();const savedLang=localStorage.getItem('language');if(savedLang){this.currentLanguage=savedLang;}
+this.applyLanguage();this.bindLanguageSwitch();}
+async loadTranslations(){try{const response=await fetch('data/translations.json');this.translations=await response.json();}catch(error){console.error('Failed to load translations:',error);this.translations={en:{nav_home:'Home',nav_about:'About',nav_products:'Products',nav_case_studies:'Case Studies',nav_news:'News',nav_contact:'Contact',nav_login:'Login',nav_admin:'Admin'},zh:{nav_home:'首页',nav_about:'关于我们',nav_products:'产品中心',nav_case_studies:'成功案例',nav_news:'新闻动态',nav_contact:'联系我们',nav_login:'登录',nav_admin:'管理后台'}};}}
+switchLanguage(lang){this.currentLanguage=lang;localStorage.setItem('language',lang);this.applyLanguage();applyLanguage(){document.querySelectorAll('[data-i18n]').forEach(element=>{const key=element.getAttribute('data-i18n');const translation=this.translate(key);if(translation){element.textContent=translation;}});document.querySelectorAll('[data-i18n-placeholder]').forEach(element=>{const key=element.getAttribute('data-i18n-placeholder');const translation=this.translate(key);if(translation){element.placeholder=translation;}});document.querySelectorAll('[data-i18n-title]').forEach(element=>{const key=element.getAttribute('data-i18n-title');const translation=this.translate(key);if(translation){element.title=translation;}});const pageTitle=document.querySelector('title[data-i18n]');if(pageTitle){const key=pageTitle.getAttribute('data-i18n');const translation=this.translate(key);if(translation){document.title=translation;}}
+this.updateLanguageButtons();}
+translate(key){if(this.translations[this.currentLanguage]&&this.translations[this.currentLanguage][key]){return this.translations[this.currentLanguage][key];}
+if(this.translations.en&&this.translations.en[key]){return this.translations.en[key];}
+return key;}
+bindLanguageSwitch(){document.querySelectorAll('.language-switch button, [data-lang]').forEach(button=>{button.addEventListener('click',(e)=>{const lang=e.target.getAttribute('data-lang');if(lang){this.switchLanguage(lang);}});});}
+updateLanguageButtons(){document.querySelectorAll('.language-switch button, [data-lang]').forEach(button=>{const lang=button.getAttribute('data-lang');if(lang===this.currentLanguage){button.classList.add('active');}else{button.classList.remove('active');}});}}
+let i18nInstance;function initI18n(){if(!i18nInstance){i18nInstance=new I18n();}
+return i18nInstance;}
+window.initI18n=initI18n;window.i18n=initI18n();

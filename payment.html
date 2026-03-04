@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Hunan Shengtongda Materials Technology</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06b6d4",
+                        "primary-dark": "#0891b2",
+                        "accent": "#22d3ee",
+                        "background-dark": "#0f172a",
+                        "surface-dark": "#1e293b",
+                        "deep-navy": "#020617"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f8fafc; }
+        .glass-panel { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .payment-method.active { border: 2px solid #06b6d4; background: rgba(6, 182, 212, 0.1); }
+    </style>
+</head>
+<body class="bg-deep-navy text-slate-100 font-['Space_Grotesk'] min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+                    </div>
+                    <span class="text-2xl font-bold text-white">HUNAN SHENGTONGDA<span class="text-primary font-light">MATERIALS</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="product-catalog.html">PRODUCTS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="about.html">ABOUT</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="news.html">NEWS</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="contact.html">CONTACT</a>
+                </div>
+                <a href="contact.html" class="bg-primary text-deep-navy px-5 py-2 rounded font-bold hover:bg-accent transition-all text-sm">
+                    Inquiry Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-bold text-white mb-2">Secure Payment</h1>
+                <p class="text-slate-400">Complete your order with our secure payment system</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="glass-panel rounded-2xl p-6">
+                        <h2 class="text-lg font-bold text-white mb-4">Order Summary</h2>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center gap-4">
+                                <img src="assets/images/products/pbm-4l.jpg" alt="Planetary Ball Mill" class="w-16 h-16 object-cover rounded">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-white">Planetary Ball Mill - 4L Capacity</p>
+                                    <p class="text-xs text-slate-400">Qty: 1</p>
+                                </div>
+                                <p class="text-sm font-medium text-white">$12,500.00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 border-t border-white/5 pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-slate-400">Subtotal</span>
+                                <span class="text-sm font-medium text-white">$12,500.00</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-slate-400">Shipping</span>
+                                <span class="text-sm font-medium text-white">$500.00</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-slate-400">Tax</span>
+                                <span class="text-sm font-medium text-white">$1,000.00</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3 border-t border-white/5">
+                                <span class="text-sm font-bold text-white">Total</span>
+                                <span class="text-lg font-bold text-primary">$14,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Form -->
+                <div class="lg:col-span-2">
+                    <div class="glass-panel rounded-2xl p-6">
+                        <h2 class="text-lg font-bold text-white mb-6">Payment Method</h2>
+                        
+                        <!-- Payment Methods -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                            <div class="payment-method active rounded-xl p-4 border border-white/10 cursor-pointer transition-all" data-method="credit_card">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                                        <span class="text-2xl">💳</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-white">Credit Card</p>
+                                        <p class="text-xs text-slate-400">Visa, Mastercard, Amex</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-method rounded-xl p-4 border border-white/10 cursor-pointer transition-all" data-method="bank_transfer">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                                        <span class="text-2xl">🏦</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-white">Bank Transfer</p>
+                                        <p class="text-xs text-slate-400">Wire transfer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-method rounded-xl p-4 border border-white/10 cursor-pointer transition-all" data-method="paypal">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                                        <span class="text-sm font-bold text-primary">PP</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-white">PayPal</p>
+                                        <p class="text-xs text-slate-400">PayPal balance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Credit Card Form -->
+                        <div id="credit-card-form" class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Card Number</label>
+                                <div class="relative">
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" 
+                                           class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Expiry Date</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY" 
+                                           class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">CVV</label>
+                                    <input type="text" id="card-cvv" placeholder="123" 
+                                           class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Cardholder Name</label>
+                                <input type="text" id="card-name" placeholder="John Doe" 
+                                       class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            </div>
+                        </div>
+                        
+                        <!-- Bank Transfer Form -->
+                        <div id="bank-transfer-form" class="space-y-6 hidden">
+                            <div>
+                                <p class="text-sm text-slate-400 mb-4">Please transfer the payment to the following bank account:</p>
+                                <div class="glass-panel p-4 rounded-lg">
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span class="text-xs text-slate-400">Bank Name</span>
+                                            <span class="text-sm font-medium text-white">Industrial Bank of China</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-xs text-slate-400">Account Number</span>
+                                            <span class="text-sm font-medium text-white">6222 0212 3456 7890</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-xs text-slate-400">SWIFT Code</span>
+                                            <span class="text-sm font-medium text-white">IBOC-CN-BJ</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-xs text-slate-400">Beneficiary</span>
+                                            <span class="text-sm font-medium text-white">Hunan Shengtongda Materials Technology Co., Ltd.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Transfer Reference</label>
+                                <input type="text" placeholder="Order #ORD-2024-001" 
+                                       class="w-full bg-deep-navy border border-white/10 text-white rounded-lg py-3 px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            </div>
+                        </div>
+                        
+                        <!-- PayPal Form -->
+                        <div id="paypal-form" class="space-y-6 hidden">
+                            <div class="text-center py-8">
+                                <div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-4xl">PayPal</span>
+                                </div>
+                                <p class="text-sm text-slate-400 mb-4">You will be redirected to PayPal to complete your payment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <button id="pay-now-btn" class="w-full bg-primary text-deep-navy py-4 rounded-lg font-bold hover:bg-accent transition-all flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-sm">payment</span>
+                                Pay Now - $14,000.00
+                            </button>
+                            <p class="text-xs text-slate-500 text-center mt-4">
+                                By clicking "Pay Now", you agree to our <a href="#" class="text-primary hover:text-accent">Terms of Service</a> and <a href="#" class="text-primary hover:text-accent">Privacy Policy</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy py-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs text-slate-600">© 2026 Hunan Shengtongda Materials Technology Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/payment.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 支付方式切换
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.addEventListener('click', function() {
+                    // 移除所有激活状态
+                    document.querySelectorAll('.payment-method').forEach(m => {
+                        m.classList.remove('active');
+                    });
+                    // 添加激活状态
+                    this.classList.add('active');
+                    
+                    // 显示对应表单
+                    const methodId = this.getAttribute('data-method');
+                    document.querySelectorAll('[id$="-form"]').forEach(form => {
+                        form.classList.add('hidden');
+                    });
+                    document.getElementById(methodId + '-form').classList.remove('hidden');
+                });
+            });
+            
+            // 信用卡号格式化
+            const cardNumberInput = document.getElementById('card-number');
+            if (cardNumberInput) {
+                cardNumberInput.addEventListener('input', function(e) {
+                    this.value = PaymentGateway.formatCardNumber(this.value);
+                });
+            }
+            
+            // 有效期格式化
+            const cardExpiryInput = document.getElementById('card-expiry');
+            if (cardExpiryInput) {
+                cardExpiryInput.addEventListener('input', function(e) {
+                    this.value = PaymentGateway.formatExpiry(this.value);
+                });
+            }
+            
+            // 支付按钮点击
+            document.getElementById('pay-now-btn').addEventListener('click', async function() {
+                const activeMethod = document.querySelector('.payment-method.active');
+                const paymentMethod = activeMethod.getAttribute('data-method');
+                
+                try {
+                    // 显示加载状态
+                    this.innerHTML = '<div class="w-5 h-5 border-2 border-deep-navy border-t-transparent rounded-full animate-spin"></div> Processing...';
+                    this.disabled = true;
+                    
+                    // 创建支付订单
+                    const orderData = {
+                        orderId: 'ORD-2024-001',
+                        amount: 14000,
+                        currency: 'USD'
+                    };
+                    
+                    const payment = await PaymentGateway.createPayment(orderData);
+                    
+                    // 处理支付
+                    const paymentData = {
+                        paymentMethod: paymentMethod,
+                        cardData: {
+                            number: document.getElementById('card-number')?.value || '',
+                            expiry: document.getElementById('card-expiry')?.value || '',
+                            cvv: document.getElementById('card-cvv')?.value || '',
+                            name: document.getElementById('card-name')?.value || ''
+                        }
+                    };
+                    
+                    const result = await PaymentGateway.processPayment(paymentData);
+                    
+                    if (result.success) {
+                        // 支付成功
+                        GrindingEquipmentB2B.showToast('Payment successful! Redirecting...', 'success');
+                        setTimeout(() => {
+                            window.location.href = 'order-confirmation.html';
+                        }, 2000);
+                    } else {
+                        // 支付失败
+                        GrindingEquipmentB2B.showToast(result.error || 'Payment failed. Please try again.', 'error');
+                        this.innerHTML = '<span class="material-symbols-outlined text-sm">payment</span> Pay Now - $14,000.00';
+                        this.disabled = false;
+                    }
+                } catch (error) {
+                    console.error('Payment error:', error);
+                    GrindingEquipmentB2B.showToast('An error occurred. Please try again.', 'error');
+                    this.innerHTML = '<span class="material-symbols-outlined text-sm">payment</span> Pay Now - $14,000.00';
+                    this.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -202,80 +202,163 @@
             <p class="text-slate-400 mt-2 max-w-2xl">高性能实验室研磨设备，适用于行星式球磨机、振动球磨机和滚筒式球磨机。提供多种高纯度材料选择。</p>
         </div>
         
+        <!-- Mobile Filter Button -->
+        <div class="lg:hidden mb-4">
+            <button id="mobile-filter-toggle" class="w-full flex items-center justify-between bg-surface-dark border border-white/10 rounded-lg p-3 text-white">
+                <span class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">filter_list</span>
+                    <span>筛选条件</span>
+                </span>
+                <span class="material-symbols-outlined">expand_more</span>
+            </button>
+        </div>
+        
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Sidebar Filters -->
             <aside class="w-full lg:w-64 flex-shrink-0">
-                <div class="sticky top-24 space-y-6">
-                    <div class="glass-panel p-5 rounded-xl">
-                        <div class="flex items-center justify-between mb-4">
-                            <h2 class="font-bold text-sm uppercase tracking-wider text-white">筛选条件</h2>
-                            <button class="text-xs text-primary font-medium hover:underline" id="reset-filters">重置全部</button>
-                        </div>
-                        
-                        <!-- Material Category -->
-                        <div class="mb-6">
-                            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
-                                <span class="material-symbols-outlined text-primary text-sm">science</span> 材料类型
-                            </h3>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-2 cursor-pointer group">
-                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" checked>
-                                    <span class="text-sm text-slate-400 group-hover:text-primary">陶瓷 (氧化铝, 氧化锆)</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer group">
-                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
-                                    <span class="text-sm text-slate-400 group-hover:text-primary">金属 (不锈钢, 钨)</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer group">
-                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
-                                    <span class="text-sm text-slate-400 group-hover:text-primary">塑料 (尼龙, PTFE)</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer group">
-                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
-                                    <span class="text-sm text-slate-400 group-hover:text-primary">天然 (玛瑙)</span>
-                                </label>
+                <div id="filter-sidebar" class="hidden lg:block">
+                    <div class="sticky top-24 space-y-6">
+                        <div class="glass-panel p-5 rounded-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="font-bold text-sm uppercase tracking-wider text-white">筛选条件</h2>
+                                <button class="text-xs text-primary font-medium hover:underline" id="reset-filters">重置全部</button>
+                            </div>
+                            
+                            <!-- Material Category -->
+                            <div class="mb-6">
+                                <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
+                                    <span class="material-symbols-outlined text-primary text-sm">science</span> 材料类型
+                                </h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" checked>
+                                        <span class="text-sm text-slate-400 group-hover:text-primary">陶瓷 (氧化铝, 氧化锆)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                        <span class="text-sm text-slate-400 group-hover:text-primary">金属 (不锈钢, 钨)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                        <span class="text-sm text-slate-400 group-hover:text-primary">塑料 (尼龙, PTFE)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                        <span class="text-sm text-slate-400 group-hover:text-primary">天然 (玛瑙)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Volume Category -->
+                            <div class="mb-6">
+                                <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
+                                    <span class="material-symbols-outlined text-primary text-sm">straighten</span> 容量
+                                </h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                        <span class="text-sm text-slate-400">10ml - 50ml</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" checked>
+                                        <span class="text-sm text-slate-400">100ml - 1L</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer group">
+                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                        <span class="text-sm text-slate-400">2L - 10L</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Compatibility Category -->
+                            <div>
+                                <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
+                                    <span class="material-symbols-outlined text-primary text-sm">settings_input_component</span> 设备类型
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent active" data-filter="equipment" data-value="行星式">行星式</button>
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="搅拌式">搅拌式</button>
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="振动式">振动式</button>
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="气流式">气流式</button>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Volume Category -->
-                        <div class="mb-6">
-                            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
-                                <span class="material-symbols-outlined text-primary text-sm">straighten</span> 容量
-                            </h3>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-2 cursor-pointer group">
-                                    <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
-                                    <span class="text-sm text-slate-400">10ml - 50ml</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer group">
-                                    <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" checked>
-                                    <span class="text-sm text-slate-400">100ml - 1L</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer group">
-                                    <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
-                                    <span class="text-sm text-slate-400">2L - 10L</span>
-                                </label>
-                            </div>
+                        <div class="bg-primary/5 p-5 rounded-xl border border-primary/20">
+                            <h4 class="font-bold text-sm mb-2 text-white">技术支持？</h4>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">不确定哪种研磨介质适合您的应用？与我们的工程师交流。</p>
+                            <button class="w-full py-2 bg-primary text-background-dark text-xs font-bold rounded hover:opacity-90 transition-opacity">联系专家</button>
                         </div>
-                        
-                        <!-- Compatibility Category -->
-                        <div>
-                            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
-                                <span class="material-symbols-outlined text-primary text-sm">settings_input_component</span> 设备类型
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent active">行星式</button>
-                                <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent">振动球磨机</button>
-                                <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent">滚筒式球磨机</button>
-                            </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Filter Panel -->
+                <div id="mobile-filter-panel" class="lg:hidden glass-panel p-5 rounded-xl mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="font-bold text-sm uppercase tracking-wider text-white">筛选条件</h2>
+                        <button class="text-xs text-primary font-medium hover:underline" id="reset-filters-mobile">重置全部</button>
+                    </div>
+                    
+                    <!-- Material Category -->
+                    <div class="mb-6">
+                        <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-primary text-sm">science</span> 材料类型
+                        </h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" checked>
+                                <span class="text-sm text-slate-400 group-hover:text-primary">陶瓷 (氧化铝, 氧化锆)</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                <span class="text-sm text-slate-400 group-hover:text-primary">金属 (不锈钢, 钨)</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                <span class="text-sm text-slate-400 group-hover:text-primary">塑料 (尼龙, PTFE)</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                <span class="text-sm text-slate-400 group-hover:text-primary">天然 (玛瑙)</span>
+                            </label>
                         </div>
                     </div>
                     
-                    <div class="bg-primary/5 p-5 rounded-xl border border-primary/20">
-                        <h4 class="font-bold text-sm mb-2 text-white">技术支持？</h4>
-                        <p class="text-xs text-slate-400 mb-4 leading-relaxed">不确定哪种研磨介质适合您的应用？与我们的工程师交流。</p>
-                        <button class="w-full py-2 bg-primary text-background-dark text-xs font-bold rounded hover:opacity-90 transition-opacity">联系专家</button>
+                    <!-- Volume Category -->
+                    <div class="mb-6">
+                        <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-primary text-sm">straighten</span> 容量
+                        </h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                <span class="text-sm text-slate-400">10ml - 50ml</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" checked>
+                                <span class="text-sm text-slate-400">100ml - 1L</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                <span class="text-sm text-slate-400">2L - 10L</span>
+                            </label>
+                        </div>
                     </div>
+                    
+                    <!-- Compatibility Category -->
+                    <div class="mb-4">
+                        <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
+                            <span class="material-symbols-outlined text-primary text-sm">settings_input_component</span> 设备类型
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent active" data-filter="equipment" data-value="行星式">行星式</button>
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="搅拌式">搅拌式</button>
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="振动式">振动式</button>
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="气流式">气流式</button>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full py-3 bg-primary text-background-dark font-bold rounded hover:opacity-90 transition-opacity">应用筛选</button>
                 </div>
             </aside>
             
@@ -286,7 +369,7 @@
                     <span class="text-sm text-slate-400">显示 <span class="text-white font-semibold">12</span> 个高纯度研磨设备</span>
                     <div class="flex items-center gap-3">
                         <span class="text-xs text-slate-400">排序方式:</span>
-                        <select class="bg-surface-dark border border-white/10 rounded px-3 py-1 text-xs text-white focus:border-primary focus:outline-none">
+                        <select class="bg-surface-dark border border-white/10 rounded px-3 py-2 text-xs text-white focus:border-primary focus:outline-none">
                             <option>推荐</option>
                             <option>价格: 低到高</option>
                             <option>价格: 高到低</option>
@@ -297,169 +380,13 @@
                 </div>
                 
                 <!-- Product Grid -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Product Card 1 -->
-                    <div class="product-card glass-panel rounded-xl overflow-hidden border border-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(19,200,236,0.2)]">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" alt="行星式球磨机" class="w-full h-48 object-cover">
-                            <div class="absolute top-3 right-3 bg-primary/90 text-deep-navy text-xs font-bold px-2 py-1 rounded">新品</div>
-                        </div>
-                        <div class="p-5">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-white">行星式球磨机</h3>
-                                <span class="text-sm text-primary font-semibold">¥12,000</span>
-                            </div>
-                            <p class="text-xs text-slate-400 mb-4 line-clamp-2">4工位高能球磨机，适用于纳米材料加工和机械合金化。</p>
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center text-xs text-slate-500">
-                                    <span class="material-symbols-outlined text-[12px]">inventory</span>
-                                    <span>库存充足</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="product-detail.html?id=1" class="text-xs text-primary hover:text-accent transition-colors">查看详情</a>
-                                    <a href="contact.html" class="text-xs text-white bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded transition-colors">咨询</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 2 -->
-                    <div class="product-card glass-panel rounded-xl overflow-hidden border border-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(19,200,236,0.2)]">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=400&fit=crop" alt="氧化铝研磨罐" class="w-full h-48 object-cover">
-                        </div>
-                        <div class="p-5">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-white">氧化铝研磨罐</h3>
-                                <span class="text-sm text-primary font-semibold">¥1,500</span>
-                            </div>
-                            <p class="text-xs text-slate-400 mb-4 line-clamp-2">高纯度氧化铝研磨罐，容量500ml，适用于各种行星式球磨机。</p>
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center text-xs text-slate-500">
-                                    <span class="material-symbols-outlined text-[12px]">inventory</span>
-                                    <span>库存充足</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="product-detail.html?id=2" class="text-xs text-primary hover:text-accent transition-colors">查看详情</a>
-                                    <a href="contact.html" class="text-xs text-white bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded transition-colors">咨询</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 3 -->
-                    <div class="product-card glass-panel rounded-xl overflow-hidden border border-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(19,200,236,0.2)]">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1586899028703-2ddd36341f46?w=600&h=400&fit=crop" alt="氧化锆研磨球" class="w-full h-48 object-cover">
-                            <div class="absolute top-3 right-3 bg-secondary/90 text-white text-xs font-bold px-2 py-1 rounded">热销</div>
-                        </div>
-                        <div class="p-5">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-white">氧化锆研磨球</h3>
-                                <span class="text-sm text-primary font-semibold">¥800</span>
-                            </div>
-                            <p class="text-xs text-slate-400 mb-4 line-clamp-2">高纯度氧化锆研磨球，直径10mm，适用于精细研磨。</p>
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center text-xs text-slate-500">
-                                    <span class="material-symbols-outlined text-[12px]">inventory</span>
-                                    <span>库存充足</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="product-detail.html?id=3" class="text-xs text-primary hover:text-accent transition-colors">查看详情</a>
-                                    <a href="contact.html" class="text-xs text-white bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded transition-colors">咨询</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 4 -->
-                    <div class="product-card glass-panel rounded-xl overflow-hidden border border-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(19,200,236,0.2)]">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop" alt="振动球磨机" class="w-full h-48 object-cover">
-                        </div>
-                        <div class="p-5">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-white">振动球磨机</h3>
-                                <span class="text-sm text-primary font-semibold">¥8,500</span>
-                            </div>
-                            <p class="text-xs text-slate-400 mb-4 line-clamp-2">高效振动球磨机，适用于快速样品制备和小批量生产。</p>
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center text-xs text-slate-500">
-                                    <span class="material-symbols-outlined text-[12px]">inventory</span>
-                                    <span>库存充足</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="product-detail.html?id=4" class="text-xs text-primary hover:text-accent transition-colors">查看详情</a>
-                                    <a href="contact.html" class="text-xs text-white bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded transition-colors">咨询</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 5 -->
-                    <div class="product-card glass-panel rounded-xl overflow-hidden border border-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(19,200,236,0.2)]">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1560185123-f211a44b36f7?w=600&h=400&fit=crop" alt="滚筒式球磨机" class="w-full h-48 object-cover">
-                        </div>
-                        <div class="p-5">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-white">滚筒式球磨机</h3>
-                                <span class="text-sm text-primary font-semibold">¥6,200</span>
-                            </div>
-                            <p class="text-xs text-slate-400 mb-4 line-clamp-2">大容量滚筒式球磨机，适用于工业规模的材料加工。</p>
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center text-xs text-slate-500">
-                                    <span class="material-symbols-outlined text-[12px]">inventory</span>
-                                    <span>库存充足</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="product-detail.html?id=5" class="text-xs text-primary hover:text-accent transition-colors">查看详情</a>
-                                    <a href="contact.html" class="text-xs text-white bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded transition-colors">咨询</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 6 -->
-                    <div class="product-card glass-panel rounded-xl overflow-hidden border border-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(19,200,236,0.2)]">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1558729925-f787a16616fd?w=600&h=400&fit=crop" alt="玛瑙研磨罐" class="w-full h-48 object-cover">
-                        </div>
-                        <div class="p-5">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-white">玛瑙研磨罐</h3>
-                                <span class="text-sm text-primary font-semibold">¥2,300</span>
-                            </div>
-                            <p class="text-xs text-slate-400 mb-4 line-clamp-2">天然玛瑙研磨罐，高纯度，适用于对污染敏感的样品。</p>
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center text-xs text-slate-500">
-                                    <span class="material-symbols-outlined text-[12px]">inventory</span>
-                                    <span>库存充足</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="product-detail.html?id=6" class="text-xs text-primary hover:text-accent transition-colors">查看详情</a>
-                                    <a href="contact.html" class="text-xs text-white bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded transition-colors">咨询</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Products will be dynamically generated here -->
                 </div>
                 
                 <!-- Pagination -->
-                <div class="flex justify-center mt-12">
-                    <div class="flex items-center gap-2">
-                        <button class="w-10 h-10 rounded flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
-                            <span class="material-symbols-outlined text-sm">chevron_left</span>
-                        </button>
-                        <button class="w-10 h-10 rounded flex items-center justify-center bg-primary text-deep-navy font-bold">1</button>
-                        <button class="w-10 h-10 rounded flex items-center justify-center text-slate-400 hover:text-primary transition-colors">2</button>
-                        <button class="w-10 h-10 rounded flex items-center justify-center text-slate-400 hover:text-primary transition-colors">3</button>
-                        <button class="w-10 h-10 rounded flex items-center justify-center text-slate-400 hover:text-primary transition-colors">...</button>
-                        <button class="w-10 h-10 rounded flex items-center justify-center text-slate-400 hover:text-primary transition-colors">8</button>
-                        <button class="w-10 h-10 rounded flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
-                            <span class="material-symbols-outlined text-sm">chevron_right</span>
-                        </button>
-                    </div>
+                <div id="pagination" class="flex justify-center mt-12">
+                    <!-- Pagination will be dynamically generated here -->
                 </div>
             </div>
         </div>
@@ -550,11 +477,11 @@
                         <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider text-sm">产品分类</h4>
                         <ul class="space-y-3 text-sm">
                             <li><a href="product-catalog.html?category=planetary" class="text-slate-400 hover:text-primary transition-colors">行星式球磨机</a></li>
-                            <li><a href="product-catalog.html?category=roller" class="text-slate-400 hover:text-primary transition-colors">滚筒式球磨机</a></li>
-                            <li><a href="product-catalog.html?category=stirred" class="text-slate-400 hover:text-primary transition-colors">搅拌式球磨机</a></li>
+                            <li><a href="product-catalog.html?category=stirred" class="text-slate-400 hover:text-primary transition-colors">搅拌磨机</a></li>
+                            <li><a href="product-catalog.html?category=vibration" class="text-slate-400 hover:text-primary transition-colors">振动磨机</a></li>
+                            <li><a href="product-catalog.html?category=airflow" class="text-slate-400 hover:text-primary transition-colors">气流磨机</a></li>
                             <li><a href="product-catalog.html?category=media" class="text-slate-400 hover:text-primary transition-colors">研磨介质</a></li>
                             <li><a href="product-catalog.html?category=jars" class="text-slate-400 hover:text-primary transition-colors">研磨罐</a></li>
-                            <li><a href="product-catalog.html?category=accessories" class="text-slate-400 hover:text-primary transition-colors">配件</a></li>
                         </ul>
                     </div>
 
@@ -691,6 +618,32 @@
             document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
             document.querySelector('input[type="radio"]').checked = true;
         });
+        
+        // Mobile Filter Toggle
+        const mobileFilterToggle = document.getElementById('mobile-filter-toggle');
+        const mobileFilterPanel = document.getElementById('mobile-filter-panel');
+        
+        if (mobileFilterToggle && mobileFilterPanel) {
+            mobileFilterToggle.addEventListener('click', function() {
+                mobileFilterPanel.classList.toggle('hidden');
+                const icon = this.querySelector('.material-symbols-outlined:last-child');
+                if (mobileFilterPanel.classList.contains('hidden')) {
+                    icon.textContent = 'expand_more';
+                } else {
+                    icon.textContent = 'expand_less';
+                }
+            });
+            
+            // Reset Filters for Mobile
+            document.getElementById('reset-filters-mobile').addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.filter-btn:first-child').classList.add('active');
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+                document.querySelector('input[type="checkbox"]').checked = true;
+                document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+                document.querySelector('input[type="radio"]').checked = true;
+            });
+        }
 
         // Global Search
         document.getElementById('global-search').addEventListener('keypress', function(e) {

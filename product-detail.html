@@ -9,8 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/products.js"></script>
+    <script src="assets/js/image-processing.js"></script>
+    <script src="assets/js/grinding-animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -93,9 +97,16 @@
     <!-- Main Content -->
     <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Product Images -->
+            <!-- Product Images and 3D Viewer -->
             <div class="space-y-4">
-                <div class="relative aspect-square bg-secondary-dark rounded-xl overflow-hidden border border-white/5">
+                <!-- View Toggle -->
+                <div class="flex justify-end gap-2">
+                    <button id="2d-view-btn" class="px-4 py-2 bg-primary text-background-dark text-xs font-bold rounded-lg">2D View</button>
+                    <button id="3d-view-btn" class="px-4 py-2 bg-background-dark border border-primary/30 text-primary text-xs font-bold rounded-lg hover:bg-primary/10 transition-colors">3D View</button>
+                </div>
+                
+                <!-- 2D Image View -->
+                <div id="2d-view" class="relative aspect-square bg-secondary-dark rounded-xl overflow-hidden border border-white/5">
                     <img id="main-image" class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" alt="Product Image">
                     <div class="absolute top-4 left-4 flex flex-col gap-2" id="product-badges">
                         <span class="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded shadow-sm">CERAMIC</span>
@@ -105,6 +116,29 @@
                         <span class="material-icons">zoom_in</span>
                     </button>
                 </div>
+                
+                <!-- 3D Product Viewer -->
+                <div id="3d-view" class="hidden relative aspect-square bg-secondary-dark rounded-xl overflow-hidden border border-white/5">
+                    <div id="product-3d-container" class="w-full h-full"></div>
+                    <div class="absolute top-4 left-4 flex flex-col gap-2" id="product-badges-3d">
+                        <span class="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded shadow-sm">3D VIEW</span>
+                        <span class="bg-secondary-dark border border-primary/30 text-white text-xs font-bold px-3 py-1 rounded shadow-sm">INTERACTIVE</span>
+                    </div>
+                    <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 justify-center">
+                        <button class="viewpoint-btn px-3 py-1 text-xs bg-background-dark/80 border border-primary/30 text-primary rounded hover:bg-primary hover:text-background-dark transition-colors" data-viewpoint="0">正面视图</button>
+                        <button class="viewpoint-btn px-3 py-1 text-xs bg-background-dark/80 border border-primary/30 text-primary rounded hover:bg-primary hover:text-background-dark transition-colors" data-viewpoint="1">侧面视图</button>
+                        <button class="viewpoint-btn px-3 py-1 text-xs bg-background-dark/80 border border-primary/30 text-primary rounded hover:bg-primary hover:text-background-dark transition-colors" data-viewpoint="2">顶部视图</button>
+                    </div>
+                    <div class="absolute bottom-4 right-4 flex gap-2">
+                        <button id="reset-view-btn" class="p-2 bg-background-dark/50 rounded-full text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-icons">refresh</span>
+                        </button>
+                        <button id="toggle-rotate-btn" class="p-2 bg-background-dark/50 rounded-full text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-icons">sync</span>
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="flex gap-3 overflow-x-auto pb-2" id="thumbnail-gallery">
                     <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 thumbnail-active">
                         <img class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" alt="Thumbnail 1">
@@ -240,6 +274,184 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <!-- Real-time Monitoring Widget -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="material-icons text-primary">monitoring</span> 实时运行监控
+            </h2>
+            <div class="glass-panel rounded-xl p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Monitoring Parameters -->
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between bg-background-dark/50 p-4 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                    <span class="material-icons text-blue-400">speed</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">转速</div>
+                                    <div class="text-lg font-bold text-white">
+                                        <span id="rpm-value">1200</span> <span class="text-xs text-slate-400">RPM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="h-2 bg-background-dark rounded-full overflow-hidden">
+                                    <div id="rpm-bar" class="h-full bg-blue-500" style="width: 60%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                    <span>0</span>
+                                    <span>2000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-background-dark/50 p-4 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+                                    <span class="material-icons text-red-400">thermostat</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">温度</div>
+                                    <div class="text-lg font-bold text-white">
+                                        <span id="temp-value">45</span> <span class="text-xs text-slate-400">°C</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="h-2 bg-background-dark rounded-full overflow-hidden">
+                                    <div id="temp-bar" class="h-full bg-red-500" style="width: 45%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                    <span>0</span>
+                                    <span>100</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-background-dark/50 p-4 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                    <span class="material-icons text-green-400">power</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">功率</div>
+                                    <div class="text-lg font-bold text-white">
+                                        <span id="power-value">1.2</span> <span class="text-xs text-slate-400">kW</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="h-2 bg-background-dark rounded-full overflow-hidden">
+                                    <div id="power-bar" class="h-full bg-green-500" style="width: 40%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                    <span>0</span>
+                                    <span>3</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-background-dark/50 p-4 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                                    <span class="material-icons text-purple-400">pressure</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">负载</div>
+                                    <div class="text-lg font-bold text-white">
+                                        <span id="load-value">65</span> <span class="text-xs text-slate-400">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <div class="h-2 bg-background-dark rounded-full overflow-hidden">
+                                    <div id="load-bar" class="h-full bg-purple-500" style="width: 65%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                    <span>0</span>
+                                    <span>100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Visualization -->
+                    <div class="bg-background-dark/50 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-bold text-white">运行参数趋势</h3>
+                            <div class="flex gap-2">
+                                <button class="px-3 py-1 text-xs bg-primary/10 border border-primary/30 rounded text-primary hover:bg-primary hover:text-background-dark transition-colors">实时</button>
+                                <button class="px-3 py-1 text-xs bg-background-dark border border-white/10 rounded text-slate-400 hover:border-primary/30 hover:text-primary transition-colors">历史</button>
+                            </div>
+                        </div>
+                        <div class="h-64">
+                            <canvas id="monitoring-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grinding Process Visualization -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="material-icons text-primary">settings</span> 研磨过程可视化
+            </h2>
+            <div class="glass-panel rounded-xl p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Animation Container -->
+                    <div class="lg:col-span-2">
+                        <div id="grinding-animation-container" class="aspect-video bg-background-dark rounded-lg overflow-hidden border border-white/5"></div>
+                    </div>
+                    <!-- Controls -->
+                    <div class="space-y-4">
+                        <div class="bg-background-dark/50 rounded-lg p-4">
+                            <h3 class="text-lg font-bold text-white mb-4">动画控制</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs text-slate-400 mb-1">旋转速度</label>
+                                    <input type="range" id="speed-control" min="0" max="10" value="5" class="w-full h-2 bg-background-dark rounded-lg appearance-none cursor-pointer">
+                                    <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                        <span>慢</span>
+                                        <span>快</span>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button id="start-animation" class="flex-1 py-2 bg-primary text-background-dark font-bold rounded-lg hover:bg-primary/90 transition-colors">
+                                        开始
+                                    </button>
+                                    <button id="stop-animation" class="flex-1 py-2 bg-background-dark border border-slate-700 text-white font-bold rounded-lg hover:border-primary/50 transition-colors">
+                                        停止
+                                    </button>
+                                    <button id="reset-animation" class="flex-1 py-2 bg-background-dark border border-slate-700 text-white font-bold rounded-lg hover:border-primary/50 transition-colors">
+                                        重置
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-background-dark/50 rounded-lg p-4">
+                            <h3 class="text-lg font-bold text-white mb-4">过程说明</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                该动画模拟了研磨过程中物料与研磨介质的相互作用。通过调整速度，可以观察不同转速下的研磨效果。
+                            </p>
+                            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-white"></span> 研磨介质
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-orange-500"></span> 物料粒子
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-blue-400"></span> 研磨罐
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -539,7 +751,245 @@
             this.reset();
         });
 
-        document.addEventListener('DOMContentLoaded', loadProduct);
+        // Real-time Monitoring Functionality
+        let monitoringChart;
+        let dataPoints = 20;
+        let timeLabels = Array.from({length: dataPoints}, (_, i) => `${i}s`);
+        let rpmData = Array(dataPoints).fill(1200);
+        let tempData = Array(dataPoints).fill(45);
+        let powerData = Array(dataPoints).fill(1.2);
+        let loadData = Array(dataPoints).fill(65);
+
+        function initMonitoringChart() {
+            const ctx = document.getElementById('monitoring-chart').getContext('2d');
+            monitoringChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: timeLabels,
+                    datasets: [
+                        {
+                            label: '转速 (RPM)',
+                            data: rpmData,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: '温度 (°C)',
+                            data: tempData,
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: '功率 (kW)',
+                            data: powerData,
+                            borderColor: '#22c55e',
+                            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: '负载 (%)',
+                            data: loadData,
+                            borderColor: '#a855f7',
+                            backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.05)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.6)'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.05)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.6)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 500,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+        }
+
+        function updateMonitoringData() {
+            // Generate random variations for realistic data
+            const rpmVariation = (Math.random() - 0.5) * 50;
+            const tempVariation = (Math.random() - 0.5) * 2;
+            const powerVariation = (Math.random() - 0.5) * 0.1;
+            const loadVariation = (Math.random() - 0.5) * 5;
+
+            // Update current values
+            const currentRPM = Math.max(800, Math.min(1600, rpmData[rpmData.length - 1] + rpmVariation));
+            const currentTemp = Math.max(30, Math.min(70, tempData[tempData.length - 1] + tempVariation));
+            const currentPower = Math.max(0.8, Math.min(2.0, powerData[powerData.length - 1] + powerVariation));
+            const currentLoad = Math.max(30, Math.min(90, loadData[loadData.length - 1] + loadVariation));
+
+            // Update display values
+            document.getElementById('rpm-value').textContent = Math.round(currentRPM);
+            document.getElementById('temp-value').textContent = Math.round(currentTemp);
+            document.getElementById('power-value').textContent = currentPower.toFixed(1);
+            document.getElementById('load-value').textContent = Math.round(currentLoad);
+
+            // Update progress bars
+            document.getElementById('rpm-bar').style.width = `${(currentRPM / 2000) * 100}%`;
+            document.getElementById('temp-bar').style.width = `${(currentTemp / 100) * 100}%`;
+            document.getElementById('power-bar').style.width = `${(currentPower / 3) * 100}%`;
+            document.getElementById('load-bar').style.width = `${currentLoad}%`;
+
+            // Update chart data
+            rpmData.push(currentRPM);
+            tempData.push(currentTemp);
+            powerData.push(currentPower);
+            loadData.push(currentLoad);
+
+            // Keep only the last N data points
+            rpmData = rpmData.slice(-dataPoints);
+            tempData = tempData.slice(-dataPoints);
+            powerData = powerData.slice(-dataPoints);
+            loadData = loadData.slice(-dataPoints);
+
+            // Update chart
+            if (monitoringChart) {
+                monitoringChart.data.datasets[0].data = rpmData;
+                monitoringChart.data.datasets[1].data = tempData;
+                monitoringChart.data.datasets[2].data = powerData;
+                monitoringChart.data.datasets[3].data = loadData;
+                monitoringChart.update('none');
+            }
+        }
+
+        // 全局变量
+        let modelViewer = null;
+        let grindingAnimation = null;
+        let isAutoRotate = true;
+
+        function init3DViewer() {
+            const productId = getProductIdFromUrl();
+            
+            try {
+                modelViewer = new ModelViewer('product-3d-container');
+                modelViewer.init(productId);
+                console.log('3D viewer initialized');
+                
+                // 绑定视角切换按钮
+                document.querySelectorAll('.viewpoint-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const viewpointIndex = parseInt(this.dataset.viewpoint);
+                        modelViewer.setViewpoint(viewpointIndex);
+                    });
+                });
+            } catch (error) {
+                console.error('Error initializing 3D viewer:', error);
+            }
+        }
+
+        function initGrindingAnimation() {
+            try {
+                grindingAnimation = new GrindingAnimation('grinding-animation-container');
+                console.log('Grinding animation initialized');
+            } catch (error) {
+                console.error('Error initializing grinding animation:', error);
+            }
+        }
+
+        function setupEventListeners() {
+            // 2D/3D视图切换
+            document.getElementById('2d-view-btn').addEventListener('click', function() {
+                document.getElementById('2d-view').classList.remove('hidden');
+                document.getElementById('3d-view').classList.add('hidden');
+                this.classList.add('bg-primary', 'text-background-dark');
+                this.classList.remove('bg-background-dark', 'border', 'border-primary/30', 'text-primary');
+                document.getElementById('3d-view-btn').classList.add('bg-background-dark', 'border', 'border-primary/30', 'text-primary');
+                document.getElementById('3d-view-btn').classList.remove('bg-primary', 'text-background-dark');
+            });
+
+            document.getElementById('3d-view-btn').addEventListener('click', function() {
+                document.getElementById('2d-view').classList.add('hidden');
+                document.getElementById('3d-view').classList.remove('hidden');
+                this.classList.add('bg-primary', 'text-background-dark');
+                this.classList.remove('bg-background-dark', 'border', 'border-primary/30', 'text-primary');
+                document.getElementById('2d-view-btn').classList.add('bg-background-dark', 'border', 'border-primary/30', 'text-primary');
+                document.getElementById('2d-view-btn').classList.remove('bg-primary', 'text-background-dark');
+                
+                // 初始化3D查看器
+                if (!modelViewer) {
+                    init3DViewer();
+                }
+            });
+
+            // 3D控制按钮
+            document.getElementById('reset-view-btn').addEventListener('click', function() {
+                if (modelViewer) {
+                    modelViewer.setViewpoint(0);
+                }
+            });
+
+            document.getElementById('toggle-rotate-btn').addEventListener('click', function() {
+                isAutoRotate = !isAutoRotate;
+                // 这里可以添加旋转控制逻辑
+            });
+
+            // 研磨动画控制
+            document.getElementById('start-animation').addEventListener('click', function() {
+                if (grindingAnimation) {
+                    grindingAnimation.start();
+                }
+            });
+
+            document.getElementById('stop-animation').addEventListener('click', function() {
+                if (grindingAnimation) {
+                    grindingAnimation.stop();
+                }
+            });
+
+            document.getElementById('reset-animation').addEventListener('click', function() {
+                if (grindingAnimation) {
+                    grindingAnimation.reset();
+                }
+            });
+
+            // 速度控制
+            document.getElementById('speed-control').addEventListener('input', function() {
+                const speed = parseFloat(this.value) / 5;
+                if (grindingAnimation) {
+                    grindingAnimation.setSpeed(speed);
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProduct();
+            initMonitoringChart();
+            setInterval(updateMonitoringData, 1000);
+            initGrindingAnimation();
+            setupEventListeners();
+        });
     </script>
 </body>
 </html>

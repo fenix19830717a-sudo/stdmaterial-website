@@ -1,0 +1,62 @@
+{
+  "versions": [
+    {
+      "id": "8540bf68-c353-4b73-b243-2b1bff889172",
+      "itemId": "TESTPROD-01D9CB54",
+      "data": {
+        "id": "TESTPROD-01D9CB54",
+        "name": "Test Product",
+        "category": "Milling Equipment",
+        "subcategory": "Planetary Mills",
+        "model": "",
+        "material": "",
+        "specifications": {},
+        "features": [],
+        "description": "",
+        "technicalDetails": "",
+        "images": [],
+        "price": 1000,
+        "currency": "USD",
+        "stock": 10,
+        "moq": 1,
+        "leadTime": "",
+        "certifications": [],
+        "applications": [],
+        "keywords": [],
+        "createdAt": "2026-03-04T17:43:23.927891",
+        "updatedAt": "2026-03-04T17:43:23.927891"
+      },
+      "createdAt": "2026-03-04T17:43:25.991527",
+      "version": 1
+    },
+    {
+      "id": "e42b9e5e-2946-41b2-ae6d-37844c1b4158",
+      "itemId": "测试产品-8A3B7545",
+      "data": {
+        "id": "测试产品-8A3B7545",
+        "name": "测试产品",
+        "category": "研磨系列",
+        "subcategory": "行星球磨机",
+        "model": "",
+        "material": "",
+        "specifications": {},
+        "features": [],
+        "description": "",
+        "technicalDetails": "",
+        "images": [],
+        "price": 5000,
+        "currency": "USD",
+        "stock": 10,
+        "moq": 1,
+        "leadTime": "",
+        "certifications": [],
+        "applications": [],
+        "keywords": [],
+        "createdAt": "2026-03-04T17:44:59.907193",
+        "updatedAt": "2026-03-04T17:44:59.907193"
+      },
+      "createdAt": "2026-03-04T17:45:01.982586",
+      "version": 2
+    }
+  ]
+}

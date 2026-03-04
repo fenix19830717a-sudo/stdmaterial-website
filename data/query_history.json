@@ -1,0 +1,39 @@
+{
+  "history": [
+    {
+      "id": "2d89961b-31c0-47fd-84d8-330b02ff6300",
+      "query": "test product",
+      "timestamp": "2026-03-05T00:45:37.312893",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "python-requests/2.32.2"
+    },
+    {
+      "id": "55719555-06cd-4637-ae0e-bcbaeff2db9f",
+      "query": "测试查询",
+      "timestamp": "2026-03-05T01:46:04.473311",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "python-requests/2.32.2"
+    },
+    {
+      "id": "f2d793bc-6bd1-40ce-bc9a-1bb49110910e",
+      "query": "test query",
+      "timestamp": "2026-03-05T01:49:54.197965",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "python-requests/2.32.2"
+    },
+    {
+      "id": "5932a10d-3faf-433f-bea3-669d92819ee6",
+      "query": "test query",
+      "timestamp": "2026-03-05T01:50:12.894081",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "python-requests/2.32.2"
+    },
+    {
+      "id": "c3c8d101-3cce-4a9b-9a88-c273e084620c",
+      "query": "测试查询",
+      "timestamp": "2026-03-05T04:28:14.162796",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "python-requests/2.32.2"
+    }
+  ]
+}

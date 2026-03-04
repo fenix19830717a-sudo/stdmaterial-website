@@ -34,7 +34,7 @@
                     <div class="w-12 h-12 bg-primary/20 border border-primary/50 rounded-lg flex items-center justify-center">
                         <span class="material-symbols-outlined text-primary text-2xl">precision_manufacturing</span>
                     </div>
-                    <span class="text-2xl font-bold text-white">PRECISION<span class="text-primary font-light">GRIND</span></span>
+                    <span class="text-2xl font-bold text-white">HUNAN SHENGTONGDA<span class="text-primary font-light">MATERIALS</span></span>
                 </div>
             </div>
             
@@ -111,12 +111,25 @@
             const result = await AdminPanel.login(username, password);
             
             if (result.success) {
-                GrindingEquipmentB2B.showToast('Login successful! Redirecting...', 'success');
+                // 显示成功消息
+                const toast = document.createElement('div');
+                toast.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50';
+                toast.textContent = 'Login successful! Redirecting...';
+                document.body.appendChild(toast);
+                
                 setTimeout(() => {
                     window.location.href = 'dashboard.html';
                 }, 1000);
             } else {
-                GrindingEquipmentB2B.showToast(result.message, 'error');
+                // 显示错误消息
+                const toast = document.createElement('div');
+                toast.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50';
+                toast.textContent = result.message;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.remove();
+                }, 3000);
             }
         });
     </script>

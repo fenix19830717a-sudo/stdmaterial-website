@@ -259,7 +259,7 @@
                         </div>
                         
                         <!-- Compatibility Category -->
-                        <div>
+                        <div class="mb-6">
                             <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
                                 <span class="material-symbols-outlined text-primary text-sm">settings_input_component</span> 设备类型
                             </h3>
@@ -268,6 +268,13 @@
                                 <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent">振动球磨机</button>
                                 <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent">滚筒式球磨机</button>
                             </div>
+                        </div>
+                        
+                        <!-- Apply Filter Button -->
+                        <div class="pt-4 border-t border-white/5">
+                            <button id="apply-filters" class="w-full py-2 bg-primary text-background-dark text-sm font-bold rounded hover:bg-primary/90 transition-colors">
+                                确认筛选
+                            </button>
                         </div>
                     </div>
                     
@@ -690,6 +697,40 @@
             document.querySelector('input[type="checkbox"]').checked = true;
             document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
             document.querySelector('input[type="radio"]').checked = true;
+        });
+
+        // Apply Filters
+        document.getElementById('apply-filters').addEventListener('click', function() {
+            // 获取选中的筛选条件
+            const selectedMaterials = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+                selectedMaterials.push(cb.nextElementSibling.textContent.trim());
+            });
+            
+            const selectedVolume = document.querySelector('input[type="radio"]:checked').nextElementSibling.textContent.trim();
+            const selectedEquipment = document.querySelector('.filter-btn.active').textContent.trim();
+            
+            console.log('Applied filters:', {
+                materials: selectedMaterials,
+                volume: selectedVolume,
+                equipment: selectedEquipment
+            });
+            
+            // 模拟筛选效果
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                // 这里可以根据实际筛选逻辑显示或隐藏产品卡片
+                // 现在只是模拟效果，显示所有产品
+                card.style.display = 'block';
+            });
+            
+            // 显示筛选结果提示
+            const resultsText = document.querySelector('.text-sm.text-slate-400');
+            resultsText.innerHTML = `显示 <span class="text-white font-semibold">${productCards.length}</span> 个符合条件的产品`;
+            
+            // 滚动到产品列表
+            const productGrid = document.querySelector('.grid.sm\:grid-cols-2');
+            productGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
 
         // Global Search
