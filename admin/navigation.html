@@ -7,6 +7,14 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-L2EZ1RRFKP");
+    </script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -61,7 +69,14 @@
             height: 100%;
         }
     </style>
-    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="./assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="bg-background-dark text-slate-100 font-display">
     <!-- Sidebar -->

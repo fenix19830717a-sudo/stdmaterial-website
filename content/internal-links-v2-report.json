@@ -1,0 +1,217 @@
+{
+  "total_articles": 30,
+  "articles_updated": 30,
+  "total_internal_links": 120,
+  "details": [
+    {
+      "file": "01-planetary-ball-mill-guide.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 11,
+      "status": "updated"
+    },
+    {
+      "file": "02-laboratory-grinding-equipment.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "03-nanomaterial-precision.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "04-grinding-media-comparison.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "05-tungsten-carbide-jars.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 4,
+      "status": "updated"
+    },
+    {
+      "file": "06-rpm-optimization.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "07-equipment-maintenance.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "08-safety-guidelines.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "09-ball-size-selection.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "10-nanoparticle-methods.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "11-high-energy-milling.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "12-lab-equipment-essentials.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "13-ceramic-grinding-media.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "14-wet-vs-dry-grinding.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "15-liner-materials.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "16-sample-preparation-workflow.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "17-grinding-efficiency.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 4,
+      "status": "updated"
+    },
+    {
+      "file": "18-industrial-vs-lab.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "19-material-hardness.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "20-market-trends-2026.md",
+      "category": "SEO",
+      "links_added": 4,
+      "existing_links": 4,
+      "status": "updated"
+    },
+    {
+      "file": "01-faq-grinding-media.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "02-comparison-ball-mills.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "03-planetary-vs-roller-faq.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "04-technical-specs.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 4,
+      "status": "updated"
+    },
+    {
+      "file": "05-grinding-calculator.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "06-material-compatibility.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "07-troubleshooting.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "08-roi-calculator.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 4,
+      "status": "updated"
+    },
+    {
+      "file": "09-compliance-guide.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    },
+    {
+      "file": "10-vendor-checklist.md",
+      "category": "GEO",
+      "links_added": 4,
+      "existing_links": 3,
+      "status": "updated"
+    }
+  ]
+}

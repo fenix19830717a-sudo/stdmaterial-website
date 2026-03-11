@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "catalog": "Product Catalog",
+    "selection": "Selection Guide",
+    "simulator": "Grinding Simulator",
+    "cases": "Case Studies",
+    "about": "About Us",
+    "news": "News",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "account": "My Account",
+    "inquiry": "Inquiry Now",
+    "liveChat": "Live Chat",
+    "downloadCatalog": "Catalog"
+  },
+  "topBar": {
+    "engineerMode": "Engineer Mode",
+    "purchaserMode": "Purchaser Mode",
+    "searchPlaceholder": "Search products, SKU, keywords..."
+  },
+  "hero": {
+    "badge": "Next-Gen Lab Tech",
+    "title1": "Achieve Nano-Scale",
+    "title2": "Grinding Precision",
+    "title3": "to 0.1μm",
+    "subtitle": "Yield Rate Increased by 40%",
+    "description": "STD-Nano series planetary ball mills, designed for lithium battery cathode materials, nano ceramics, pharmaceutical powders and other high-precision grinding needs. From lab to production line, ensuring every gram of material achieves ideal particle size.",
+    "cta1": "Configure Your Solution",
+    "cta2": "Try Grinding Simulator",
+    "param1Title": "Peak Speed",
+    "param1Value": "800 RPM",
+    "param2Title": "Nano Precision",
+    "param2Value": "0.1μm",
+    "param3Title": "Certification",
+    "param3Value": "ISO 9001",
+    "cert1": "ISO 9001",
+    "cert2": "NANO-SCALE",
+    "cert3": "24H DUTY",
+    "caseTag": "Application Case",
+    "caseFrom": "From Tsinghua University Materials Science"
+  },
+  "timeline": {
+    "title": "Technology Milestones",
+    "subtitle": "27 Years of Grinding Technology Innovation",
+    "description": "From our founding in 1998 to today, we continue to push the boundaries of grinding technology",
+    "1998": {
+      "year": "1998",
+      "title": "Founded",
+      "desc": "Started in Changsha, Hunan"
+    },
+    "2008": {
+      "year": "2008",
+      "title": "ISO 9001",
+      "desc": "Quality Management Certification"
+    },
+    "2015": {
+      "year": "2015",
+      "title": "Nano Grinding",
+      "desc": "0.1μm Level Breakthrough"
+    },
+    "2020": {
+      "year": "2020",
+      "title": "Smart Control",
+      "desc": "IoT Remote Monitoring System"
+    },
+    "2025": {
+      "year": "2025",
+      "title": "AI Simulator",
+      "desc": "Intelligent Process Optimization"
+    }
+  },
+  "products": {
+    "title": "Product Categories",
+    "viewAll": "View All Products",
+    "details": "View Details",
+    "inquiry": "Request Quote",
+    "specs": "Specifications",
+    "features": "Features",
+    "applications": "Applications",
+    "price": "Price",
+    "stock": "Stock Status",
+    "contactForQuote": "Contact for Quote",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "category": {
+      "crushing": "Crushing Series",
+      "planetary": "Planetary Ball Mills",
+      "stirred": "Stirred Ball Mills",
+      "horizontal": "Horizontal Ball Mills",
+      "vibrating": "Vibrating Ball Mills",
+      "jars": "Grinding Jars",
+      "media": "Grinding Media"
+    }
+  },
+  "footer": {
+    "company": "Hunan Shengtongda Materials Technology Co., Ltd.",
+    "slogan": "Precision Grinding Solutions for Industry & Laboratory",
+    "contact": "Contact Info",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "addressValue": "High-Tech Industrial Development Zone, Changsha, Hunan, China",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "faq": "FAQ",
+    "shipping": "Shipping Info",
+    "returns": "Returns & Warranty",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "followUs": "Follow Us",
+    "copyright": "© 2026 Hunan Shengtongda Materials Technology Co., Ltd. All Rights Reserved."
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Leading the Future of Grinding Technology",
+    "story": "Our Story",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "values": "Core Values",
+    "certifications": "Certifications",
+    "globalReach": "Global Reach"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in Touch with Our Team",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "company": "Company",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "news": {
+    "title": "Latest News",
+    "subtitle": "Industry Insights & Company Updates",
+    "readMore": "Read More",
+    "categories": {
+      "company": "Company News",
+      "industry": "Industry Trends",
+      "tech": "Technology"
+    }
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Success Stories from Our Customers",
+    "viewCase": "View Case Study"
+  },
+  "language": {
+    "english": "English",
+    "chinese": "中文",
+    "switch": "Language"
+  },
+  "currency": {
+    "usd": "USD ($)",
+    "eur": "EUR (€)",
+    "cny": "CNY (¥)",
+    "gbp": "GBP (£)"
+  }
+}

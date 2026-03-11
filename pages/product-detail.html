@@ -57,6 +57,13 @@
         input[type="range"] { min-height: 44px; }
         select { min-height: 44px; }
     </style>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="../assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
     <div class="fixed inset-0 z-0 bg-grid-pattern bg-[size:40px_40px] pointer-events-none"></div>
@@ -111,7 +118,7 @@
             <!-- Product Images -->
             <div class="space-y-4">
                 <div class="relative aspect-square bg-secondary-dark rounded-xl overflow-hidden border border-white/5">
-                    <img id="main-image" class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" alt="Product Image">
+                    <img id="main-image" class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" loading="lazy" alt="Product Image">
                     <div class="absolute top-4 left-4 flex flex-col gap-2" id="product-badges">
                         <span class="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded shadow-sm">CERAMIC</span>
                         <span class="bg-secondary-dark border border-primary/30 text-white text-xs font-bold px-3 py-1 rounded shadow-sm">99.7% PURITY</span>
@@ -122,10 +129,10 @@
                 </div>
                 <div class="flex gap-3 overflow-x-auto pb-2" id="thumbnail-gallery">
                     <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 thumbnail-active">
-                        <img class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" alt="Thumbnail 1">
+                        <img class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" loading="lazy" alt="Thumbnail 1">
                     </button>
                     <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 bg-secondary-dark">
-                        <img class="w-full h-full object-cover" src="assets/images/products/eq-pm-4x500.jpg" alt="Thumbnail 2">
+                        <img class="w-full h-full object-cover" src="assets/images/products/eq-pm-4x500.jpg" loading="lazy" alt="Thumbnail 2">
                     </button>
                 </div>
                 
@@ -479,7 +486,7 @@
                 relatedContainer.innerHTML = related.map(p => `
                     <a href="product-detail.html?id=${p.id}" class="group bg-background-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl transition-all flex flex-col">
                         <div class="relative aspect-square bg-secondary-dark overflow-hidden">
-                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.images && p.images.length > 0 ? p.images[0] : 'https://via.placeholder.com/400x300?text=No+Image'}" alt="${p.name}">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.images && p.images.length > 0 ? p.images[0] : 'https://via.placeholder.com/400x300?text=No+Image'}" loading="lazy" alt="${p.name}">
                             <div class="absolute top-2 left-2">
                                 <span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-0.5 rounded">${(p.subcategory || '').toUpperCase()}</span>
                             </div>

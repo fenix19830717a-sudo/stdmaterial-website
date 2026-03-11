@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>成功案例 - 晟通达精密设备</title>
+    <title>Case Studies | Hunan Shengtongda Materials Technology</title>
+    <meta name="description" content="Discover how our industrial grinding equipment and planetary ball mills have helped clients across industries achieve precise material processing results." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n.js" defer></script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -46,7 +48,51 @@
         .case-card:hover .case-image {
             transform: scale(1.05);
         }
-    </style>
+    
+        /* Language Switcher Styles */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 20px;
+            padding: 4px 8px;
+        }
+        .lang-switcher button {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .lang-switcher button.active {
+            background: #06b6d4;
+            color: #020617;
+        }
+        .lang-switcher button:hover:not(.active) {
+            color: #06b6d4;
+        }
+</style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-L2EZ1RRFKP");
+    </script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="../assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="min-h-screen">
     <!-- 导航栏 -->
@@ -60,15 +106,15 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-300 hover:text-primary transition-colors">首页</a>
-                    <a href="product-catalog.html" class="text-gray-300 hover:text-primary transition-colors">产品中心</a>
+                    <a href="index.html" class="text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="product-catalog.html" class="text-gray-300 hover:text-primary transition-colors">Products中心</a>
                     <a href="case-studies.html" class="text-primary font-medium">成功案例</a>
-                    <a href="news.html" class="text-gray-300 hover:text-primary transition-colors">新闻资讯</a>
-                    <a href="about.html" class="text-gray-300 hover:text-primary transition-colors">关于我们</a>
-                    <a href="contact.html" class="text-gray-300 hover:text-primary transition-colors">联系我们</a>
+                    <a href="news.html" class="text-gray-300 hover:text-primary transition-colors">News</a>
+                    <a href="about.html" class="text-gray-300 hover:text-primary transition-colors">About Us</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-primary transition-colors">Contact Us</a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="login.html" class="text-gray-300 hover:text-primary transition-colors">登录</a>
+                    <a href="login.html" class="text-gray-300 hover:text-primary transition-colors">Login</a>
                     <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition-colors">
                         立即咨询
                     </a>
@@ -121,7 +167,7 @@
                 <!-- 案例 1 -->
                 <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="pharma">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" 
+                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" loading="lazy" 
                              alt="制药行业纳米研磨" 
                              class="case-image w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4">
@@ -154,7 +200,7 @@
                 <!-- 案例 2 -->
                 <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="chemical">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop" 
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop" loading="lazy" 
                              alt="化工颜料分散" 
                              class="case-image w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4">
@@ -187,7 +233,7 @@
                 <!-- 案例 3 -->
                 <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="materials">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" 
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" loading="lazy" 
                              alt="新材料石墨烯" 
                              class="case-image w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4">
@@ -220,7 +266,7 @@
                 <!-- 案例 4 -->
                 <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="mining">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop" 
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop" loading="lazy" 
                              alt="矿物样品制备" 
                              class="case-image w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4">
@@ -253,7 +299,7 @@
                 <!-- 案例 5 -->
                 <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="pharma">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" 
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" loading="lazy" 
                              alt="中药超细粉碎" 
                              class="case-image w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4">
@@ -286,7 +332,7 @@
                 <!-- 案例 6 -->
                 <article class="case-card glass-panel rounded-2xl overflow-hidden" data-category="chemical">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=600&h=400&fit=crop" 
+                        <img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=600&h=400&fit=crop" loading="lazy" 
                              alt="电池材料研磨" 
                              class="case-image w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4">
@@ -343,14 +389,14 @@
         </div>
     </section>
 
-    <!-- 联系我们 CTA -->
+    <!-- Contact Us CTA -->
     <section class="py-16 bg-gradient-to-r from-primary-dark to-primary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="font-display text-3xl font-bold text-white mb-4">
                 打造您的专属解决方案
             </h2>
             <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                联系我们，获取定制化的研磨设备方案设计和报价
+                Contact Us，获取定制化的研磨设备方案设计和报价
             </p>
             <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-primary-dark font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                 立即咨询
@@ -373,7 +419,7 @@
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">产品中心</h4>
+                    <h4 class="font-semibold mb-4">Products中心</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="product-catalog.html" class="hover:text-primary transition-colors">行星式球磨机</a></li>
                         <li><a href="product-catalog.html" class="hover:text-primary transition-colors">卧式砂磨机</a></li>
@@ -386,12 +432,12 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="case-studies.html" class="hover:text-primary transition-colors">成功案例</a></li>
                         <li><a href="news.html" class="hover:text-primary transition-colors">行业资讯</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition-colors">关于我们</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition-colors">联系我们</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">联系我们</h4>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li class="flex items-center">
                             <span class="material-symbols-outlined text-sm mr-2">location_on</span>

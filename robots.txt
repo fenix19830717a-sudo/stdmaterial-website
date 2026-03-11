@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://stdmaterial.com/sitemap.xml
+
+# Disallow admin area
+Disallow: /admin/
+Disallow: /admin/*
+
+# Disallow staging areas
+Disallow: /product_staging/
+Disallow: /image_staging/
+
+# Crawl delay for better server performance
+Crawl-delay: 1

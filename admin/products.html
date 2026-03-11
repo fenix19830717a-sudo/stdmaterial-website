@@ -7,6 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-L2EZ1RRFKP");
+    </script>
     <script>
         tailwind.config = {
             theme: {
@@ -39,9 +47,16 @@
         ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
     </style>
-    <link rel="stylesheet" href="../assets/css/admin.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <script src="../assets/js/admin.js"></script>
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="./assets/js/admin.js"></script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="./assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="bg-dark-900 text-white min-h-screen">
     <div class="flex h-screen overflow-hidden">
@@ -59,39 +74,39 @@
                 </div>
             </div>
             <nav class="flex-1 p-4 space-y-1">
-                <a href="../dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">dashboard</span>
                     <span>Dashboard</span>
                 </a>
-                <a href="../products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                <a href="./products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
                     <span class="material-icons text-xl">inventory_2</span>
                     <span>Products</span>
                 </a>
-                <a href="../inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">mail</span>
                     <span>Inquiries</span>
                 </a>
-                <a href="../orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">shopping_cart</span>
                     <span>Orders</span>
                 </a>
-                <a href="../customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">people</span>
                     <span>Customers</span>
                 </a>
-                <a href="../marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">campaign</span>
                     <span>Marketing</span>
                 </a>
-                <a href="../statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">analytics</span>
                     <span>Statistics</span>
                 </a>
-                <a href="../api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">api</span>
                     <span>API Settings</span>
                 </a>
-                <a href="../settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">settings</span>
                     <span>Settings</span>
                 </a>
@@ -294,7 +309,7 @@
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-lg bg-dark-600 flex items-center justify-center overflow-hidden">
                                 ${product.images && product.images.length > 0 
-                                    ? `<img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">`
+                                    ? `<img src="${product.images[0]}" loading="lazy" alt="${product.name}" class="w-full h-full object-cover">`
                                     : `<span class="material-icons text-gray-400">inventory_2</span>`
                                 }
                             </div>
@@ -456,7 +471,7 @@
             previewArea.classList.remove('hidden');
             previewArea.innerHTML = currentProductImages.map((img, index) => `
                 <div class="relative group">
-                    <img src="${img.data}" alt="${img.name}" class="w-full h-24 object-cover rounded-lg">
+                    <img src="${img.data}" loading="lazy" alt="${img.name}" class="w-full h-24 object-cover rounded-lg">
                     <button type="button" onclick="removeImage(${index})" 
                             class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
                         <span class="material-icons text-sm">close</span>

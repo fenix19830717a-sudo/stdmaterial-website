@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "catalog": "产品目录",
+    "selection": "选型指南",
+    "simulator": "研磨模拟器",
+    "cases": "应用案例",
+    "about": "关于我们",
+    "news": "新闻资讯",
+    "contact": "联系我们",
+    "login": "登录",
+    "register": "注册",
+    "account": "我的账户",
+    "inquiry": "立即询价",
+    "liveChat": "在线客服",
+    "downloadCatalog": "下载目录"
+  },
+  "topBar": {
+    "engineerMode": "工程师模式",
+    "purchaserMode": "采购模式",
+    "searchPlaceholder": "搜索产品、SKU、关键词..."
+  },
+  "hero": {
+    "badge": "下一代实验室技术",
+    "title1": "实现纳米级",
+    "title2": "研磨精度",
+    "title3": "至0.1μm",
+    "subtitle": "良品率提升40%",
+    "description": "STD-Nano系列行星式球磨机，专为锂电正极材料、纳米陶瓷、医药微粉等高精度研磨需求设计。从实验室到产线，让每一克材料都达到理想粒径。",
+    "cta1": "配置您的解决方案",
+    "cta2": "体验研磨模拟器",
+    "param1Title": "峰值转速",
+    "param1Value": "800 RPM",
+    "param2Title": "纳米精度",
+    "param2Value": "0.1μm",
+    "param3Title": "质量认证",
+    "param3Value": "ISO 9001",
+    "cert1": "ISO 9001",
+    "cert2": "纳米级",
+    "cert3": "24小时连续",
+    "caseTag": "应用案例",
+    "caseFrom": "来自清华大学材料学院"
+  },
+  "timeline": {
+    "title": "技术里程碑",
+    "subtitle": "27年专注研磨技术创新",
+    "description": "从1998年创立至今，我们持续推动研磨技术的边界",
+    "1998": {
+      "year": "1998",
+      "title": "公司成立",
+      "desc": "湖南长沙起步"
+    },
+    "2008": {
+      "year": "2008",
+      "title": "ISO 9001",
+      "desc": "质量管理体系认证"
+    },
+    "2015": {
+      "year": "2015",
+      "title": "纳米研磨",
+      "desc": "0.1μm级突破"
+    },
+    "2020": {
+      "year": "2020",
+      "title": "智能控制",
+      "desc": "IoT远程监控系统"
+    },
+    "2025": {
+      "year": "2025",
+      "title": "AI模拟器",
+      "desc": "工艺智能优化"
+    }
+  },
+  "products": {
+    "title": "产品分类",
+    "viewAll": "查看全部产品",
+    "details": "查看详情",
+    "inquiry": "询价",
+    "specs": "技术参数",
+    "features": "产品特点",
+    "applications": "应用领域",
+    "price": "价格",
+    "stock": "库存状态",
+    "contactForQuote": "联系询价",
+    "inStock": "现货",
+    "outOfStock": "缺货",
+    "category": {
+      "crushing": "破碎系列",
+      "planetary": "行星球磨机",
+      "stirred": "搅拌球磨机",
+      "horizontal": "卧式球磨机",
+      "vibrating": "振动球磨机",
+      "jars": "研磨罐",
+      "media": "研磨介质"
+    }
+  },
+  "footer": {
+    "company": "湖南晟通达材料科技有限公司",
+    "slogan": "为工业与实验室提供精密研磨解决方案",
+    "contact": "联系信息",
+    "phone": "电话",
+    "email": "邮箱",
+    "address": "地址",
+    "addressValue": "湖南省长沙市高新技术产业开发区",
+    "quickLinks": "快速链接",
+    "support": "客户支持",
+    "faq": "常见问题",
+    "shipping": "配送信息",
+    "returns": "退换货与保修",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "followUs": "关注我们",
+    "copyright": "© 2026 湖南晟通达材料科技有限公司 版权所有"
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "引领研磨技术的未来",
+    "story": "企业故事",
+    "mission": "企业使命",
+    "vision": "企业愿景",
+    "values": "核心价值观",
+    "certifications": "资质认证",
+    "globalReach": "全球布局"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与我们的团队取得联系",
+    "form": {
+      "name": "您的姓名",
+      "email": "电子邮箱",
+      "company": "公司名称",
+      "phone": "联系电话",
+      "subject": "主题",
+      "message": "留言内容",
+      "submit": "发送消息",
+      "success": "消息发送成功！",
+      "error": "发送失败，请重试。"
+    }
+  },
+  "news": {
+    "title": "最新资讯",
+    "subtitle": "行业洞察与公司动态",
+    "readMore": "阅读更多",
+    "categories": {
+      "company": "公司新闻",
+      "industry": "行业动态",
+      "tech": "技术前沿"
+    }
+  },
+  "caseStudies": {
+    "title": "应用案例",
+    "subtitle": "客户成功案例",
+    "viewCase": "查看案例详情"
+  },
+  "language": {
+    "english": "English",
+    "chinese": "中文",
+    "switch": "语言"
+  },
+  "currency": {
+    "usd": "USD ($)",
+    "eur": "EUR (€)",
+    "cny": "CNY (¥)",
+    "gbp": "GBP (£)"
+  }
+}

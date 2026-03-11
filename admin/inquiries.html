@@ -7,6 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-L2EZ1RRFKP");
+    </script>
     <script>
         tailwind.config = {
             theme: {
@@ -39,10 +47,17 @@
         ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
     </style>
-    <link rel="stylesheet" href="../assets/css/admin.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <script src="../assets/js/admin.js"></script>
-    <script src="../assets/js/api-config.js"></script>
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="./assets/js/admin.js"></script>
+    <script src="./assets/js/api-config.js"></script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="./assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="bg-dark-900 text-white min-h-screen">
     <div class="flex h-screen overflow-hidden">
@@ -60,39 +75,39 @@
                 </div>
             </div>
             <nav class="flex-1 p-4 space-y-1">
-                <a href="../dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">dashboard</span>
                     <span>Dashboard</span>
                 </a>
-                <a href="../products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">inventory_2</span>
                     <span>Products</span>
                 </a>
-                <a href="../inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                <a href="./inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
                     <span class="material-icons text-xl">mail</span>
                     <span>Inquiries</span>
                 </a>
-                <a href="../orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">shopping_cart</span>
                     <span>Orders</span>
                 </a>
-                <a href="../customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">people</span>
                     <span>Customers</span>
                 </a>
-                <a href="../marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">campaign</span>
                     <span>Marketing</span>
                 </a>
-                <a href="../statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">analytics</span>
                     <span>Statistics</span>
                 </a>
-                <a href="../api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">api</span>
                     <span>API Settings</span>
                 </a>
-                <a href="../settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="./settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">settings</span>
                     <span>Settings</span>
                 </a>

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News & Updates | PrecisionGrind</title>
+    <title>News & Updates | Hunan Shengtongda Materials Technology</title>
+    <meta name="description" content="Latest industry insights, company announcements, and procurement guides for grinding equipment professionals. Stay updated with Hunan Shengtongda." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -29,7 +30,52 @@
     <style>
         body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f8fafc; }
         .glass-panel { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-    </style>
+        .pagination-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    
+        /* Language Switcher Styles */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 20px;
+            padding: 4px 8px;
+        }
+        .lang-switcher button {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .lang-switcher button.active {
+            background: #06b6d4;
+            color: #020617;
+        }
+        .lang-switcher button:hover:not(.active) {
+            color: #06b6d4;
+        }
+</style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-L2EZ1RRFKP");
+    </script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="../assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="bg-deep-navy text-slate-100 font-['Space_Grotesk']">
     <!-- Navigation -->
@@ -79,164 +125,27 @@
         </div>
     </section>
 
-    <!-- Featured Article -->
-    <section class="py-12">
+    <!-- Featured Article (Dynamic) -->
+    <section class="py-12" id="featured-article">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-panel rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-2">
-                    <div class="relative h-64 lg:h-auto">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=500&fit=crop" alt="Featured Article" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-primary text-deep-navy text-xs font-bold px-3 py-1 rounded">FEATURED</span>
-                        </div>
-                    </div>
-                    <div class="p-8 lg:p-12 flex flex-col justify-center">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="text-primary text-xs font-bold uppercase tracking-wider">Industry News</span>
-                            <span class="text-slate-500 text-xs">February 10, 2024</span>
-                        </div>
-                        <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">The Future of Nano-Grinding: Trends and Technologies for 2024</h2>
-                        <p class="text-slate-400 mb-6">Explore the latest advancements in nano-scale grinding technology and how they're revolutionizing industries from pharmaceuticals to electronics manufacturing.</p>
-                        <a href="#" class="inline-flex items-center gap-2 text-primary font-medium hover:text-accent transition-colors">
-                            Read Full Article
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <!-- Featured article will be loaded here -->
         </div>
     </section>
 
-    <!-- News Grid -->
+    <!-- News Grid (Dynamic) -->
     <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Article 1 -->
-                <article class="glass-panel rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all" data-category="industry">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=300&fit=crop" alt="Article" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-3 left-3">
-                            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">INDUSTRY</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-slate-500 text-xs">February 8, 2024</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500 text-xs">5 min read</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Global Grinding Equipment Market to Reach $5.2B by 2028</h3>
-                        <p class="text-slate-400 text-sm mb-4">New market research indicates significant growth in the industrial grinding equipment sector driven by nanotechnology applications.</p>
-                        <a href="#" class="text-primary text-sm font-medium hover:text-accent transition-colors">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Article 2 -->
-                <article class="glass-panel rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all" data-category="company">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=300&fit=crop" alt="Article" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-3 left-3">
-                            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">COMPANY</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-slate-500 text-xs">February 5, 2024</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500 text-xs">3 min read</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">PrecisionGrind Expands Production Capacity by 40%</h3>
-                        <p class="text-slate-400 text-sm mb-4">Our new manufacturing facility is now operational, significantly increasing our production capacity for grinding jars and equipment.</p>
-                        <a href="#" class="text-primary text-sm font-medium hover:text-accent transition-colors">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="glass-panel rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all" data-category="guide">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=300&fit=crop" alt="Article" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-3 left-3">
-                            <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">GUIDE</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-slate-500 text-xs">February 1, 2024</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500 text-xs">8 min read</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Complete Guide to Selecting Grinding Jars for Your Application</h3>
-                        <p class="text-slate-400 text-sm mb-4">Learn how to choose the right grinding jar material, size, and configuration for optimal results in your specific application.</p>
-                        <a href="#" class="text-primary text-sm font-medium hover:text-accent transition-colors">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Article 4 -->
-                <article class="glass-panel rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all" data-category="industry">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=300&fit=crop" alt="Article" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-3 left-3">
-                            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">INDUSTRY</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-slate-500 text-xs">January 28, 2024</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500 text-xs">6 min read</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">Pharmaceutical Industry Adopts High-Purity Zirconia Grinding</h3>
-                        <p class="text-slate-400 text-sm mb-4">FDA-compliant zirconia grinding solutions are becoming the standard for pharmaceutical API manufacturing.</p>
-                        <a href="#" class="text-primary text-sm font-medium hover:text-accent transition-colors">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Article 5 -->
-                <article class="glass-panel rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all" data-category="company">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop" alt="Article" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-3 left-3">
-                            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">COMPANY</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-slate-500 text-xs">January 20, 2024</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500 text-xs">4 min read</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">PrecisionGrind Achieves ISO 14001 Environmental Certification</h3>
-                        <p class="text-slate-400 text-sm mb-4">Our commitment to sustainable manufacturing practices has been recognized with ISO 14001 certification.</p>
-                        <a href="#" class="text-primary text-sm font-medium hover:text-accent transition-colors">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Article 6 -->
-                <article class="glass-panel rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all" data-category="guide">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop" alt="Article" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute top-3 left-3">
-                            <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">GUIDE</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-slate-500 text-xs">January 15, 2024</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500 text-xs">10 min read</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">International Procurement: Shipping, Customs & Documentation</h3>
-                        <p class="text-slate-400 text-sm mb-4">A comprehensive guide to importing grinding equipment, including HS codes, customs procedures, and documentation requirements.</p>
-                        <a href="#" class="text-primary text-sm font-medium hover:text-accent transition-colors">Read More →</a>
-                    </div>
-                </article>
+            <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Articles will be loaded here dynamically -->
+                <div class="col-span-full text-center py-12">
+                    <span class="material-symbols-outlined text-4xl text-slate-500 animate-spin">progress_activity</span>
+                    <p class="text-slate-400 mt-4">Loading articles...</p>
+                </div>
             </div>
 
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button class="px-8 py-3 border border-primary/30 text-primary rounded-lg font-medium hover:bg-primary/10 transition-all">
-                    Load More Articles
-                </button>
+            <!-- Pagination -->
+            <div id="pagination-container" class="flex justify-center mt-12">
+                <!-- Pagination will be generated here -->
             </div>
         </div>
     </section>
@@ -277,26 +186,7 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script>
-        document.querySelectorAll('.news-tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                document.querySelectorAll('.news-tab').forEach(t => {
-                    t.classList.remove('bg-primary', 'text-deep-navy');
-                    t.classList.add('bg-surface-dark', 'text-slate-300');
-                });
-                this.classList.remove('bg-surface-dark', 'text-slate-300');
-                this.classList.add('bg-primary', 'text-deep-navy');
-                
-                const category = this.dataset.category;
-                document.querySelectorAll('article').forEach(article => {
-                    if (category === 'all' || article.dataset.category === category) {
-                        article.style.display = 'block';
-                    } else {
-                        article.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/news.js"></script>
 </body>
 </html>

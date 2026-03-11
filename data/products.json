@@ -1,31 +1,389 @@
 {
   "products": [
     {
-      "id": "GJ-AL-500",
-      "name": "Alumina Ceramic Grinding Jar",
-      "category": "Grinding Jars",
-      "subcategory": "Ceramic",
-      "material": "Alumina (Al2O3)",
-      "purity": "99.7%",
-      "volume": "500 ml",
-      "hardness": "9.0 Mohs",
-      "maxTemperature": "1600°C",
-      "equipment": [
-        "Planetary Mill",
-        "High-Energy Shaker"
-      ],
-      "description": "High-purity alumina ceramic grinding jar for laboratory use. Excellent wear resistance and minimal contamination.",
+      "id": "CR-不锈钢-442",
+      "name": "不锈钢振动粉碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 不锈钢振动粉碎机 designed for industrial and laboratory applications. Features 处理量： of 1~10kg/h.",
       "features": [
-        "99.7% purity",
-        "High hardness",
-        "Low contamination",
-        "Chemical resistant"
+        "Stainless steel construction"
       ],
       "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "处理量：": "1~10kg/h",
+        "进料粒度：": "≤3mm",
+        "粉碎细度：": "120～1200 目（44～3.1um）"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/stainless-steel-vibration-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032509544Q6435.png",
+      "nameEn": "Stainless Steel Vibration Crusher",
+      "descriptionEn": "Professional Stainless Steel Vibration Crusher designed for industrial and laboratory applications. Features 处理量: 1~10kg/h, 进料粒度: ≤3mm."
+    },
+    {
+      "id": "CR-不锈钢-462",
+      "name": "不锈钢无尘粉碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 不锈钢无尘粉碎机 designed for industrial and laboratory applications. Features 产能： of 20-350kg/h.",
+      "features": [
+        "Stainless steel construction"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "产能：": "20-350kg/h",
+        "进料粒度：": "&lt;6~12mm",
+        "粉碎粒度：": "60-120 目"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/stainless-steel-dust-free-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032510030QN30.png",
+      "nameEn": "Stainless Steel Dust-Free Crusher",
+      "descriptionEn": "Professional Stainless Steel Dust-Free Crusher designed for industrial and laboratory applications. Features 产能: 20-350kg/h, 进料粒度: &lt;6~12mm."
+    },
+    {
+      "id": "CR-塑料粉-921",
+      "name": "塑料粉碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 塑料粉碎机 designed for industrial and laboratory applications. Features 产能： of 50~800kg/h.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "产能：": "50~800kg/h",
+        "筛网孔径：": "6~10mm",
+        "旋转直径：": "148~350mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/plastic-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032GG92Gc00.png",
+      "nameEn": "Plastic Crusher",
+      "descriptionEn": "Professional Plastic Crusher designed for industrial and laboratory applications. Features 产能: 50~800kg/h, 筛网孔径: 6~10mm."
+    },
+    {
+      "id": "CR-多功能-165",
+      "name": "多功能粉碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 多功能粉碎机 designed for industrial and laboratory applications. Features 进料粒度： of &lt;6~10mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "进料粒度：": "&lt;6~10mm",
+        "粉碎细度：": "60-220目",
+        "粉碎能力：": "10~120kg/h"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/multi-functional-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032510130112W7.png",
+      "nameEn": "Multi-Functional Crusher",
+      "descriptionEn": "Professional Multi-Functional Crusher designed for industrial and laboratory applications. Features 进料粒度: &lt;6~10mm, 粉碎细度: 60-220目."
+    },
+    {
+      "id": "CR-实验颚-594",
+      "name": "实验颚式破碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 实验颚式破碎机 designed for industrial and laboratory applications. Features 动颚转速： of 560rpm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "动颚转速：": "560rpm",
+        "入料粒度：": "&lt;35mm",
+        "出料粒度：": "0.01~8mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/lab-jaw-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0122111350123N.png",
+      "nameEn": "Laboratory Jaw Crusher",
+      "descriptionEn": "Professional Laboratory Jaw Crusher designed for industrial and laboratory applications. Features 动颚转速: 560rpm, 入料粒度: &lt;35mm."
+    },
+    {
+      "id": "CR-实验颚-612",
+      "name": "实验颚式破碎机（2025款）",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 实验颚式破碎机（2025款） designed for industrial and laboratory applications. Features 动颚转速： of 560rpm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "动颚转速：": "560rpm",
+        "入料粒度：": "&lt;35mm",
+        "出料粒度：": "0.01~8mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/lab-jaw-crusher-2025.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/112509150314M6.png",
+      "nameEn": "Laboratory Jaw Crusher (2025)",
+      "descriptionEn": "Professional Laboratory Jaw Crusher (2025) designed for industrial and laboratory applications. Features 动颚转速: 560rpm, 入料粒度: &lt;35mm."
+    },
+    {
+      "id": "CR-对辊破-935",
+      "name": "对辊破碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 对辊破碎机 designed for industrial and laboratory applications. Features 入料粒度： of ≤5mm~20mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "入料粒度：": "≤5mm~20mm",
+        "出料粒度：": "≥150um",
+        "生产量：": "300Kg/H"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/double-roll-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G3333514131.png",
+      "nameEn": "Double Roll Crusher",
+      "descriptionEn": "Professional Double Roll Crusher designed for industrial and laboratory applications. Features 入料粒度: ≤5mm~20mm, 出料粒度: ≥150um."
+    },
+    {
+      "id": "CR-小型撕-471",
+      "name": "小型撕碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 小型撕碎机 designed for industrial and laboratory applications. Features 输入转速： of 12~16 转/分.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "输入转速：": "12~16 转/分",
+        "最大输入扭矩：": "1600~2919Nm",
+        "刀片数量：": "24~26片"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/small-shredder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G3451612912.png",
+      "nameEn": "小型撕碎机 (EN)",
+      "descriptionEn": "Professional 小型撕碎机 (EN) designed for industrial and laboratory applications. Features 输入转速: 12~16 转/分, 最大输入扭矩: 1600~2919Nm."
+    },
+    {
+      "id": "CR-锤片式-074",
+      "name": "锤片式粉碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 锤片式粉碎机 designed for industrial and laboratory applications. Features 锤片： of 16.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "锤片：": "16",
+        "进料口：": "200*180mm",
+        "产量：": "200-400kg/h"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/paddle-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032510355315005.png",
+      "nameEn": "锤片式粉碎机 (EN)",
+      "descriptionEn": "Professional 锤片式粉碎机 (EN) designed for industrial and laboratory applications. Features 锤片: 16, 进料口: 200*180mm."
+    },
+    {
+      "id": "CR-颚式破-998",
+      "name": "颚式破碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 颚式破碎机 designed for industrial and laboratory applications. Features 给料粒度： of 90mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "给料粒度：": "90mm",
+        "出料粒度：": "6-38mm",
+        "生产能力：": "180~200kg/h"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/jaw-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G05A119321.png",
+      "nameEn": "颚式破碎机 (EN)",
+      "descriptionEn": "Professional 颚式破碎机 (EN) designed for industrial and laboratory applications. Features 给料粒度: 90mm, 出料粒度: 6-38mm."
+    },
+    {
+      "id": "CR-齿辊破-033",
+      "name": "齿辊破碎机",
+      "category": "Crushing Series",
+      "subcategory": "Crushing Equipment",
+      "categoryCn": "破碎系列",
+      "description": "Professional 齿辊破碎机 designed for industrial and laboratory applications. Features 入料粒度： of 10mm~80mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Chemical Industry",
+        "Materials Research"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "入料粒度：": "10mm~80mm",
+        "出料粒度：": "0.5mm~5mm",
+        "生产量：": "70-80Kg/H ~ 600Kg/H"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/broken-series/teeth-roll-crusher.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G3401311464.png",
+      "nameEn": "齿辊破碎机 (EN)",
+      "descriptionEn": "Professional 齿辊破碎机 (EN) designed for industrial and laboratory applications. Features 入料粒度: 10mm~80mm, 出料粒度: 0.5mm~5mm."
+    },
+    {
+      "id": "GR-滚筒不-070",
+      "name": "滚筒不锈钢球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 滚筒不锈钢球磨罐 designed for industrial and laboratory applications. Features 外径： of 88~271mm.",
+      "features": [
+        "Stainless steel construction"
+      ],
+      "applications": [
+        "Laboratory",
         "Ceramics",
-        "Electronics",
-        "Pharmaceuticals",
-        "Mining"
+        "Pharmaceuticals"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
@@ -33,120 +391,589 @@
         "assets/images/products/gj-al-500.jpg"
       ],
       "specifications": {
-        "Outer Diameter": "100 mm",
-        "Inner Diameter": "85 mm",
-        "Height": "120 mm",
-        "Weight": "850 g",
-        "Lid Type": "Screw-on with PTFE seal"
+        "外径：": "88~271mm",
+        "内径：": "82~263mm",
+        "含盖高：": "144~347mm"
       },
-      "createdAt": "2024-01-15",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/roller-ball-mill-jar-accessory/stainless-steel-roll-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03261331561b35.png",
+      "nameEn": "滚筒不锈钢球磨罐 (EN)",
+      "descriptionEn": "Professional 滚筒不锈钢球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 88~271mm, 内径: 82~263mm."
     },
     {
-      "id": "GJ-SS-1000",
-      "name": "Stainless Steel Mill Container",
+      "id": "GR-滚筒刚-504",
+      "name": "滚筒刚玉球磨罐",
       "category": "Grinding Jars",
-      "subcategory": "Metal",
-      "material": "Stainless Steel 304L",
-      "purity": "Industrial Grade",
-      "volume": "1000 ml",
-      "hardness": "N/A",
-      "maxTemperature": "1200°C",
-      "equipment": [
-        "Planetary Mill",
-        "Roller Mill"
-      ],
-      "description": "Heavy-duty stainless steel grinding container for industrial-scale material processing.",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 滚筒刚玉球磨罐 designed for industrial and laboratory applications. Features 外径： of 100~246mm.",
       "features": [
-        "304L grade",
-        "O-ring gasket seal",
-        "High temperature resistance",
-        "Easy cleaning"
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
       ],
       "applications": [
-        "Metallurgy",
-        "Chemical Industry",
-        "Food Processing"
-      ],
-      "price": "Contact for Quote",
-      "stock": "In Stock",
-      "images": [
-        "assets/images/products/gj-ss-1000.jpg"
-      ],
-      "specifications": {
-        "Outer Diameter": "150 mm",
-        "Inner Diameter": "130 mm",
-        "Height": "180 mm",
-        "Weight": "2500 g",
-        "Lid Type": "Clamp-on with O-ring"
-      },
-      "createdAt": "2024-01-15",
-      "updatedAt": "2024-02-14"
-    },
-    {
-      "id": "GJ-ZR-250",
-      "name": "Zirconia (YSZ) Grinding Jar",
-      "category": "Grinding Jars",
-      "subcategory": "Ceramic",
-      "material": "Yttria-Stabilized Zirconia (YSZ)",
-      "purity": "99.9%",
-      "volume": "250 ml",
-      "hardness": "8.5 Mohs",
-      "maxTemperature": "1000°C",
-      "equipment": [
-        "High-Energy Shaker",
-        "Planetary Mill"
-      ],
-      "description": "Premium zirconia grinding jar with exceptional wear resistance for high-energy milling applications.",
-      "features": [
-        "Y-stabilized",
-        "Exceptional wear resistance",
-        "High density",
-        "Low contamination"
-      ],
-      "applications": [
-        "Nano-materials",
-        "Pharmaceuticals",
-        "Electronics",
-        "Advanced Ceramics"
-      ],
-      "price": "Contact for Quote",
-      "stock": "In Stock",
-      "images": [
-        "assets/images/products/gj-zr-250.jpg"
-      ],
-      "specifications": {
-        "Outer Diameter": "80 mm",
-        "Inner Diameter": "65 mm",
-        "Height": "100 mm",
-        "Weight": "650 g",
-        "Lid Type": "Screw-on with ceramic seal"
-      },
-      "createdAt": "2024-01-15",
-      "updatedAt": "2024-02-14"
-    },
-    {
-      "id": "PBM-4L",
-      "name": "Planetary Ball Mill - 4L Capacity",
-      "category": "Planetary Ball Mills",
-      "subcategory": "Laboratory Scale",
-      "model": "PBM-4L",
-      "volume": "4 L",
-      "maxSpeed": "800 rpm",
-      "voltage": "220V/50Hz",
-      "power": "1.5 kW",
-      "description": "Professional planetary ball mill with 4L capacity, suitable for laboratory research and small-scale production.",
-      "features": [
-        "4 grinding stations",
-        "Variable speed control",
-        "Digital timer",
-        "Compact design"
-      ],
-      "applications": [
-        "Materials Research",
-        "Nanotechnology",
-        "Chemical Synthesis",
+        "Laboratory",
+        "Ceramics",
         "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "100~246mm",
+        "含盖高：": "129~344mm",
+        "不含盖高：": "120~334mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/roller-ball-mill-jar-accessory/corundum-roll-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032613591GJD.png",
+      "nameEn": "滚筒刚玉球磨罐 (EN)",
+      "descriptionEn": "Professional 滚筒刚玉球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 100~246mm, 含盖高: 129~344mm."
+    },
+    {
+      "id": "GR-滚筒尼-740",
+      "name": "滚筒尼龙球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 滚筒尼龙球磨罐 designed for industrial and laboratory applications. Features 外径： of 108~298mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "108~298mm",
+        "内径：": "88~262mm",
+        "含盖高：": "137~451mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/roller-ball-mill-jar-accessory/nylon-roll-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03261326121b38.png",
+      "nameEn": "滚筒尼龙球磨罐 (EN)",
+      "descriptionEn": "Professional 滚筒尼龙球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 108~298mm, 内径: 88~262mm."
+    },
+    {
+      "id": "GR-滚筒聚-926",
+      "name": "滚筒聚四氟乙烯球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 滚筒聚四氟乙烯球磨罐 designed for industrial and laboratory applications. Features 外径： of 108~298mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "108~298mm",
+        "内径：": "88~262mm",
+        "含盖高：": "137~451mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/roller-ball-mill-jar-accessory/ptfe-roll-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0119130A91PA.png",
+      "nameEn": "滚筒聚四氟乙烯球磨罐 (EN)",
+      "descriptionEn": "Professional 滚筒聚四氟乙烯球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 108~298mm, 内径: 88~262mm."
+    },
+    {
+      "id": "GR-滚筒聚-152",
+      "name": "滚筒聚氨酯球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 滚筒聚氨酯球磨罐 designed for industrial and laboratory applications. Features 外径： of 68~243mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "68~243mm",
+        "内径：": "53~219mm",
+        "含盖高：": "69~286mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/roller-ball-mill-jar-accessory/pu-roll-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326135441113R.png",
+      "nameEn": "滚筒聚氨酯球磨罐 (EN)",
+      "descriptionEn": "Professional 滚筒聚氨酯球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 68~243mm, 内径: 53~219mm."
+    },
+    {
+      "id": "GR-滚筒陶-924",
+      "name": "滚筒陶瓷球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 滚筒陶瓷球磨罐 designed for industrial and laboratory applications. Features 直径： of 220~300mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "直径：": "220~300mm",
+        "含盖高：": "260~400mm",
+        "肩高：": "220~300mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/roller-ball-mill-jar-accessory/cetamic-roll-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032613401119196.png",
+      "nameEn": "滚筒陶瓷球磨罐 (EN)",
+      "descriptionEn": "Professional 滚筒陶瓷球磨罐 (EN) designed for industrial and laboratory applications. Features 直径: 220~300mm, 含盖高: 260~400mm."
+    },
+    {
+      "id": "GR-特级刚-530",
+      "name": "特级刚玉行星球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 特级刚玉行星球磨罐 designed for industrial and laboratory applications. Features 型号规格： of 50ml~2000ml.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "型号规格：": "50ml~2000ml",
+        "外径：": "56~132mm",
+        "高度：": "70~173mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/a-grade-corundum-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/1204162541153a.png",
+      "nameEn": "特级刚玉行星球磨罐 (EN)",
+      "descriptionEn": "Professional 特级刚玉行星球磨罐 (EN) designed for industrial and laboratory applications. Features 型号规格: 50ml~2000ml, 外径: 56~132mm."
+    },
+    {
+      "id": "GR-行星不-034",
+      "name": "行星不锈钢内衬氧化锆罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星不锈钢内衬氧化锆罐 designed for industrial and laboratory applications. Features 氧化锆密度： of 5.9 - 6.0 g/cm³.",
+      "features": [
+        "High capacity design",
+        "Stainless steel construction",
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "氧化锆密度：": "5.9 - 6.0 g/cm³",
+        "典型容积：": "15ml~500ml",
+        "热膨胀系数：": "11 ± 0.2 40−400℃"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/304-stainless-steel-lined-with-zirconia-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/1121105T112253.png",
+      "nameEn": "行星不锈钢内衬氧化锆罐 (EN)",
+      "descriptionEn": "Professional 行星不锈钢内衬氧化锆罐 (EN) designed for industrial and laboratory applications. Features 氧化锆密度: 5.9 - 6.0 g/cm³, 典型容积: 15ml~500ml."
+    },
+    {
+      "id": "GR-行星不-771",
+      "name": "行星不锈钢球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星不锈钢球磨罐 designed for industrial and laboratory applications. Features 外径壁厚（行星罐）： of 48~320mm.",
+      "features": [
+        "Stainless steel construction",
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径壁厚（行星罐）：": "48~320mm",
+        "外径（滚筒罐）：": "88~271mm",
+        "高（行星罐）：": "54~247mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/304-stainless-steel-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/02101130231E10.webp",
+      "nameEn": "行星不锈钢球磨罐 (EN)",
+      "descriptionEn": "Professional 行星不锈钢球磨罐 (EN) designed for industrial and laboratory applications. Features 外径壁厚（行星罐）: 48~320mm, 外径（滚筒罐）: 88~271mm."
+    },
+    {
+      "id": "GR-行星刚-720",
+      "name": "行星刚玉球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星刚玉球磨罐 designed for industrial and laboratory applications. Features 外径： of 56~132mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "56~132mm",
+        "高度：": "70~173mm",
+        "内径：": "40~150mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/corundum-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/02101132021O44.webp",
+      "nameEn": "行星刚玉球磨罐 (EN)",
+      "descriptionEn": "Professional 行星刚玉球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 56~132mm, 高度: 70~173mm."
+    },
+    {
+      "id": "GR-行星尼-411",
+      "name": "行星尼龙球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星尼龙球磨罐 designed for industrial and laboratory applications. Features 外径： of 63~320mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "63~320mm",
+        "内径：": "31~285mm",
+        "高：": "65~424mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/nylon-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/021011341415G1.webp",
+      "nameEn": "行星尼龙球磨罐 (EN)",
+      "descriptionEn": "Professional 行星尼龙球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 63~320mm, 内径: 31~285mm."
+    },
+    {
+      "id": "GR-行星氧-048",
+      "name": "行星氧化锆球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星氧化锆球磨罐 designed for industrial and laboratory applications. Features 外径： of 55~192mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "55~192mm",
+        "内径：": "38~170mm",
+        "高度：": "67~254mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/zirconia-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/12041646111I54.png",
+      "nameEn": "行星氧化锆球磨罐 (EN)",
+      "descriptionEn": "Professional 行星氧化锆球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 55~192mm, 内径: 38~170mm."
+    },
+    {
+      "id": "GR-行星玛-851",
+      "name": "行星玛瑙球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星玛瑙球磨罐 designed for industrial and laboratory applications. Features 外径： of 65~156mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "65~156mm",
+        "内径：": "45~130mm",
+        "高：": "57~190mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/agate-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032611345QSV.png",
+      "nameEn": "行星玛瑙球磨罐 (EN)",
+      "descriptionEn": "Professional 行星玛瑙球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 65~156mm, 内径: 45~130mm."
+    },
+    {
+      "id": "GR-行星真-365",
+      "name": "行星真空球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星真空球磨罐 designed for industrial and laboratory applications. Features 外径： of 49~192mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "49~192mm",
+        "内径：": "39~182mm",
+        "内深：": "45~200mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/vacuum-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326130P11K23.png",
+      "nameEn": "行星真空球磨罐 (EN)",
+      "descriptionEn": "Professional 行星真空球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 49~192mm, 内径: 39~182mm."
+    },
+    {
+      "id": "GR-行星硬-711",
+      "name": "行星硬质合金球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星硬质合金球磨罐 designed for industrial and laboratory applications. Features 外径： of 48~320mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "48~320mm",
+        "内径：": "38~310mm",
+        "高：": "54~347mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/tungsten-carbide-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032613000111Y4.png",
+      "nameEn": "行星硬质合金球磨罐 (EN)",
+      "descriptionEn": "Professional 行星硬质合金球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 48~320mm, 内径: 38~310mm."
+    },
+    {
+      "id": "GR-行星聚-172",
+      "name": "行星聚四氟乙烯球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星聚四氟乙烯球磨罐 designed for industrial and laboratory applications. Features 外径： of 63~320mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "63~320mm",
+        "内径：": "31~285mm",
+        "高：": "65~424mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/ptfe-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/021011350913G7.webp",
+      "nameEn": "行星聚四氟乙烯球磨罐 (EN)",
+      "descriptionEn": "Professional 行星聚四氟乙烯球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 63~320mm, 内径: 31~285mm."
+    },
+    {
+      "id": "GR-行星聚-516",
+      "name": "行星聚氨酯球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星聚氨酯球磨罐 designed for industrial and laboratory applications. Features 外径： of 68~243mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "68~243mm",
+        "内径：": "53~219mm",
+        "高：": "69~286mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/pu-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326114P513H9.png",
+      "nameEn": "行星聚氨酯球磨罐 (EN)",
+      "descriptionEn": "Professional 行星聚氨酯球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 68~243mm, 内径: 53~219mm."
+    },
+    {
+      "id": "GR-行星钢-386",
+      "name": "行星钢化尼龙球磨罐",
+      "category": "Grinding Jars",
+      "subcategory": "Grinding Accessories",
+      "categoryCn": "研磨配件-球磨罐",
+      "description": "Professional 行星钢化尼龙球磨罐 designed for industrial and laboratory applications. Features 外径： of 98~248mm.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Laboratory",
+        "Ceramics",
+        "Pharmaceuticals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "外径：": "98~248mm",
+        "内径：": "73~216mm",
+        "高：": "90~300mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill-tank-accessories/tempered-nylon-planetary-mill-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032613130Q9630.png",
+      "nameEn": "行星钢化尼龙球磨罐 (EN)",
+      "descriptionEn": "Professional 行星钢化尼龙球磨罐 (EN) designed for industrial and laboratory applications. Features 外径: 98~248mm, 内径: 73~216mm."
+    },
+    {
+      "id": "PL-360-196",
+      "name": "360°旋转全方位实验行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 360°旋转全方位实验行星球磨机 designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
@@ -154,38 +981,1230 @@
         "assets/images/products/pbm-4l.jpg"
       ],
       "specifications": {
-        "Number of Jars": "4",
-        "Jar Volume": "1000 ml each",
-        "Speed Range": "0-800 rpm",
-        "Timer": "0-999 minutes",
-        "Dimension": "600x400x500 mm",
-        "Weight": "120 kg"
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~10L",
+        "调速方式：": "变频调速"
       },
-      "createdAt": "2024-01-20",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/laboratory-full-directional-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032415364GVC.png",
+      "nameEn": "360°旋转全方位实验行星球磨机 (EN)",
+      "descriptionEn": "Professional 360°旋转全方位实验行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~10L."
     },
     {
-      "id": "PBM-16L",
-      "name": "Planetary Ball Mill - 16L Capacity",
+      "id": "PL-三头玛-398",
+      "name": "三头玛瑙研磨机",
       "category": "Planetary Ball Mills",
-      "subcategory": "Production Scale",
-      "model": "PBM-16L",
-      "volume": "16 L",
-      "maxSpeed": "600 rpm",
-      "voltage": "380V/50Hz",
-      "power": "5.5 kW",
-      "description": "High-capacity planetary ball mill for production-scale material processing and pilot plant applications.",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 三头玛瑙研磨机 designed for industrial and laboratory applications. Features 研钵直径： of Φ120mm.",
       "features": [
-        "4 grinding stations",
-        "Heavy-duty construction",
-        "Variable speed control",
-        "Industrial grade"
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
       ],
       "applications": [
-        "Industrial Production",
-        "Pilot Plant",
-        "Large Batch Processing",
-        "Research Institutes"
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "研钵直径：": "Φ120mm",
+        "给料粒度：": "-1.5",
+        "出料粒度：": "-0.074"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/agate-grinder-with-three-working-stations.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0325130613111K.png",
+      "nameEn": "三头玛瑙研磨机 (EN)",
+      "descriptionEn": "Professional 三头玛瑙研磨机 (EN) designed for industrial and laboratory applications. Features 研钵直径: Φ120mm, 给料粒度: -1.5."
+    },
+    {
+      "id": "PL-三辊研-912",
+      "name": "三辊研磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 三辊研磨机 designed for industrial and laboratory applications. Features 瓷辊间距： of 5-140微米.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "瓷辊间距：": "5-140微米",
+        "瓷辊转速：": "0-500RPM",
+        "动力配置：": "120W直流电机 / 1.5KW伺服电机"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/three-roll-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03241G13G3443.png",
+      "nameEn": "三辊研磨机 (EN)",
+      "descriptionEn": "Professional 三辊研磨机 (EN) designed for industrial and laboratory applications. Features 瓷辊间距: 5-140微米, 瓷辊转速: 0-500RPM."
+    },
+    {
+      "id": "PL-不锈钢-313",
+      "name": "不锈钢研磨球",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 不锈钢研磨球 designed for industrial and laboratory applications. Features 直径： of 1~30mm.",
+      "features": [
+        "Stainless steel construction"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "直径：": "1~30mm",
+        "密度：": "≈7.9g/cm³",
+        "硬度：": "HRC 20-30"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/grinding-ball-accessory/304-stainless-steel-grinding-ball.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326140G5134O.png",
+      "nameEn": "Stainless Steel Grinding Ball",
+      "descriptionEn": "Professional Stainless Steel Grinding Ball designed for industrial and laboratory applications. Features 直径: 1~30mm, 密度: ≈7.9g/cm³."
+    },
+    {
+      "id": "PL-低温行-803",
+      "name": "低温行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 低温行星球磨机 designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~4L",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/low-temperature-planetary-grinding-machine.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G3501011a6.png",
+      "nameEn": "Cryogenic Planetary Ball Mill",
+      "descriptionEn": "Professional Cryogenic Planetary Ball Mill designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~4L."
+    },
+    {
+      "id": "PL-全方位-956",
+      "name": "全方位生产型行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 全方位生产型行星球磨机 designed for industrial and laboratory applications. Features 球磨罐规格： of 2~25L.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐规格：": "2~25L",
+        "磨罐数量：": "4只",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/heavy-duty-full-directional-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326094K9125M.png",
+      "nameEn": "全方位生产型行星球磨机 (EN)",
+      "descriptionEn": "Professional 全方位生产型行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐规格: 2~25L, 磨罐数量: 4只."
+    },
+    {
+      "id": "PL-刚玉研-391",
+      "name": "刚玉研磨球",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 刚玉研磨球 designed for industrial and laboratory applications. Features 直径： of 0.5~50mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "直径：": "0.5~50mm",
+        "密度：": "3.6~3.9g/cm³",
+        "硬度：": "莫氏9，HRC 80+"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/grinding-ball-accessory/corundum-grinding-ball.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326142K61W01.png",
+      "nameEn": "刚玉研磨球 (EN)",
+      "descriptionEn": "Professional 刚玉研磨球 (EN) designed for industrial and laboratory applications. Features 直径: 0.5~50mm, 密度: 3.6~3.9g/cm³."
+    },
+    {
+      "id": "PL-制样机-294",
+      "name": "制样机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 制样机 designed for industrial and laboratory applications. Features 进料粒度： of 13mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "进料粒度：": "13mm",
+        "出料粒度：": "80-200目",
+        "生产能力：": "100~300g"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/lab-sample-grinder-machine.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03261GG21K38.png",
+      "nameEn": "制样机 (EN)",
+      "descriptionEn": "Professional 制样机 (EN) designed for industrial and laboratory applications. Features 进料粒度: 13mm, 出料粒度: 80-200目."
+    },
+    {
+      "id": "PL-卧式轻-042",
+      "name": "卧式轻型球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 卧式轻型球磨机 designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~1500ml",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/horizontal-light-duty-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032415444GM27.png",
+      "nameEn": "卧式轻型球磨机 (EN)",
+      "descriptionEn": "Professional 卧式轻型球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~1500ml."
+    },
+    {
+      "id": "PL-双行星-633",
+      "name": "双行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 双行星球磨机 designed for industrial and laboratory applications. Features 球磨罐规格： of 50ml~1500ml.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐规格：": "50ml~1500ml",
+        "磨罐数量：": "4只",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/dual-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03260934211CW.png",
+      "nameEn": "双行星球磨机 (EN)",
+      "descriptionEn": "Professional 双行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐规格: 50ml~1500ml, 磨罐数量: 4只."
+    },
+    {
+      "id": "PL-土壤研-891",
+      "name": "土壤研磨与筛分器",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 土壤研磨与筛分器 designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~4L",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/soil-grinder-and-sieve-machine.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_0324161GI055.jpg",
+      "nameEn": "土壤研磨与筛分器 (EN)",
+      "descriptionEn": "Professional 土壤研磨与筛分器 (EN) designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~4L."
+    },
+    {
+      "id": "PL-实验室-476",
+      "name": "实验室棒磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 实验室棒磨机 designed for industrial and laboratory applications. Features 容积： of 4.02~13.57L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "容积：": "4.02~13.57L",
+        "磨矿量：": "300~5000g",
+        "给料粒度：": "2~3mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/laboratory-rod-grinder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032511144214345.png",
+      "nameEn": "实验室棒磨机 (EN)",
+      "descriptionEn": "Professional 实验室棒磨机 (EN) designed for industrial and laboratory applications. Features 容积: 4.02~13.57L, 磨矿量: 300~5000g."
+    },
+    {
+      "id": "PL-实验室-526",
+      "name": "实验室气流粉碎机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 实验室气流粉碎机 designed for industrial and laboratory applications. Features 使用压力： of 6.5-11Kg/cm².",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "使用压力：": "6.5-11Kg/cm²",
+        "进料粒度：": "100-200目",
+        "处理量：": "0.05-0.5Kg/h"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/lab-air-jet-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032509491Q6324.png",
+      "nameEn": "实验室气流粉碎机 (EN)",
+      "descriptionEn": "Professional 实验室气流粉碎机 (EN) designed for industrial and laboratory applications. Features 使用压力: 6.5-11Kg/cm², 进料粒度: 100-200目."
+    },
+    {
+      "id": "PL-实验室-018",
+      "name": "实验室砂磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 实验室砂磨机 designed for industrial and laboratory applications. Features 搅拌器： of 砂磨片 2个.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "搅拌器：": "砂磨片 2个",
+        "搅拌转数：": "1400~3500r/min",
+        "粉碎粒度：": "可达1μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/laboratory-sand-grinder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/012216034G1157.png",
+      "nameEn": "实验室砂磨机 (EN)",
+      "descriptionEn": "Professional 实验室砂磨机 (EN) designed for industrial and laboratory applications. Features 搅拌器: 砂磨片 2个, 搅拌转数: 1400~3500r/min."
+    },
+    {
+      "id": "PL-实验室-146",
+      "name": "实验室行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 实验室行星球磨机 designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~25L",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/laboratory-planetary-grinder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/012214492914L8.png",
+      "nameEn": "实验室行星球磨机 (EN)",
+      "descriptionEn": "Professional 实验室行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~25L."
+    },
+    {
+      "id": "PL-实验室-703",
+      "name": "实验室锥形球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 实验室锥形球磨机 designed for industrial and laboratory applications. Features 给矿量： of 200~4000g.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "给矿量：": "200~4000g",
+        "给料粒度：": "5mm",
+        "出料粒度：": "0.074mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/laboratory-cone-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/01221G52GGL.png",
+      "nameEn": "实验室锥形球磨机 (EN)",
+      "descriptionEn": "Professional 实验室锥形球磨机 (EN) designed for industrial and laboratory applications. Features 给矿量: 200~4000g, 给料粒度: 5mm."
+    },
+    {
+      "id": "PL-小型磨-634",
+      "name": "小型磨粉机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 小型磨粉机 designed for industrial and laboratory applications. Features 产能： of 30~50kg.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "产能：": "30~50kg",
+        "进料粒度：": "10mm",
+        "出料粒度：": "50~200目"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/small-grinder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03251609591Q57.png",
+      "nameEn": "小型磨粉机 (EN)",
+      "descriptionEn": "Professional 小型磨粉机 (EN) designed for industrial and laboratory applications. Features 产能: 30~50kg, 进料粒度: 10mm."
+    },
+    {
+      "id": "PL-微型气-573",
+      "name": "微型气流粉碎机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 微型气流粉碎机 designed for industrial and laboratory applications. Features 处理量： of 0.5-200g/hr.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "处理量：": "0.5-200g/hr",
+        "进料100目：": "出料2-5微米",
+        "用气量：": "&gt;0.4M³/min"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/micro-airflow-pulverizer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032509450615445.png",
+      "nameEn": "微型气流粉碎机 (EN)",
+      "descriptionEn": "Professional 微型气流粉碎机 (EN) designed for industrial and laboratory applications. Features 处理量: 0.5-200g/hr, 进料100目: 出料2-5微米."
+    },
+    {
+      "id": "PL-微型行-775",
+      "name": "微型行星式球磨机（XQM-0.2S手套箱专用款）",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 微型行星式球磨机（XQM-0.2S手套箱专用款） designed for industrial and laboratory applications. Features 功率： of 90W.",
+      "features": [
+        "Planetary motion mechanism",
+        "功率：: 90W"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "功率：": "90W",
+        "磨罐座内径：": "50mm",
+        "允许磨罐最大高度：": "60mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/micro-planetary-ball-mill-glove-box-special-edition.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/01220U140133T.png",
+      "nameEn": "微型行星式球磨机（XQM-0.2S手套箱专用款） (EN)",
+      "descriptionEn": "Professional 微型行星式球磨机（XQM-0.2S手套箱专用款） (EN) designed for industrial and laboratory applications. Features 功率: 90W, 磨罐座内径: 50mm."
+    },
+    {
+      "id": "PL-微型行-780",
+      "name": "微型行星式球磨机（XQM-0.2）",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 微型行星式球磨机（XQM-0.2） designed for industrial and laboratory applications. Features 功率： of 90W.",
+      "features": [
+        "Planetary motion mechanism",
+        "功率：: 90W"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "功率：": "90W",
+        "磨罐座内径：": "50mm",
+        "允许磨罐最大高度：": "60mm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/micro-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0122091HQ5504.png",
+      "nameEn": "微型行星式球磨机（XQM-0.2） (EN)",
+      "descriptionEn": "Professional 微型行星式球磨机（XQM-0.2） (EN) designed for industrial and laboratory applications. Features 功率: 90W, 磨罐座内径: 50mm."
+    },
+    {
+      "id": "PL-微电脑-247",
+      "name": "微电脑行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 微电脑行星球磨机 designed for industrial and laboratory applications. Features 球磨罐规格： of 50ml~25L.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐规格：": "50ml~25L",
+        "磨罐数量：": "4只",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/micro-computerized-touch-screen-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03260U63111137.png",
+      "nameEn": "微电脑行星球磨机 (EN)",
+      "descriptionEn": "Professional 微电脑行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐规格: 50ml~25L, 磨罐数量: 4只."
+    },
+    {
+      "id": "PL-快速球-583",
+      "name": "快速球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 快速球磨机 designed for industrial and laboratory applications. Features 研磨头数： of 1~2.",
+      "features": [
+        "High capacity design",
+        "功率：: 370W*1~2"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "研磨头数：": "1~2",
+        "研磨容积：": "0.5~2L",
+        "功率：": "370W*1~2"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/fast-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03261AIQ4044.png",
+      "nameEn": "快速球磨机 (EN)",
+      "descriptionEn": "Professional 快速球磨机 (EN) designed for industrial and laboratory applications. Features 研磨头数: 1~2, 研磨容积: 0.5~2L."
+    },
+    {
+      "id": "PL-树脂球-722",
+      "name": "树脂球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 树脂球磨机 designed for industrial and laboratory applications. Features 筒体转速： of 125r/min.",
+      "features": [
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "筒体转速：": "125r/min",
+        "装球：": "20mm瓷球",
+        "调速方式：": "变频控速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/resin-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032616454Q4U5.png",
+      "nameEn": "树脂球磨机 (EN)",
+      "descriptionEn": "Professional 树脂球磨机 (EN) designed for industrial and laboratory applications. Features 筒体转速: 125r/min, 装球: 20mm瓷球."
+    },
+    {
+      "id": "PL-氧化锆-782",
+      "name": "氧化锆研磨球",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 氧化锆研磨球 designed for industrial and laboratory applications. Features 直径： of 1~30mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "直径：": "1~30mm",
+        "密度：": "6.0g/cm³",
+        "硬度：": "莫氏 ~8.5， HV ~1250"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/grinding-ball-accessory/zirconia-grinding-ball.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032614121G9508.png",
+      "nameEn": "Zirconia Grinding Ball",
+      "descriptionEn": "Professional Zirconia Grinding Ball designed for industrial and laboratory applications. Features 直径: 1~30mm, 密度: 6.0g/cm³."
+    },
+    {
+      "id": "PL-液氮行-921",
+      "name": "液氮行星式球磨机（冷冻行星球磨机）",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 液氮行星式球磨机（冷冻行星球磨机） designed for industrial and laboratory applications. Features 工作温度： of -40℃~20℃.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "工作温度：": "-40℃~20℃",
+        "气体消耗量：": "4-5升/小时 (0-10℃)",
+        "匹配液氮罐：": "30升/50升"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/liquid-nitrogen-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0122130U614K4.png",
+      "nameEn": "液氮行星式球磨机（冷冻行星球磨机） (EN)",
+      "descriptionEn": "Professional 液氮行星式球磨机（冷冻行星球磨机） (EN) designed for industrial and laboratory applications. Features 工作温度: -40℃~20℃, 气体消耗量: 4-5升/小时 (0-10℃)."
+    },
+    {
+      "id": "PL-玛瑙研-730",
+      "name": "玛瑙研磨仪",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 玛瑙研磨仪 designed for industrial and laboratory applications. Features 研钵口径： of Φ120mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "研钵口径：": "Φ120mm",
+        "研钵转速：": "10rpm",
+        "研棒转速：": "20rpm-90rpm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/agate-grinder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_0325134632EY.jpg",
+      "nameEn": "玛瑙研磨仪 (EN)",
+      "descriptionEn": "Professional 玛瑙研磨仪 (EN) designed for industrial and laboratory applications. Features 研钵口径: Φ120mm, 研钵转速: 10rpm."
+    },
+    {
+      "id": "PL-玛瑙研-347",
+      "name": "玛瑙研磨球",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 玛瑙研磨球 designed for industrial and laboratory applications. Features 直径： of 3~20mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "直径：": "3~20mm",
+        "密度：": "≈2.65g/cm³",
+        "硬度：": "中等，莫氏 7"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/grinding-ball-accessory/agate-ball.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032614244Q55H.png",
+      "nameEn": "Agate Grinding Ball",
+      "descriptionEn": "Professional Agate Grinding Ball designed for industrial and laboratory applications. Features 直径: 3~20mm, 密度: ≈2.65g/cm³."
+    },
+    {
+      "id": "PL-硬质合-668",
+      "name": "硬质合金研磨球",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 硬质合金研磨球 designed for industrial and laboratory applications. Features 直径： of 1~30mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "直径：": "1~30mm",
+        "密度：": "14.5~15.0g/cm³",
+        "硬度：": "HRA 88-93"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/grinding-ball-accessory/tungsten-carbide-mill-ball.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326143P912c2.png",
+      "nameEn": "硬质合金研磨球 (EN)",
+      "descriptionEn": "Professional 硬质合金研磨球 (EN) designed for industrial and laboratory applications. Features 直径: 1~30mm, 密度: 14.5~15.0g/cm³."
+    },
+    {
+      "id": "PL-立式方-300",
+      "name": "立式方形行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 立式方形行星球磨机 designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~25L",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/vertical-square-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0324152FQ2S5.png",
+      "nameEn": "立式方形行星球磨机 (EN)",
+      "descriptionEn": "Professional 立式方形行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~25L."
+    },
+    {
+      "id": "PL-立式生-071",
+      "name": "立式生产型行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 立式生产型行星球磨机 designed for industrial and laboratory applications. Features 球磨罐规格： of 50ml~4L.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐规格：": "50ml~4L",
+        "磨罐数量：": "4只",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/vertical-production-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0325164H5110X.png",
+      "nameEn": "立式生产型行星球磨机 (EN)",
+      "descriptionEn": "Professional 立式生产型行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐规格: 50ml~4L, 磨罐数量: 4只."
+    },
+    {
+      "id": "PL-篮式砂-292",
+      "name": "篮式砂磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 篮式砂磨机 designed for industrial and laboratory applications. Features 研磨篮： of 0.35L.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "研磨篮：": "0.35L",
+        "研磨筒体积：": "3L",
+        "处理量：": "1-3L"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/basket-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/012216152415229.png",
+      "nameEn": "篮式砂磨机 (EN)",
+      "descriptionEn": "Professional 篮式砂磨机 (EN) designed for industrial and laboratory applications. Features 研磨篮: 0.35L, 研磨筒体积: 3L."
+    },
+    {
+      "id": "PL-聚氨酯-518",
+      "name": "聚氨酯包铁芯研磨球",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 聚氨酯包铁芯研磨球 designed for industrial and laboratory applications. Features 直径： of 15~30mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "直径：": "15~30mm",
+        "密度：": "可变",
+        "硬度：": "~HS 80-95A"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/grinding-ball-accessory/polyurethane-coated-iron-core-grinding-ball.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032614340113052.png",
+      "nameEn": "聚氨酯包铁芯研磨球 (EN)",
+      "descriptionEn": "Professional 聚氨酯包铁芯研磨球 (EN) designed for industrial and laboratory applications. Features 直径: 15~30mm, 密度: 可变."
+    },
+    {
+      "id": "PL-胶体磨-401",
+      "name": "胶体磨",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 胶体磨 designed for industrial and laboratory applications. Features 加工细度： of 2-70μm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "加工细度：": "2-70μm",
+        "产能：": "0.2-4t/h",
+        "电机转速：": "3000±100r/min"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/other/colloid-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_03251042229426.jpg",
+      "nameEn": "胶体磨 (EN)",
+      "descriptionEn": "Professional 胶体磨 (EN) designed for industrial and laboratory applications. Features 加工细度: 2-70μm, 产能: 0.2-4t/h."
+    },
+    {
+      "id": "PL-行星球-080",
+      "name": "行星球磨机(半圆形款)",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 行星球磨机(半圆形款) designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Planetary motion mechanism",
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~4L",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/planetary-ball-mill-semi-circular-model.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0324150A9163E.png",
+      "nameEn": "行星球磨机(半圆形款) (EN)",
+      "descriptionEn": "Professional 行星球磨机(半圆形款) (EN) designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~4L."
+    },
+    {
+      "id": "PL-超声波-992",
+      "name": "超声波行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 超声波行星球磨机 designed for industrial and laboratory applications. Features 球磨罐规格： of 0.5L~50L.",
+      "features": [
+        "Planetary motion mechanism"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐规格：": "0.5L~50L",
+        "进料粒度：": "土壤料≤10mm,其他料≤3mm",
+        "出料粒度：": "最小可达0.1μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/ultrasonic-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032610321Q4F3.png",
+      "nameEn": "超声波行星球磨机 (EN)",
+      "descriptionEn": "Professional 超声波行星球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐规格: 0.5L~50L, 进料粒度: 土壤料≤10mm,其他料≤3mm."
+    },
+    {
+      "id": "PL-连续性-097",
+      "name": "连续性行星球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 连续性行星球磨机 designed for industrial and laboratory applications. Features 筒数： of 2~6.",
+      "features": [
+        "High capacity design",
+        "Planetary motion mechanism",
+        "公转功率：: 1.1~75KW"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "筒数：": "2~6",
+        "筒全容积：": "0.5~200L",
+        "公转功率：": "1.1~75KW"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/continuous-planetary-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032611003116319.png",
+      "nameEn": "连续性行星球磨机 (EN)",
+      "descriptionEn": "Professional 连续性行星球磨机 (EN) designed for industrial and laboratory applications. Features 筒数: 2~6, 筒全容积: 0.5~200L."
+    },
+    {
+      "id": "PL-重型卧-926",
+      "name": "重型卧式球磨机",
+      "category": "Planetary Ball Mills",
+      "subcategory": "Planetary Mill",
+      "categoryCn": "行星球磨机",
+      "description": "Professional 重型卧式球磨机 designed for industrial and laboratory applications. Features 球磨罐数量： of 4只.",
+      "features": [
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Nanomaterials",
+        "Ceramics",
+        "Battery Materials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "球磨罐数量：": "4只",
+        "磨罐规格：": "50ml~25L",
+        "调速方式：": "变频调速"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/planetary-ball-mill/heavy-duty-horizontal-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G34G51K31.png",
+      "nameEn": "重型卧式球磨机 (EN)",
+      "descriptionEn": "Professional 重型卧式球磨机 (EN) designed for industrial and laboratory applications. Features 球磨罐数量: 4只, 磨罐规格: 50ml~25L."
+    },
+    {
+      "id": "RO-两工位-407",
+      "name": "两工位罐磨球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 两工位罐磨球磨机 designed for industrial and laboratory applications. Features 主辊转速： of 40~410±10.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
@@ -193,38 +2212,521 @@
         "assets/images/products/pbm-16l.jpg"
       ],
       "specifications": {
-        "Number of Jars": "4",
-        "Jar Volume": "4000 ml each",
-        "Speed Range": "0-600 rpm",
-        "Timer": "0-999 minutes",
-        "Dimension": "1200x800x900 mm",
-        "Weight": "450 kg"
+        "主辊转速：": "40~410±10",
+        "电机型号：": "0.75~1.5KW",
+        "重量：": "59~92KG"
       },
-      "createdAt": "2024-01-20",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/two-working-station-jar-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326150240152D.png",
+      "nameEn": "两工位罐磨球磨机 (EN)",
+      "descriptionEn": "Professional 两工位罐磨球磨机 (EN) designed for industrial and laboratory applications. Features 主辊转速: 40~410±10, 电机型号: 0.75~1.5KW."
     },
     {
-      "id": "GM-ZR-10",
-      "name": "Zirconia Grinding Balls",
-      "category": "Grinding Media",
-      "subcategory": "Ceramic",
-      "material": "Yttria-Stabilized Zirconia",
-      "purity": "99.9%",
-      "size": "10 mm",
-      "density": "6.0 g/cm³",
-      "hardness": "12.5 HV0.5",
-      "description": "Premium zirconia grinding balls for high-energy milling. Excellent wear resistance and minimal contamination.",
+      "id": "RO-八工位-138",
+      "name": "八工位罐磨球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 八工位罐磨球磨机 designed for industrial and laboratory applications. Features 主辊转速： of 50~410±10rpm.",
       "features": [
-        "High density",
-        "Excellent wear resistance",
-        "Low contamination",
-        "High efficiency"
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
       ],
       "applications": [
-        "Nanomaterials",
-        "Pharmaceuticals",
-        "Ceramics",
-        "Electronics"
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "主辊转速：": "50~410±10rpm",
+        "电机型号：": "1.5~2.2KW",
+        "重量：": "106~152KG"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/jar-mill-with-8-working-station.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032615294112W0.png",
+      "nameEn": "八工位罐磨球磨机 (EN)",
+      "descriptionEn": "Professional 八工位罐磨球磨机 (EN) designed for industrial and laboratory applications. Features 主辊转速: 50~410±10rpm, 电机型号: 1.5~2.2KW."
+    },
+    {
+      "id": "RO-内衬滚-576",
+      "name": "内衬滚筒式球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 内衬滚筒式球磨机 designed for industrial and laboratory applications. Features 容积： of 30~2000L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "容积：": "30~2000L",
+        "装料量：": "10.5~700L",
+        "出料粒度：": "≥300目"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/inner-lined-roll-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03261453161A48.png",
+      "nameEn": "内衬滚筒式球磨机 (EN)",
+      "descriptionEn": "Professional 内衬滚筒式球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 30~2000L, 装料量: 10.5~700L."
+    },
+    {
+      "id": "RO-四工位-597",
+      "name": "四工位罐磨球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 四工位罐磨球磨机 designed for industrial and laboratory applications. Features 主辊转速： of 40~410±10rpm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "主辊转速：": "40~410±10rpm",
+        "电机型号：": "0.75~2.2KW",
+        "重量：": "70~122KG"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/four-station-jar-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032615130212a9.png",
+      "nameEn": "四工位罐磨球磨机 (EN)",
+      "descriptionEn": "Professional 四工位罐磨球磨机 (EN) designed for industrial and laboratory applications. Features 主辊转速: 40~410±10rpm, 电机型号: 0.75~2.2KW."
+    },
+    {
+      "id": "RO-大型滚-959",
+      "name": "大型滚筒球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 大型滚筒球磨机 designed for industrial and laboratory applications. Features 容积： of 30~2000L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "容积：": "30~2000L",
+        "装料量：": "10.5~700kg",
+        "出料粒度：": "≥300μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/large-roll-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_032416441HP5.jpg",
+      "nameEn": "大型滚筒球磨机 (EN)",
+      "descriptionEn": "Professional 大型滚筒球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 30~2000L, 装料量: 10.5~700kg."
+    },
+    {
+      "id": "RO-实验室-905",
+      "name": "实验室滚筒球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 实验室滚筒球磨机 designed for industrial and laboratory applications. Features 主辊转速： of 60-570rpm±10.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "主辊转速：": "60-570rpm±10",
+        "单工位间距：": "260~340mm",
+        "单罐最大载荷：": "35~80KG"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/lab-roll-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0324164A319248.png",
+      "nameEn": "实验室滚筒球磨机 (EN)",
+      "descriptionEn": "Professional 实验室滚筒球磨机 (EN) designed for industrial and laboratory applications. Features 主辊转速: 60-570rpm±10, 单工位间距: 260~340mm."
+    },
+    {
+      "id": "RO-小型陶-891",
+      "name": "小型陶瓷滚筒球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 小型陶瓷滚筒球磨机 designed for industrial and laboratory applications. Features 容积： of 30~2000L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "容积：": "30~2000L",
+        "装料量：": "10.5~700kg",
+        "出料粒度：": "≥300μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/small-ball-mill-with-a-ceramic-jar.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/03241624151I19.png",
+      "nameEn": "小型陶瓷滚筒球磨机 (EN)",
+      "descriptionEn": "Professional 小型陶瓷滚筒球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 30~2000L, 装料量: 10.5~700kg."
+    },
+    {
+      "id": "RO-磨筛机-221",
+      "name": "磨筛机（筛磨机）",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 磨筛机（筛磨机） designed for industrial and laboratory applications. Features 装料量： of 10~66L.",
+      "features": [
+        "Variable frequency control"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "装料量：": "10~66L",
+        "变频转速：": "10~72r/min",
+        "设备重量：": "290~445kg"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/screening-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0122134A119643.png",
+      "nameEn": "磨筛机（筛磨机） (EN)",
+      "descriptionEn": "Professional 磨筛机（筛磨机） (EN) designed for industrial and laboratory applications. Features 装料量: 10~66L, 变频转速: 10~72r/min."
+    },
+    {
+      "id": "RO-轻型滚-365",
+      "name": "轻型滚筒球磨机",
+      "category": "Roller Ball Mills",
+      "subcategory": "Roller Mill",
+      "categoryCn": "滚筒球磨机",
+      "description": "Professional 轻型滚筒球磨机 designed for industrial and laboratory applications. Features 容积： of 30~2000L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Mining",
+        "Cement",
+        "Chemical Industry"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "容积：": "30~2000L",
+        "装料量：": "10.5~700kg",
+        "出料粒度：": "≥300μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/drum-ball-mill/light-duty-roll-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G0055913O2.png",
+      "nameEn": "轻型滚筒球磨机 (EN)",
+      "descriptionEn": "Professional 轻型滚筒球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 30~2000L, 装料量: 10.5~700kg."
+    },
+    {
+      "id": "ST-实验搅-187",
+      "name": "实验搅拌球磨机",
+      "category": "Stirring Ball Mills",
+      "subcategory": "Stirring Mill",
+      "categoryCn": "搅拌球磨机",
+      "description": "Professional 实验搅拌球磨机 designed for industrial and laboratory applications. Features 容积： of 1~600L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Pigments",
+        "Coatings",
+        "Nanomaterials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ag-150.jpg"
+      ],
+      "specifications": {
+        "容积：": "1~600L",
+        "装料量：": "0.35~200L",
+        "出料粒度：": "≤1μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/stirring-ball-mill/lab-stirred-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326153FG50H.png",
+      "nameEn": "实验搅拌球磨机 (EN)",
+      "descriptionEn": "Professional 实验搅拌球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 1~600L, 装料量: 0.35~200L."
+    },
+    {
+      "id": "ST-生产型-078",
+      "name": "生产型搅拌球磨机",
+      "category": "Stirring Ball Mills",
+      "subcategory": "Stirring Mill",
+      "categoryCn": "搅拌球磨机",
+      "description": "Professional 生产型搅拌球磨机 designed for industrial and laboratory applications. Features 容积： of 1~600L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Pigments",
+        "Coatings",
+        "Nanomaterials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/default.jpg"
+      ],
+      "specifications": {
+        "容积：": "1~600L",
+        "装料量：": "0.35~200L",
+        "出料粒度：": "≤1μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/stirring-ball-mill/production-type-stirred-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326160133131L.png",
+      "nameEn": "生产型搅拌球磨机 (EN)",
+      "descriptionEn": "Professional 生产型搅拌球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 1~600L, 装料量: 0.35~200L."
+    },
+    {
+      "id": "ST-电动升-642",
+      "name": "电动升降搅拌球磨机",
+      "category": "Stirring Ball Mills",
+      "subcategory": "Stirring Mill",
+      "categoryCn": "搅拌球磨机",
+      "description": "Professional 电动升降搅拌球磨机 designed for industrial and laboratory applications. Features 容积： of 1~600L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Pigments",
+        "Coatings",
+        "Nanomaterials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "容积：": "1~600L",
+        "装料量：": "0.35~200L",
+        "出料粒度：": "≤1μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/stirring-ball-mill/electric-lifting-stirred-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0326154956132V.png",
+      "nameEn": "电动升降搅拌球磨机 (EN)",
+      "descriptionEn": "Professional 电动升降搅拌球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 1~600L, 装料量: 0.35~200L."
+    },
+    {
+      "id": "ST-轻型搅-999",
+      "name": "轻型搅拌球磨机",
+      "category": "Stirring Ball Mills",
+      "subcategory": "Stirring Mill",
+      "categoryCn": "搅拌球磨机",
+      "description": "Professional 轻型搅拌球磨机 designed for industrial and laboratory applications. Features 容积： of 1~600L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Pigments",
+        "Coatings",
+        "Nanomaterials"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-zr-250.jpg"
+      ],
+      "specifications": {
+        "容积：": "1~600L",
+        "装料量：": "0.35~200L",
+        "出料粒度：": "≤1μm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/stirring-ball-mill/lightweight-stirred-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032615553519D6.png",
+      "nameEn": "轻型搅拌球磨机 (EN)",
+      "descriptionEn": "Professional 轻型搅拌球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 1~600L, 装料量: 0.35~200L."
+    },
+    {
+      "id": "VI-实验振-926",
+      "name": "实验振动球磨机",
+      "category": "Vibration Ball Mills",
+      "subcategory": "Vibration Mill",
+      "categoryCn": "振动球磨机",
+      "description": "Professional 实验振动球磨机 designed for industrial and laboratory applications. Features 装料量： of 25%.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Laboratory",
+        "Minerals",
+        "Metallurgy"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ss-1000.jpg"
+      ],
+      "specifications": {
+        "装料量：": "25%",
+        "进料粒度：": "≤5mm",
+        "出料粒度：": "200~2000目"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/vibration-ball-mill/lab-vibration-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/101310221312258.png",
+      "nameEn": "实验振动球磨机 (EN)",
+      "descriptionEn": "Professional 实验振动球磨机 (EN) designed for industrial and laboratory applications. Features 装料量: 25%, 进料粒度: ≤5mm."
+    },
+    {
+      "id": "VI-轻型振-182",
+      "name": "轻型振动球磨机",
+      "category": "Vibration Ball Mills",
+      "subcategory": "Vibration Mill",
+      "categoryCn": "振动球磨机",
+      "description": "Professional 轻型振动球磨机 designed for industrial and laboratory applications. Features 装料量： of 25%.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Laboratory",
+        "Minerals",
+        "Metallurgy"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "装料量：": "25%",
+        "进料粒度：": "≤5mm",
+        "出料粒度：": "200~2000目"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/vibration-ball-mill/lightweight-vibrating-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/12040U30316339.png",
+      "nameEn": "轻型振动球磨机 (EN)",
+      "descriptionEn": "Professional 轻型振动球磨机 (EN) designed for industrial and laboratory applications. Features 装料量: 25%, 进料粒度: ≤5mm."
+    },
+    {
+      "id": "VI-重型振-734",
+      "name": "重型振动球磨机",
+      "category": "Vibration Ball Mills",
+      "subcategory": "Vibration Mill",
+      "categoryCn": "振动球磨机",
+      "description": "Professional 重型振动球磨机 designed for industrial and laboratory applications. Features 容积： of 100~1200L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Laboratory",
+        "Minerals",
+        "Metallurgy"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "容积：": "100~1200L",
+        "处理能力：": "0.1~16t/h",
+        "出料粒度：": "0.3~0.074目"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/vibration-ball-mill/heavy-duty-vibrating-ball-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032616314411327.png",
+      "nameEn": "重型振动球磨机 (EN)",
+      "descriptionEn": "Professional 重型振动球磨机 (EN) designed for industrial and laboratory applications. Features 容积: 100~1200L, 处理能力: 0.1~16t/h."
+    },
+    {
+      "id": "SA-实验型-696",
+      "name": "实验型卧式棒销纳米砂磨机",
+      "category": "Sand Mills",
+      "subcategory": "Sand Mill",
+      "categoryCn": "砂磨机",
+      "description": "Professional 实验型卧式棒销纳米砂磨机 designed for industrial and laboratory applications. Features 研磨通净容积： of 0.3L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Paints",
+        "Inks",
+        "Coatings"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
@@ -232,36 +2734,30 @@
         "assets/images/products/gm-zr-10.jpg"
       ],
       "specifications": {
-        "Diameter": "10 mm",
-        "Composition": "ZrO2 + 5% Y2O3",
-        "Density": "6.0 g/cm³",
-        "Hardness": "12.5 HV0.5",
-        "Packaging": "1 kg/bag"
+        "研磨通净容积：": "0.3L",
+        "加工批量：": "0.25-0.7L",
+        "处理能力：": "200nm-2μm"
       },
-      "createdAt": "2024-01-25",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/sand-mill/lab-horizontal-bar-pin-nano-sand-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/12041633291SF.png",
+      "nameEn": "实验型卧式棒销纳米砂磨机 (EN)",
+      "descriptionEn": "Professional 实验型卧式棒销纳米砂磨机 (EN) designed for industrial and laboratory applications. Features 研磨通净容积: 0.3L, 加工批量: 0.25-0.7L."
     },
     {
-      "id": "GM-AL-5",
-      "name": "Alumina Grinding Balls",
-      "category": "Grinding Media",
-      "subcategory": "Ceramic",
-      "material": "Alumina (Al2O3)",
-      "purity": "99.7%",
-      "size": "5 mm",
-      "density": "3.9 g/cm³",
-      "hardness": "15 HV0.5",
-      "description": "High-purity alumina grinding balls for general-purpose milling applications.",
+      "id": "SA-量产型-672",
+      "name": "量产型纳米砂磨机",
+      "category": "Sand Mills",
+      "subcategory": "Sand Mill",
+      "categoryCn": "砂磨机",
+      "description": "Professional 量产型纳米砂磨机 designed for industrial and laboratory applications. Features 研磨桶净容积： of 5~150L.",
       "features": [
-        "High purity",
-        "Good wear resistance",
-        "Cost-effective",
-        "Chemical resistant"
+        "High capacity design"
       ],
       "applications": [
-        "Ceramics",
-        "Minerals",
         "Paints",
+        "Inks",
         "Coatings"
       ],
       "price": "Contact for Quote",
@@ -270,37 +2766,33 @@
         "assets/images/products/gm-al-5.jpg"
       ],
       "specifications": {
-        "Diameter": "5 mm",
-        "Composition": "Al2O3 99.7%",
-        "Density": "3.9 g/cm³",
-        "Hardness": "15 HV0.5",
-        "Packaging": "5 kg/bag"
+        "研磨桶净容积：": "5~150L",
+        "加工批量：": "20~6000L",
+        "处理能力：": "100mm -2μm"
       },
-      "createdAt": "2024-01-25",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/sand-mill/production-type-sand-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_0325092050OJ.jpg",
+      "nameEn": "量产型纳米砂磨机 (EN)",
+      "descriptionEn": "Professional 量产型纳米砂磨机 (EN) designed for industrial and laboratory applications. Features 研磨桶净容积: 5~150L, 加工批量: 20~6000L."
     },
     {
-      "id": "GM-SS-8",
-      "name": "Stainless Steel Grinding Balls",
-      "category": "Grinding Media",
-      "subcategory": "Metal",
-      "material": "Stainless Steel 304",
-      "purity": "Industrial Grade",
-      "size": "8 mm",
-      "density": "7.9 g/cm³",
-      "hardness": "45 HRC",
-      "description": "Stainless steel grinding balls for heavy-duty milling and industrial applications.",
+      "id": "LA-细胞磨-329",
+      "name": "细胞磨—对撞式研磨机",
+      "category": "Large Grinding Equipment",
+      "subcategory": "General",
+      "categoryCn": "大型研磨设备",
+      "description": "Professional 细胞磨—对撞式研磨机 designed for industrial and laboratory applications. Features 固含量： of 50-70%.",
       "features": [
-        "High density",
-        "High impact strength",
-        "Durable",
-        "Magnetic"
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
       ],
       "applications": [
-        "Metallurgy",
-        "Mining",
-        "Chemical Industry",
-        "Mechanical Alloying"
+        "Industrial Applications",
+        "Laboratory",
+        "Research"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
@@ -308,119 +2800,33 @@
         "assets/images/products/gm-ss-8.jpg"
       ],
       "specifications": {
-        "Diameter": "8 mm",
-        "Composition": "304 Stainless Steel",
-        "Density": "7.9 g/cm³",
-        "Hardness": "45 HRC",
-        "Packaging": "10 kg/bag"
+        "固含量：": "50-70%",
+        "浆产量：": "1.5~8吨/H",
+        "磨耗：": "1.1~2.5元/T"
       },
-      "createdAt": "2024-01-25",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/large-grinding-equipment/cell-grinder-collider-grinder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_032513300M5Q.jpg",
+      "nameEn": "细胞磨—对撞式研磨机 (EN)",
+      "descriptionEn": "Professional 细胞磨—对撞式研磨机 (EN) designed for industrial and laboratory applications. Features 固含量: 50-70%, 浆产量: 1.5~8吨/H."
     },
     {
-      "id": "SJM-2L",
-      "name": "Stirring Jar Mill - 2L",
-      "category": "Stirring Mills",
-      "subcategory": "Laboratory Scale",
-      "model": "SJM-2L",
-      "volume": "2 L",
-      "maxSpeed": "1500 rpm",
-      "voltage": "220V/50Hz",
-      "power": "0.75 kW",
-      "description": "Efficient stirring jar mill for wet grinding and dispersion. Ideal for nano-material preparation.",
+      "id": "LA-细胞磨-343",
+      "name": "细胞磨—搅拌式研磨机",
+      "category": "Large Grinding Equipment",
+      "subcategory": "General",
+      "categoryCn": "大型研磨设备",
+      "description": "Professional 细胞磨—搅拌式研磨机 designed for industrial and laboratory applications. Features 固含量： of 50-70%.",
       "features": [
-        "High efficiency",
-        "Low energy consumption",
-        "Fine particle size",
+        "Industrial grade quality",
+        "Reliable performance",
         "Easy operation"
       ],
       "applications": [
-        "Nanomaterials",
-        "Inks",
-        "Pigments",
-        "Ceramics"
-      ],
-      "price": "Contact for Quote",
-      "stock": "In Stock",
-      "images": [
-        "assets/images/products/sjm-2l.jpg"
-      ],
-      "specifications": {
-        "Jar Volume": "2000 ml",
-        "Speed Range": "0-1500 rpm",
-        "Motor Power": "0.75 kW",
-        "Dimension": "400x300x400 mm",
-        "Weight": "35 kg"
-      },
-      "createdAt": "2024-02-01",
-      "updatedAt": "2024-02-14"
-    },
-    {
-      "id": "PBM-V-0.4L",
-      "name": "Vacuum Planetary Ball Mill - 0.4L",
-      "category": "Planetary Ball Mills",
-      "subcategory": "Vacuum Type",
-      "model": "PBM-V-0.4L",
-      "volume": "0.4 L",
-      "maxSpeed": "1000 rpm",
-      "vacuum": "≤ -0.1 MPa",
-      "voltage": "220V/50Hz",
-      "power": "0.55 kW",
-      "description": "Vacuum planetary ball mill for oxygen-sensitive materials and inert atmosphere applications.",
-      "features": [
-        "Vacuum grinding",
-        "Inert gas compatible",
-        "Sealed jars",
-        "Temperature control"
-      ],
-      "applications": [
-        "Battery Materials",
-        "Catalysts",
-        "Pyrophoric Materials",
-        "Air-sensitive Compounds"
-      ],
-      "price": "Contact for Quote",
-      "stock": "In Stock",
-      "images": [
-        "assets/images/products/pbm-v-04l.jpg"
-      ],
-      "specifications": {
-        "Number of Jars": "4",
-        "Jar Volume": "100 ml each",
-        "Speed Range": "0-1000 rpm",
-        "Vacuum Level": "≤ -0.1 MPa",
-        "Dimension": "500x400x450 mm",
-        "Weight": "80 kg"
-      },
-      "createdAt": "2024-02-05",
-      "updatedAt": "2024-02-14"
-    },
-    {
-      "id": "GJ-PTFE-250",
-      "name": "PTFE Chemical-Resistant Jar",
-      "category": "Grinding Jars",
-      "subcategory": "Plastic",
-      "material": "PTFE (Teflon)",
-      "purity": "Industrial Grade",
-      "volume": "250 ml",
-      "hardness": "N/A",
-      "maxTemperature": "260°C",
-      "equipment": [
-        "Planetary Mill",
-        "Roller Mill"
-      ],
-      "description": "PTFE grinding jar with excellent chemical resistance for corrosive materials.",
-      "features": [
-        "Excellent chemical resistance",
-        "Wide temperature range",
-        "Non-stick surface",
-        "FDA compliant"
-      ],
-      "applications": [
-        "Chemical Analysis",
-        "Pharmaceuticals",
-        "Food Industry",
-        "Corrosive Materials"
+        "Industrial Applications",
+        "Laboratory",
+        "Research"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
@@ -428,133 +2834,481 @@
         "assets/images/products/gj-ptfe-250.jpg"
       ],
       "specifications": {
-        "Outer Diameter": "85 mm",
-        "Inner Diameter": "70 mm",
-        "Height": "100 mm",
-        "Weight": "180 g",
-        "Lid Type": "Screw-on with PTFE seal"
+        "固含量：": "50-70%",
+        "浆产量：": "1.8~100吨/H",
+        "磨耗：": "1.7~4.9元/T"
       },
-      "createdAt": "2024-02-10",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/large-grinding-equipment/cell-mill-stirring-mill.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_03251325159263.jpg",
+      "nameEn": "细胞磨—搅拌式研磨机 (EN)",
+      "descriptionEn": "Professional 细胞磨—搅拌式研磨机 (EN) designed for industrial and laboratory applications. Features 固含量: 50-70%, 浆产量: 1.8~100吨/H."
     },
     {
-      "id": "GM-WC-6",
-      "name": "Tungsten Carbide Grinding Balls",
-      "category": "Grinding Media",
-      "subcategory": "Metal",
-      "material": "Tungsten Carbide (WC-Co 6%)",
-      "purity": "Industrial Grade",
-      "size": "6 mm",
-      "density": "14.5 g/cm³",
-      "hardness": "1400 HV30",
-      "description": "Ultra-hard tungsten carbide grinding balls for extreme wear applications.",
+      "id": "LA-细胞磨-382",
+      "name": "细胞磨—涡轮式研磨机",
+      "category": "Large Grinding Equipment",
+      "subcategory": "General",
+      "categoryCn": "大型研磨设备",
+      "description": "Professional 细胞磨—涡轮式研磨机 designed for industrial and laboratory applications. Features 固含量： of 50-70%.",
       "features": [
-        "Extreme hardness",
-        "High density",
-        "Excellent wear resistance",
-        "Heavy-duty"
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
       ],
       "applications": [
-        "Mining",
-        "Hard Materials",
-        "Ceramics",
-        "Metal Matrix Composites"
+        "Industrial Applications",
+        "Laboratory",
+        "Research"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
-      "images": [
-        "assets/images/products/gm-wc-6.jpg"
-      ],
-      "specifications": {
-        "Diameter": "6 mm",
-        "Composition": "WC + 6% Co",
-        "Density": "14.5 g/cm³",
-        "Hardness": "1400 HV30",
-        "Packaging": "5 kg/bag"
-      },
-      "createdAt": "2024-02-12",
-      "updatedAt": "2024-02-14"
-    },
-    {
-      "id": "GJ-AG-150",
-      "name": "Natural Agate Grinding Jar",
-      "category": "Grinding Jars",
-      "subcategory": "Natural",
-      "material": "Natural Agate (SiO2)",
-      "purity": "99.9%",
-      "volume": "150 ml",
-      "hardness": "7.0 Mohs",
-      "maxTemperature": "800°C",
-      "equipment": [
-        "Planetary Mill"
-      ],
-      "description": "Premium natural agate grinding jar for mineral analysis and high-purity applications.",
-      "features": [
-        "Natural stone",
-        "99.9% SiO2 purity",
-        "Minimal contamination",
-        "Aesthetic appeal"
-      ],
-      "applications": [
-        "Mineral Analysis",
-        "Geology",
-        "Jewelry",
-        "High-Purity Materials"
-      ],
-      "price": "Contact for Quote",
-      "stock": "Limited Stock",
       "images": [
         "assets/images/products/gj-ag-150.jpg"
       ],
       "specifications": {
-        "Outer Diameter": "75 mm",
-        "Inner Diameter": "60 mm",
-        "Height": "85 mm",
-        "Weight": "400 g",
-        "Lid Type": "Screw-on with agate seal"
+        "固含量：": "50-70%",
+        "浆产量：": "0.05~3吨/H",
+        "磨耗：": "1.1~6.6元/T"
       },
-      "createdAt": "2024-02-14",
-      "updatedAt": "2024-02-14"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/large-grinding-equipment/cell-grinder-turbine-grinder.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_03251319239220.jpg",
+      "nameEn": "细胞磨—涡轮式研磨机 (EN)",
+      "descriptionEn": "Professional 细胞磨—涡轮式研磨机 (EN) designed for industrial and laboratory applications. Features 固含量: 50-70%, 浆产量: 0.05~3吨/H."
     },
     {
-      "id": "PBM-C-0.2L",
-      "name": "Cryogenic Planetary Ball Mill - 0.2L",
-      "category": "Planetary Ball Mills",
-      "subcategory": "Cryogenic Type",
-      "model": "PBM-C-0.2L",
-      "volume": "0.2 L",
-      "maxSpeed": "1200 rpm",
-      "temperature": "-196°C to Room Temp",
-      "voltage": "220V/50Hz",
-      "power": "0.75 kW",
-      "description": "Cryogenic planetary ball mill with liquid nitrogen cooling for processing temperature-sensitive materials.",
+      "id": "LA-蜂巢磨-031",
+      "name": "蜂巢磨—粉体复合改性机",
+      "category": "Large Grinding Equipment",
+      "subcategory": "General",
+      "categoryCn": "大型研磨设备",
+      "description": "Professional 蜂巢磨—粉体复合改性机 designed for industrial and laboratory applications. Features 气体流量： of 1.25~37.5km³/h.",
       "features": [
-        "Liquid nitrogen cooling",
-        "Temperature control",
-        "For brittle materials",
-        "Wide applications"
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
       ],
       "applications": [
-        "Food Industry",
-        "Pharmaceuticals",
-        "Polymers",
-        "Thermo-sensitive Materials"
+        "Industrial Applications",
+        "Laboratory",
+        "Research"
       ],
       "price": "Contact for Quote",
       "stock": "In Stock",
       "images": [
-        "assets/images/products/pbm-c-02l.jpg"
+        "assets/images/products/default.jpg"
       ],
       "specifications": {
-        "Number of Jars": "4",
-        "Jar Volume": "50 ml each",
-        "Speed Range": "0-1200 rpm",
-        "Temperature Range": "-196°C to Room Temp",
-        "Dimension": "600x500x700 mm",
-        "Weight": "95 kg"
+        "气体流量：": "1.25~37.5km³/h",
+        "最高转速：": "1000~6500rpm",
+        "生产能力：": "0.5~4.5t/h"
       },
-      "createdAt": "2024-02-15",
-      "updatedAt": "2024-02-15"
+      "sourceUrl": "https://www.sbworld.cn/product/grinding/large-grinding-equipment/honeycomb-mill-powder-composite-modification-machin.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_03251341403125.jpg",
+      "nameEn": "蜂巢磨—粉体复合改性机 (EN)",
+      "descriptionEn": "Professional 蜂巢磨—粉体复合改性机 (EN) designed for industrial and laboratory applications. Features 气体流量: 1.25~37.5km³/h, 最高转速: 1000~6500rpm."
+    },
+    {
+      "id": "SC-三次元-654",
+      "name": "三次元旋振筛",
+      "category": "Screening Series",
+      "subcategory": "General",
+      "categoryCn": "筛分系列",
+      "description": "Professional 三次元旋振筛 designed for industrial and laboratory applications. Features 有效直径： of 560~1750mm.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "有效直径：": "560~1750mm",
+        "筛网规格：": "0.02~50mm",
+        "筛分效率：": "85-95%"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/screening-series/3d-rotary-vibrating-screen.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0202134IQ2114.png",
+      "nameEn": "三次元旋振筛 (EN)",
+      "descriptionEn": "Professional 三次元旋振筛 (EN) designed for industrial and laboratory applications. Features 有效直径: 560~1750mm, 筛网规格: 0.02~50mm."
+    },
+    {
+      "id": "SC-不锈钢-885",
+      "name": "不锈钢振筛机",
+      "category": "Screening Series",
+      "subcategory": "General",
+      "categoryCn": "筛分系列",
+      "description": "Professional 不锈钢振筛机 designed for industrial and laboratory applications. Features 筛子直径： of 200mm.",
+      "features": [
+        "Stainless steel construction"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-zr-250.jpg"
+      ],
+      "specifications": {
+        "筛子直径：": "200mm",
+        "筛子层数：": "5层",
+        "筛子摇动次数：": "1400转/分"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/screening-series/stainless-steel-vibrating-screen-machine.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/020214031G4038.png",
+      "nameEn": "不锈钢振筛机 (EN)",
+      "descriptionEn": "Professional 不锈钢振筛机 (EN) designed for industrial and laboratory applications. Features 筛子直径: 200mm, 筛子层数: 5层."
+    },
+    {
+      "id": "SC-小型实-581",
+      "name": "小型实验室筛分机",
+      "category": "Screening Series",
+      "subcategory": "General",
+      "categoryCn": "筛分系列",
+      "description": "Professional 小型实验室筛分机 designed for industrial and laboratory applications. Features 振频： of 3000r/min.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ss-1000.jpg"
+      ],
+      "specifications": {
+        "振频：": "3000r/min",
+        "最大样品量：": "2Kg",
+        "最大可叠放筛网数量：": "7（50mm高）"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/screening-series/small-laboratory-screening-machine.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/011316044411N3.png",
+      "nameEn": "小型实验室筛分机 (EN)",
+      "descriptionEn": "Professional 小型实验室筛分机 (EN) designed for industrial and laboratory applications. Features 振频: 3000r/min, 最大样品量: 2Kg."
+    },
+    {
+      "id": "MI-V型混-716",
+      "name": "V型混合机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional V型混合机 designed for industrial and laboratory applications. Features 工作容积： of 2~200L.",
+      "features": [
+        "High capacity design",
+        "混料功率：: 0.37~7.5KW"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-4l.jpg"
+      ],
+      "specifications": {
+        "工作容积：": "2~200L",
+        "装料系数：": "0.4",
+        "混料功率：": "0.37~7.5KW"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/v-type-mixer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G4030419320.png",
+      "nameEn": "V型混合机 (EN)",
+      "descriptionEn": "Professional V型混合机 (EN) designed for industrial and laboratory applications. Features 工作容积: 2~200L, 装料系数: 0.4."
+    },
+    {
+      "id": "MI-三维混-329",
+      "name": "三维混合机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 三维混合机 designed for industrial and laboratory applications. Features 最大装料容积： of 40~800t.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/pbm-16l.jpg"
+      ],
+      "specifications": {
+        "最大装料容积：": "40~800t",
+        "最大装料重量：": "40~800kg",
+        "混合桶容积：": "50~1000t"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/3d-mixer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G4094219546.png",
+      "nameEn": "三维混合机 (EN)",
+      "descriptionEn": "Professional 三维混合机 (EN) designed for industrial and laboratory applications. Features 最大装料容积: 40~800t, 最大装料重量: 40~800kg."
+    },
+    {
+      "id": "MI-剪切乳-646",
+      "name": "剪切乳化机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 剪切乳化机 designed for industrial and laboratory applications. Features 处理量： of 40L.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-zr-10.jpg"
+      ],
+      "specifications": {
+        "处理量：": "40L",
+        "工作头配置：": "Φ70MM",
+        "额定转距：": "34.1n.cm"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/shear-emulsifier.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0325113S9154T.png",
+      "nameEn": "剪切乳化机 (EN)",
+      "descriptionEn": "Professional 剪切乳化机 (EN) designed for industrial and laboratory applications. Features 处理量: 40L, 工作头配置: Φ70MM."
+    },
+    {
+      "id": "MI-卧式螺-340",
+      "name": "卧式螺带混合机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 卧式螺带混合机 designed for industrial and laboratory applications. Features 桶体容积： of 200~400L.",
+      "features": [
+        "High capacity design"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-al-5.jpg"
+      ],
+      "specifications": {
+        "桶体容积：": "200~400L",
+        "桨叶形式：": "单轴双螺带",
+        "密封方式：": "聚氟"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/horizontal-screw-belt-mixer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_0325115615B26.jpg",
+      "nameEn": "卧式螺带混合机 (EN)",
+      "descriptionEn": "Professional 卧式螺带混合机 (EN) designed for industrial and laboratory applications. Features 桶体容积: 200~400L, 桨叶形式: 单轴双螺带."
+    },
+    {
+      "id": "MI-双锥混-270",
+      "name": "双锥混合机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 双锥混合机 designed for industrial and laboratory applications. Features 容积： of 5-300L.",
+      "features": [
+        "High capacity design",
+        "电机功率：: 0.25-3Kw"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gm-ss-8.jpg"
+      ],
+      "specifications": {
+        "容积：": "5-300L",
+        "电机功率：": "0.25-3Kw",
+        "外型尺寸：": "150~300L"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/double-cone-mixer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G40I11L15.png",
+      "nameEn": "双锥混合机 (EN)",
+      "descriptionEn": "Professional 双锥混合机 (EN) designed for industrial and laboratory applications. Features 容积: 5-300L, 电机功率: 0.25-3Kw."
+    },
+    {
+      "id": "MI-多维万-756",
+      "name": "多维万向混合机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 多维万向混合机 designed for industrial and laboratory applications. Features 罐子容积： of 单罐10L，共20L.",
+      "features": [
+        "High capacity design",
+        "电机功率：: 0.75KW"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ptfe-250.jpg"
+      ],
+      "specifications": {
+        "罐子容积：": "单罐10L，共20L",
+        "电机功率：": "0.75KW",
+        "罐子旋转速度：": "37r/min"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/multi-dimensional-mixer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032FS3511K13.png",
+      "nameEn": "多维万向混合机 (EN)",
+      "descriptionEn": "Professional 多维万向混合机 (EN) designed for industrial and laboratory applications. Features 罐子容积: 单罐10L，共20L, 电机功率: 0.75KW."
+    },
+    {
+      "id": "MI-实验分-077",
+      "name": "实验分散机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 实验分散机 designed for industrial and laboratory applications. Features 转速： of 1400~2800r/min.",
+      "features": [
+        "Industrial grade quality",
+        "Reliable performance",
+        "Easy operation"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-ag-150.jpg"
+      ],
+      "specifications": {
+        "转速：": "1400~2800r/min",
+        "分散盘直径：": "50",
+        "升降行程：": "200"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/lab-disperser.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032FT1131SE.png",
+      "nameEn": "实验分散机 (EN)",
+      "descriptionEn": "Professional 实验分散机 (EN) designed for industrial and laboratory applications. Features 转速: 1400~2800r/min, 分散盘直径: 50."
+    },
+    {
+      "id": "MI-斜式混-314",
+      "name": "斜式混合机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 斜式混合机 designed for industrial and laboratory applications. Features 工作容积： of 2~200L.",
+      "features": [
+        "High capacity design",
+        "混料功率：: 0.37~7.5KW"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/default.jpg"
+      ],
+      "specifications": {
+        "工作容积：": "2~200L",
+        "装料系数：": "0.4",
+        "混料功率：": "0.37~7.5KW"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/oblique-mixer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/032G40R31L42.png",
+      "nameEn": "斜式混合机 (EN)",
+      "descriptionEn": "Professional 斜式混合机 (EN) designed for industrial and laboratory applications. Features 工作容积: 2~200L, 装料系数: 0.4."
+    },
+    {
+      "id": "MI-槽型混-859",
+      "name": "槽型混合机",
+      "category": "Mixing Series",
+      "subcategory": "General",
+      "categoryCn": "混合系列",
+      "description": "Professional 槽型混合机 designed for industrial and laboratory applications. Features 混合时间： of 5~20min.",
+      "features": [
+        "High capacity design",
+        "倒料电机功率：: 手动~1.1kw"
+      ],
+      "applications": [
+        "Pharmaceuticals",
+        "Food",
+        "Chemicals"
+      ],
+      "price": "Contact for Quote",
+      "stock": "In Stock",
+      "images": [
+        "assets/images/products/gj-al-500.jpg"
+      ],
+      "specifications": {
+        "混合时间：": "5~20min",
+        "工作容积：": "10~300L",
+        "倒料电机功率：": "手动~1.1kw"
+      },
+      "sourceUrl": "https://www.sbworld.cn/product/mixed-series/trough-mixer.html",
+      "createdAt": "2026-03-05",
+      "updatedAt": "2026-03-05",
+      "originalImage": "assets/images/products/0_032511462NW1.jpg",
+      "nameEn": "槽型混合机 (EN)",
+      "descriptionEn": "Professional 槽型混合机 (EN) designed for industrial and laboratory applications. Features 混合时间: 5~20min, 工作容积: 10~300L."
     }
   ]
 }

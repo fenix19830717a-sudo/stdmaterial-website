@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail - NanoMech</title>
+    <title>Planetary Ball Mill Specifications | Grinding Jar & Media Technical Details</title>
+    <meta name="description" content="Detailed technical specifications for planetary ball mills, grinding jars & zirconia media. Find capacity, speed, power & material options for laboratory & industrial grinding equipment." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/animations.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/products.js"></script>
     <script src="assets/js/image-processing.js"></script>
     <script src="assets/js/grinding-animation.js"></script>
@@ -45,7 +47,51 @@
         }
         .neon-shadow { box-shadow: 0 0 15px rgba(19, 200, 236, 0.3); }
         .thumbnail-active { border-color: #13c8ec !important; }
-    </style>
+    
+        /* Language Switcher Styles */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 20px;
+            padding: 4px 8px;
+        }
+        .lang-switcher button {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .lang-switcher button.active {
+            background: #06b6d4;
+            color: #020617;
+        }
+        .lang-switcher button:hover:not(.active) {
+            color: #06b6d4;
+        }
+</style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-L2EZ1RRFKP");
+    </script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="../assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
     <div class="fixed inset-0 z-0 bg-grid-pattern bg-[size:40px_40px] pointer-events-none"></div>
@@ -107,7 +153,7 @@
                 
                 <!-- 2D Image View -->
                 <div id="2d-view" class="relative aspect-square bg-secondary-dark rounded-xl overflow-hidden border border-white/5">
-                    <img id="main-image" class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" alt="Product Image">
+                    <img id="main-image" class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" loading="lazy" alt="Product Image">
                     <div class="absolute top-4 left-4 flex flex-col gap-2" id="product-badges">
                         <span class="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded shadow-sm">CERAMIC</span>
                         <span class="bg-secondary-dark border border-primary/30 text-white text-xs font-bold px-3 py-1 rounded shadow-sm">99.7% PURITY</span>
@@ -141,10 +187,10 @@
                 
                 <div class="flex gap-3 overflow-x-auto pb-2" id="thumbnail-gallery">
                     <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 thumbnail-active">
-                        <img class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" alt="Thumbnail 1">
+                        <img class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" loading="lazy" alt="Thumbnail 1">
                     </button>
                     <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 bg-secondary-dark">
-                        <img class="w-full h-full object-cover" src="assets/images/products/eq-pm-4x500.jpg" alt="Thumbnail 2">
+                        <img class="w-full h-full object-cover" src="assets/images/products/eq-pm-4x500.jpg" loading="lazy" alt="Thumbnail 2">
                     </button>
                 </div>
             </div>
@@ -546,7 +592,33 @@
     </footer>
 
     <script>
-        const productsData = {
+        // Load products from JSON and display
+    let productsData = {};
+    let currentProduct = null;
+    
+    async function loadProductsData() {
+        try {
+            const response = await fetch('/data/products.json');
+            const data = await response.json();
+            const products = data.products || [];
+            
+            // Convert array to object keyed by id
+            products.forEach(p => {
+                productsData[p.id] = p;
+            });
+            
+            console.log(`Loaded ${products.length} products`);
+            loadProduct();
+        } catch (error) {
+            console.error('Error loading products:', error);
+            // Fallback to hardcoded data if fetch fails
+            loadFallbackData();
+        }
+    }
+    
+    function loadFallbackData() {
+        // Fallback data for when JSON fails to load
+        productsData = {
             "GJ-AL-500": {
                 id: "GJ-AL-500",
                 name: "Alumina Ceramic Grinding Jar",
@@ -571,58 +643,10 @@
                     "Weight": "850 g",
                     "Lid Type": "Screw-on with PTFE seal"
                 }
-            },
-            "GJ-SS-1000": {
-                id: "GJ-SS-1000",
-                name: "Stainless Steel Mill Container",
-                category: "Grinding Jars",
-                subcategory: "Metal",
-                material: "Stainless Steel 304L",
-                purity: "Industrial Grade",
-                volume: "1000 ml",
-                hardness: "N/A",
-                maxTemperature: "1200°C",
-                equipment: ["Planetary Mill", "Roller Mill"],
-                description: "Heavy-duty stainless steel grinding container for industrial-scale material processing.",
-                features: ["304L grade", "O-ring gasket seal", "High temperature resistance", "Easy cleaning"],
-                applications: ["Metallurgy", "Chemical Industry", "Food Processing"],
-                price: "Contact for Quote",
-                stock: "In Stock",
-                images: ["assets/images/products/eq-pm-4x500.jpg"],
-                specifications: {
-                    "Outer Diameter": "150 mm",
-                    "Inner Diameter": "130 mm",
-                    "Height": "180 mm",
-                    "Weight": "2500 g",
-                    "Lid Type": "Clamp-on with O-ring"
-                }
-            },
-            "GJ-ZR-250": {
-                id: "GJ-ZR-250",
-                name: "Zirconia (YSZ) Grinding Jar",
-                category: "Grinding Jars",
-                subcategory: "Ceramic",
-                material: "Yttria-Stabilized Zirconia (YSZ)",
-                purity: "99.9%",
-                volume: "250 ml",
-                hardness: "8.5 Mohs",
-                maxTemperature: "1000°C",
-                equipment: ["High-Energy Shaker", "Planetary Mill"],
-                description: "Premium zirconia grinding jar with exceptional wear resistance for high-energy milling applications.",
-                features: ["Y-stabilized", "Exceptional wear resistance", "High density", "Low contamination"],
-                applications: ["Nano-materials", "Pharmaceuticals", "Electronics", "Advanced Ceramics"],
-                price: "Contact for Quote",
-                stock: "In Stock",
-                images: ["assets/images/products/gj-al-500.jpg"],
-                specifications: {
-                    "Outer Diameter": "80 mm",
-                    "Inner Diameter": "65 mm",
-                    "Height": "100 mm",
-                    "Weight": "650 g",
-                    "Lid Type": "Screw-on with ceramic seal"
-                }
             }
         };
+        loadProduct();
+    }
 
         function getProductIdFromUrl() {
             const params = new URLSearchParams(window.location.search);
@@ -631,7 +655,16 @@
 
         function loadProduct() {
             const productId = getProductIdFromUrl();
-            const product = productsData[productId] || productsData['GJ-AL-500'];
+            const product = productsData[productId] || productsData['GJ-AL-500'] || Object.values(productsData)[0];
+            currentProduct = product;
+            
+            // Handle image error - fallback to placeholder
+            const mainImage = document.getElementById('main-image');
+            if (mainImage) {
+                mainImage.onerror = function() {
+                    this.src = 'assets/images/products/default.jpg';
+                };
+            }
             
             document.getElementById('breadcrumb-category').textContent = product.category;
             document.getElementById('breadcrumb-product').textContent = product.name;
@@ -696,7 +729,7 @@
             relatedContainer.innerHTML = related.map(p => `
                 <a href="product-detail.html?id=${p.id}" class="group bg-background-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl transition-all flex flex-col">
                     <div class="relative aspect-square bg-secondary-dark overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.images[0]}" alt="${p.name}">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.images[0]}" loading="lazy" alt="${p.name}">
                         <div class="absolute top-2 left-2">
                             <span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-0.5 rounded">${p.subcategory.toUpperCase()}</span>
                         </div>

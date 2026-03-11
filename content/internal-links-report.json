@@ -1,0 +1,188 @@
+{
+  "total_articles": 30,
+  "articles_with_links": 5,
+  "total_internal_links_added": 16,
+  "articles_with_cta": 30,
+  "details": [
+    {
+      "file": "01-planetary-ball-mill-guide.md",
+      "links_added": 4,
+      "cta_added": true,
+      "status": "success"
+    },
+    {
+      "file": "14-wet-vs-dry-grinding.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "09-ball-size-selection.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "06-rpm-optimization.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "19-material-hardness.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "16-sample-preparation-workflow.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "20-market-trends-2026.md",
+      "links_added": 3,
+      "cta_added": true,
+      "status": "success"
+    },
+    {
+      "file": "11-high-energy-milling.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "15-liner-materials.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "05-tungsten-carbide-jars.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "08-safety-guidelines.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "02-laboratory-grinding-equipment.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "13-ceramic-grinding-media.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "04-grinding-media-comparison.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "03-nanomaterial-precision.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "12-lab-equipment-essentials.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "07-equipment-maintenance.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "10-nanoparticle-methods.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "18-industrial-vs-lab.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "17-grinding-efficiency.md",
+      "links_added": 3,
+      "cta_added": true,
+      "status": "success"
+    },
+    {
+      "file": "03-planetary-vs-roller-faq.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "08-roi-calculator.md",
+      "links_added": 3,
+      "cta_added": true,
+      "status": "success"
+    },
+    {
+      "file": "01-faq-grinding-media.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "06-material-compatibility.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "04-technical-specs.md",
+      "links_added": 3,
+      "cta_added": true,
+      "status": "success"
+    },
+    {
+      "file": "07-troubleshooting.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "09-compliance-guide.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "10-vendor-checklist.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "02-comparison-ball-mills.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    },
+    {
+      "file": "05-grinding-calculator.md",
+      "links_added": 0,
+      "cta_added": true,
+      "status": "already has links"
+    }
+  ]
+}

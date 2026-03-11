@@ -1,0 +1,185 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "The Future of Nano-Grinding: Trends and Technologies for 2024",
+      "excerpt": "Explore the latest advancements in nano-scale grinding technology and how they're revolutionizing industries from pharmaceuticals to electronics manufacturing.",
+      "category": "industry",
+      "categoryLabel": "Industry News",
+      "date": "February 10, 2024",
+      "readTime": "8 min read",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=500&fit=crop",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Global Grinding Equipment Market to Reach $5.2B by 2028",
+      "excerpt": "New market research indicates significant growth in the industrial grinding equipment sector driven by nanotechnology applications.",
+      "category": "industry",
+      "categoryLabel": "INDUSTRY",
+      "date": "February 8, 2024",
+      "readTime": "5 min read",
+      "image": "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "PrecisionGrind Expands Production Capacity by 40%",
+      "excerpt": "Our new manufacturing facility is now operational, significantly increasing our production capacity for grinding jars and equipment.",
+      "category": "company",
+      "categoryLabel": "COMPANY",
+      "date": "February 5, 2024",
+      "readTime": "3 min read",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "Complete Guide to Selecting Grinding Jars for Your Application",
+      "excerpt": "Learn how to choose the right grinding jar material, size, and configuration for optimal results in your specific application.",
+      "category": "guide",
+      "categoryLabel": "GUIDE",
+      "date": "February 1, 2024",
+      "readTime": "8 min read",
+      "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 5,
+      "title": "Pharmaceutical Industry Adopts High-Purity Zirconia Grinding",
+      "excerpt": "FDA-compliant zirconia grinding solutions are becoming the standard for pharmaceutical API manufacturing.",
+      "category": "industry",
+      "categoryLabel": "INDUSTRY",
+      "date": "January 28, 2024",
+      "readTime": "6 min read",
+      "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 6,
+      "title": "PrecisionGrind Achieves ISO 14001 Environmental Certification",
+      "excerpt": "Our commitment to sustainable manufacturing practices has been recognized with ISO 14001 certification.",
+      "category": "company",
+      "categoryLabel": "COMPANY",
+      "date": "January 20, 2024",
+      "readTime": "4 min read",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 7,
+      "title": "International Procurement: Shipping, Customs & Documentation",
+      "excerpt": "A comprehensive guide to importing grinding equipment, including HS codes, customs procedures, and documentation requirements.",
+      "category": "guide",
+      "categoryLabel": "GUIDE",
+      "date": "January 15, 2024",
+      "readTime": "10 min read",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 8,
+      "title": "New ISO Standards for Laboratory Grinding Equipment Released",
+      "excerpt": "The International Organization for Standardization has published updated safety and performance standards for laboratory grinding equipment.",
+      "category": "industry",
+      "categoryLabel": "INDUSTRY",
+      "date": "January 12, 2024",
+      "readTime": "5 min read",
+      "image": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 9,
+      "title": "PrecisionGrind Launches New Line of Agate Grinding Jars",
+      "excerpt": "Introducing our premium collection of natural agate grinding jars, perfect for high-purity mineral analysis applications.",
+      "category": "company",
+      "categoryLabel": "COMPANY",
+      "date": "January 8, 2024",
+      "readTime": "4 min read",
+      "image": "https://images.unsplash.com/photo-1560167016-022b78a0258e?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 10,
+      "title": "Cryogenic Grinding: Applications in Food and Pharmaceuticals",
+      "excerpt": "An in-depth look at cryogenic grinding technology and its applications for temperature-sensitive materials.",
+      "category": "guide",
+      "categoryLabel": "GUIDE",
+      "date": "January 5, 2024",
+      "readTime": "12 min read",
+      "image": "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 11,
+      "title": "The Impact of Grinding Media on Product Quality",
+      "excerpt": "Understanding how different grinding media materials affect contamination levels and final product quality.",
+      "category": "industry",
+      "categoryLabel": "INDUSTRY",
+      "date": "January 2, 2024",
+      "readTime": "7 min read",
+      "image": "https://images.unsplash.com/photo-1581093458791-9d15482442e0?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 12,
+      "title": "PrecisionGrind Partners with Leading European Research Institutes",
+      "excerpt": "Strategic partnerships established with top European research institutions to advance grinding technology innovation.",
+      "category": "company",
+      "categoryLabel": "COMPANY",
+      "date": "December 28, 2023",
+      "readTime": "3 min read",
+      "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 13,
+      "title": "How to Maintain Your Grinding Equipment for Longevity",
+      "excerpt": "Essential maintenance tips and best practices to extend the lifespan of your grinding equipment and ensure optimal performance.",
+      "category": "guide",
+      "categoryLabel": "GUIDE",
+      "date": "December 20, 2023",
+      "readTime": "9 min read",
+      "image": "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 14,
+      "title": "Electric Vehicle Battery Materials: Grinding Challenges and Solutions",
+      "excerpt": "Specialized grinding solutions for cathode and anode materials used in lithium-ion battery manufacturing.",
+      "category": "industry",
+      "categoryLabel": "INDUSTRY",
+      "date": "December 15, 2023",
+      "readTime": "8 min read",
+      "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 15,
+      "title": "Year in Review: PrecisionGrind's 2023 Milestones",
+      "excerpt": "A look back at our key achievements, new product launches, and growth throughout 2023.",
+      "category": "company",
+      "categoryLabel": "COMPANY",
+      "date": "December 10, 2023",
+      "readTime": "6 min read",
+      "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 16,
+      "title": "Understanding Particle Size Distribution in Grinding Processes",
+      "excerpt": "A technical guide to understanding and controlling particle size distribution in various grinding applications.",
+      "category": "guide",
+      "categoryLabel": "GUIDE",
+      "date": "December 5, 2023",
+      "readTime": "11 min read",
+      "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 17,
+      "title": "Asian Grinding Equipment Market Shows Strong Growth",
+      "excerpt": "Market analysis reveals continued expansion in Asia-Pacific grinding equipment sector driven by manufacturing growth.",
+      "category": "industry",
+      "categoryLabel": "INDUSTRY",
+      "date": "December 1, 2023",
+      "readTime": "5 min read",
+      "image": "https://images.unsplash.com/photo-1545987796-200677ee1011?w=600&h=300&fit=crop"
+    },
+    {
+      "id": 18,
+      "title": "PrecisionGrind Opens New Technical Support Center",
+      "excerpt": "Our expanded technical support team is now available 24/7 to assist customers worldwide.",
+      "category": "company",
+      "categoryLabel": "COMPANY",
+      "date": "November 25, 2023",
+      "readTime": "3 min read",
+      "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=300&fit=crop"
+    }
+  ]
+}
