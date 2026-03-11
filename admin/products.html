@@ -119,16 +119,16 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h1 class="text-2xl font-semibold">Products</h1>
-                        <p class="text-gray-400 text-sm mt-1">管理产品目录</p>
+                        <p class="text-gray-400 text-sm mt-1">Manage Products</p>
                     </div>
                     <div class="flex items-center gap-3">
                         <button onclick="exportProducts()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
                             <span class="material-icons text-lg">download</span>
-                            <span>导出</span>
+                            <span>Export</span>
                         </button>
                         <button onclick="openProductModal()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
                             <span class="material-icons text-lg">add</span>
-                            <span>添加产品</span>
+                            <span>Add Product</span>
                         </button>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl max-h-[90vh] overflow-auto">
             <div class="glass rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-xl font-semibold" id="modalTitle">添加产品</h2>
+                    <h2 class="text-xl font-semibold" id="modalTitle">Add Product</h2>
                     <button onclick="closeProductModal()" class="text-gray-400 hover:text-white">
                         <span class="material-icons">close</span>
                     </button>
@@ -219,7 +219,7 @@
                     <input type="hidden" id="productId">
                     <div class="grid grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="block text-sm text-gray-400 mb-1">产品名称</label>
+                            <label class="block text-sm text-gray-400 mb-1">Product Name</label>
                             <input type="text" id="productName" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
                         </div>
                         <div>
@@ -229,32 +229,32 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="block text-sm text-gray-400 mb-1">分类</label>
+                            <label class="block text-sm text-gray-400 mb-1">Category</label>
                             <select id="productCategory" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
-                                <option value="Grinding Jars">研磨罐</option>
-                                <option value="Grinding Media">研磨介质</option>
-                                <option value="Equipment">设备</option>
-                                <option value="Accessories">配件</option>
+                                <option value="Grinding Jars">Grinding Jars</option>
+                                <option value="Grinding Media">Grinding Media</option>
+                                <option value="Equipment">Equipment</option>
+                                <option value="Accessories">Accessories</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm text-gray-400 mb-1">价格</label>
+                            <label class="block text-sm text-gray-400 mb-1">Price</label>
                             <input type="number" id="productPrice" step="0.01" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label class="block text-sm text-gray-400 mb-1">描述</label>
+                        <label class="block text-sm text-gray-400 mb-1">Description</label>
                         <textarea id="productDescription" rows="3" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none"></textarea>
                     </div>
                     
                     <!-- Image Upload Section -->
                     <div class="mb-4">
-                        <label class="block text-sm text-gray-400 mb-2">产品图片</label>
+                        <label class="block text-sm text-gray-400 mb-2">Product Images</label>
                         <div id="imageUploadArea" class="border-2 border-dashed border-dark-600 rounded-lg p-6 text-center hover:border-primary transition-colors cursor-pointer"
                              ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)" onclick="document.getElementById('imageInput').click()">
                             <span class="material-icons text-4xl text-gray-500 mb-2">cloud_upload</span>
-                            <p class="text-gray-400 text-sm">拖拽图片到此处或点击上传</p>
-                            <p class="text-gray-500 text-xs mt-1">支持 JPG, PNG, WebP 格式，单张最大 5MB</p>
+                            <p class="text-gray-400 text-sm">Drag and drop images here or click to upload</p>
+                            <p class="text-gray-500 text-xs mt-1">Supports JPG, PNG, WebP formats, max 5MB per image</p>
                             <input type="file" id="imageInput" accept="image/*" multiple class="hidden" onchange="handleImageSelect(event)">
                         </div>
                         
@@ -265,8 +265,8 @@
                     </div>
                     
                     <div class="flex justify-end gap-3">
-                        <button type="button" onclick="closeProductModal()" class="px-6 py-2.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300">取消</button>
-                        <button type="submit" class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium">保存</button>
+                        <button type="button" onclick="closeProductModal()" class="px-6 py-2.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300">Cancel</button>
+                        <button type="submit" class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium">Save</button>
                     </div>
                 </form>
             </div>
