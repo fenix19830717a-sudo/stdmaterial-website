@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Data Load</title>
+    <script src="assets/js/products.js"></script>
+</head>
+<body>
+    <h1>Test Data Load</h1>
+    <div id="test-result"></div>
+    <script>
+        async function testDataLoad() {
+            const resultDiv = document.getElementById('test-result');
+            resultDiv.innerHTML = '<p>Loading data...</p>';
+            
+            try {
+                await ProductManager.init();
+                resultDiv.innerHTML = `
+                    <p>Data loaded successfully!</p>
+                    <p>Total products: ${ProductManager.products.length}</p>
+                    <p>Filtered products: ${ProductManager.filteredProducts.length}</p>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <p>Error loading data:</p>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+        
+        testDataLoad();
+    </script>
+</body>
+</html>

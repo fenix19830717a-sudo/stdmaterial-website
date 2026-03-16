@@ -30,7 +30,7 @@ const ProductManager = {
                 data = await response.json();
             } catch (apiError) {
                 console.log('API not available, using local data');
-                const response = await fetch('/assets/data/products.json');
+                const response = await fetch('assets/data/products.json');
                 data = await response.json();
             }
             
@@ -98,6 +98,17 @@ const ProductManager = {
             imageUrl = product.image_url;
         } else if (product.local_image) {
             imageUrl = product.local_image;
+        }
+        
+        // Ensure image URL is absolute or correct relative path
+        if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('https')) {
+            // If path starts with /, it's absolute from root
+            if (imageUrl.startsWith('/')) {
+                imageUrl = imageUrl;
+            } else {
+                // Otherwise, make it relative to the current directory
+                imageUrl = 'assets/images/products/' + imageUrl;
+            }
         }
         
         // Get category display name
@@ -277,9 +288,12 @@ const ProductManager = {
             if (selectedVolume) {
                 const productVolume = product.volume || '';
                 const volumeNum = parseInt(productVolume);
-                if (selectedVolume.includes('10ml') && volumeNum > 50) return false;
-                if (selectedVolume.includes('100ml') && (volumeNum < 100 || volumeNum > 1000)) return false;
-                if (selectedVolume.includes('2L') && volumeNum < 2000) return false;
+                // Only filter if volume is available
+                if (!isNaN(volumeNum)) {
+                    if (selectedVolume.includes('10ml') && volumeNum > 50) return false;
+                    if (selectedVolume.includes('100ml') && (volumeNum < 100 || volumeNum > 1000)) return false;
+                    if (selectedVolume.includes('2L') && volumeNum < 2000) return false;
+                }
             }
             
             // Equipment filter
@@ -287,10 +301,10 @@ const ProductManager = {
                 const productEquipment = product.equipment || [];
                 const hasMatch = productEquipment.some(eq => {
                     const eqLower = eq.toLowerCase();
-                    if (selectedEquipment === '行星式') return eqLower.includes('planetary');
-                    if (selectedEquipment === '搅拌式') return eqLower.includes('stir') || eqLower.includes('sand');
-                    if (selectedEquipment === '振动式') return eqLower.includes('vibration');
-                    if (selectedEquipment === '气流式') return eqLower.includes('air') || eqLower.includes('drum');
+                    if (selectedEquipment === '行星式') return eqLower.includes('planetary') || product.name.toLowerCase().includes('行星');
+                    if (selectedEquipment === '搅拌式') return eqLower.includes('stir') || eqLower.includes('sand') || product.name.toLowerCase().includes('搅拌');
+                    if (selectedEquipment === '振动式') return eqLower.includes('vibration') || product.name.toLowerCase().includes('振动');
+                    if (selectedEquipment === '气流式') return eqLower.includes('air') || eqLower.includes('drum') || product.name.toLowerCase().includes('气流');
                     return false;
                 });
                 if (!hasMatch) return false;
@@ -337,7 +351,7 @@ const ProductManager = {
         const categoryLabel = product.categoryLabel || product.category || 'PRODUCT';
         
         return `
-            <div class="product-card group bg-surface-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl flex flex-col" data-product-id="${product.id}">
+            <div class="product-card group bg-surface-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl flex flex-col" data-product-id="${product.slug}">
                 <div class="relative aspect-square bg-deep-navy overflow-hidden">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         alt="${product.name}"
@@ -351,7 +365,7 @@ const ProductManager = {
                 </div>
                 <div class="p-5 flex-1 flex flex-col">
                     <div class="mb-3">
-                        <span class="text-[10px] font-mono text-primary font-bold tracking-widest">SKU: ${product.id || product.slug?.split('/').pop() || 'N/A'}</span>
+                        <span class="text-[10px] font-mono text-primary font-bold tracking-widest">SKU: ${product.slug?.split('/').pop() || 'N/A'}</span>
                         <h3 class="text-lg font-bold mt-1 group-hover:text-primary transition-colors leading-tight text-white">${product.name}</h3>
                     </div>
                     <p class="text-xs text-slate-400 mb-4 line-clamp-2">${product.description?.substring(0, 100) || ''}...</p>
@@ -368,7 +382,7 @@ const ProductManager = {
                         </div>` : ''}
                     </div>
                     <button class="w-full py-2.5 bg-primary text-background-dark font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 mt-auto group view-product-btn"
-                        data-product-id="${product.id}">
+                        data-product-id="${product.slug}">
                         <span>查看详情</span>
                         <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </button>

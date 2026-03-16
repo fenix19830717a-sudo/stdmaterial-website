@@ -163,5 +163,28 @@
     "eur": "EUR (€)",
     "cny": "CNY (¥)",
     "gbp": "GBP (£)"
+  },
+  "filters": {
+    "title": "筛选条件",
+    "reset": "重置全部",
+    "materialType": "材料类型",
+    "ceramic": "陶瓷 (氧化铝, 氧化锆)",
+    "metal": "金属 (不锈钢, 钨)",
+    "plastic": "塑料 (尼龙, PTFE)",
+    "natural": "天然 (玛瑙)",
+    "volumeRange": "容积范围",
+    "smallVolume": "小型 (0.1-1L)",
+    "mediumVolume": "中型 (1-5L)",
+    "largeVolume": "大型 (5L+)",
+    "application": "应用领域",
+    "lab": "实验室",
+    "industry": "工业生产",
+    "rnd": "研发",
+    "certification": "认证",
+    "iso": "ISO 9001",
+    "ce": "CE",
+    "support": "技术支持？",
+    "supportText": "不确定哪种研磨介质适合您的应用？与我们的工程师交流。",
+    "contactExpert": "联系专家"
   }
 }

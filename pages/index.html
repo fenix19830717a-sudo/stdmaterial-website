@@ -97,6 +97,42 @@
                 opacity: 0.5;
             }
         }
+        /* Language Switcher Styles */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 20px;
+            padding: 4px 8px;
+        }
+        .lang-switcher button {
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .lang-switcher button.active {
+            background: #06b6d4;
+            color: #020617;
+        }
+        .lang-switcher button:hover:not(.active) {
+            color: #06b6d4;
+        }
+        /* Toggle switch styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #06b6d4;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #06b6d4;
+        }
     </style>
     <link rel="stylesheet" href="../assets/minified/main.css">
     <link rel="stylesheet" href="../assets/minified/animations.css">
@@ -108,13 +144,13 @@
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
     <script src="../assets/minified/lazy-loader.js" defer></script>
+    <script src="../assets/js/content-manager.js" defer></script>
+    <script src="../assets/js/product-manager.js" defer></script>
 
     <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-
-    <script src="../assets/minified/lazy-loader.js" defer></script>
 </head>
 <body class="bg-deep-navy text-slate-100 font-display selection:bg-primary selection:text-white">
     <!-- Navigation -->
@@ -124,14 +160,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
                 <div class="flex justify-between items-center text-xs">
                     <div class="flex items-center gap-4">
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm text-primary">language</span>
-                            <select id="language-select" class="bg-transparent text-slate-300 border-none text-xs focus:outline-none cursor-pointer">
-                                <option value="en">English</option>
-                                <option value="zh">中文</option>
-                                <option value="es">Español</option>
-                                <option value="de">Deutsch</option>
-                            </select>
+                        <!-- Language Switcher -->
+                        <div class="lang-switcher">
+                            <button data-lang="en" class="active">EN</button>
+                            <button data-lang="zh">中文</button>
                         </div>
                         <div class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-sm text-primary">payments</span>
@@ -141,6 +173,14 @@
                                 <option value="CNY">CNY (¥)</option>
                                 <option value="GBP">GBP (£)</option>
                             </select>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">person</span>
+                            <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                                <input type="checkbox" id="role-switch" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                <label for="role-switch" class="toggle-label block overflow-hidden h-6 rounded-full bg-primary/30 cursor-pointer"></label>
+                            </div>
+                            <span id="role-label" class="text-xs text-slate-300" data-i18n="topBar.engineerMode">Engineer Mode</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">

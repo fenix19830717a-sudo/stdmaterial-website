@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="assets/js/content-manager.js" defer></script>
+    <script src="assets/js/product-manager.js" defer></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/i18n.js" defer></script>
-    <script src="assets/js/products.js"></script>
     <script src="assets/js/image-processing.js"></script>
     <script src="assets/js/grinding-animation.js"></script>
+    <script src="assets/js/image-optimizer.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
@@ -98,28 +100,112 @@
     <div class="fixed inset-0 z-0 bg-gradient-to-b from-transparent via-background-dark/80 to-background-dark pointer-events-none"></div>
 
     <!-- Navigation -->
-    <nav class="relative z-50 border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
-        <div class="w-full px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center neon-shadow">
-                        <span class="material-icons text-white text-sm">science</span>
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <!-- Top Bar -->
+        <div class="bg-deep-navy/80 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+                <div class="flex justify-between items-center text-xs">
+                    <div class="flex items-center gap-4">
+                        <!-- Language Switcher -->
+                        <div class="lang-switcher">
+                            <button data-lang="en" class="active">EN</button>
+                            <button data-lang="zh">中文</button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">payments</span>
+                            <select id="currency-select" class="bg-transparent text-slate-300 border-none text-xs focus:outline-none cursor-pointer">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="CNY">CNY (¥)</option>
+                                <option value="GBP">GBP (£)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">person</span>
+                            <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                                <input type="checkbox" id="role-switch" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                <label for="role-switch" class="toggle-label block overflow-hidden h-6 rounded-full bg-primary/30 cursor-pointer"></label>
+                            </div>
+                            <span id="role-label" class="text-xs text-slate-300" data-i18n="topBar.engineerMode">Engineer Mode</span>
+                        </div>
                     </div>
-                    <a href="index.html" class="text-xl font-bold tracking-widest text-white uppercase">Nano<span class="text-primary">Mech</span></a>
+                    <div class="flex items-center gap-4">
+                        <a href="login.html" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                            <span data-i18n="nav.login">Login</span> / <span data-i18n="nav.register">Register</span>
+                        </a>
+                        <button id="chat-widget-btn" class="flex items-center gap-1 text-primary hover:text-accent transition-colors">
+                            <span class="material-symbols-outlined text-sm">chat</span>
+                            <span data-i18n="nav.liveChat">Live Chat</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                    <a class="text-primary hover:text-primary/80 transition-colors" href="index.html">Home</a>
-                    <a class="text-slate-400 hover:text-white transition-colors" href="product-catalog.html">Products</a>
-                    <a class="text-slate-400 hover:text-white transition-colors" href="about.html">About</a>
-                    <a class="text-slate-400 hover:text-white transition-colors" href="contact.html">Contact</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button class="text-slate-400 hover:text-white transition-colors">
-                        <span class="material-icons">search</span>
-                    </button>
-                    <a class="hidden sm:inline-flex items-center justify-center px-6 py-2 border border-primary/30 rounded text-xs font-bold text-primary hover:bg-primary/10 transition-all uppercase tracking-wider" href="contact.html">
-                        Get Quote
+            </div>
+        </div>
+        <!-- Main Navigation -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
+                            <span class="material-symbols-outlined text-primary relative z-10">precision_manufacturing</span>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-white">HUNAN SHENGTONGDA<span class="text-primary text-glow font-light ml-1">MATERIALS</span></span>
                     </a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-1 max-w-md mx-8">
+                    <div class="relative w-full">
+                        <input type="text" id="global-search" data-i18n="topBar.searchPlaceholder" data-i18n-attr="placeholder" placeholder="Search products, SKU, keywords..." 
+                               class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 pl-10 pr-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6" id="engineer-nav">
+                    <!-- Nav items will be dynamically generated -->
+                </div>
+                <div class="hidden md:flex items-center space-x-6" id="purchaser-nav">
+                    <!-- Nav items will be dynamically generated -->
+                </div>
+                <div class="flex items-center gap-2 md:gap-3">
+                    <button class="hidden lg:flex items-center gap-2 px-3 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
+                        <span class="material-symbols-outlined text-sm">download</span> <span data-i18n="nav.downloadCatalog">Catalog</span>
+                    </button>
+                    <a href="contact.html" class="bg-primary text-deep-navy px-4 py-2 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide text-sm" data-i18n="nav.inquiry">
+                        Inquiry Now
+                    </a>
+                    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden md:hidden pb-4">
+                <div class="mb-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search products..." 
+                               class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 pl-10 pr-4 text-sm">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-3">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html">Home</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="product-catalog.html">Products</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="about.html">About Us</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="news.html">News</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="contact.html">Contact Us</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="order-tracking.html">Order Tracking</a>
+                    <div class="flex gap-2 pt-2">
+                        <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-sm">download</span> Product Catalog
+                        </button>
+                        <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold bg-primary text-deep-navy rounded hover:bg-accent transition-all uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-sm">chat</span> Live Support
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,7 +228,7 @@
 
     <!-- Main Content -->
     <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12">
             <!-- Product Images and 3D Viewer -->
             <div class="space-y-4">
                 <!-- View Toggle -->
@@ -153,7 +239,7 @@
                 
                 <!-- 2D Image View -->
                 <div id="2d-view" class="relative aspect-square bg-secondary-dark rounded-xl overflow-hidden border border-white/5">
-                    <img id="main-image" class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" loading="lazy" alt="Product Image">
+                    <img id="main-image" class="w-full h-full object-cover image-lazy" data-src="assets/images/products/gj-al-500.jpg" loading="lazy" alt="Product Image">
                     <div class="absolute top-4 left-4 flex flex-col gap-2" id="product-badges">
                         <span class="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded shadow-sm">CERAMIC</span>
                         <span class="bg-secondary-dark border border-primary/30 text-white text-xs font-bold px-3 py-1 rounded shadow-sm">99.7% PURITY</span>
@@ -186,13 +272,45 @@
                 </div>
                 
                 <div class="flex gap-3 overflow-x-auto pb-2" id="thumbnail-gallery">
-                    <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 thumbnail-active">
-                        <img class="w-full h-full object-cover" src="assets/images/products/gj-al-500.jpg" loading="lazy" alt="Thumbnail 1">
-                    </button>
-                    <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-colors flex-shrink-0 bg-secondary-dark">
-                        <img class="w-full h-full object-cover" src="assets/images/products/eq-pm-4x500.jpg" loading="lazy" alt="Thumbnail 2">
-                    </button>
                 </div>
+                <script>
+                    // Initialize thumbnail gallery
+                    function initThumbnailGallery(product) {
+                        const gallery = document.getElementById('thumbnail-gallery');
+                        gallery.innerHTML = '';
+                        
+                        if (product.images && product.images.length > 0) {
+                            product.images.forEach((image, index) => {
+                                const button = document.createElement('button');
+                                button.className = `w-20 h-20 rounded-lg overflow-hidden border-2 ${index === 0 ? 'border-primary thumbnail-active' : 'border-transparent hover:border-primary/50'} transition-colors flex-shrink-0`;
+                                button.innerHTML = `
+                                    <img class="w-full h-full object-cover image-lazy" 
+                                         data-src="${image}" 
+                                         loading="lazy" 
+                                         alt="${product.name} - Thumbnail ${index + 1}">
+                                `;
+                                button.addEventListener('click', () => {
+                                    const mainImage = document.getElementById('main-image');
+                                    if (mainImage) {
+                                        mainImage.src = image;
+                                    }
+                                    document.querySelectorAll('#thumbnail-gallery button').forEach(btn => {
+                                        btn.classList.remove('thumbnail-active', 'border-primary');
+                                        btn.classList.add('border-transparent');
+                                    });
+                                    button.classList.add('thumbnail-active', 'border-primary');
+                                    button.classList.remove('border-transparent');
+                                });
+                                gallery.appendChild(button);
+                            });
+                        }
+                        
+                        // Optimize images
+                        if (window.ImageOptimizer) {
+                            window.ImageOptimizer.updateImages();
+                        }
+                    }
+                </script>
             </div>
 
             <!-- Product Info -->
@@ -329,7 +447,7 @@
                 <span class="material-icons text-primary">monitoring</span> 实时运行监控
             </h2>
             <div class="glass-panel rounded-xl p-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Monitoring Parameters -->
                     <div class="space-y-4">
                         <div class="flex items-center justify-between bg-background-dark/50 p-4 rounded-lg">
@@ -448,9 +566,9 @@
                 <span class="material-icons text-primary">settings</span> 研磨过程可视化
             </h2>
             <div class="glass-panel rounded-xl p-6">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Animation Container -->
-                    <div class="lg:col-span-2">
+                    <div class="md:col-span-2">
                         <div id="grinding-animation-container" class="aspect-video bg-background-dark rounded-lg overflow-hidden border border-white/5"></div>
                     </div>
                     <!-- Controls -->
@@ -506,7 +624,7 @@
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <span class="material-icons text-primary">widgets</span> Related Products
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="related-products">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" id="related-products">
             </div>
         </div>
     </main>
@@ -592,152 +710,125 @@
     </footer>
 
     <script>
-        // Load products from JSON and display
-    let productsData = {};
-    let currentProduct = null;
-    
-    async function loadProductsData() {
-        try {
-            const response = await fetch('/data/products.json');
-            const data = await response.json();
-            const products = data.products || [];
-            
-            // Convert array to object keyed by id
-            products.forEach(p => {
-                productsData[p.id] = p;
-            });
-            
-            console.log(`Loaded ${products.length} products`);
-            loadProduct();
-        } catch (error) {
-            console.error('Error loading products:', error);
-            // Fallback to hardcoded data if fetch fails
-            loadFallbackData();
-        }
-    }
-    
-    function loadFallbackData() {
-        // Fallback data for when JSON fails to load
-        productsData = {
-            "GJ-AL-500": {
-                id: "GJ-AL-500",
-                name: "Alumina Ceramic Grinding Jar",
-                category: "Grinding Jars",
-                subcategory: "Ceramic",
-                material: "Alumina (Al2O3)",
-                purity: "99.7%",
-                volume: "500 ml",
-                hardness: "9.0 Mohs",
-                maxTemperature: "1600°C",
-                equipment: ["Planetary Mill", "High-Energy Shaker"],
-                description: "High-purity alumina ceramic grinding jar for laboratory use. Excellent wear resistance and minimal contamination.",
-                features: ["99.7% purity", "High hardness", "Low contamination", "Chemical resistant"],
-                applications: ["Ceramics", "Electronics", "Pharmaceuticals", "Mining"],
-                price: "Contact for Quote",
-                stock: "In Stock",
-                images: ["assets/images/products/gj-al-500.jpg"],
-                specifications: {
-                    "Outer Diameter": "100 mm",
-                    "Inner Diameter": "85 mm",
-                    "Height": "120 mm",
-                    "Weight": "850 g",
-                    "Lid Type": "Screw-on with PTFE seal"
-                }
+        // Load product using ProductManager
+        let currentProduct = null;
+        
+        async function loadProduct() {
+            // Wait for ProductManager to initialize
+            if (!ProductManager.products || ProductManager.products.length === 0) {
+                await ProductManager.loadProducts();
             }
-        };
-        loadProduct();
-    }
-
-        function getProductIdFromUrl() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get('id') || 'GJ-AL-500';
-        }
-
-        function loadProduct() {
+            
             const productId = getProductIdFromUrl();
-            const product = productsData[productId] || productsData['GJ-AL-500'] || Object.values(productsData)[0];
+            const product = ProductManager.getProductById(productId) || ProductManager.products[0];
             currentProduct = product;
             
             // Handle image error - fallback to placeholder
             const mainImage = document.getElementById('main-image');
             if (mainImage) {
-                mainImage.onerror = function() {
-                    this.src = 'assets/images/products/default.jpg';
-                };
+                // Set main image with lazy loading
+                const imageUrl = product.images?.[0] || product.image_url || product.local_image || 'https://via.placeholder.com/400x300?text=Image+Not+Available';
+                mainImage.setAttribute('data-src', imageUrl);
+                mainImage.classList.add('image-lazy');
             }
             
-            document.getElementById('breadcrumb-category').textContent = product.category;
+            // Optimize images
+            if (window.ImageOptimizer) {
+                window.ImageOptimizer.updateImages();
+            }
+            
+            // Update breadcrumbs and product info
+            document.getElementById('breadcrumb-category').textContent = product.categoryLabel || product.category || 'Products';
             document.getElementById('breadcrumb-product').textContent = product.name;
-            document.getElementById('product-sku').textContent = `SKU: ${product.id}`;
+            document.getElementById('product-sku').textContent = `SKU: ${product.slug?.split('/').pop() || 'N/A'}`;
             document.getElementById('product-name').textContent = product.name;
-            document.getElementById('product-description').textContent = product.description;
-            document.getElementById('spec-volume').textContent = product.volume;
-            document.getElementById('spec-material').textContent = product.material;
-            document.getElementById('spec-hardness').textContent = product.hardness;
-            document.getElementById('spec-temp').textContent = product.maxTemperature;
-            document.getElementById('product-price').textContent = product.price;
+            document.getElementById('product-description').textContent = product.description || 'No description available';
             
+            // Set specifications (fallback to default values if not available)
+            document.getElementById('spec-volume').textContent = product.volume || 'N/A';
+            document.getElementById('spec-material').textContent = product.material || 'N/A';
+            document.getElementById('spec-hardness').textContent = product.hardness || 'N/A';
+            document.getElementById('spec-temp').textContent = product.maxTemperature || 'N/A';
+            document.getElementById('product-price').textContent = product.price || 'Contact for Quote';
+            
+            // Set stock status
             const stockStatus = document.getElementById('stock-status');
-            if (product.stock === 'In Stock') {
-                stockStatus.innerHTML = '<span class="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span> In Stock';
-                stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/30 text-emerald-400';
-            } else if (product.stock === 'Limited Stock') {
-                stockStatus.innerHTML = '<span class="w-2 h-2 bg-amber-400 rounded-full mr-2"></span> Limited Stock';
-                stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-900/30 text-amber-400';
-            } else {
-                stockStatus.innerHTML = '<span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span> Out of Stock';
-                stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-900/30 text-red-400';
-            }
+            stockStatus.innerHTML = '<span class="w-2 h-2 bg-emerald-400 rounded-full mr-2"></span> In Stock';
+            stockStatus.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/30 text-emerald-400';
             
+            // Set features (fallback to default features if not available)
             const featuresList = document.getElementById('features-list');
-            featuresList.innerHTML = product.features.map(f => `
+            const features = product.features || ['High quality', 'Durable', 'Reliable', 'Professional grade'];
+            featuresList.innerHTML = features.map(f => `
                 <li class="flex items-center gap-2 text-slate-300">
                     <span class="material-icons text-primary text-sm">check_circle</span> ${f}
                 </li>
             `).join('');
             
+            // Set applications (fallback to default applications if not available)
             const applicationsList = document.getElementById('applications-list');
-            applicationsList.innerHTML = product.applications.map(a => `
+            const applications = product.applications || ['Industrial', 'Laboratory', 'Research', 'Manufacturing'];
+            applicationsList.innerHTML = applications.map(a => `
                 <span class="px-3 py-1 bg-secondary-dark rounded-full text-xs text-slate-300">${a}</span>
             `).join('');
             
+            // Set equipment compatibility (fallback to default if not available)
             const equipmentList = document.getElementById('equipment-list');
-            equipmentList.innerHTML = product.equipment.map(e => `
+            const equipment = product.equipment || ['Planetary Mill', 'Grinder'];
+            equipmentList.innerHTML = equipment.map(e => `
                 <span class="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-xs text-primary">${e}</span>
             `).join('');
             
+            // Set specifications table (fallback to default specs if not available)
             const specsTable = document.getElementById('specs-table');
-            specsTable.innerHTML = Object.entries(product.specifications).map(([key, value]) => `
+            const specifications = product.specifications || {
+                'Material': product.material || 'N/A',
+                'Category': product.category || 'N/A',
+                'Description': product.description ? 'See details above' : 'N/A'
+            };
+            specsTable.innerHTML = Object.entries(specifications).map(([key, value]) => `
                 <tr>
                     <td class="px-6 py-4 text-slate-400 w-1/3">${key}</td>
                     <td class="px-6 py-4 text-white font-medium">${value}</td>
                 </tr>
             `).join('');
             
-            document.getElementById('inquiry-product-id').value = product.id;
+            document.getElementById('inquiry-product-id').value = product.slug;
             document.getElementById('inquiry-product-name').value = product.name;
             
-            document.title = `${product.name} - NanoMech`;
+            document.title = `${product.name} - ShengTongDa`;
+            
+            // Initialize thumbnail gallery
+            initThumbnailGallery(product);
             
             loadRelatedProducts(product);
         }
 
+        function getProductIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id') || 'GJ-AL-500';
+        }
+
         function loadRelatedProducts(currentProduct) {
             const relatedContainer = document.getElementById('related-products');
-            const related = Object.values(productsData).filter(p => p.id !== currentProduct.id).slice(0, 4);
+            const related = ProductManager.getRelatedProducts(currentProduct.id, 4);
             
             relatedContainer.innerHTML = related.map(p => `
-                <a href="product-detail.html?id=${p.id}" class="group bg-background-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl transition-all flex flex-col">
+                <a href="product-detail.html?id=${p.slug}" class="group bg-background-dark rounded-xl border border-white/5 overflow-hidden hover:shadow-xl transition-all flex flex-col">
                     <div class="relative aspect-square bg-secondary-dark overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.images[0]}" loading="lazy" alt="${p.name}">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                             src="${p.images?.[0] || 'https://via.placeholder.com/400x300?text=No+Image'}" 
+                             loading="lazy" 
+                             alt="${p.name}" 
+                             onerror="this.src='https://via.placeholder.com/400x300?text=Image+Not+Available'">
                         <div class="absolute top-2 left-2">
-                            <span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-0.5 rounded">${p.subcategory.toUpperCase()}</span>
+                            <span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-0.5 rounded">${(p.subcategory || p.categoryLabel || p.category || 'PRODUCT').toUpperCase()}</span>
                         </div>
                     </div>
                     <div class="p-4 flex-1 flex flex-col">
-                        <span class="text-[10px] font-mono text-primary font-bold tracking-widest">SKU: ${p.id}</span>
+                        <span class="text-[10px] font-mono text-primary font-bold tracking-widest">SKU: ${p.slug?.split('/').pop() || 'N/A'}</span>
                         <h3 class="text-sm font-bold mt-1 group-hover:text-primary transition-colors text-white">${p.name}</h3>
-                        <div class="mt-2 text-xs text-slate-400">${p.volume}</div>
+                        <div class="mt-2 text-xs text-slate-400">${p.volume || 'N/A'}</div>
                         <button class="mt-auto w-full py-2 bg-primary/10 text-primary text-xs font-bold rounded hover:bg-primary hover:text-background-dark transition-colors">
                             View Details
                         </button>
@@ -745,6 +836,9 @@
                 </a>
             `).join('');
         }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', loadProduct);
 
         function openInquiryModal() {
             document.getElementById('inquiry-modal').classList.remove('hidden');

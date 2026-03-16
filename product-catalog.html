@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="assets/js/content-manager.js" defer></script>
+    <script src="assets/js/product-manager.js" defer></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/products.js"></script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -129,14 +130,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
                 <div class="flex justify-between items-center text-xs">
                     <div class="flex items-center gap-4">
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-sm text-primary">language</span>
-                            <select id="language-select" class="bg-transparent text-slate-300 border-none text-xs focus:outline-none cursor-pointer">
-                                <option value="zh">中文</option>
-                                <option value="en">English</option>
-                                <option value="es">Español</option>
-                                <option value="de">Deutsch</option>
-                            </select>
+                        <!-- Language Switcher -->
+                        <div class="lang-switcher">
+                            <button data-lang="en" class="active">EN</button>
+                            <button data-lang="zh">中文</button>
                         </div>
                         <div class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-sm text-primary">payments</span>
@@ -147,15 +144,23 @@
                                 <option value="GBP">GBP (£)</option>
                             </select>
                         </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm text-primary">person</span>
+                            <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                                <input type="checkbox" id="role-switch" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                <label for="role-switch" class="toggle-label block overflow-hidden h-6 rounded-full bg-primary/30 cursor-pointer"></label>
+                            </div>
+                            <span id="role-label" class="text-xs text-slate-300" data-i18n="topBar.engineerMode">Engineer Mode</span>
+                        </div>
                     </div>
                     <div class="flex items-center gap-4">
                         <a href="login.html" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-1">
                             <span class="material-symbols-outlined text-sm">person</span>
-                            <span>Login / Register</span>
+                            <span data-i18n="nav.login">Login</span> / <span data-i18n="nav.register">Register</span>
                         </a>
                         <button id="chat-widget-btn" class="flex items-center gap-1 text-primary hover:text-accent transition-colors">
                             <span class="material-symbols-outlined text-sm">chat</span>
-                            <span>Live Support</span>
+                            <span data-i18n="nav.liveChat">Live Chat</span>
                         </button>
                     </div>
                 </div>
@@ -170,31 +175,31 @@
                             <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
                             <span class="material-symbols-outlined text-primary relative z-10">precision_manufacturing</span>
                         </div>
-                        <span class="text-2xl font-bold tracking-tight text-white">ShengTong<span class="text-primary font-light ml-1">Da</span></span>
+                        <span class="text-2xl font-bold tracking-tight text-white">HUNAN SHENGTONGDA<span class="text-primary text-glow font-light ml-1">MATERIALS</span></span>
                     </a>
                 </div>
                 
                 <!-- Search Bar -->
                 <div class="hidden lg:flex flex-1 max-w-md mx-8">
                     <div class="relative w-full">
-                        <input type="text" id="global-search" placeholder="搜索产品、型号、关键词..." 
+                        <input type="text" id="global-search" data-i18n="topBar.searchPlaceholder" data-i18n-attr="placeholder" placeholder="Search products, SKU, keywords..." 
                                class="w-full bg-surface-dark/50 border border-white/10 text-white rounded-lg py-2 pl-10 pr-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
                         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
                     </div>
                 </div>
                 
-                <div class="hidden md:flex items-center space-x-6">
-                    <a class="text-sm font-medium text-primary transition-colors tracking-wide" href="product-catalog.html">Products</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="about.html">About Us</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="news.html">News</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="contact.html">Contact Us</a>
+                <div class="hidden md:flex items-center space-x-6" id="engineer-nav">
+                    <!-- Nav items will be dynamically generated -->
                 </div>
-                <div class="flex items-center gap-3">
-                    <button class="hidden lg:flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
-                        <span class="material-symbols-outlined text-sm">download</span> Product Catalog
+                <div class="hidden md:flex items-center space-x-6" id="purchaser-nav">
+                    <!-- Nav items will be dynamically generated -->
+                </div>
+                <div class="flex items-center gap-2 md:gap-3">
+                    <button class="hidden lg:flex items-center gap-2 px-3 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
+                        <span class="material-symbols-outlined text-sm">download</span> <span data-i18n="nav.downloadCatalog">Catalog</span>
                     </button>
-                    <a href="contact.html" class="bg-primary text-deep-navy px-5 py-2 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(19,200,236,0.4)] transition-all uppercase tracking-wide text-sm">
-                        Get Quote
+                    <a href="contact.html" class="bg-primary text-deep-navy px-4 py-2 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide text-sm" data-i18n="nav.inquiry">
+                        Inquiry Now
                     </a>
                     <button class="md:hidden text-white" onclick="toggleMobileMenu()">
                         <span class="material-symbols-outlined text-2xl">menu</span>
@@ -211,17 +216,17 @@
                     </div>
                 </div>
                 <div class="flex flex-col space-y-3">
-                    <a class="text-sm font-medium text-primary transition-colors tracking-wide py-2" href="product-catalog.html">产品中心</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="about.html">关于我们</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="news.html">新闻资讯</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="contact.html">联系我们</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="order-tracking.html">订单追踪</a>
+                    <a class="text-sm font-medium text-primary transition-colors tracking-wide py-2" href="product-catalog.html">Products</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="about.html">About Us</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="news.html">News</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="contact.html">Contact Us</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="order-tracking.html">Order Tracking</a>
                     <div class="flex gap-2 pt-2">
                         <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
-                            <span class="material-symbols-outlined text-sm">download</span> 产品目录
+                            <span class="material-symbols-outlined text-sm">download</span> Product Catalog
                         </button>
                         <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold bg-primary text-deep-navy rounded hover:bg-accent transition-all uppercase tracking-wider">
-                            <span class="material-symbols-outlined text-sm">chat</span> 在线客服
+                            <span class="material-symbols-outlined text-sm">chat</span> Live Support
                         </button>
                     </div>
                 </div>
@@ -235,15 +240,15 @@
         <div class="mb-8">
             <nav aria-label="Breadcrumb" class="flex text-xs text-slate-500 mb-4">
                 <ol class="flex items-center space-x-2">
-                    <li><a class="hover:text-primary" href="index.html">首页</a></li>
+                    <li><a class="hover:text-primary" href="index.html">Home</a></li>
                     <li><span class="material-symbols-outlined text-[10px]">chevron_right</span></li>
-                    <li><a class="hover:text-primary" href="product-catalog.html">产品中心</a></li>
+                    <li><a class="hover:text-primary" href="product-catalog.html">Products</a></li>
                     <li><span class="material-symbols-outlined text-[10px]">chevron_right</span></li>
-                    <li class="font-medium text-white">工业研磨设备</li>
+                    <li class="font-medium text-white">Industrial Grinding Equipment</li>
                 </ol>
             </nav>
-            <h1 class="text-3xl font-bold text-white">工业研磨解决方案</h1>
-            <p class="text-slate-400 mt-2 max-w-2xl">高性能实验室研磨设备，适用于行星式球磨机、振动球磨机和滚筒式球磨机。提供多种高纯度材料选择。</p>
+            <h1 class="text-3xl font-bold text-white">Industrial Grinding Solutions</h1>
+            <p class="text-slate-400 mt-2 max-w-2xl">High-performance laboratory grinding equipment suitable for planetary ball mills, vibration ball mills, and drum ball mills. Offering multiple high-purity material options.</p>
         </div>
         
         <!-- Mobile Filter Button -->
@@ -264,34 +269,34 @@
                     <div class="sticky top-24 space-y-6">
                         <div class="glass-panel p-5 rounded-xl">
                             <div class="flex items-center justify-between mb-4">
-                                <h2 class="font-bold text-sm uppercase tracking-wider text-white">筛选条件</h2>
-                                <button class="text-xs text-primary font-medium hover:underline" id="reset-filters">重置全部</button>
+                                <h2 class="font-bold text-sm uppercase tracking-wider text-white" data-i18n="filters.title">筛选条件</h2>
+                            <button class="text-xs text-primary font-medium hover:underline" id="reset-filters" data-i18n="filters.reset">重置全部</button>
+                        </div>
+                        
+                        <!-- Material Category -->
+                        <div class="mb-6">
+                            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white" data-i18n="filters.materialType">
+                                <span class="material-symbols-outlined text-primary text-sm">science</span> 材料类型
+                            </h3>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Ceramic">
+                                    <span class="text-sm text-slate-400 group-hover:text-primary" data-i18n="filters.ceramic">陶瓷 (氧化铝, 氧化锆)</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Metal">
+                                    <span class="text-sm text-slate-400 group-hover:text-primary" data-i18n="filters.metal">金属 (不锈钢, 钨)</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Plastic">
+                                    <span class="text-sm text-slate-400 group-hover:text-primary" data-i18n="filters.plastic">塑料 (尼龙, PTFE)</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Natural">
+                                    <span class="text-sm text-slate-400 group-hover:text-primary" data-i18n="filters.natural">天然 (玛瑙)</span>
+                                </label>
                             </div>
-                            
-                            <!-- Material Category -->
-                            <div class="mb-6">
-                                <h3 class="text-sm font-semibold mb-3 flex items-center gap-2 text-white">
-                                    <span class="material-symbols-outlined text-primary text-sm">science</span> 材料类型
-                                </h3>
-                                <div class="space-y-2">
-                                    <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" checked>
-                                        <span class="text-sm text-slate-400 group-hover:text-primary">陶瓷 (氧化铝, 氧化锆)</span>
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
-                                        <span class="text-sm text-slate-400 group-hover:text-primary">金属 (不锈钢, 钨)</span>
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
-                                        <span class="text-sm text-slate-400 group-hover:text-primary">塑料 (尼龙, PTFE)</span>
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
-                                        <span class="text-sm text-slate-400 group-hover:text-primary">天然 (玛瑙)</span>
-                                    </label>
-                                </div>
-                            </div>
+                        </div>
                             
                             <!-- Volume Category -->
                             <div class="mb-6">
@@ -300,15 +305,15 @@
                                 </h3>
                                 <div class="space-y-2">
                                     <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" data-volume="10ml - 50ml">
                                         <span class="text-sm text-slate-400">10ml - 50ml</span>
                                     </label>
                                     <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" checked>
+                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" data-volume="100ml - 1L" checked>
                                         <span class="text-sm text-slate-400">100ml - 1L</span>
                                     </label>
                                     <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                        <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" data-volume="2L - 10L">
                                         <span class="text-sm text-slate-400">2L - 10L</span>
                                     </label>
                                 </div>
@@ -320,24 +325,24 @@
                                     <span class="material-symbols-outlined text-primary text-sm">settings_input_component</span> 设备类型
                                 </h3>
                                 <div class="flex flex-wrap gap-2">
-                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent active" data-filter="equipment" data-value="行星式">行星式</button>
-                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="搅拌式">搅拌式</button>
-                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="振动式">振动式</button>
-                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="气流式">气流式</button>
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent active" data-filter="equipment" data-value="Planetary">行星式</button>
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="Stirred">搅拌式</button>
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="Vibration">振动式</button>
+                                    <button class="filter-btn px-2 py-1 text-[10px] bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="Airflow">气流式</button>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="bg-primary/5 p-5 rounded-xl border border-primary/20">
-                            <h4 class="font-bold text-sm mb-2 text-white">技术支持？</h4>
-                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">不确定哪种研磨介质适合您的应用？与我们的工程师交流。</p>
-                            <button class="w-full py-2 bg-primary text-background-dark text-xs font-bold rounded hover:opacity-90 transition-opacity">联系专家</button>
+                            <h4 class="font-bold text-sm mb-2 text-white" data-i18n="filters.support">技术支持？</h4>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed" data-i18n="filters.supportText">不确定哪种研磨介质适合您的应用？与我们的工程师交流。</p>
+                            <button class="w-full py-2 bg-primary text-background-dark text-xs font-bold rounded hover:opacity-90 transition-opacity" data-i18n="filters.contactExpert">联系专家</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Mobile Filter Panel -->
-                <div id="mobile-filter-panel" class="lg:hidden glass-panel p-5 rounded-xl mb-6">
+                <div id="mobile-filter-panel" class="lg:hidden glass-panel p-5 rounded-xl mb-6 hidden">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="font-bold text-sm uppercase tracking-wider text-white">筛选条件</h2>
                         <button class="text-xs text-primary font-medium hover:underline" id="reset-filters-mobile">重置全部</button>
@@ -350,19 +355,19 @@
                         </h3>
                         <div class="space-y-2">
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" checked>
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Ceramic">
                                 <span class="text-sm text-slate-400 group-hover:text-primary">陶瓷 (氧化铝, 氧化锆)</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Metal">
                                 <span class="text-sm text-slate-400 group-hover:text-primary">金属 (不锈钢, 钨)</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Plastic">
                                 <span class="text-sm text-slate-400 group-hover:text-primary">塑料 (尼龙, PTFE)</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+                                <input type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary" data-material="Natural">
                                 <span class="text-sm text-slate-400 group-hover:text-primary">天然 (玛瑙)</span>
                             </label>
                         </div>
@@ -375,15 +380,15 @@
                         </h3>
                         <div class="space-y-2">
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" data-volume="10ml - 50ml">
                                 <span class="text-sm text-slate-400">10ml - 50ml</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" checked>
+                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" data-volume="100ml - 1L" checked>
                                 <span class="text-sm text-slate-400">100ml - 1L</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary">
+                                <input type="radio" name="vol" class="rounded-full border-slate-300 text-primary focus:ring-primary" data-volume="2L - 10L">
                                 <span class="text-sm text-slate-400">2L - 10L</span>
                             </label>
                         </div>
@@ -395,14 +400,14 @@
                             <span class="material-symbols-outlined text-primary text-sm">settings_input_component</span> 设备类型
                         </h3>
                         <div class="flex flex-wrap gap-2">
-                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent active" data-filter="equipment" data-value="行星式">行星式</button>
-                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="搅拌式">搅拌式</button>
-                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="振动式">振动式</button>
-                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="气流式">气流式</button>
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent active" data-filter="equipment" data-value="Planetary">行星式</button>
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="Stirred">搅拌式</button>
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="Vibration">振动式</button>
+                            <button class="filter-btn px-3 py-2 text-sm bg-surface-dark rounded font-medium border border-transparent" data-filter="equipment" data-value="Airflow">气流式</button>
                         </div>
                     </div>
                     
-                    <button class="w-full py-3 bg-primary text-background-dark font-bold rounded hover:opacity-90 transition-opacity">应用筛选</button>
+                    <button id="apply-filters-mobile" class="w-full py-3 bg-primary text-background-dark font-bold rounded hover:opacity-90 transition-opacity">应用筛选</button>
                 </div>
             </aside>
             
@@ -413,12 +418,12 @@
                     <span class="text-sm text-slate-400">显示 <span class="text-white font-semibold" id="product-count">0</span> 个高纯度研磨设备</span>
                     <div class="flex items-center gap-3">
                         <span class="text-xs text-slate-400">排序方式:</span>
-                        <select class="bg-surface-dark border border-white/10 rounded px-3 py-2 text-xs text-white focus:border-primary focus:outline-none">
-                            <option>推荐</option>
-                            <option>价格: 低到高</option>
-                            <option>价格: 高到低</option>
-                            <option>新品优先</option>
-                            <option>热门程度</option>
+                        <select id="sort-select" class="bg-surface-dark border border-white/10 rounded px-3 py-2 text-xs text-white focus:border-primary focus:outline-none">
+                            <option value="recommended">推荐</option>
+                            <option value="price-asc">价格: 低到高</option>
+                            <option value="price-desc">价格: 高到低</option>
+                            <option value="newest">新品优先</option>
+                            <option value="popular">热门程度</option>
                         </select>
                     </div>
                 </div>
@@ -426,6 +431,10 @@
                 <!-- Product Grid -->
                 <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Products will be dynamically generated here -->
+                    <div class="col-span-full text-center py-12">
+                        <span class="material-symbols-outlined text-4xl text-slate-500 mb-4">inventory_2</span>
+                        <p class="text-slate-400">加载产品中...</p>
+                    </div>
                 </div>
                 
                 <!-- Pagination -->
@@ -645,24 +654,8 @@
             chatWidget.classList.add('opacity-0', 'invisible');
         });
 
-        // Filter Buttons - DISABLED: handled by products.js
-//         document.querySelectorAll('.filter-btn').forEach(btn => {
-//             btn.addEventListener('click', function() {
-//                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-//                 this.classList.add('active');
-//             });
-        });
+        // Filter Buttons are handled by product-manager.js
 
-        // Reset Filters
-        document.getElementById('reset-filters').addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.filter-btn:first-child').classList.add('active');
-            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            document.querySelector('input[type="checkbox"]').checked = true;
-            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
-            document.querySelector('input[type="radio"]').checked = true;
-        });
-        
         // Mobile Filter Toggle
         const mobileFilterToggle = document.getElementById('mobile-filter-toggle');
         const mobileFilterPanel = document.getElementById('mobile-filter-panel');
@@ -676,16 +669,6 @@
                 } else {
                     icon.textContent = 'expand_less';
                 }
-            });
-            
-            // Reset Filters for Mobile
-            document.getElementById('reset-filters-mobile').addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelector('.filter-btn:first-child').classList.add('active');
-                document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-                document.querySelector('input[type="checkbox"]').checked = true;
-                document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
-                document.querySelector('input[type="radio"]').checked = true;
             });
         }
 
@@ -725,6 +708,11 @@
         });
     </script>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/openclaw-api.js" defer></script>
+    <script src="assets/js/chat-widget.js" defer></script>
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/navigation.js" defer></script>
+    <script src="assets/js/image-optimizer.js" defer></script>
 </body>
 </html>
