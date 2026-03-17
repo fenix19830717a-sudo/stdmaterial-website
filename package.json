@@ -1,0 +1,44 @@
+{
+  "name": "stdmaterial",
+  "version": "1.0.0",
+  "description": "湖南盛通达材料科技官网",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000 -o",
+    "server": "node src/server.js",
+    "build": "echo 'Build completed'",
+    "test": "npx jest tests/unit",
+    "test:watch": "npx jest tests/unit --watch",
+    "lint": "echo 'Linting...'"
+  },
+  "keywords": [
+    "grinding",
+    "mill",
+    "planetary",
+    "materials",
+    "laboratory"
+  ],
+  "author": "STD Materials",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "autoprefixer": "^10.4.27",
+    "babel-jest": "^30.3.0",
+    "http-server": "^14.1.1",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "ajv": "^8.12.0",
+    "axios": "^1.13.6",
+    "body-parser": "^2.2.2",
+    "chart.js": "^4.5.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

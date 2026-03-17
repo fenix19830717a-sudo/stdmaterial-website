@@ -171,6 +171,21 @@ skills:
         - pie
         - scatter
         - heatmap
+  
+  design_system_manager:
+    name: "设计系统管理器"
+    description: "用于管理和应用设计系统、样式检查、组件库等设计相关任务"
+    enabled: true
+    config:
+      design_system_path: "./assets/css/design-system.css"
+      variables_path: "./assets/css/variables.css"
+      project_root: "./"
+      allowed_extensions:
+        - ".html"
+        - ".css"
+        - ".js"
+        - ".jsx"
+        - ".tsx"
 
 skill_groups:
   product_management:
@@ -214,3 +229,10 @@ skill_groups:
       - api_integration
       - file_operations
       - web_browser
+  
+  design:
+    name: "设计技能组"
+    skills:
+      - design_system_manager
+      - file_operations
+      - code_execution

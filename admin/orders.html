@@ -5,17 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Management - Hunan Shengtongda Materials Technology Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/admin/assets/js/security.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
     <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-L2EZ1RRFKP");
     </script>
     <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
         tailwind.config = {
             theme: {
                 extend: {
@@ -57,8 +102,8 @@
         ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
         .timeline-line { position: absolute; left: 15px; top: 30px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #13c8ec, transparent); }
     </style>
-    <link rel="stylesheet" href="./assets/css/admin.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="/admin/assets/css/admin.css">
+    <link rel="stylesheet" href="/admin/assets/css/main.css">
     <script src="./assets/js/admin.js"></script>
 
     <!-- Performance Optimization -->
@@ -83,35 +128,40 @@
                 </div>
             </div>
             <nav class="flex-1 p-4 space-y-1">
-                <a href="./dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">dashboard</span>
                     <span>Dashboard</span>
                 </a>
-                <a href="./products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">inventory_2</span>
                     <span>Products</span>
                 </a>
-                <a href="./inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">mail</span>
                     <span>Inquiries</span>
                 </a>
-                <a href="./orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                <a href="/admin/orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
                     <span class="material-icons text-xl">shopping_cart</span>
                     <span>Orders</span>
                 </a>
-                <a href="./customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">people</span>
                     <span>Customers</span>
                 </a>
-                <a href="./marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/notifications.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                    <span class="material-icons text-xl">notifications</span>
+                    <span>Notifications</span>
+                    <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+                </a>
+                <a href="/admin/marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">campaign</span>
                     <span>Marketing</span>
                 </a>
-                <a href="./statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">analytics</span>
                     <span>Statistics</span>
                 </a>
-                <a href="./settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">settings</span>
                     <span>Settings</span>
                 </a>
@@ -231,12 +281,34 @@
                         <input type="date" id="endDate" onchange="filterOrders()" class="bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
                     </div>
                 </div>
+                
+                <!-- Bulk Actions -->
+                <div class="glass rounded-xl p-4 mb-6 hidden" id="bulkActions">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-gray-400">已选择 <span id="selectedCount">0</span> 个订单</span>
+                            <select id="bulkAction" class="bg-dark-700 border border-dark-600 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none">
+                                <option value="">批量操作</option>
+                                <option value="status">更新状态</option>
+                                <option value="delete">删除</option>
+                                <option value="export">导出</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="cancelBulkActions()" class="px-4 py-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">取消</button>
+                            <button onclick="executeBulkAction()" class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">执行</button>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="glass rounded-xl overflow-hidden">
                     <div class="overflow-x-auto">
                         <table class="w-full">
                             <thead class="bg-dark-700">
                                 <tr>
+                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                                        <input type="checkbox" id="selectAllOrders" onclick="toggleSelectAllOrders()" class="rounded border-dark-600 text-primary focus:ring-primary">
+                                    </th>
                                     <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Order ID</th>
                                     <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Customer</th>
                                     <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Products</th>
@@ -301,6 +373,28 @@
                                 <span class="material-icons text-primary">local_shipping</span>
                                 Order Status
                             </h3>
+                            <div class="flex flex-wrap gap-4 mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-400">Order ID</p>
+                                    <p class="font-medium text-primary" id="detailOrderIdDisplay"></p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Created At</p>
+                                    <p class="font-medium" id="detailCreatedAt"></p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Updated At</p>
+                                    <p class="font-medium" id="detailUpdatedAt"></p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Payment Method</p>
+                                    <p class="font-medium" id="detailPaymentMethod"></p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Payment Status</p>
+                                    <p class="font-medium" id="detailPaymentStatus"></p>
+                                </div>
+                            </div>
                             <div class="relative pl-8" id="statusTimeline">
                             </div>
                         </div>
@@ -662,7 +756,70 @@
         </div>
     </div>
 
+    <div id="bulkStatusModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeBulkStatusModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md">
+            <div class="glass rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold">Bulk Update Status</h2>
+                    <button onclick="closeBulkStatusModal()" class="text-gray-400 hover:text-white">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <form onsubmit="saveBulkStatus(event)">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">New Status</label>
+                            <select id="bulkNewStatus" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none">
+                                <option value="pending">Pending</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="processing">Processing</option>
+                                <option value="shipped">Shipped</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Note</label>
+                            <textarea id="bulkStatusNote" rows="3" class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2.5 text-white focus:border-primary focus:outline-none" placeholder="Optional note for this status change..."></textarea>
+                        </div>
+                    </div>
+                    <div class="flex justify-end gap-3 mt-6">
+                        <button type="button" onclick="closeBulkStatusModal()" class="px-6 py-2.5 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-300 transition-all">
+                            Cancel
+                        </button>
+                        <button type="submit" class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-dark-900 font-medium transition-all">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
         let orders = [];
         let filteredOrders = [];
         let currentPage = 1;
@@ -945,6 +1102,9 @@
             tbody.innerHTML = pageOrders.map(order => `
                 <tr class="hover:bg-dark-700/50 transition-colors">
                     <td class="px-4 py-3">
+                        <input type="checkbox" class="order-checkbox rounded border-dark-600 text-primary focus:ring-primary" value="${order.id}" onclick="updateSelectedOrderCount()">
+                    </td>
+                    <td class="px-4 py-3">
                         <span class="text-primary font-medium">${order.id}</span>
                     </td>
                     <td class="px-4 py-3">
@@ -994,6 +1154,99 @@
             document.getElementById('prevBtn').disabled = currentPage === 1;
             document.getElementById('nextBtn').disabled = currentPage === totalPages;
         }
+        
+        // Bulk actions functions for orders
+        function toggleSelectAllOrders() {
+            const selectAll = document.getElementById('selectAllOrders');
+            const checkboxes = document.querySelectorAll('.order-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = selectAll.checked;
+            });
+            updateSelectedOrderCount();
+        }
+        
+        function updateSelectedOrderCount() {
+            const checkedCheckboxes = document.querySelectorAll('.order-checkbox:checked');
+            const count = checkedCheckboxes.length;
+            document.getElementById('selectedCount').textContent = count;
+            const bulkActions = document.getElementById('bulkActions');
+            if (count > 0) {
+                bulkActions.classList.remove('hidden');
+            } else {
+                bulkActions.classList.add('hidden');
+            }
+        }
+        
+        function cancelBulkActions() {
+            document.getElementById('selectAllOrders').checked = false;
+            const checkboxes = document.querySelectorAll('.order-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            updateSelectedOrderCount();
+        }
+        
+        function executeBulkAction() {
+            const action = document.getElementById('bulkAction').value;
+            const selectedCheckboxes = document.querySelectorAll('.order-checkbox:checked');
+            const selectedIds = Array.from(selectedCheckboxes).map(checkbox => checkbox.value);
+            
+            if (!action || selectedIds.length === 0) {
+                alert('请选择操作和订单');
+                return;
+            }
+            
+            if (action === 'status') {
+                // 打开批量状态更新模态框
+                document.getElementById('bulkStatusModal').classList.remove('hidden');
+                // 存储选中的订单ID
+                document.getElementById('bulkStatusModal').dataset.selectedIds = JSON.stringify(selectedIds);
+            } else if (action === 'delete') {
+                if (confirm(`确定要删除 ${selectedIds.length} 个订单吗？`)) {
+                    orders = orders.filter(order => !selectedIds.includes(order.id));
+                    saveOrders();
+                    init();
+                    cancelBulkActions();
+                    alert('删除成功');
+                }
+            } else if (action === 'export') {
+                exportSelectedOrders(selectedIds);
+            }
+        }
+        
+        function exportSelectedOrders(selectedIds) {
+            const selectedOrders = orders.filter(order => selectedIds.includes(order.id));
+            const csvContent = generateCSV(selectedOrders);
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `orders_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        function generateCSV(orders) {
+            const headers = ['Order ID', 'Customer Name', 'Company', 'Email', 'Phone', 'Status', 'Total', 'Created At', 'Updated At', 'Items'];
+            const rows = orders.map(order => [
+                order.id,
+                order.customer.name,
+                order.customer.company,
+                order.customer.email,
+                order.customer.phone,
+                order.status,
+                order.total,
+                order.createdAt,
+                order.updatedAt,
+                order.items.map(item => `${item.name} (${item.quantity} x $${item.price})`).join('; ')
+            ]);
+            const csvContent = [
+                headers.join(','),
+                ...rows.map(row => row.join(','))
+            ].join('\n');
+            return csvContent;
+        }
 
         function formatDate(dateStr) {
             const date = new Date(dateStr);
@@ -1023,6 +1276,20 @@
             
             document.getElementById('detailOrderId').textContent = `Order #${order.id}`;
             document.getElementById('detailOrderDate').textContent = `Created on ${formatDate(order.createdAt)}`;
+            
+            // 填充新添加的订单详情信息
+            document.getElementById('detailOrderIdDisplay').textContent = order.id;
+            document.getElementById('detailCreatedAt').textContent = formatDate(order.createdAt);
+            document.getElementById('detailUpdatedAt').textContent = formatDate(order.updatedAt);
+            
+            const paymentMethods = {
+                wire: 'Wire Transfer',
+                paypal: 'PayPal',
+                credit: 'Credit Card',
+                lc: 'Letter of Credit'
+            };
+            document.getElementById('detailPaymentMethod').textContent = paymentMethods[order.paymentMethod] || order.paymentMethod;
+            document.getElementById('detailPaymentStatus').textContent = order.paymentStatus.charAt(0).toUpperCase() + order.paymentStatus.slice(1);
             
             renderStatusTimeline(order);
             renderOrderItems(order);
@@ -1461,6 +1728,36 @@
             a.download = `orders_${new Date().toISOString().split('T')[0]}.csv`;
             a.click();
             URL.revokeObjectURL(url);
+        }
+
+        function closeBulkStatusModal() {
+            document.getElementById('bulkStatusModal').classList.add('hidden');
+        }
+
+        function saveBulkStatus(event) {
+            event.preventDefault();
+            const selectedIds = JSON.parse(document.getElementById('bulkStatusModal').dataset.selectedIds);
+            const newStatus = document.getElementById('bulkNewStatus').value;
+            const note = document.getElementById('bulkStatusNote').value;
+            
+            selectedIds.forEach(id => {
+                const order = orders.find(o => o.id === id);
+                if (order) {
+                    order.status = newStatus;
+                    order.updatedAt = new Date().toISOString().split('T')[0];
+                    order.statusHistory.push({
+                        status: newStatus,
+                        date: order.updatedAt,
+                        note: note || 'Bulk status update'
+                    });
+                }
+            });
+            
+            saveOrders();
+            init();
+            cancelBulkActions();
+            closeBulkStatusModal();
+            alert('状态更新成功');
         }
 
         init();

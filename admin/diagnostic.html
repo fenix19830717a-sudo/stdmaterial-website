@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录诊断测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #1a1a2e; color: white; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { background: #162326; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        button { background: #13c8ec; color: #101f22; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #0ea5c0; }
+        .success { color: #22c55e; }
+        .error { color: #ef4444 }
+        .info { color: #3b82f6; }
+        pre { background: #0f0f1a; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>登录诊断测试</h1>
+        
+        <div class="section">
+            <h2>步骤 1: 检查 Session Storage</h2>
+            <button onclick="checkSession()">检查 Session Storage</button>
+            <div id="session-result"></div>
+        </div>
+        
+        <div class="section">
+            <h2>步骤 2: 模拟登录</h2>
+            <button onclick="simulateLogin()">模拟登录</button>
+            <div id="login-result"></div>
+        </div>
+        
+        <div class="section">
+            <h2>步骤 3: 检查 Security 类</h2>
+            <button onclick="checkSecurity()">检查 Security 类</button>
+            <div id="security-result"></div>
+        </div>
+        
+        <div class="section">
+            <h2>步骤 4: 测试跳转</h2>
+            <button onclick="testRedirect()">测试跳转到 Dashboard</button>
+        </div>
+        
+        <div class="section">
+            <h2>步骤 5: 清除 Session</h2>
+            <button onclick="clearSession()">清除 Session</button>
+        </div>
+    </div>
+    
+    <script src="/admin/assets/js/security.js"></script>
+    <script>
+        function checkSession() {
+            const result = document.getElementById('session-result');
+            result.innerHTML = '<h3>Session Storage 内容:</h3>';
+            
+            const userRole = sessionStorage.getItem('userRole');
+            const userInfo = sessionStorage.getItem('userInfo');
+            
+            result.innerHTML += '<p><strong>userRole:</strong> ' + (userRole || '<em class="error">未设置</em>') + '</p>';
+            result.innerHTML += '<p><strong>userInfo:</strong> ' + (userInfo || '<em class="error">未设置</em>') + '</p>';
+            
+            if (userInfo) {
+                try {
+                    const parsed = JSON.parse(userInfo);
+                    result.innerHTML += '<p><strong>解析后的 userInfo:</strong></p>';
+                    result.innerHTML += '<pre>' + JSON.stringify(parsed, null, 2) + '</pre>';
+                } catch (e) {
+                    result.innerHTML += '<p class="error">解析 userInfo 失败: ' + e.message + '</p>';
+                }
+            }
+        }
+        
+        function simulateLogin() {
+            const result = document.getElementById('login-result');
+            result.innerHTML = '<h3>模拟登录:</h3>';
+            
+            try {
+                // 设置 sessionStorage
+                sessionStorage.setItem('userRole', 'admin');
+                sessionStorage.setItem('userInfo', JSON.stringify({ email: 'admin@admin.com', role: 'admin' }));
+                
+                result.innerHTML += '<p class="success">✓ sessionStorage 设置成功</p>';
+                result.innerHTML += '<p><strong>userRole:</strong> admin</p>';
+                result.innerHTML += '<p><strong>userInfo:</strong> ' + JSON.stringify({ email: 'admin@admin.com', role: 'admin' }) + '</p>';
+            } catch (e) {
+                result.innerHTML += '<p class="error">✗ 设置失败: ' + e.message + '</p>';
+            }
+        }
+        
+        function checkSecurity() {
+            const result = document.getElementById('security-result');
+            result.innerHTML = '<h3>Security 类检查:</h3>';
+            
+            try {
+                // 检查 Security.getUserInfo()
+                const userInfo = Security.getUserInfo();
+                result.innerHTML += '<p><strong>Security.getUserInfo():</strong></p>';
+                result.innerHTML += '<pre>' + JSON.stringify(userInfo, null, 2) + '</pre>';
+                
+                // 检查 Security.checkPermission()
+                const hasPermission = Security.checkPermission('user');
+                result.innerHTML += '<p><strong>Security.checkPermission("user"):</strong> ' + (hasPermission ? '<span class="success">true</span>' : '<span class="error">false</span>') + '</p>';
+                
+                // 检查 sessionStorage
+                const storedUserRole = sessionStorage.getItem('userRole');
+                const storedUserInfo = sessionStorage.getItem('userInfo');
+                result.innerHTML += '<p><strong>sessionStorage.userRole:</strong> ' + (storedUserRole || 'null') + '</p>';
+                result.innerHTML += '<p><strong>sessionStorage.userInfo:</strong> ' + (storedUserInfo || 'null') + '</p>';
+                
+            } catch (e) {
+                result.innerHTML += '<p class="error">✗ 检查失败: ' + e.message + '</p>';
+                console.error('Security check error:', e);
+            }
+        }
+        
+        function testRedirect() {
+            // 直接跳转到 dashboard
+            window.location.href = '/admin/dashboard.html';
+        }
+        
+        function clearSession() {
+            sessionStorage.clear();
+            alert('Session 已清除');
+            location.reload();
+        }
+    </script>
+</body>
+</html>

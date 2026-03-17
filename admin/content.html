@@ -5,17 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>内容管理 - Hunan Shengtongda Materials Technology Admin Panel</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/admin/assets/js/security.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
     <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-L2EZ1RRFKP");
     </script>
     <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
         tailwind.config = {
             theme: {
                 extend: {
@@ -47,8 +92,9 @@
         ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
     </style>
-    <link rel="stylesheet" href="./assets/css/admin.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="/admin/assets/css/admin.css">
+    <link rel="stylesheet" href="/admin/assets/css/main.css">
+    <script src="/assets/js/main.js"></script>
     <script src="./assets/js/admin.js"></script>
     <script src="./assets/js/api-config.js"></script>
 
@@ -75,43 +121,43 @@
                 </div>
             </div>
             <nav class="flex-1 p-4 space-y-1">
-                <a href="./dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">dashboard</span>
                     <span>Dashboard</span>
                 </a>
-                <a href="./products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/products.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">inventory_2</span>
                     <span>Products</span>
                 </a>
-                <a href="./inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/inquiries.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">mail</span>
                     <span>Inquiries</span>
                 </a>
-                <a href="./orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/orders.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">shopping_cart</span>
                     <span>Orders</span>
                 </a>
-                <a href="./customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/customers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">people</span>
                     <span>Customers</span>
                 </a>
-                <a href="./marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/marketing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">campaign</span>
                     <span>Marketing</span>
                 </a>
-                <a href="./statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/statistics.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">analytics</span>
                     <span>Statistics</span>
                 </a>
-                <a href="./content.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                <a href="/admin/content.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
                     <span class="material-icons text-xl">article</span>
                     <span>内容管理</span>
                 </a>
-                <a href="./api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/api-settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">api</span>
                     <span>API Settings</span>
                 </a>
-                <a href="./settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
+                <a href="/admin/settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-dark-700 hover:text-white transition-all">
                     <span class="material-icons text-xl">settings</span>
                     <span>Settings</span>
                 </a>
@@ -288,6 +334,28 @@
     </div>
 
     <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
         let contentItems = [];
         let filteredContent = [];
 

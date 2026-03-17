@@ -1,0 +1,33 @@
+<div class="card group">
+    <a href="product-detail.html?id={product-id}" class="block">
+        <div class="product-image-container aspect-[4/3]">
+            <img 
+                src="{product-image}" 
+                alt="{product-name}"
+                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+            />
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-medium text-primary uppercase tracking-wider">
+                    {product-category}
+                </span>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+                {product-name}
+            </h3>
+            <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                {product-description}
+            </p>
+            <div class="flex items-center justify-between">
+                <span class="text-primary font-semibold">
+                    {product-price}
+                </span>
+                <span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">
+                    arrow_forward
+                </span>
+            </div>
+        </div>
+    </a>
+</div>

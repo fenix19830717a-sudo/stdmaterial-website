@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Hunan Shengtongda Materials Technology Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/admin/assets/js/security.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
+    <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-L2EZ1RRFKP");
+    </script>
+    <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#13c8ec',
+                        'primary-dark': '#0ea5c0',
+                        'primary-light': '#5dd9f5',
+                        dark: {
+                            900: '#101f22',
+                            800: '#162326',
+                            700: '#1c2d31',
+                            600: '#24373b',
+                            500: '#2c4145'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(22, 35, 38, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(19, 200, 236, 0.1); }
+        .glass-light { background: rgba(28, 45, 49, 0.6); backdrop-filter: blur(8px); border: 1px solid rgba(19, 200, 236, 0.08); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #162326; }
+        ::-webkit-scrollbar-thumb { background: #2c4145; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #13c8ec; }
+        .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="./assets/minified/lazy-loader.js" defer></script>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+    <div class="flex h-screen overflow-hidden admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar fixed top-0 left-0 bottom-0 w-64 md:w-64 lg:w-64 bg-dark-800 border-r border-dark-700 overflow-y-auto z-50 transition-all duration-300 ease-in-out">
+            <div class="p-6 border-b border-dark-700 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                        <span class="material-icons text-dark-900">science</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <h1 class="text-lg font-semibold text-white">Hunan Shengtongda Materials Technology</h1>
+                        <p class="text-xs text-gray-500">Admin Panel</p>
+                    </div>
+                </div>
+                <button class="sidebar-toggle p-2 rounded-lg hover:bg-dark-700 transition-colors">
+                    <span class="material-icons text-gray-400 hover:text-white">menu</span>
+                </button>
+            </div>
+            <nav class="flex-1 p-4 space-y-1">
+                <a href="/admin/dashboard.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="dashboard">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">dashboard</span>
+                    <span class="sidebar-link-text text-sm font-medium">Dashboard</span>
+                </a>
+                <a href="/admin/products.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="products">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">inventory_2</span>
+                    <span class="sidebar-link-text text-sm font-medium">Products</span>
+                </a>
+                <a href="/admin/inquiries.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="inquiries">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">mail</span>
+                    <span class="sidebar-link-text text-sm font-medium">Inquiries</span>
+                </a>
+                <a href="/admin/orders.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="orders">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">shopping_cart</span>
+                    <span class="sidebar-link-text text-sm font-medium">Orders</span>
+                </a>
+                <a href="/admin/customers.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="customers">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">people</span>
+                    <span class="sidebar-link-text text-sm font-medium">Customers</span>
+                </a>
+                <a href="/admin/notifications.html" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="notifications">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">notifications</span>
+                    <span class="sidebar-link-text text-sm font-medium">Notifications</span>
+                    <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+                </a>
+                <a href="/admin/marketing.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="marketing">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">campaign</span>
+                    <span class="sidebar-link-text text-sm font-medium">Marketing</span>
+                </a>
+                <a href="/admin/statistics.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="statistics">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">analytics</span>
+                    <span class="sidebar-link-text text-sm font-medium">Statistics</span>
+                </a>
+                <a href="/admin/api-settings.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="api-settings">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">api</span>
+                    <span class="sidebar-link-text text-sm font-medium">API Settings</span>
+                </a>
+                <a href="/admin/settings.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ease-in-out" data-section="settings">
+                    <span class="material-icons text-xl text-gray-400 min-w-6 text-center">settings</span>
+                    <span class="sidebar-link-text text-sm font-medium">Settings</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-dark-700">
+                <div class="flex items-center gap-3 px-4 py-3">
+                    <div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span class="material-icons text-primary text-lg">person</span>
+                    </div>
+                    <div class="flex-1 hidden md:block">
+                        <p class="text-sm font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">admin@precisiongrind.com</p>
+                    </div>
+                    <button class="logout-btn text-gray-400 hover:text-white p-2 rounded-lg hover:bg-dark-700 transition-colors">
+                        <span class="material-icons text-xl">logout</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header sticky top-0 z-40 glass border-b border-dark-700 px-4 md:px-6 py-3 md:py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3 md:gap-4">
+                        <button class="mobile-menu-toggle md:hidden p-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-400 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary/50">
+                            <span class="material-icons">menu</span>
+                        </button>
+                        <div>
+                            <h1 class="text-xl md:text-2xl font-semibold">Notifications</h1>
+                            <p class="text-gray-400 text-xs md:text-sm mt-1">Manage all your notifications</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-3">
+                        <span class="text-xs md:text-sm text-gray-400 hidden sm:inline" id="currentDate"></span>
+                        <button class="notification-btn p-2 rounded-lg bg-dark-700 hover:bg-dark-600 text-gray-400 hover:text-white transition-all relative focus:outline-none focus:ring-2 focus:ring-primary/50">
+                            <span class="material-icons">notifications</span>
+                            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Notifications Panel -->
+            <div class="notifications-panel fixed top-20 right-6 w-80 glass rounded-xl p-4 shadow-lg z-50 hidden">
+                <h3 class="text-lg font-semibold mb-4">Notifications</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-dark-700 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-primary text-sm">shopping_cart</span>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium">New order received</p>
+                            <p class="text-xs text-gray-400">Order #12345 has been placed</p>
+                            <p class="text-xs text-gray-500 mt-1">5 minutes ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-dark-700 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-icons text-blue-400 text-sm">mail</span>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium">New inquiry</p>
+                            <p class="text-xs text-gray-400">From John Doe about grinding media</p>
+                            <p class="text-xs text-gray-500 mt-1">15 minutes ago</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/admin/notifications.html" class="block text-center text-primary text-sm mt-4 hover:underline">View all notifications</a>
+            </div>
+
+            <div class="p-4 md:p-6">
+                <!-- Notification Management -->
+                <div class="glass rounded-xl p-4 md:p-6 mb-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                        <h3 class="text-lg font-semibold mb-3 md:mb-0">Notification Management</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button id="markAllRead" class="px-3 py-1.5 bg-dark-700 hover:bg-dark-600 rounded-lg text-sm transition-colors flex items-center gap-1">
+                                <span class="material-icons text-xs">done_all</span>
+                                <span>Mark All Read</span>
+                            </button>
+                            <button id="deleteSelected" class="px-3 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-sm transition-colors flex items-center gap-1">
+                                <span class="material-icons text-xs">delete</span>
+                                <span>Delete Selected</span>
+                            </button>
+                            <select id="notificationFilter" class="bg-dark-700 border border-dark-600 rounded-lg px-3 py-1.5 text-sm text-white focus:border-primary focus:outline-none">
+                                <option value="all">All Notifications</option>
+                                <option value="unread">Unread Only</option>
+                                <option value="order">Order Notifications</option>
+                                <option value="inventory">Inventory Alerts</option>
+                                <option value="system">System Messages</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Notification List -->
+                    <div class="space-y-3" id="notificationList">
+                        <!-- Notification items will be generated here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-6 flex items-center justify-center">
+                        <nav class="flex items-center gap-1">
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                                <span class="material-icons text-xs">chevron_left</span>
+                            </button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-dark-900 font-medium transition-colors">1</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">2</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">3</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                                <span class="material-icons text-xs">chevron_right</span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="glass rounded-xl p-4 md:p-6">
+                    <h3 class="text-lg font-semibold mb-4">Notification Settings</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+                            <div>
+                                <p class="text-sm font-medium">Order Notifications</p>
+                                <p class="text-xs text-gray-400">Receive alerts for new orders, order status changes, etc.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" checked>
+                                <div class="w-11 h-6 bg-dark-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+                            <div>
+                                <p class="text-sm font-medium">Inventory Alerts</p>
+                                <p class="text-xs text-gray-400">Receive alerts when inventory levels are low.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" checked>
+                                <div class="w-11 h-6 bg-dark-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+                            <div>
+                                <p class="text-sm font-medium">System Messages</p>
+                                <p class="text-xs text-gray-400">Receive system updates and important notifications.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" checked>
+                                <div class="w-11 h-6 bg-dark-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+                            <div>
+                                <p class="text-sm font-medium">Email Notifications</p>
+                                <p class="text-xs text-gray-400">Receive notifications via email.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-dark-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Admin Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/notification.js"></script>
+    <script>
+
+        // 权限验证
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查用户是否已登录
+            const userInfo = Security.getUserInfo();
+            if (!userInfo) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+            
+            // 检查用户权限
+            if (!Security.checkPermission("user")) {
+                window.location.href = "/admin/login.html";
+                return;
+            }
+        });
+        
+        // 登出功能
+        function logout() {
+            Security.clearUserInfo();
+            window.location.href = "/admin/login.html";
+        }
+        // Update date
+        function updateDate() {
+            const date = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = date.toLocaleDateString('en-US', options);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDate();
+            // Notification system is initialized in notification.js
+        });
+    </script>
+</body>
+</html>

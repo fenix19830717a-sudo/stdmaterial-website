@@ -1,0 +1,138 @@
+{
+  "materials": [
+    {
+      "id": "ceramic",
+      "name": "Ceramic",
+      "types": [
+        {
+          "id": "alumina",
+          "name": "Alumina",
+          "en_name": "Alumina",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=high%20purity%20alumina%20ceramic%20material%2C%20white%20powder%20or%20solid%20block%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "Mohs 9",
+            "purity": "99.9%",
+            "color": "White"
+          }
+        },
+        {
+          "id": "zirconia",
+          "name": "Zirconia",
+          "en_name": "Zirconia",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=zirconia%20ceramic%20material%2C%20white%20crystalline%20structure%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "Mohs 8.5",
+            "purity": "99.5%",
+            "color": "White"
+          }
+        },
+        {
+          "id": "silica",
+          "name": "Silica",
+          "en_name": "Silica",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=silica%20ceramic%20material%2C%20transparent%20or%20white%20powder%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "Mohs 7",
+            "purity": "99.8%",
+            "color": "White/Transparent"
+          }
+        }
+      ]
+    },
+    {
+      "id": "metal",
+      "name": "Metal",
+      "types": [
+        {
+          "id": "stainless_steel",
+          "name": "Stainless Steel",
+          "en_name": "Stainless Steel",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=stainless%20steel%20material%2C%20shiny%20silver%20metal%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "HV 200-300",
+            "purity": "99.5%",
+            "color": "Silver"
+          }
+        },
+        {
+          "id": "tungsten_carbide",
+          "name": "Tungsten Carbide",
+          "en_name": "Tungsten Carbide",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=tungsten%20carbide%20material%2C%20dark%20gray%20metal%20alloy%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "HV 1800-2200",
+            "purity": "95%",
+            "color": "Dark Gray"
+          }
+        },
+        {
+          "id": "titanium",
+          "name": "Titanium Alloy",
+          "en_name": "Titanium Alloy",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=titanium%20alloy%20material%2C%20light%20gray%20metal%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "HV 300-400",
+            "purity": "99.0%",
+            "color": "Light Gray"
+          }
+        }
+      ]
+    },
+    {
+      "id": "plastic",
+      "name": "Plastic",
+      "types": [
+        {
+          "id": "nylon",
+          "name": "Nylon",
+          "en_name": "Nylon",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=nylon%20plastic%20material%2C%20off-white%20polymer%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "Shore D 75-85",
+            "purity": "98%",
+            "color": "Off-white"
+          }
+        },
+        {
+          "id": "ptfe",
+          "name": "PTFE",
+          "en_name": "PTFE",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=PTFE%20polytetrafluoroethylene%20material%2C%20white%20plastic%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "Shore D 55-65",
+            "purity": "99.5%",
+            "color": "White"
+          }
+        },
+        {
+          "id": "pu",
+          "name": "PU",
+          "en_name": "PU",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=polyurethane%20PU%20material%2C%20dense%20plastic%20material%2C%20technical%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "Shore A 80-95",
+            "purity": "98%",
+            "color": "Various Colors"
+          }
+        }
+      ]
+    },
+    {
+      "id": "natural",
+      "name": "Natural Material",
+      "types": [
+        {
+          "id": "agate",
+          "name": "Agate",
+          "en_name": "Agate",
+          "image": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=natural%20agate%20material%2C%20banded%20quartz%2C%20technical%20material%20photography&image_size=square_hd",
+          "properties": {
+            "hardness": "Mohs 7",
+            "purity": "Natural",
+            "color": "Banded"
+          }
+        }
+      ]
+    }
+  ]
+}

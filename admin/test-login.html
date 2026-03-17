@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录测试</title>
+</head>
+<body>
+    <h1>登录测试</h1>
+    <button onclick="testLogin()">测试登录</button>
+    <button onclick="checkSession()">检查Session</button>
+    <button onclick="clearSession()">清除Session</button>
+    
+    <script src="/admin/assets/js/security.js"></script>
+    <script>
+        function testLogin() {
+            // 模拟登录
+            sessionStorage.setItem('userRole', 'admin');
+            sessionStorage.setItem('userInfo', JSON.stringify({ email: 'admin@admin.com', role: 'admin' }));
+            console.log('登录成功');
+            console.log('userRole:', sessionStorage.getItem('userRole'));
+            console.log('userInfo:', sessionStorage.getItem('userInfo'));
+            
+            // 跳转到 dashboard
+            window.location.href = '/admin/dashboard.html';
+        }
+        
+        function checkSession() {
+            console.log('=== Session 检查 ===');
+            console.log('userRole:', sessionStorage.getItem('userRole'));
+            console.log('userInfo:', sessionStorage.getItem('userInfo'));
+            console.log('Security.getUserInfo():', Security.getUserInfo());
+            console.log('Security.checkPermission("user"):', Security.checkPermission("user"));
+        }
+        
+        function clearSession() {
+            sessionStorage.clear();
+            console.log('Session 已清除');
+            }
+    </script>
+</body>
+</html>

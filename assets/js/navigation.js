@@ -1,15 +1,73 @@
-class NavigationManager{constructor(){this.navigationData={engineer:[],purchaser:[]};this.currentRole='engineer';}
-async init(){try{await this.loadNavigationData();this.setupRoleSwitch();this.renderNavigation();}catch(error){console.error('Error initializing navigation:',error);this.renderDefaultNavigation();}}
-async loadNavigationData(){try{const response=await fetch('/api/navigation');if(!response.ok)throw new Error('Failed to fetch navigation data');this.navigationData=await response.json();}catch(error){console.error('Error loading navigation data:',error);this.navigationData={engineer:[{id:'1',title:'PRODUCTS',url:'product-catalog.html',visible:true},{id:'2',title:'ABOUT',url:'about.html',visible:true},{id:'3',title:'设备模拟器',url:'simulator.html',visible:true},{id:'4',title:'选型指南',url:'selection/index.html',visible:true},{id:'5',title:'NEWS',url:'news.html',visible:true},{id:'6',title:'CONTACT',url:'contact.html',visible:true}],purchaser:[{id:'1',title:'PRODUCTS',url:'product-catalog.html',visible:true},{id:'2',title:'ABOUT',url:'about.html',visible:true},{id:'3',title:'成功案例',url:'case-studies.html',visible:true},{id:'4',title:'订单跟踪',url:'order-tracking.html',visible:true},{id:'5',title:'NEWS',url:'news.html',visible:true},{id:'6',title:'CONTACT',url:'contact.html',visible:true}]};}}
-setupRoleSwitch(){const roleSwitch=document.getElementById('role-switch');const roleLabel=document.getElementById('role-label');if(roleSwitch){roleSwitch.addEventListener('change',(e)=>{this.currentRole=e.target.checked?'engineer':'purchaser';roleLabel.textContent=e.target.checked?'工程师模式':'采购商模式';this.renderNavigation();});}}
-renderNavigation(){this.renderDesktopNavigation();this.renderMobileNavigation();}
-renderDesktopNavigation(){const engineerNav=document.getElementById('engineer-nav');const purchaserNav=document.getElementById('purchaser-nav');if(engineerNav){engineerNav.innerHTML=this.generateNavLinks('engineer');engineerNav.style.display=this.currentRole==='engineer'?'flex':'none';}
-if(purchaserNav){purchaserNav.innerHTML=this.generateNavLinks('purchaser');purchaserNav.style.display=this.currentRole==='purchaser'?'flex':'none';}}
-renderMobileNavigation(){const mobileEngineerNav=document.getElementById('mobile-engineer-nav');const mobilePurchaserNav=document.getElementById('mobile-purchaser-nav');if(mobileEngineerNav){mobileEngineerNav.innerHTML=this.generateMobileNavLinks('engineer');mobileEngineerNav.classList.toggle('hidden',this.currentRole!=='engineer');}
-if(mobilePurchaserNav){mobilePurchaserNav.innerHTML=this.generateMobileNavLinks('purchaser');mobilePurchaserNav.classList.toggle('hidden',this.currentRole!=='purchaser');}}
-generateNavLinks(role){const items=this.navigationData[role]||[];return items.filter(item=>item.visible).map(item=>`<a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide"
-href="${item.url}"data-i18n="nav_${item.title.toLowerCase()}">${item.title}</a>`).join('');}
-generateMobileNavLinks(role){const items=this.navigationData[role]||[];const navLinks=items.filter(item=>item.visible).map(item=>`<a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2"
-href="${item.url}"data-i18n="nav_${item.title.toLowerCase()}">${item.title}</a>`).join('');return navLinks+`<div class="flex gap-2 pt-2"><button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider"><span class="material-symbols-outlined text-sm">download</span>Catalog</button><button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold bg-primary text-deep-navy rounded hover:bg-accent transition-all uppercase tracking-wide"><span class="material-symbols-outlined text-sm">chat</span>Chat</button></div>`;}
-renderDefaultNavigation(){this.renderNavigation();}}
-if(typeof window!=='undefined'){window.navigationManager=new NavigationManager();document.addEventListener('DOMContentLoaded',()=>{window.navigationManager.init();});}
+function toggleMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
+    }
+}
+
+function setupTabNavigation() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('#specifications, #applications, #documentation');
+    const tabIndicator = document.querySelector('.tab-indicator');
+    
+    if (tabButtons.length > 0 && tabIndicator) {
+        // Initialize indicator position
+        const activeButton = document.querySelector('.tab-btn.active');
+        if (activeButton) {
+            updateIndicatorPosition(activeButton, tabIndicator);
+        }
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active', 'text-white');
+                    btn.classList.add('text-text-secondary');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active', 'text-white');
+                this.classList.remove('text-text-secondary');
+                
+                // Update indicator position
+                updateIndicatorPosition(this, tabIndicator);
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    if (content) content.classList.add('hidden');
+                });
+                
+                // Show the corresponding tab content
+                const tabId = this.dataset.tab;
+                const targetContent = document.getElementById(tabId);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                }
+            });
+        });
+    }
+}
+
+function updateIndicatorPosition(button, indicator) {
+    const rect = button.getBoundingClientRect();
+    const parentRect = button.parentElement.getBoundingClientRect();
+    
+    indicator.style.left = `${rect.left - parentRect.left}px`;
+    indicator.style.width = `${rect.width}px`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (currentPath.includes(href) || (currentPath === '/' && href === 'index.html'))) {
+            link.classList.add('text-primary');
+            link.classList.remove('text-text-secondary');
+        }
+    });
+    
+    // Setup tab navigation for product detail page
+    setupTabNavigation();
+});

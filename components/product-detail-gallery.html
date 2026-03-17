@@ -1,0 +1,97 @@
+<div class="grid lg:grid-cols-2 gap-8 items-start">
+    <div class="space-y-4">
+        <div class="product-image-container aspect-square">
+            <img 
+                id="main-product-image"
+                src="{main-image}" 
+                alt="{product-name}"
+                class="w-full h-full object-contain"
+            />
+        </div>
+        <div class="grid grid-cols-4 gap-3">
+            <button 
+                onclick="changeMainImage('{image-1}')"
+                class="product-image-container aspect-square border-2 border-primary"
+            >
+                <img 
+                    src="{image-1}" 
+                    alt="Thumbnail 1"
+                    class="w-full h-full object-contain"
+                />
+            </button>
+            <button 
+                onclick="changeMainImage('{image-2}')"
+                class="product-image-container aspect-square border-2 border-transparent hover:border-primary/50 transition-colors"
+            >
+                <img 
+                    src="{image-2}" 
+                    alt="Thumbnail 2"
+                    class="w-full h-full object-contain"
+                />
+            </button>
+            <button 
+                onclick="changeMainImage('{image-3}')"
+                class="product-image-container aspect-square border-2 border-transparent hover:border-primary/50 transition-colors"
+            >
+                <img 
+                    src="{image-3}" 
+                    alt="Thumbnail 3"
+                    class="w-full h-full object-contain"
+                />
+            </button>
+            <button 
+                onclick="changeMainImage('{image-4}')"
+                class="product-image-container aspect-square border-2 border-transparent hover:border-primary/50 transition-colors"
+            >
+                <img 
+                    src="{image-4}" 
+                    alt="Thumbnail 4"
+                    class="w-full h-full object-contain"
+                />
+            </button>
+        </div>
+    </div>
+
+    <div class="space-y-6">
+        <div>
+            <span class="text-primary font-medium text-sm uppercase tracking-wider">
+                {product-category}
+            </span>
+            <h1 class="heading-lg text-white mt-2">
+                {product-name}
+            </h1>
+        </div>
+
+        <p class="text-body">
+            {product-description}
+        </p>
+
+        <div class="glass-panel p-6 rounded-xl">
+            <h3 class="text-white font-semibold mb-4">Key Specifications</h3>
+            <div class="grid grid-cols-2 gap-4">
+                {specifications}
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+            <button class="btn-primary flex-1">
+                Request Quote
+            </button>
+            <button class="btn-secondary flex items-center justify-center gap-2" onclick="openSimulator()">
+                <span class="material-symbols-outlined">play_circle</span>
+                Try Simulator
+            </button>
+        </div>
+
+        <div class="flex items-center gap-6 pt-4 border-t border-white/10">
+            <div class="flex items-center gap-2 text-slate-400">
+                <span class="material-symbols-outlined text-success">check_circle</span>
+                <span class="text-sm">In Stock</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400">
+                <span class="material-symbols-outlined text-primary">verified</span>
+                <span class="text-sm">ISO 9001 Certified</span>
+            </div>
+        </div>
+    </div>
+</div>

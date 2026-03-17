@@ -163,5 +163,28 @@
     "eur": "EUR (€)",
     "cny": "CNY (¥)",
     "gbp": "GBP (£)"
+  },
+  "filters": {
+    "title": "Filters",
+    "reset": "Reset All",
+    "materialType": "Material Type",
+    "ceramic": "Ceramic (Alumina, Zirconia)",
+    "metal": "Metal (Stainless Steel, Tungsten)",
+    "plastic": "Plastic (Nylon, PTFE)",
+    "natural": "Natural (Agate)",
+    "volumeRange": "Volume Range",
+    "smallVolume": "Small (0.1-1L)",
+    "mediumVolume": "Medium (1-5L)",
+    "largeVolume": "Large (5L+)",
+    "application": "Application",
+    "lab": "Laboratory",
+    "industry": "Industrial Production",
+    "rnd": "R&D",
+    "certification": "Certification",
+    "iso": "ISO 9001",
+    "ce": "CE",
+    "support": "Technical Support?",
+    "supportText": "Not sure which grinding media is right for your application? Talk to our engineers.",
+    "contactExpert": "Contact Expert"
   }
 }

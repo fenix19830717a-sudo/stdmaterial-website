@@ -7,16 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/admin.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-L2EZ1RRFKP");
-    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -33,13 +25,12 @@
             }
         }
     </script>
-
-    <!-- Performance Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-
-    <script src="./assets/minified/lazy-loader.js" defer></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <body class="bg-background-dark font-['Space_Grotesk']">
     <div class="admin-login-container">
@@ -49,7 +40,7 @@
                     <div class="w-12 h-12 bg-primary/20 border border-primary/50 rounded-lg flex items-center justify-center">
                         <span class="material-symbols-outlined text-primary text-2xl">precision_manufacturing</span>
                     </div>
-                    <span class="text-2xl font-bold text-white">HUNAN SHENGTONGDA<span class="text-primary font-light">MATERIALS</span></span>
+                    <span class="text-2xl font-bold text-white">PRECISION<span class="text-primary font-light">GRIND</span></span>
                 </div>
             </div>
             
@@ -63,7 +54,7 @@
                         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">email</span>
                         <input type="email" id="username" name="username" 
                                class="w-full bg-secondary-dark border border-white/10 text-white rounded-lg py-3 pl-10 pr-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                               placeholder="Enter email address" required>
+                               placeholder="Enter your email" required>
                     </div>
                 </div>
                 
@@ -96,13 +87,12 @@
             </form>
             
             <div class="mt-8 pt-6 border-t border-white/10 text-center">
-                <p class="text-xs text-slate-500">Admin Portal</p>
+                <p class="text-xs text-slate-500">Default credentials: admin@admin.com / admin123</p>
             </div>
         </div>
     </div>
     
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/admin.js"></script>
+    <script src="/admin/assets/js/security.js"></script>
     <script>
         function togglePassword() {
             const passwordInput = document.getElementById('password');
@@ -117,34 +107,22 @@
             }
         }
         
-        document.getElementById('login-form').addEventListener('submit', async function(e) {
+        document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const username = document.getElementById('username').value;
+            const email = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            const result = await AdminPanel.login(username, password);
-            
-            if (result.success) {
-                // 显示成功消息
-                const toast = document.createElement('div');
-                toast.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50';
-                toast.textContent = 'Login successful! Redirecting...';
-                document.body.appendChild(toast);
+            // 使用默认凭证登录
+            if (email === 'admin@admin.com' && password === 'admin123') {
+                // 直接设置 sessionStorage
+                sessionStorage.setItem('userRole', 'admin');
+                sessionStorage.setItem('userInfo', JSON.stringify({ email: email, role: 'admin' }));
                 
-                setTimeout(() => {
-                    window.location.href = 'dashboard.html';
-                }, 1000);
+                // 直接跳转到仪表盘，不使用 setTimeout
+                window.location.href = '/admin/dashboard.html';
             } else {
-                // 显示错误消息
-                const toast = document.createElement('div');
-                toast.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50';
-                toast.textContent = result.message;
-                document.body.appendChild(toast);
-                
-                setTimeout(() => {
-                    toast.remove();
-                }, 3000);
+                alert('Invalid credentials');
             }
         });
     </script>

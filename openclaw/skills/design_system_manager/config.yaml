@@ -1,0 +1,58 @@
+name: "设计系统管理器"
+description: "用于管理和应用设计系统、样式检查、组件库等设计相关任务
+enabled: true
+version: "1.0.0"
+
+config:
+  design_system_path: "./assets/css/design-system.css"
+  variables_path: "./assets/css/variables.css"
+  project_root: "./"
+  allowed_extensions:
+    - ".html"
+    - ".css"
+    - ".js"
+    - ".jsx"
+    - ".tsx"
+
+task_types:
+  - name: "scan_project"
+    description: "扫描整个项目检查设计系统合规性"
+    parameters:
+      - name: "directory"
+        type: "string"
+        description: "要扫描的目录路径（可选，默认项目根目录）"
+        required: false
+  
+  - name: "validate_file"
+    description: "验证单个文件的设计系统合规性"
+    parameters:
+      - name: "file_path"
+        type: "string"
+        description: "要验证的文件路径"
+        required: true
+  
+  - name: "generate_snippet"
+    description: "生成设计系统组件代码片段"
+    parameters:
+      - name: "component_type"
+        type: "string"
+        description: "组件类型（product_image, primary_button, secondary_button, glass_panel, card"
+        required: true
+      - name: "params"
+        type: "object"
+        description: "组件参数"
+        required: false
+  
+  - name: "get_guidelines"
+    description: "获取设计系统指南"
+    parameters: []
+
+dependencies:
+  - "file_operations"
+  - "data_processor"
+
+outputs:
+  - type: "report"
+    format: "json"
+  - type: "snippet"
+    format: "html/css"

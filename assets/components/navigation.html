@@ -1,0 +1,50 @@
+<!-- 统一导航栏组件 -->
+<nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center relative overflow-hidden group shadow-lg">
+                    <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
+                    <span class="material-symbols-outlined text-2xl text-white relative z-10">precision_manufacturing</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-white">HUNAN SHENGTONGDA</span>
+                    <span class="text-sm text-primary tracking-wide font-medium">MATERIALS TECHNOLOGY</span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Home</a>
+                <a href="product-catalog.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Products</a>
+                <a href="simulator.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Grinding Simulator</a>
+                <a href="selection.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Product Selector</a>
+                <a href="about.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">About Us</a>
+                <a href="contact.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="login.html" class="hidden sm:flex items-center gap-2 text-slate-300 hover:text-primary transition-colors text-sm font-medium">
+                    <span class="material-symbols-outlined text-base">person</span>
+                    Account
+                </a>
+                <a href="contact.html" class="btn-primary text-sm">
+                    Request Quote
+                </a>
+                <button class="lg:hidden text-white" onclick="toggleMobileMenu()">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-surface-dark border-t border-white/5">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Home</a>
+                <a href="product-catalog.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Products</a>
+                <a href="simulator.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Grinding Simulator</a>
+                <a href="selection.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Product Selector</a>
+                <a href="about.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">About Us</a>
+                <a href="contact.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>

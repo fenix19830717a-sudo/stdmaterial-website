@@ -3,1086 +3,157 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Material Selection Guide | Hunan Shengtongda Materials Technology Co., Ltd.</title>
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="根据您的物料、工艺需求选择不同的Products，从而获得最佳的成果。Hunan Shengtongda提供专业的粉体设备选型服务。" />
-    <meta name="keywords" content="粉体设备,行星球磨机,滚筒球磨机,Selection Guide,研磨设备" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Hunan Shengtongda Materials Technology Co., Ltd." />
+    <title>Industry Product Matcher | Hunan Shengtongda Materials</title>
+    <meta name="description" content="Intelligent product matching based on your industry requirements. Find the perfect grinding equipment for your specific application." />
     
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Material Selection Guide | Hunan Shengtongda Materials Technology Co., Ltd." />
-    <meta property="og:description" content="根据您的物料、工艺需求选择不同的Products，从而获得最佳的成果。" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://stdmaterial.com/selection.html" />
-    <meta property="og:site_name" content="Hunan Shengtongda Materials Technology Co., Ltd." />
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Material Selection Guide",
-      "description": "根据您的物料、工艺需求选择不同的Products，从而获得最佳的成果。",
-      "brand": "Hunan Shengtongda Materials Technology Co., Ltd."
-    }
-    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#06b6d4",
-                        "primary-dark": "#0891b2",
-                        "accent": "#22d3ee",
-                        "background-dark": "#0f172a",
-                        "surface-dark": "#1e293b",
-                        "deep-navy": "#020617",
-                        "secondary": "#f97316",
-                        "success": "#22c55e"
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk"]
-                    },
-                    backgroundImage: {
-                        'cyber-grid': "radial-gradient(circle, rgba(6,182,212,0.1) 1px, transparent 1px)",
-                        'blueprint': "linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)"
-                    }
-                },
-            },
-        }
-    </script>
+    <link rel="stylesheet" href="assets/css/output.css">
+    <link rel="stylesheet" href="assets/css/design-system.css">
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
         }
-        .glass-panel {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        .industry-card {
+            transition: all var(--transition-normal);
         }
-        .glass-panel:hover {
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+        .industry-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
         }
-        .text-glow {
-            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
-        }
-        .blueprint-bg {
-            background-size: 40px 40px;
-            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-        }
-        .tech-border {
-            position: relative;
-        }
-        .tech-border::before, .tech-border::after {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border: 1px solid #06b6d4;
-            transition: all 0.3s ease;
-        }
-        .tech-border::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-        .tech-border::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
-        .tech-border:hover::before, .tech-border:hover::after {
-            width: 100%;
-            height: 100%;
-        }
-        .material-card {
-            background: linear-gradient(145deg, rgba(30,41,59,0.7) 0%, rgba(15,23,42,0.9) 100%);
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-pulse-slow {
-            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #06b6d4, #22d3ee);
-        }
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 20px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #06b6d4;
-            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
-        }
-        .form-input {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        .form-input:focus {
-            border-color: #06b6d4;
-            box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
-        }
-        .result-card {
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
-            border: 1px solid rgba(6, 182, 212, 0.2);
-        }
-        
-        /* 修复背景颜色问题，确保文字清晰可见 */
-        .form-input {
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #f8fafc;
-            transition: all 0.3s ease;
-        }
-        
-        .form-input:focus {
-            border-color: #06b6d4;
-            box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
-        }
-        
-        /* 优化表单标签样式 */
-        label {
-            color: #f8fafc !important;
-        }
-        
-        /* 优化选择框样式 */
-        select.form-input {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2306b6d4' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
-            background-position: right 0.5rem center;
-            background-repeat: no-repeat;
-            background-size: 1.5em 1.5em;
-            padding-right: 2.5rem;
-        }
-    
-        /* Language Switcher Styles */
-        .lang-switcher {
-            display: flex;
-            align-items: center;
-            gap: 4px;
+        .industry-card.selected {
+            border-color: var(--color-primary);
             background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            border-radius: 20px;
-            padding: 4px 8px;
         }
-        .lang-switcher button {
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 11px;
-            font-weight: 600;
-            color: #94a3b8;
-            transition: all 0.3s ease;
-            background: transparent;
-            border: none;
-            cursor: pointer;
+        .industry-card.selected h3,
+        .industry-card.selected p {
+            color: var(--color-primary);
         }
-        .lang-switcher button.active {
-            background: #06b6d4;
-            color: #020617;
-        }
-        .lang-switcher button:hover:not(.active) {
-            color: #06b6d4;
-        }
-</style>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/i18n.js"></script>
-    <script src="assets/js/compatibility-checker.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2EZ1RRFKP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-L2EZ1RRFKP");
-    </script>
-
-    <!-- Performance Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-
-    <script src="../assets/minified/lazy-loader.js" defer></script>
+    </style>
 </head>
-<body class="bg-deep-navy text-slate-100 font-display selection:bg-primary selection:text-white">
-    <!-- Navigation -->
+<body class="bg-background text-text-primary font-display">
     <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center relative overflow-hidden group">
-                        <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
-                        <span class="material-symbols-outlined text-primary relative z-10">precision_manufacturing</span>
-                    </div>
-                    <span class="text-2xl font-bold tracking-tight text-white">HUNAN SHENGTONGDA<span class="text-primary text-glow font-light ml-1">MATERIALS</span></span>
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary/20 border border-primary/50 rounded flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-primary/20 blur-md group-hover:bg-primary/40 transition-all"></div>
+                            <span class="material-symbols-outlined text-primary relative z-10">precision_manufacturing</span>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-white">HUNAN SHENGTONGDA<span class="text-primary font-light ml-1">MATERIALS</span></span>
+                    </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#products">PRODUCTS</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#applications">APPLICATIONS</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#customization">CUSTOMIZATION</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="index.html#data-sheets">DATA SHEETS</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="about.html">ABOUT US</a>
-                    <a class="text-sm font-medium text-primary border-b-2 border-primary transition-colors tracking-wide" href="selection.html">Selection Guide</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide" href="contact.html">CONTACT</a>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="product-catalog.html" class="text-text-secondary hover:text-primary transition-colors">Products</a>
+                    <a href="simulator.html" class="text-text-secondary hover:text-primary transition-colors">Simulator</a>
+                    <a href="selection.html" class="text-primary font-semibold">Industry Matcher</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="contact.html" class="text-text-secondary hover:text-primary transition-colors">Contact</a>
                 </div>
-                <div class="flex items-center gap-4">
-                    <button class="hidden lg:flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
-                        <span class="material-symbols-outlined text-sm">download</span> Catalog
-                    </button>
-                    <button class="bg-primary text-deep-navy px-6 py-2.5 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide text-sm">
+                
+                <div class="flex items-center gap-2 md:gap-3">
+                    <a href="contact.html" class="btn-warm">
                         Inquiry Now
-                    </button>
+                    </a>
                     <button class="md:hidden text-white" onclick="toggleMobileMenu()">
                         <span class="material-symbols-outlined text-2xl">menu</span>
                     </button>
                 </div>
             </div>
-            <!-- Mobile Menu -->
             <div class="mobile-menu hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#products">PRODUCTS</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#applications">APPLICATIONS</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#customization">CUSTOMIZATION</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="index.html#data-sheets">DATA SHEETS</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="about.html">ABOUT US</a>
-                    <a class="text-sm font-medium text-primary border-l-2 border-primary pl-3 transition-colors tracking-wide py-2" href="selection.html">Selection Guide</a>
-                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors tracking-wide py-2" href="contact.html">CONTACT</a>
-                    <button class="flex items-center gap-2 px-4 py-2 text-xs font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider w-fit">
-                        <span class="material-symbols-outlined text-sm">download</span> Catalog
-                    </button>
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="text-text-secondary hover:text-primary transition-colors py-2">Home</a>
+                    <a href="product-catalog.html" class="text-text-secondary hover:text-primary transition-colors py-2">Products</a>
+                    <a href="simulator.html" class="text-text-secondary hover:text-primary transition-colors py-2">Simulator</a>
+                    <a href="selection.html" class="text-primary font-semibold py-2">Industry Matcher</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-colors py-2">About</a>
+                    <a href="contact.html" class="text-text-secondary hover:text-primary transition-colors py-2">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40 bg-surface-dark">
-        <div class="absolute inset-0 blueprint-bg opacity-20 pointer-events-none" style="background-image: linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px);"></div>
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto">
-                <div class="inline-flex items-center gap-2 py-1 px-3 rounded border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-sm">
-                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    技术选型
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
-                    粉体设备 <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-200 to-white text-glow">Selection Guide</span>
+    <section class="py-12 md:py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-sm text-text-secondary mb-8">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <span class="material-symbols-outlined text-xs">chevron_right</span>
+                <span class="text-primary">Industry Product Matcher</span>
+            </div>
+
+            <div class="text-center mb-12">
+                <h1 class="heading-xl mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-200 to-white">Industry Product Matcher</span>
                 </h1>
-                <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto font-light border-l-2 border-primary/30 pl-6">
-                    根据您的物料、工艺需求选择不同的Products，从而获得最佳的成果。我们提供专业的粉体设备选型服务，帮助您找到最适合的解决方案。
+                <p class="text-text-secondary max-w-2xl mx-auto text-lg">
+                    Select your industry to get intelligent product recommendations tailored to your specific application needs
                 </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Selection Form Section -->
-    <section class="py-24 bg-surface-dark relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-2 block">参数选择</span>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">设备配置方案</h2>
-                <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6"></div>
-                <p class="text-slate-400 max-w-2xl mx-auto">请填写以下参数，我们将为您生成最适合的设备配置方案。</p>
+            <div class="glass-panel rounded-2xl p-6 md:p-8 mb-8">
+                <h2 class="text-2xl font-bold text-white mb-6">
+                    <span class="text-primary">Step 1/2</span> Select Your Industry
+                </h2>
+                
+                <div id="industry-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                </div>
             </div>
 
-            <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl p-8 border border-white/10">
-                <form id="selectionForm" class="space-y-8">
-                    <!-- Industry Type -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">行业类型</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <select id="industryType" class="form-input w-full text-white rounded p-4 focus:outline-none">
-                                    <option value="">请选择行业</option>
-                                    <option value="university">大学</option>
-                                    <option value="research">研究所</option>
-                                    <option value="tech_company">科技型企业</option>
-                                    <option value="other">其他</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Material Type -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">物料类型</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <select id="materialType" class="form-input w-full text-white rounded p-4 focus:outline-none">
-                                    <option value="">请选择物料</option>
-                                    <option value="fluorescent_powder">荧光粉</option>
-                                    <option value="ore">矿石</option>
-                                    <option value="mineral_salt">矿物盐</option>
-                                    <option value="graphite">石墨</option>
-                                    <option value="silica">二氧化硅</option>
-                                    <option value="ceramic">陶瓷</option>
-                                    <option value="other">其他</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Process Type -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">工艺类型</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <select id="processType" class="form-input w-full text-white rounded p-4 focus:outline-none">
-                                    <option value="">请选择工艺</option>
-                                    <option value="dry_grinding">干磨</option>
-                                    <option value="wet_grinding">湿磨</option>
-                                    <option value="other">其他</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Type -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">Products类型</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <select id="productType" class="form-input w-full text-white rounded p-4 focus:outline-none">
-                                    <option value="">请选择Products</option>
-                                    <option value="planetary_mill">行星球磨机</option>
-                                    <option value="roller_mill">滚筒球磨机</option>
-                                    <option value="vibration_mill">振动球磨机</option>
-                                    <option value="other">其他</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Equipment Model -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">设备型号</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <select id="equipmentModel" class="form-input w-full text-white rounded p-4 focus:outline-none">
-                                    <option value="">请选择设备型号</option>
-                                    <option value="PBM-4L">PBM-4L (行星球磨机)</option>
-                                    <option value="PBM-16L">PBM-16L (行星球磨机)</option>
-                                    <option value="PBM-V-0.4L">PBM-V-0.4L (真空行星球磨机)</option>
-                                    <option value="PBM-C-0.2L">PBM-C-0.2L (低温行星球磨机)</option>
-                                    <option value="SJM-2L">SJM-2L (搅拌球磨机)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Jar Model -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">容器型号</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <select id="jarModel" class="form-input w-full text-white rounded p-4 focus:outline-none">
-                                    <option value="">请选择容器型号</option>
-                                    <option value="GJ-AL-500">GJ-AL-500 (刚玉罐 500ml)</option>
-                                    <option value="GJ-SS-1000">GJ-SS-1000 (不锈钢罐 1000ml)</option>
-                                    <option value="GJ-ZR-250">GJ-ZR-250 (氧化锆罐 250ml)</option>
-                                    <option value="GJ-PTFE-250">GJ-PTFE-250 (PTFE罐 250ml)</option>
-                                    <option value="GJ-AG-150">GJ-AG-150 (玛瑙罐 150ml)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Grinding Media -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">研磨球</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <select id="grindingMedia" class="form-input w-full text-white rounded p-4 focus:outline-none">
-                                    <option value="">请选择研磨球</option>
-                                    <option value="GM-ZR-10">GM-ZR-10 (氧化锆球 10mm)</option>
-                                    <option value="GM-AL-5">GM-AL-5 (刚玉球 5mm)</option>
-                                    <option value="GM-SS-8">GM-SS-8 (不锈钢球 8mm)</option>
-                                    <option value="GM-WC-6">GM-WC-6 (碳化钨球 6mm)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Grinding Time -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">研磨时间 (分钟)</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <input type="number" id="grindingTime" class="form-input w-full text-white rounded p-4 focus:outline-none" placeholder="请输入研磨时间">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Grinding Speed -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-3">研磨转速 (转/分钟)</label>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <input type="number" id="grindingSpeed" class="form-input w-full text-white rounded p-4 focus:outline-none" placeholder="请输入研磨转速">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="pt-4">
-                        <button type="button" id="generateBtn" class="w-full bg-gradient-to-r from-primary to-primary-dark text-white py-4 rounded font-bold text-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide">
-                            生成配置方案
+            <div id="recommendations-section" class="hidden">
+                <div class="glass-panel rounded-2xl p-6 md:p-8 mb-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-white">
+                            <span class="text-primary">Step 2/2</span> Recommended Products
+                        </h2>
+                        <button id="reset-btn" class="btn-warm-secondary flex items-center gap-2">
+                            <span class="material-symbols-outlined">refresh</span> Reset Selection
                         </button>
                     </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Result Section -->
-    <section id="resultSection" class="py-24 bg-deep-navy hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-2 block">配置方案</span>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">推荐设备配置</h2>
-                <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6"></div>
-                <p class="text-slate-400 max-w-2xl mx-auto">根据您的需求，我们为您推荐以下设备配置方案。</p>
-            </div>
-
-            <div id="resultContent" class="space-y-8">
-                <!-- Result content will be generated here -->
-            </div>
-
-            <div class="mt-12 text-center flex flex-wrap justify-center gap-4">
-                <button id="resetBtn" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
-                    <span class="material-symbols-outlined text-sm">refresh</span> 重新选择
-                </button>
-                <button id="simulatorBtn" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold border border-primary/30 text-primary rounded bg-primary/5 hover:bg-primary/10 transition-all uppercase tracking-wider">
-                    <span class="material-symbols-outlined text-sm">simulation</span> 启动模拟器
-                </button>
-                <button class="bg-primary text-deep-navy px-6 py-3 rounded font-bold hover:bg-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide text-sm">
-                    咨询详情
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sample Applications -->
-    <section class="py-24 bg-surface-dark border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Case Studies</span>
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">成功案例</h2>
-                <div class="h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6"></div>
-                <p class="text-slate-400 max-w-2xl mx-auto">以下是我们的一些成功Case Studies，供您参考。</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Sample 1 -->
-                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
-                        <span class="material-symbols-outlined text-3xl">lightbulb</span>
+                    
+                    <div id="selected-industry-display" class="mb-6 p-4 bg-primary/10 rounded-xl border border-primary/30">
+                        <p class="text-text-secondary">Selected Industry:</p>
+                        <p id="selected-industry-name" class="text-xl font-bold text-primary"></p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">荧光粉研磨</h3>
-                    <p class="text-sm text-slate-400 mb-4">刚玉罐配氧化锆球，自转500转/分钟，30分钟后正反转交替运行，时间2小时</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">荧光粉</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">刚玉罐</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">氧化锆球</span>
+                    
+                    <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     </div>
                 </div>
 
-                <!-- Sample 2 -->
-                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
-                        <span class="material-symbols-outlined text-3xl">rock</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">矿石研磨</h3>
-                    <p class="text-sm text-slate-400 mb-4">不锈钢罐配不锈钢球，自转150r/min，时间180min</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">矿石</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">不锈钢罐</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">不锈钢球</span>
-                    </div>
-                </div>
-
-                <!-- Sample 3 -->
-                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
-                        <span class="material-symbols-outlined text-3xl">salt</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">矿物盐研磨</h3>
-                    <p class="text-sm text-slate-400 mb-4">不锈钢罐配不锈钢球，转速550r/min，时间240min</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">矿物盐</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">不锈钢罐</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">不锈钢球</span>
-                    </div>
-                </div>
-
-                <!-- Sample 4 -->
-                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
-                        <span class="material-symbols-outlined text-3xl">graphic_eq</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">石墨研磨</h3>
-                    <p class="text-sm text-slate-400 mb-4">不锈钢罐配不锈钢球，自转150r/min，时间180min</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">石墨</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">不锈钢罐</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">不锈钢球</span>
-                    </div>
-                </div>
-
-                <!-- Sample 5 -->
-                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
-                        <span class="material-symbols-outlined text-3xl">blur_on</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">二氧化硅研磨</h3>
-                    <p class="text-sm text-slate-400 mb-4">刚玉罐配氧化锆球，干磨，转速480r/min，时间30min，过80目筛</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">二氧化硅</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">刚玉罐</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">氧化锆球</span>
-                    </div>
-                </div>
-
-                <!-- Sample 6 -->
-                <div class="group glass-panel p-6 rounded-xl border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner">
-                        <span class="material-symbols-outlined text-3xl">inventory</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">陶瓷研磨</h3>
-                    <p class="text-sm text-slate-400 mb-4">陶瓷刚玉滚筒罐配氧化锆球，湿磨，转速380r/min，时间6小时</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">陶瓷</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">刚玉滚筒罐</span>
-                        <span class="text-xs px-3 py-1 rounded bg-primary/10 text-primary border border-primary/30">氧化锆球</span>
-                    </div>
+                <div class="text-center">
+                    <a href="simulator.html" class="btn-warm inline-flex items-center gap-2">
+                        <span class="material-symbols-outlined">simulation</span> Try Grinding Simulator
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="py-24 bg-deep-navy relative">
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/10">
-                <div class="lg:w-1/2 p-12 bg-surface-dark/80 backdrop-blur-md">
-                    <h3 class="text-3xl font-bold mb-4 text-white">免费磨样申请</h3>
-                    <p class="text-slate-400 mb-8">我们有设备齐全的专业实验室和专业的实验人员，秉着为新材料创造的理念，免费为您提供材料研磨实验和相应的研磨实验报告。</p>
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Full Name</label>
-                                <input class="form-input w-full text-white rounded p-4 focus:outline-none" placeholder="Your Name" type="text">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Email Address</label>
-                                <input class="form-input w-full text-white rounded p-4 focus:outline-none" placeholder="your.email@company.com" type="email">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Material Type</label>
-                            <input class="form-input w-full text-white rounded p-4 focus:outline-none" placeholder="Material Type" type="text">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-2">Requirements</label>
-                            <textarea class="form-input w-full text-white rounded p-4 focus:outline-none" placeholder="Your requirements here..." rows="4"></textarea>
-                        </div>
-                        <button class="w-full bg-gradient-to-r from-primary to-primary-dark text-white py-4 rounded font-bold text-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all uppercase tracking-wide" type="submit">
-                            研磨实验申请
-                        </button>
-                    </form>
-                </div>
-                <div class="lg:w-1/2 relative min-h-[400px]">
-                    <img alt="Contact Us" class="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk-drzsS_rhtYaiIP0kUiKECsukgoC_tlMrH8puiRAJ-2cXWF6fDsIvBaRxhGXz16JFjYy6ad-9c-Kw5juSKXRNj0b_Cg_U1f1i27OA4wcV-vUF9ccLXitArVE9UYQ_6VO9Fvao5JEcm-L0J-C01iw6-4cQDfLbeSk8LLkrH_QDk9HdfgGNogUhPukS_NT8oHF94B9L6tim59cIWOYIv3x8nWGVl9phH03qEPPofdITLD-oC41zpr-MDQo5P-tiGO6BT86B1lOUWs" loading="lazy">
-                    <div class="absolute inset-0 bg-primary/30 mix-blend-overlay"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-transparent to-transparent"></div>
-                    <div class="absolute inset-0 flex flex-col justify-end p-12 text-white">
-                        <div class="flex gap-4 mb-8">
-                            <div class="glass-panel p-4 rounded border-l-2 border-primary">
-                                <p class="text-3xl font-bold font-mono">20k+</p>
-                                <p class="text-xs uppercase font-medium text-slate-300">Global Clients</p>
-                            </div>
-                            <div class="glass-panel p-4 rounded border-l-2 border-primary">
-                                <p class="text-3xl font-bold font-mono">60+</p>
-                                <p class="text-xs uppercase font-medium text-slate-300">Countries</p>
-                            </div>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4">技术咨询</h4>
-                        <div class="space-y-2">
-                            <p class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors cursor-pointer">
-                                <span class="material-symbols-outlined text-sm text-primary">call</span>
-                                <span class="font-mono">0731-84027560</span>
-                            </p>
-                            <p class="flex items-center gap-3 text-slate-300 hover:text-primary transition-colors cursor-pointer">
-                                <span class="material-symbols-outlined text-sm text-primary">alternate_email</span>
-                                <span class="font-mono">admin@stdmaterial.com</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-deep-navy py-12 border-t border-white/5 relative overflow-hidden">
+    <footer class="bg-background py-12 border-t border-white/5 relative overflow-hidden">
         <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-surface-dark border border-primary/50 rounded flex items-center justify-center">
+                    <div class="w-8 h-8 bg-surface border border-primary/50 rounded flex items-center justify-center">
                         <span class="material-symbols-outlined text-primary text-sm">precision_manufacturing</span>
                     </div>
                     <span class="text-xl font-bold tracking-tight text-white">HUNAN SHENGTONGDA<span class="text-primary font-light">MATERIALS</span></span>
                 </div>
-                <div class="flex flex-wrap justify-center gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <div class="flex flex-wrap justify-center gap-8 text-xs font-bold uppercase tracking-widest text-text-muted">
                     <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-                    <a class="hover:text-primary transition-colors" href="index.html#products">Products</a>
-                    <a class="hover:text-primary transition-colors" href="index.html#applications">Applications</a>
+                    <a class="hover:text-primary transition-colors" href="product-catalog.html">Products</a>
                     <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
-                    <a class="hover:text-primary transition-colors" href="selection.html">Selection Guide</a>
                     <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
-                    <a class="hover:text-primary transition-colors" href="#">Privacy</a>
-                    <a class="hover:text-primary transition-colors" href="#">Terms</a>
                 </div>
-                <p class="text-xs text-slate-600 font-mono">© 2026 Hunan Shengtongda Materials Technology Co., Ltd. All Rights Reserved.</p>
+                <p class="text-xs text-text-muted font-mono">© 2026 Hunan Shengtongda Materials Technology Co., Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- AI Assistant Button -->
-    <div class="fixed bottom-8 right-8 z-50">
-        <button class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:bg-accent transition-all group">
-            <span class="material-symbols-outlined text-white text-2xl group-hover:scale-110 transition-transform">smart_toy</span>
-        </button>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.querySelector('.mobile-menu');
-            if (menu) {
-                menu.classList.toggle('hidden');
-            }
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Selection form logic
-        document.addEventListener('DOMContentLoaded', function() {
-            const generateBtn = document.getElementById('generateBtn');
-            const resetBtn = document.getElementById('resetBtn');
-            const resultSection = document.getElementById('resultSection');
-            const resultContent = document.getElementById('resultContent');
-            const selectionForm = document.getElementById('selectionForm');
-
-            // 智能推荐系统配置数据
-            const configurations = {
-                // 基于行业和物料类型的智能推荐
-                industry: {
-                    university: {
-                        equipment: "行星球磨机",
-                        model: "PBM-C-0.2L",
-                        jar: "刚玉罐",
-                        balls: "氧化锆球",
-                        note: "适合实验室研究使用"
-                    },
-                    research: {
-                        equipment: "行星球磨机",
-                        model: "PBM-V-0.4L",
-                        jar: "玛瑙罐",
-                        balls: "氧化锆球",
-                        note: "适合高精度研究"
-                    },
-                    tech_company: {
-                        equipment: "行星球磨机",
-                        model: "PBM-4L",
-                        jar: "不锈钢罐",
-                        balls: "不锈钢球",
-                        note: "适合中试生产"
-                    },
-                    other: {
-                        equipment: "行星球磨机",
-                        model: "PBM-4L",
-                        jar: "不锈钢罐",
-                        balls: "不锈钢球",
-                        note: "通用配置"
-                    }
-                },
-                material: {
-                    fluorescent_powder: {
-                        equipment: "行星球磨机",
-                        jar: "刚玉罐",
-                        balls: "氧化锆球",
-                        speed: "500转/分钟",
-                        time: "2小时",
-                        note: "30分钟后正反转交替运行"
-                    },
-                    ore: {
-                        equipment: "行星球磨机",
-                        jar: "不锈钢罐",
-                        balls: "不锈钢球",
-                        speed: "150转/分钟",
-                        time: "180分钟",
-                        note: ""
-                    },
-                    mineral_salt: {
-                        equipment: "行星球磨机",
-                        jar: "不锈钢罐",
-                        balls: "不锈钢球",
-                        speed: "550转/分钟",
-                        time: "240分钟",
-                        note: ""
-                    },
-                    graphite: {
-                        equipment: "行星球磨机",
-                        jar: "不锈钢罐",
-                        balls: "不锈钢球",
-                        speed: "150转/分钟",
-                        time: "180分钟",
-                        note: ""
-                    },
-                    silica: {
-                        equipment: "行星球磨机",
-                        jar: "刚玉罐",
-                        balls: "氧化锆球",
-                        speed: "480转/分钟",
-                        time: "30分钟",
-                        note: "过80目筛"
-                    },
-                    ceramic: {
-                        equipment: "滚筒球磨机",
-                        jar: "陶瓷刚玉滚筒罐",
-                        balls: "氧化锆球",
-                        speed: "380转/分钟",
-                        time: "6小时",
-                        note: "湿磨"
-                    },
-                    other: {
-                        equipment: "行星球磨机",
-                        jar: "不锈钢罐",
-                        balls: "不锈钢球",
-                        speed: "200转/分钟",
-                        time: "120分钟",
-                        note: ""
-                    }
-                }
-            };
-
-            // 添加表单输入验证和实时反馈
-            const formInputs = document.querySelectorAll('.form-input');
-            formInputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    this.classList.add('border-primary');
-                });
-                input.addEventListener('blur', function() {
-                    if (!this.value) {
-                        this.classList.remove('border-primary');
-                    }
-                });
-            });
-
-            // Generate configuration
-            generateBtn.addEventListener('click', function() {
-                const industryType = document.getElementById('industryType').value;
-                const materialType = document.getElementById('materialType').value;
-                const processType = document.getElementById('processType').value;
-                const productType = document.getElementById('productType').value;
-                const equipmentModel = document.getElementById('equipmentModel').value;
-                const jarModel = document.getElementById('jarModel').value;
-                const grindingMedia = document.getElementById('grindingMedia').value;
-                const grindingTime = document.getElementById('grindingTime').value;
-                const grindingSpeed = document.getElementById('grindingSpeed').value;
-
-                // Validate form
-                if (!materialType) {
-                    alert('请选择物料类型');
-                    document.getElementById('materialType').focus();
-                    return;
-                }
-
-                // 显示加载状态
-                generateBtn.disabled = true;
-                generateBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> 生成中...';
-
-                // 智能推荐逻辑：结合行业和物料类型
-                let config = {};
-                
-                // 首先获取物料类型的配置
-                const materialConfig = configurations.material[materialType] || configurations.material.other;
-                
-                // 然后根据行业类型进行调整
-                if (industryType && configurations.industry[industryType]) {
-                    const industryConfig = configurations.industry[industryType];
-                    config = {
-                        ...materialConfig,
-                        ...industryConfig,
-                        // 保留物料类型的关键参数
-                        speed: materialConfig.speed,
-                        time: materialConfig.time,
-                        note: materialConfig.note ? materialConfig.note : industryConfig.note
-                    };
-                } else {
-                    config = materialConfig;
-                }
-                
-                // 使用用户输入的参数覆盖默认值
-                if (grindingSpeed) config.speed = `${grindingSpeed}转/分钟`;
-                if (grindingTime) config.time = `${grindingTime}分钟`;
-
-                // Generate compatibility report
-                let compatibilityHTML = '';
-                if (equipmentModel && jarModel) {
-                    const compatibilityReport = CompatibilityChecker.generateCompatibilityReport(equipmentModel, jarModel, grindingMedia);
-                    compatibilityHTML = `
-                        <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl p-8 border border-white/10 mb-8">
-                            <h3 class="text-2xl font-bold mb-6 text-white">兼容性检查结果</h3>
-                            <div class="space-y-6">
-                                <!-- Equipment-Jar Compatibility -->
-                                <div class="p-4 rounded-lg ${compatibilityReport.equipmentCompatibility.compatible ? 'bg-success/10 border border-success/30' : 'bg-red-500/10 border border-red-500/30'}">
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <span class="material-symbols-outlined ${compatibilityReport.equipmentCompatibility.compatible ? 'text-success' : 'text-red-500'}">${compatibilityReport.equipmentCompatibility.compatible ? 'check_circle' : 'error'}</span>
-                                        <h4 class="text-lg font-bold text-white">设备与容器兼容性</h4>
-                                    </div>
-                                    <p class="text-slate-300 ml-10">${compatibilityReport.equipmentCompatibility.message}</p>
-                                    ${compatibilityReport.equipmentCompatibility.suggestion ? `
-                                        <div class="mt-2 ml-10 p-3 bg-primary/10 rounded border border-primary/30">
-                                            <p class="text-sm text-primary">建议：${compatibilityReport.equipmentCompatibility.suggestion}</p>
-                                        </div>
-                                    ` : ''}
-                                </div>
-
-                                <!-- Jar-Media Compatibility -->
-                                ${grindingMedia ? `
-                                    <div class="p-4 rounded-lg ${compatibilityReport.mediaCompatibility.compatible ? 'bg-success/10 border border-success/30' : 'bg-red-500/10 border border-red-500/30'}">
-                                        <div class="flex items-center gap-3 mb-2">
-                                            <span class="material-symbols-outlined ${compatibilityReport.mediaCompatibility.compatible ? 'text-success' : 'text-red-500'}">${compatibilityReport.mediaCompatibility.compatible ? 'check_circle' : 'error'}</span>
-                                            <h4 class="text-lg font-bold text-white">容器与研磨球兼容性</h4>
-                                        </div>
-                                        <p class="text-slate-300 ml-10">${compatibilityReport.mediaCompatibility.message}</p>
-                                        ${compatibilityReport.mediaCompatibility.suggestion ? `
-                                            <div class="mt-2 ml-10 p-3 bg-primary/10 rounded border border-primary/30">
-                                                <p class="text-sm text-primary">建议：${compatibilityReport.mediaCompatibility.suggestion}</p>
-                                            </div>
-                                        ` : ''}
-                                    </div>
-                                ` : ''}
-
-                                <!-- Recommendations -->
-                                ${compatibilityReport.recommendations.length > 0 ? `
-                                    <div class="p-4 rounded-lg bg-primary/10 border border-primary/30">
-                                        <h4 class="text-lg font-bold mb-3 text-white">建议</h4>
-                                        <ul class="space-y-2 ml-10 list-disc text-slate-300">
-                                            ${compatibilityReport.recommendations.map(rec => `<li>${rec}</li>`).join('')}
-                                        </ul>
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                    `;
-                }
-
-                // Generate result HTML
-                const resultHTML = `
-                    ${compatibilityHTML}
-                    <div class="result-card rounded-3xl overflow-hidden shadow-2xl p-8 border border-primary/20">
-                        <div class="flex flex-col md:flex-row gap-8">
-                            <div class="md:w-1/3">
-                                <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mb-6 text-primary border border-primary/30 shadow-inner mx-auto">
-                                    <span class="material-symbols-outlined text-5xl">precision_manufacturing</span>
-                                </div>
-                            </div>
-                            <div class="md:w-2/3 space-y-4">
-                                <h3 class="text-2xl font-bold text-white">智能推荐配置方案</h3>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">设备类型</p>
-                                        <p class="text-white font-bold">${config.equipment}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">设备型号</p>
-                                        <p class="text-white font-bold">${config.model || (equipmentModel ? equipmentModel : '标准型号')}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">研磨罐</p>
-                                        <p class="text-white font-bold">${config.jar}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">研磨球</p>
-                                        <p class="text-white font-bold">${config.balls}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">研磨转速</p>
-                                        <p class="text-white font-bold">${config.speed}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">研磨时间</p>
-                                        <p class="text-white font-bold">${config.time}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">工艺类型</p>
-                                        <p class="text-white font-bold">${processType === 'dry_grinding' ? '干磨' : processType === 'wet_grinding' ? '湿磨' : '常规研磨'}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-slate-400 mb-1">适用行业</p>
-                                        <p class="text-white font-bold">${industryType === 'university' ? '大学' : industryType === 'research' ? '研究所' : industryType === 'tech_company' ? '科技型企业' : '通用'}</p>
-                                    </div>
-                                </div>
-                                ${config.note ? `
-                                    <div class="mt-4 p-4 bg-primary/10 rounded-lg border border-primary/30">
-                                        <p class="text-sm text-primary font-bold">备注：${config.note}</p>
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl p-8 border border-white/10">
-                        <h3 class="text-2xl font-bold mb-6 text-white">配置详情</h3>
-                        <div class="space-y-6">
-                            <div class="flex flex-col md:flex-row gap-4 items-start">
-                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary border border-primary/30 shadow-inner flex-shrink-0">
-                                    <span class="material-symbols-outlined text-xl">settings</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-bold mb-2 text-white">设备选择</h4>
-                                    <p class="text-slate-400">根据您的${industryType ? '行业需求和' : ''}物料特性，我们推荐使用${config.equipment}${config.model ? `（型号：${config.model}）` : ''}，该设备能够提供高效的研磨效果，确保物料达到理想的粒度分布。</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-col md:flex-row gap-4 items-start">
-                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary border border-primary/30 shadow-inner flex-shrink-0">
-                                    <span class="material-symbols-outlined text-xl">inventory</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-bold mb-2 text-white">研磨介质</h4>
-                                    <p class="text-slate-400">推荐使用${config.balls}作为研磨介质，配合${config.jar}，能够有效减少物料污染，提高研磨效率。</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-col md:flex-row gap-4 items-start">
-                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary border border-primary/30 shadow-inner flex-shrink-0">
-                                    <span class="material-symbols-outlined text-xl">speed</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-bold mb-2 text-white">工艺参数</h4>
-                                    <p class="text-slate-400">建议采用${config.speed}的转速，研磨时间${config.time}，${config.note ? '并' + config.note : ''}，以获得最佳的研磨效果。</p>
-                                </div>
-                            </div>
-                            ${industryType ? `
-                            <div class="flex flex-col md:flex-row gap-4 items-start">
-                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary border border-primary/30 shadow-inner flex-shrink-0">
-                                    <span class="material-symbols-outlined text-xl">business</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-bold mb-2 text-white">行业适配性</h4>
-                                    <p class="text-slate-400">该配置方案特别适合${industryType === 'university' ? '大学实验室' : industryType === 'research' ? '研究机构' : industryType === 'tech_company' ? '科技型企业' : '通用场景'}使用，能够满足${industryType === 'university' ? '教学和基础研究' : industryType === 'research' ? '高精度研究' : industryType === 'tech_company' ? '中试生产' : '一般生产'}的需求。</p>
-                                </div>
-                            </div>
-                            ` : ''}
-                        </div>
-                    </div>
-                `;
-
-                // 模拟生成过程的延迟，提升用户体验
-                setTimeout(() => {
-                    // Display result
-                    resultContent.innerHTML = resultHTML;
-                    resultSection.classList.remove('hidden');
-                    resultSection.scrollIntoView({ behavior: 'smooth' });
-                    
-                    // 恢复按钮状态
-                    generateBtn.disabled = false;
-                    generateBtn.innerHTML = '生成配置方案';
-                }, 800);
-            });
-
-            // Reset form
-            resetBtn.addEventListener('click', function() {
-                selectionForm.reset();
-                resultSection.classList.add('hidden');
-                selectionForm.scrollIntoView({ behavior: 'smooth' });
-            });
-
-            // Simulator button functionality
-            const simulatorBtn = document.getElementById('simulatorBtn');
-            if (simulatorBtn) {
-                simulatorBtn.addEventListener('click', function() {
-                    const industryType = document.getElementById('industryType').value;
-                    const materialType = document.getElementById('materialType').value;
-                    const processType = document.getElementById('processType').value;
-                    const productType = document.getElementById('productType').value;
-                    const equipmentModel = document.getElementById('equipmentModel').value;
-                    const jarModel = document.getElementById('jarModel').value;
-                    const grindingMedia = document.getElementById('grindingMedia').value;
-                    const grindingTime = document.getElementById('grindingTime').value;
-                    const grindingSpeed = document.getElementById('grindingSpeed').value;
-                    
-                    // Build query string
-                    const params = new URLSearchParams();
-                    if (industryType) params.append('industry', industryType);
-                    if (materialType) params.append('material', materialType);
-                    if (processType) params.append('process', processType);
-                    if (productType) params.append('product', productType);
-                    if (equipmentModel) params.append('model', equipmentModel);
-                    if (jarModel) params.append('jar', jarModel);
-                    if (grindingMedia) params.append('media', grindingMedia);
-                    if (grindingTime) params.append('time', grindingTime);
-                    if (grindingSpeed) params.append('speed', grindingSpeed);
-                    
-                    // Redirect to simulator page with parameters
-                    window.location.href = `simulator.html?${params.toString()}`;
-                });
-            }
-
-            // Form submission
-            document.querySelector('form')?.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // Add form submission logic here
-                alert('Your message has been sent! We will contact you shortly.');
-            });
-        });
-    </script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/industry-matcher.js"></script>
 </body>
 </html>

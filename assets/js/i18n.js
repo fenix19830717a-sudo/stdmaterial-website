@@ -115,6 +115,9 @@ const I18n = {
 
         console.log('[i18n] Switching to:', lang);
         
+        // Add loading state
+        this.addLoadingState();
+        
         // Load new translations
         await this.loadTranslations(lang);
         
@@ -127,11 +130,14 @@ const I18n = {
         // Update HTML lang attribute
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         
-        // Apply translations
-        this.applyTranslations();
+        // Apply translations with animation
+        this.applyTranslationsWithAnimation();
         
         // Update language switcher UI
         this.updateSwitcherUI();
+        
+        // Remove loading state
+        this.removeLoadingState();
         
         // Dispatch custom event
         window.dispatchEvent(new CustomEvent('languageChanged', { 
@@ -139,6 +145,50 @@ const I18n = {
         }));
         
         console.log('[i18n] Language switched to:', lang);
+    },
+
+    /**
+     * Add loading state to language switcher
+     */
+    addLoadingState: function() {
+        document.querySelectorAll('[data-lang]').forEach(btn => {
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+        });
+    },
+
+    /**
+     * Remove loading state from language switcher
+     */
+    removeLoadingState: function() {
+        document.querySelectorAll('[data-lang]').forEach(btn => {
+            btn.disabled = false;
+            btn.classList.remove('opacity-50');
+        });
+    },
+
+    /**
+     * Apply translations with fade animation
+     */
+    applyTranslationsWithAnimation: function() {
+        // Select all elements with data-i18n attribute
+        const elements = document.querySelectorAll('[data-i18n], [data-i18n-html]');
+        
+        // Fade out
+        elements.forEach(el => {
+            el.style.transition = 'opacity 0.3s ease';
+            el.style.opacity = '0';
+        });
+        
+        // Apply translations after fade out
+        setTimeout(() => {
+            this.applyTranslations();
+            
+            // Fade in
+            elements.forEach(el => {
+                el.style.opacity = '1';
+            });
+        }, 150);
     },
 
     /**

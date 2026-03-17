@@ -1,0 +1,57 @@
+{
+  "parameterRanges": {
+    "processingCapacity": {
+      "min": 0.002,
+      "max": 800
+    },
+    "feedSize": {
+      "min": null,
+      "max": 100
+    },
+    "outputSize": {
+      "min": 0.001,
+      "max": 2000
+    },
+    "power": {
+      "min": 90,
+      "max": 90
+    },
+    "speed": {
+      "min": 125,
+      "max": 3500
+    }
+  },
+  "categories": [
+    "Crushing Series",
+    "Grinding Jars",
+    "Planetary Ball Mills",
+    "Roller Ball Mills",
+    "Stirring Ball Mills",
+    "Vibration Ball Mills",
+    "Sand Mills",
+    "Large Grinding Equipment",
+    "Screening Series",
+    "Mixing Series"
+  ],
+  "applications": [
+    "Mining",
+    "Chemical Industry",
+    "Materials Research",
+    "Laboratory",
+    "Ceramics",
+    "Pharmaceuticals",
+    "Nanomaterials",
+    "Battery Materials",
+    "Cement",
+    "Pigments",
+    "Coatings",
+    "Minerals",
+    "Metallurgy",
+    "Paints",
+    "Inks",
+    "Industrial Applications",
+    "Research",
+    "Food",
+    "Chemicals"
+  ]
+}

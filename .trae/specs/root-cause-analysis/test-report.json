@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-03-17T11:23:56.326Z",
+  "baseUrl": "http://localhost:3000",
+  "passedTests": 9,
+  "failedTests": 0,
+  "totalTests": 10,
+  "performanceResults": [
+    {
+      "url": "/",
+      "loadTime": 5
+    },
+    {
+      "url": "/about.html",
+      "loadTime": 2
+    },
+    {
+      "url": "/contact.html",
+      "loadTime": 3
+    },
+    {
+      "url": "/product-catalog.html",
+      "loadTime": 3
+    },
+    {
+      "url": "/product-detail.html",
+      "loadTime": 3
+    },
+    {
+      "url": "/admin/login.html",
+      "loadTime": 1
+    },
+    {
+      "url": "/admin/dashboard.html",
+      "loadTime": 3
+    },
+    {
+      "url": "/admin/products.html",
+      "loadTime": 3
+    }
+  ]
+}
