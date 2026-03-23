@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Services - Hunan Shengtongda Materials</title>
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="../assets/css/design-system.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(16, 31, 34, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 200, 236, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-deep-navy text-slate-200 font-display min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        <!-- 侧边栏（通过组件加载） -->
+        <div id="admin-sidebar-placeholder"></div>
+        
+        <!-- 主内容区 -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- 顶部导航栏（通过组件加载） -->
+            <div id="admin-header-placeholder"></div>
+            
+            <!-- 主内容 -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <!-- 页面标题 -->
+                <div class="mb-8">
+                    <h1 class="text-2xl font-bold text-white mb-2">AI Services Configuration</h1>
+                    <p class="text-sm text-slate-400">Manage AI-powered features and integrations</p>
+                </div>
+                
+                <!-- AI 服务卡片 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- AI 产品信息 -->
+                    <div class="glass-panel rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-2xl">inventory_2</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AI Product Info</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Automatically generate and optimize product descriptions using AI</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Status: Active</span>
+                            <button class="px-4 py-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all text-sm font-medium">
+                                Configure
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- AI 图像生成 -->
+                    <div class="glass-panel rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-cyan-400 text-2xl">image</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AI Image Gen</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Generate product images and marketing visuals with AI</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Status: Active</span>
+                            <button class="px-4 py-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all text-sm font-medium">
+                                Configure
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- AI 聊天机器人 -->
+                    <div class="glass-panel rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-purple-400 text-2xl">chat</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AI Chatbot</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Intelligent customer support chatbot powered by AI</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Status: Active</span>
+                            <button class="px-4 py-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all text-sm font-medium">
+                                Configure
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- AI 营销 -->
+                    <div class="glass-panel rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-green-400 text-2xl">campaign</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AI Marketing</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Create and optimize marketing campaigns with AI assistance</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Status: Inactive</span>
+                            <button class="px-4 py-2 bg-slate-700 text-slate-300 rounded-lg hover:bg-slate-600 transition-all text-sm font-medium">
+                                Configure
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- AI 翻译 -->
+                    <div class="glass-panel rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-yellow-400 text-2xl">translate</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AI Translation</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Multi-language translation for product content</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Status: Active</span>
+                            <button class="px-4 py-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all text-sm font-medium">
+                                Configure
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- AI SEO -->
+                    <div class="glass-panel rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-red-400 text-2xl">trending_up</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AI SEO</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Optimize content for search engines using AI</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Status: Active</span>
+                            <button class="px-4 py-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all text-sm font-medium">
+                                Configure
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- 组件加载脚本 -->
+    <script src="../assets/js/load-admin-components.js"></script>
+</body>
+</html>

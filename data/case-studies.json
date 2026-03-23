@@ -1,0 +1,124 @@
+{
+  "case-studies": [
+    {
+      "id": "case-1",
+      "title": "Stainless Steel Grinding Application",
+      "date": "2016-07-15",
+      "content": "**Background:** A customer needed to grind materials to a specific granularity for their production process. They chose Tencan planetary ball mill with stainless steel jars and stainless steel balls.
+
+**Solution:** The Tencan planetary ball mill was used with stainless steel jars and balls, which are ideal for grinding hard materials. The grinding process was set to run for 1 hour.
+
+**Result:** The granularity of the output met the customer's requirements, providing them with the precise material they needed for their production process. The stainless steel components ensured minimal contamination and long-lasting performance.",
+      "image": "assets/images/cases/stainless-steel-grinding.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-2",
+      "title": "Nylon and Zirconia Grinding Application",
+      "date": "2014-11-25",
+      "content": "**Background:** A customer required a grinding solution that would not contaminate their materials. They selected Tencan planetary ball mill with nylon pots and zirconia balls.
+
+**Solution:** The Tencan planetary ball mill was configured with nylon pots to prevent contamination and zirconia balls for efficient grinding. The grinding process was run for 2 hours to achieve the desired granularity.
+
+**Result:** The granularity of the output 100% met the customer's requirements. The nylon pots prevented any contamination, while the zirconia balls provided efficient grinding performance.",
+      "image": "assets/images/cases/nylon-zirconia-grinding.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-3",
+      "title": "Alumina and Zirconia Grinding Application",
+      "date": "2014-11-25",
+      "content": "**Background:** A customer needed to grind materials that required a high level of purity. They chose Tencan planetary ball mill with alumina jars and zirconia balls.
+
+**Solution:** The Tencan planetary ball mill was used with alumina jars, which are known for their high purity and resistance to contamination. Zirconia balls were selected for their durability and grinding efficiency. The grinding process was run for 2 hours.
+
+**Result:** The granularity of the output powder met the customer's request. The alumina jars ensured that the materials remained pure, while the zirconia balls provided consistent grinding performance.",
+      "image": "assets/images/cases/alumina-zirconia-grinding.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-4",
+      "title": "Stainless Steel Mill Balls Application",
+      "date": "2014-11-25",
+      "content": "**Background:** A customer needed a robust grinding solution for their industrial application. They selected Tencan planetary ball mill with stainless steel jars and stainless steel mill balls.
+
+**Solution:** The Tencan planetary ball mill was configured with stainless steel jars and mill balls, which are ideal for heavy-duty grinding applications. The grinding process was run for 1 hour to achieve the desired results.
+
+**Result:** The granularity of the output powder met the customer's request. The stainless steel components provided durability and resistance to wear, making them suitable for long-term use in industrial settings.",
+      "image": "assets/images/cases/stainless-steel-balls.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-5",
+      "title": "Extended Grinding Application",
+      "date": "2014-11-25",
+      "content": "**Background:** A customer needed to grind materials to a very fine granularity. They chose Tencan planetary ball mill with stainless steel jars and stainless steel balls.
+
+**Solution:** The Tencan planetary ball mill was used with stainless steel jars and balls, and the grinding process was extended to 4 hours to achieve the desired fineness.
+
+**Result:** The granularity of the output powder met the customer's requests. The extended grinding time allowed for the production of very fine particles, suitable for their specific application.",
+      "image": "assets/images/cases/extended-grinding.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-6",
+      "title": "Ceramic Material Grinding",
+      "date": "2014-10-15",
+      "content": "**Background:** A ceramics manufacturer needed to grind raw materials to a precise granularity for their production process. They selected Tencan planetary ball mill with ceramic jars and balls.
+
+**Solution:** The Tencan planetary ball mill was configured with ceramic jars and balls, which are ideal for grinding ceramic materials without contamination. The grinding process was run for 3 hours to achieve the desired consistency.
+
+**Result:** The granularity of the output met the manufacturer's requirements, providing them with the precise material they needed for their ceramic production.",
+      "image": "assets/images/cases/ceramic-grinding.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-7",
+      "title": "Pharmaceutical Grinding Application",
+      "date": "2014-09-20",
+      "content": "**Background:** A pharmaceutical company needed to grind active ingredients to a fine powder for their drug formulations. They chose Tencan planetary ball mill with stainless steel jars and zirconia balls.
+
+**Solution:** The Tencan planetary ball mill was used with stainless steel jars to ensure cleanliness and zirconia balls for efficient grinding. The grinding process was run for 2.5 hours to achieve the desired fineness.
+
+**Result:** The granularity of the output met the pharmaceutical company's strict requirements, ensuring that their drug formulations would be consistent and effective.",
+      "image": "assets/images/cases/pharmaceutical-grinding.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-8",
+      "title": "Nanomaterial Synthesis",
+      "date": "2014-08-10",
+      "content": "**Background:** A research laboratory needed to synthesize nanomaterials for their experiments. They selected Tencan planetary ball mill with specialized jars and balls.
+
+**Solution:** The Tencan planetary ball mill was configured with specialized jars and balls designed for nanomaterial synthesis. The grinding process was run for 5 hours to ensure proper particle size reduction.
+
+**Result:** The granularity of the output met the laboratory's requirements, allowing them to successfully synthesize the nanomaterials needed for their research.",
+      "image": "assets/images/cases/nanomaterial-synthesis.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-9",
+      "title": "Mining Sample Preparation",
+      "date": "2014-07-05",
+      "content": "**Background:** A mining company needed to prepare samples for analysis. They chose Tencan planetary ball mill with stainless steel jars and balls.
+
+**Solution:** The Tencan planetary ball mill was used with stainless steel jars and balls to grind mining samples to a consistent granularity for analysis. The grinding process was run for 1.5 hours.
+
+**Result:** The granularity of the output met the mining company's requirements, allowing them to accurately analyze their samples and make informed decisions about their operations.",
+      "image": "assets/images/cases/mining-sample.jpg",
+      "category": "Grinding Applications"
+    },
+    {
+      "id": "case-10",
+      "title": "Food Industry Application",
+      "date": "2014-06-20",
+      "content": "**Background:** A food processing company needed to grind ingredients to a fine powder for their products. They selected Tencan planetary ball mill with food-grade stainless steel jars and balls.
+
+**Solution:** The Tencan planetary ball mill was configured with food-grade stainless steel jars and balls to ensure food safety. The grinding process was run for 2 hours to achieve the desired fineness.
+
+**Result:** The granularity of the output met the food processing company's requirements, providing them with the fine powder needed for their food products while ensuring food safety standards were met.",
+      "image": "assets/images/cases/food-industry.jpg",
+      "category": "Grinding Applications"
+    }
+  ]
+}

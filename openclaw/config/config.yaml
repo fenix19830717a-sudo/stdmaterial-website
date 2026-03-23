@@ -1,40 +1,264 @@
+# OpenClaw 配置文件
+# 为研磨设备B2B独立站定制的AI agent团队配置
+
 openclaw:
   name: "研磨设备B2B独立站AI助手"
   version: "1.0.0"
   language: "zh-CN"
   timezone: "Asia/Shanghai"
   
-logging:
-  level: "INFO"
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-  file: "/var/log/openclaw/openclaw.log"
+  # 日志配置
+  logging:
+    level: "INFO"
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    file: "/var/log/openclaw/openclaw.log"
   
-storage:
-  type: "local"
-  path: "./data"
-  backup:
-    interval: 24
-    retention: 30
-    
-security:
-  api_key: "grinding-equipment-b2b-api-key-2024"
-  allowed_ips: ["127.0.0.1", "192.168.1.0/24", "10.0.0.0/8"]
-  rate_limit:
-    requests_per_minute: 100
-    burst: 20
-    
-website:
-  name: "晟通达精密设备"
-  url: "https://shengtongda.com"
-  admin_url: "https://admin.shengtongda.com"
-  api_endpoint: "/api"
-  language: "zh-CN"
-  timezone: "Asia/Shanghai"
-  currency: "CNY"
-  country: "China"
+  # 存储配置
+  storage:
+    type: "local"
+    path: "/data/openclaw"
+    backup:
+      interval: 24
+      retention: 30
   
-database:
-  products: "./data/products.json"
-  customers: "./data/customers.json"
-  orders: "./data/orders.json"
-  inquiries: "./data/inquiries.json"
+  # 安全配置
+  security:
+    api_key: "grinding-equipment-b2b-api-key"
+    allowed_ips: ["127.0.0.1", "192.168.1.0/24"]
+    rate_limit:
+      requests_per_minute: 100
+      burst: 20
+
+# AI Agent 团队配置
+agent_teams:
+  # 主Agent
+  main_agent:
+    name: "研磨设备B2B运营总协调"
+    role: "运营总监"
+    description: "负责统筹规划所有业务任务，分配工作给专业子Agent，监控执行进度"
+    core_skills:
+      - task_planning
+      - team_coordination
+      - decision_making
+      - progress_monitoring
+  
+  # 子Agent团队
+  sub_agents:
+    # 产品运营Agent
+    product_operations:
+      name: "产品运营专员"
+      role: "产品经理"
+      description: "负责产品信息管理、产品上架、产品描述生成等产品相关任务"
+      core_skills:
+        - product_management
+        - data_scraping
+        - content_generation
+        - market_research
+      tools:
+        - web_browser
+        - data_processor
+        - file_operations
+        - product_scraper
+    
+    # 营销推广Agent
+    marketing_promotion:
+      name: "营销推广专员"
+      role: "营销经理"
+      description: "负责内容创作、广告投放、邮件营销、SEO优化等营销相关任务"
+      core_skills:
+        - content_creation
+        - email_marketing
+        - seo_optimization
+        - social_media_management
+      tools:
+        - web_browser
+        - data_processor
+        - email_marketing
+        - content_generator
+    
+    # 客户服务Agent
+    customer_service:
+      name: "客户服务专员"
+      role: "客服经理"
+      description: "负责智能客服、询盘处理、客户跟进、投诉处理等客户服务相关任务"
+      core_skills:
+        - customer_support
+        - inquiry_handling
+        - follow_up
+        - complaint_resolution
+      tools:
+        - web_browser
+        - data_processor
+        - email_marketing
+        - chatbot
+    
+    # 数据分析Agent
+    data_analysis:
+      name: "数据分析专员"
+      role: "数据分析师"
+      description: "负责业务数据分析、市场趋势分析、效果评估、预测分析等数据相关任务"
+      core_skills:
+        - data_analysis
+        - trend_analysis
+        - performance_evaluation
+        - predictive_analytics
+      tools:
+        - web_browser
+        - data_processor
+        - file_operations
+        - analytics
+    
+    # 技术支持Agent
+    technical_support:
+      name: "技术支持专员"
+      role: "技术工程师"
+      description: "负责技术文档管理、技术问题解答、产品技术参数配置等技术相关任务"
+      core_skills:
+        - technical_support
+        - documentation_management
+        - problem_solving
+        - product_configuration
+      tools:
+        - web_browser
+        - data_processor
+        - file_operations
+        - code_execution
+
+# 技能配置
+skills:
+  # 内置技能
+  - name: "web_browser"
+    enabled: true
+    config:
+      timeout: 30
+      max_pages: 10
+      user_agent: "OpenClaw/1.0 (+https://openclaw.dev)"
+  
+  - name: "data_processor"
+    enabled: true
+    config:
+      supported_formats: ["csv", "json", "excel", "pdf"]
+      max_file_size: 10485760
+  
+  - name: "file_operations"
+    enabled: true
+    config:
+      allowed_paths: ["/data/uploads", "/data/exports"]
+      read_only: false
+  
+  - name: "code_execution"
+    enabled: true
+    config:
+      timeout: 60
+      max_output: 10000
+  
+  # 自定义业务技能
+  - name: "product_scraper"
+    enabled: true
+    config:
+      target_websites: ["https://supplier1.com", "https://supplier2.com"]
+      scrape_interval: 3600
+      max_retries: 3
+  
+  - name: "email_marketing"
+    enabled: true
+    config:
+      smtp_server: "smtp.gmail.com"
+      smtp_port: 587
+      email_address: "marketing@yourcompany.com"
+      max_emails_per_hour: 100
+  
+  - name: "content_generator"
+    enabled: true
+    config:
+      max_length: 5000
+      language: "zh-CN"
+      tone: "professional"
+  
+  - name: "chatbot"
+    enabled: true
+    config:
+      response_timeout: 30
+      max_history: 100
+      language: "zh-CN"
+  
+  - name: "analytics"
+    enabled: true
+    config:
+      data_sources: ["website", "crm", "marketing"]
+      report_format: "pdf"
+      max_report_size: 50000
+
+# 集成配置
+integrations:
+  # 独立站集成
+  website:
+    url: "https://yourwebsite.com"
+    api_endpoint: "https://yourwebsite.com/api"
+    api_key: "your-website-api-key"
+    webhook_secret: "your-webhook-secret"
+  
+  # 数据库集成
+  database:
+    type: "mysql"
+    host: "localhost"
+    port: 3306
+    database: "b2b_platform"
+    username: "openclaw_user"
+    password: "secure-password"
+  
+  # 营销工具集成
+  marketing:
+    mailchimp:
+      api_key: "your-mailchimp-api-key"
+      list_id: "your-mailchimp-list-id"
+  
+  # 客服工具集成
+  customer_service:
+    zendesk:
+      subdomain: "yourcompany"
+      username: "openclaw@yourcompany.com"
+      api_token: "your-zendesk-api-token"
+
+# 共享工作区配置
+shared_workspace:
+  path: "/data/openclaw/shared-context"
+  structure:
+    - priorities.md
+    - agent-outputs/
+    - feedback/
+    - kpis/
+    - calendar/
+    - content-calendar/
+    - roundtable/
+
+# 记忆系统配置
+memory_system:
+  short_term_memory:
+    path: "/data/openclaw/memory"
+    retention_days: 7
+  
+  long_term_memory:
+    path: "/data/openclaw/MEMORY.md"
+  
+  business_directory: "/data/openclaw/business"
+  personal_directory: "/data/openclaw/personal"
+  soul_file: "/data/openclaw/SOUL.md"
+
+# 定时任务配置
+scheduled_tasks:
+  daily_report:
+    schedule: "0 9 * * *"  # 每天上午9点
+    task: "generate_daily_report"
+  
+  weekly_summary:
+    schedule: "0 10 * * 1"  # 每周一上午10点
+    task: "generate_weekly_summary"
+  
+  product_update:
+    schedule: "0 2 * * *"  # 每天凌晨2点
+    task: "update_product_info"
+  
+  market_research:
+    schedule: "0 3 * * 0"  # 每周日凌晨3点
+    task: "conduct_market_research"

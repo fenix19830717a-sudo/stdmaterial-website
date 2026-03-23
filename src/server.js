@@ -1,56 +1,40 @@
-// Express服务器
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import apiRoutes from './routes/api.js';
-import path from 'path';
+import connectDB from '../config/database.js';
+import productsRouter from './routes/products.js';
+import categoriesRouter from './routes/categories.js';
+import leadsRouter from './routes/leads.js';
+import authRouter from './routes/auth.js';
+import ordersRouter from './routes/orders.js';
+import customersRouter from './routes/customers.js';
+import analyticsRouter from './routes/analytics.js';
 
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT || 3001;
 
-// 中间件
+connectDB();
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// 静态文件服务
-app.use(express.static(path.join(new URL('.', import.meta.url).pathname, '../')));
-
-// API路由
-app.use('/api', apiRoutes);
+app.use('/api/products', productsRouter);
+app.use('/api/categories', categoriesRouter);
+app.use('/api/leads', leadsRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/orders', ordersRouter);
+app.use('/api/customers', customersRouter);
+app.use('/api/analytics', analyticsRouter);
 
 // 健康检查
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    message: 'Server is running'
-  });
-});
-
-// 404处理
-app.use((req, res) => {
-  res.status(404).json({
-    status: 'error',
-    message: 'Route not found'
-  });
-});
-
-// 错误处理
-app.use((err, req, res, next) => {
-  console.error('Server error:', err);
-  res.status(500).json({
-    status: 'error',
-    message: 'Internal server error'
-  });
+app.get('/api/health', (req, res) => {
+  res.json({ success: true, message: 'Server is running' });
 });
 
 // 启动服务器
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-  console.log(`API endpoints:`);
-  console.log(`  POST http://localhost:${port}/api/recommend`);
-  console.log(`  GET http://localhost:${port}/api/products/params`);
-  console.log(`  GET http://localhost:${port}/health`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 export default app;

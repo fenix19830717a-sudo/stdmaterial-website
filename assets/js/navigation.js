@@ -5,6 +5,13 @@ function toggleMobileMenu() {
     }
 }
 
+function toggleTechToolsMenu() {
+    const techToolsSubmenu = document.querySelector('.tech-tools-submenu');
+    if (techToolsSubmenu) {
+        techToolsSubmenu.classList.toggle('hidden');
+    }
+}
+
 function setupTabNavigation() {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('#specifications, #applications, #documentation');

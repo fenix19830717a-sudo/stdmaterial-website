@@ -1,0 +1,89 @@
+<!-- 后台管理侧边栏组件 -->
+<aside class="w-64 bg-surface-dark border-r border-white/5 flex flex-col">
+    <!-- 品牌区域 -->
+    <div class="p-6 border-b border-white/5">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-lg">
+                <span class="material-symbols-outlined text-white text-xl">precision_manufacturing</span>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-white">HUNAN SHENGTONGDA</h1>
+                <span class="text-xs text-slate-500">Admin Dashboard</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 导航菜单 -->
+    <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+        <!-- 主要功能 -->
+        <div class="mb-6">
+            <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">Main</h2>
+            <a href="admin-dashboard.html" class="sidebar-item active flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-primary bg-primary/10">
+                <span class="material-symbols-outlined text-primary text-sm">dashboard</span>
+                <span class="text-sm font-medium text-white">Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">inventory</span>
+                <span class="text-sm font-medium text-slate-300">Products</span>
+            </a>
+            <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">people</span>
+                <span class="text-sm font-medium text-slate-300">Customers</span>
+            </a>
+            <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">receipt</span>
+                <span class="text-sm font-medium text-slate-300">Orders</span>
+            </a>
+        </div>
+        
+        <!-- AI 服务 -->
+        <div class="mb-6">
+            <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-xs text-primary">auto_awesome</span>
+                AI Services
+            </h2>
+            <a href="admin-ai-services.html" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">smart_toy</span>
+                <span class="text-sm font-medium text-slate-300">AI Configuration</span>
+            </a>
+            <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">chat</span>
+                <span class="text-sm font-medium text-slate-300">AI Chatbot</span>
+            </a>
+            <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">auto_fix_high</span>
+                <span class="text-sm font-medium text-slate-300">AI Marketing</span>
+            </a>
+        </div>
+        
+        <!-- 系统设置 -->
+        <div>
+            <h2 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">System</h2>
+            <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+                <span class="text-sm font-medium text-slate-300">Settings</span>
+            </a>
+            <a href="#" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">security</span>
+                <span class="text-sm font-medium text-slate-300">Security</span>
+            </a>
+            <a href="../index.html" class="sidebar-item flex items-center space-x-3 px-3 py-2 rounded-lg border-l-4 border-transparent hover:bg-primary/10 hover:border-primary/50 transition-all">
+                <span class="material-symbols-outlined text-slate-400 text-sm">logout</span>
+                <span class="text-sm font-medium text-slate-300">Back to Site</span>
+            </a>
+        </div>
+    </nav>
+    
+    <!-- 用户信息 -->
+    <div class="p-4 border-t border-white/5">
+        <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface/50">
+            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-sm">person</span>
+            </div>
+            <div class="flex-1">
+                <p class="text-xs font-medium text-white">Admin User</p>
+                <p class="text-xs text-slate-500">admin@stdmaterial.com</p>
+            </div>
+        </div>
+    </div>
+</aside>

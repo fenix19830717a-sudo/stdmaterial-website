@@ -1,0 +1,28 @@
+{
+  "news": [
+    {
+      "id": "news-1",
+      "title": "Sustainable Development Lies in Innovation",
+      "date": "2015-01-12",
+      "content": "Innovation is the driving force behind sustainable development in the manufacturing industry. Tencan has always been committed to developing innovative technologies and products to meet the changing needs of customers. Our planetary ball mills, vibrating screens, and other equipment are designed with sustainability in mind, focusing on energy efficiency and environmental friendliness. By continuously investing in research and development, we aim to provide our customers with high-quality, sustainable solutions that help them achieve their production goals while minimizing their environmental impact.",
+      "image": "assets/images/news/innovation.jpg",
+      "category": "Industry News"
+    },
+    {
+      "id": "news-2",
+      "title": "Professionals Originated from Concentration",
+      "date": "2015-01-01",
+      "content": "At Tencan, we believe that professionalism comes from concentration. Our team of experts has dedicated years to researching and developing grinding and screening equipment. This focus has allowed us to become a leading provider of laboratory and industrial equipment. We take pride in our ability to understand our customers' needs and provide tailored solutions that meet their specific requirements. Our commitment to excellence is reflected in every product we manufacture, ensuring that our customers receive the highest quality equipment for their applications.",
+      "image": "assets/images/news/professional.jpg",
+      "category": "Company News"
+    },
+    {
+      "id": "news-3",
+      "title": "Tencan Takes the Lead in Development of Ultrafine Powder Technology",
+      "date": "2014-12-21",
+      "content": "Tencan has taken a leading position in the development of ultrafine powder technology. Our planetary ball mills and other equipment are designed to produce high-quality ultrafine powders with precise particle size distribution. This technology has applications in a wide range of industries, including pharmaceuticals, ceramics, and materials science. By staying at the forefront of ultrafine powder technology, we are able to provide our customers with cutting-edge solutions that help them achieve their production goals and stay competitive in their respective markets.",
+      "image": "assets/images/news/ultrafine.jpg",
+      "category": "Technology News"
+    }
+  ]
+}

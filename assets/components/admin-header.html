@@ -1,0 +1,35 @@
+<!-- 后台管理顶部导航栏组件 -->
+<header class="bg-surface-dark border-b border-white/5 px-6 py-4">
+    <div class="flex items-center justify-between">
+        <!-- 页面标题 -->
+        <div>
+            <h1 class="text-2xl font-bold text-white mb-1">Dashboard</h1>
+            <p class="text-sm text-slate-400">Welcome back, Admin</p>
+        </div>
+        
+        <!-- 右侧操作区 -->
+        <div class="flex items-center gap-4">
+            <!-- 通知 -->
+            <button class="relative p-2 text-slate-400 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+            </button>
+            
+            <!-- 快速操作 -->
+            <button class="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 text-primary rounded-lg hover:bg-primary/20 transition-all text-sm font-medium">
+                <span class="material-symbols-outlined text-sm">add</span>
+                <span>New Item</span>
+            </button>
+            
+            <!-- 用户菜单 -->
+            <div class="flex items-center gap-3 pl-4 border-l border-white/10">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-sm">person</span>
+                </div>
+                <button class="text-slate-400 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">expand_more</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

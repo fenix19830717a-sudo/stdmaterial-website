@@ -15,9 +15,55 @@
 
             <div class="hidden lg:flex items-center space-x-8">
                 <a href="index.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Home</a>
-                <a href="product-catalog.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Products</a>
-                <a href="simulator.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Grinding Simulator</a>
-                <a href="selection.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Product Selector</a>
+                <div class="relative group">
+                    <a href="product-catalog.html" class="flex items-center gap-2 text-slate-300 hover:text-primary transition-colors font-medium text-sm">
+                        Products
+                        <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </a>
+                    <div class="absolute top-full left-0 w-full bg-surface-dark border border-white/5 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="px-6 py-8 grid grid-cols-3 gap-8">
+                            <a href="product-catalog.html#grinding-equipment" class="flex flex-col items-center p-4 rounded-lg hover:bg-white/5 transition-colors group">
+                                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                                    <span class="material-symbols-outlined text-2xl text-primary">construction</span>
+                                </div>
+                                <span class="text-white font-medium text-center">研磨设备</span>
+                                <span class="text-xs text-slate-400 mt-1 text-center">Grinding Equipment</span>
+                            </a>
+                            <a href="product-catalog.html#grinding-media" class="flex flex-col items-center p-4 rounded-lg hover:bg-white/5 transition-colors group">
+                                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                                    <span class="material-symbols-outlined text-2xl text-primary">sports_esports</span>
+                                </div>
+                                <span class="text-white font-medium text-center">研磨介质</span>
+                                <span class="text-xs text-slate-400 mt-1 text-center">Grinding Media</span>
+                            </a>
+                            <a href="product-catalog.html#grinding-jars" class="flex flex-col items-center p-4 rounded-lg hover:bg-white/5 transition-colors group">
+                                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                                    <span class="material-symbols-outlined text-2xl text-primary">inventory</span>
+                                </div>
+                                <span class="text-white font-medium text-center">研磨罐</span>
+                                <span class="text-xs text-slate-400 mt-1 text-center">Grinding Jars</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="#" class="flex items-center gap-2 text-slate-300 hover:text-primary transition-colors font-medium text-sm">
+                        技术工具
+                        <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </a>
+                    <div class="absolute top-full left-0 w-64 bg-surface-dark border border-white/5 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="px-6 py-4 space-y-2">
+                            <a href="simulator.html" class="flex items-center justify-between p-3 rounded-lg hover:bg-white/5 transition-colors group">
+                                <span class="text-white font-medium">研磨工艺模拟器</span>
+                                <span class="px-2 py-1 bg-[var(--color-warning)] text-white text-xs font-bold rounded-full">HOT</span>
+                            </a>
+                            <a href="selection.html" class="flex items-center p-3 rounded-lg hover:bg-white/5 transition-colors group">
+                                <span class="text-white font-medium">产品选型工具</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="news.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">News</a>
                 <a href="about.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">About Us</a>
                 <a href="contact.html" class="text-slate-300 hover:text-primary transition-colors font-medium text-sm">Contact</a>
             </div>
@@ -36,12 +82,24 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-surface-dark border-t border-white/5">
+        <div id="mobile-menu" class="mobile-menu hidden lg:hidden bg-surface-dark border-t border-white/5">
             <div class="px-4 py-6 space-y-4">
                 <a href="index.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Home</a>
                 <a href="product-catalog.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Products</a>
-                <a href="simulator.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Grinding Simulator</a>
-                <a href="selection.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Product Selector</a>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between text-slate-300 font-medium py-2 cursor-pointer" onclick="toggleTechToolsMenu()">
+                        <span>技术工具</span>
+                        <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </div>
+                    <div class="tech-tools-submenu pl-4 space-y-2">
+                        <a href="simulator.html" class="flex items-center justify-between text-slate-300 hover:text-primary transition-colors font-medium py-2">
+                            <span>研磨工艺模拟器</span>
+                            <span class="px-2 py-1 bg-[var(--color-warning)] text-white text-xs font-bold rounded-full">HOT</span>
+                        </a>
+                        <a href="selection.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">产品选型工具</a>
+                    </div>
+                </div>
+                <a href="news.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">News</a>
                 <a href="about.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">About Us</a>
                 <a href="contact.html" class="block text-slate-300 hover:text-primary transition-colors font-medium py-2">Contact</a>
             </div>

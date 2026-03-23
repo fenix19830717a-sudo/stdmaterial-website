@@ -133,6 +133,12 @@ class GrindingSimulator {
                 }
             });
         }
+        
+        // AI Optimize button
+        const aiOptimizeBtn = document.getElementById('ai-optimize-btn');
+        if (aiOptimizeBtn) {
+            aiOptimizeBtn.addEventListener('click', () => this.aiOptimizeParameters());
+        }
     }
     
     searchMaterials(query) {
@@ -219,14 +225,17 @@ class GrindingSimulator {
         this.initializeParticles();
         
         // Reset chart data
-        this.chartData = { labels: [], fineness: [], temperature: [], energy: [] };
-        if (this.chart) {
-            this.chart.data.labels = this.chartData.labels;
-            this.chart.data.datasets[0].data = this.chartData.fineness;
-            this.chart.data.datasets[1].data = this.chartData.temperature;
-            this.chart.data.datasets[2].data = this.chartData.energy;
-            this.chart.update();
-        }
+            this.chartData = { labels: [], fineness: [], temperature: [], energy: [] };
+            if (this.temperatureChart) {
+                this.temperatureChart.data.labels = this.chartData.labels;
+                this.temperatureChart.data.datasets[0].data = this.chartData.temperature;
+                this.temperatureChart.update();
+            }
+            if (this.particleChart) {
+                this.particleChart.data.labels = this.chartData.labels;
+                this.particleChart.data.datasets[0].data = this.chartData.fineness;
+                this.particleChart.update();
+            }
         
         // Reset real-time data
         this.updateRealTimeData(500, 25, 0, 800);
@@ -567,63 +576,87 @@ class GrindingSimulator {
     }
     
     initializeChart() {
-        const chartCanvas = document.getElementById('simulation-chart');
-        if (!chartCanvas || typeof Chart === 'undefined') return;
-        
-        const ctx = chartCanvas.getContext('2d');
-        this.chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: this.chartData.labels,
-                datasets: [
-                    {
-                        label: 'Fineness (μm)',
-                        data: this.chartData.fineness,
-                        borderColor: '#06b6d4',
-                        backgroundColor: 'rgba(6, 182, 212, 0.1)',
-                        tension: 0.4,
-                        fill: true
-                    },
-                    {
+        // Initialize temperature chart
+        const temperatureChartCanvas = document.getElementById('temperature-chart');
+        if (temperatureChartCanvas && typeof Chart !== 'undefined') {
+            const temperatureCtx = temperatureChartCanvas.getContext('2d');
+            this.temperatureChart = new Chart(temperatureCtx, {
+                type: 'line',
+                data: {
+                    labels: this.chartData.labels,
+                    datasets: [{
                         label: 'Temperature (°C)',
                         data: this.chartData.temperature,
                         borderColor: '#f97316',
                         backgroundColor: 'rgba(249, 115, 22, 0.1)',
                         tension: 0.4,
                         fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f8fafc'
+                            }
+                        }
                     },
-                    {
-                        label: 'Energy (kWh)',
-                        data: this.chartData.energy,
-                        borderColor: '#22c55e',
-                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                        tension: 0.4,
-                        fill: true
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: '#f8fafc'
+                    scales: {
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        },
+                        y: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
                         }
                     }
+                }
+            });
+        }
+        
+        // Initialize particle size chart
+        const particleChartCanvas = document.getElementById('particle-chart');
+        if (particleChartCanvas && typeof Chart !== 'undefined') {
+            const particleCtx = particleChartCanvas.getContext('2d');
+            this.particleChart = new Chart(particleCtx, {
+                type: 'line',
+                data: {
+                    labels: this.chartData.labels,
+                    datasets: [{
+                        label: 'Fineness (μm)',
+                        data: this.chartData.fineness,
+                        borderColor: '#06b6d4',
+                        backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
                 },
-                scales: {
-                    x: {
-                        ticks: { color: '#94a3b8' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f8fafc'
+                            }
+                        }
                     },
-                    y: {
-                        ticks: { color: '#94a3b8' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    scales: {
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        },
+                        y: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
     
     startSimulation() {
@@ -634,17 +667,23 @@ class GrindingSimulator {
             // If user confirms, reset the simulation
             this.state.simulationProgress = 0;
             this.chartData = { labels: [], fineness: [], temperature: [], energy: [] };
-            if (this.chart) {
-                this.chart.data.labels = this.chartData.labels;
-                this.chart.data.datasets[0].data = this.chartData.fineness;
-                this.chart.data.datasets[1].data = this.chartData.temperature;
-                this.chart.data.datasets[2].data = this.chartData.energy;
-                this.chart.update();
+            if (this.temperatureChart) {
+                this.temperatureChart.data.labels = this.chartData.labels;
+                this.temperatureChart.data.datasets[0].data = this.chartData.temperature;
+                this.temperatureChart.update();
+            }
+            if (this.particleChart) {
+                this.particleChart.data.labels = this.chartData.labels;
+                this.particleChart.data.datasets[0].data = this.chartData.fineness;
+                this.particleChart.update();
             }
             this.initializeParticles();
         }
         
-        document.getElementById('simulation-interface').classList.remove('hidden');
+        const simulationInterface = document.getElementById('simulation-interface');
+        if (simulationInterface) {
+            simulationInterface.classList.remove('hidden');
+        }
         
         this.state.isSimulating = true;
         this.animate();
@@ -925,8 +964,11 @@ class GrindingSimulator {
                 this.chartData.temperature.push(temperature);
                 this.chartData.energy.push(energy);
                 
-                if (this.chart) {
-                    this.chart.update();
+                if (this.temperatureChart) {
+                    this.temperatureChart.update();
+                }
+                if (this.particleChart) {
+                    this.particleChart.update();
                 }
             }
             
@@ -1165,6 +1207,135 @@ class GrindingSimulator {
             printWindow.print();
             printWindow.close();
         }, 500);
+    }
+    
+    aiOptimizeParameters() {
+        // Get optimal parameters based on selected material
+        const { selectedMaterial } = this.state;
+        
+        let optimalParams = {
+            targetFineness: 0.5,
+            capacity: 'production',
+            operationMode: 'intermittent',
+            cooling: 'water',
+            rotationSpeed: 800
+        };
+        
+        // Material-specific optimal parameters
+        switch(selectedMaterial) {
+            case 'Battery Material':
+                optimalParams = {
+                    targetFineness: 0.1,
+                    capacity: 'production',
+                    operationMode: 'intermittent',
+                    cooling: 'water',
+                    rotationSpeed: 900
+                };
+                break;
+            case 'Ore':
+                optimalParams = {
+                    targetFineness: 5,
+                    capacity: 'production',
+                    operationMode: 'continuous',
+                    cooling: 'water',
+                    rotationSpeed: 800
+                };
+                break;
+            case 'Ceramic':
+                optimalParams = {
+                    targetFineness: 1,
+                    capacity: 'pilot',
+                    operationMode: 'intermittent',
+                    cooling: 'water',
+                    rotationSpeed: 700
+                };
+                break;
+            case 'Chemical':
+                optimalParams = {
+                    targetFineness: 0.5,
+                    capacity: 'lab',
+                    operationMode: 'intermittent',
+                    cooling: 'water',
+                    rotationSpeed: 750
+                };
+                break;
+            case 'Pharmaceutical':
+                optimalParams = {
+                    targetFineness: 0.2,
+                    capacity: 'lab',
+                    operationMode: 'intermittent',
+                    cooling: 'water',
+                    rotationSpeed: 600
+                };
+                break;
+        }
+        
+        // Update state
+        this.state.targetFineness = optimalParams.targetFineness;
+        this.state.capacity = optimalParams.capacity;
+        this.state.operationMode = optimalParams.operationMode;
+        this.state.cooling = optimalParams.cooling;
+        this.state.rotationSpeed = optimalParams.rotationSpeed;
+        
+        // Update UI elements
+        const finenessSlider = document.getElementById('fineness-slider');
+        if (finenessSlider) {
+            finenessSlider.value = optimalParams.targetFineness;
+        }
+        
+        const speedSlider = document.getElementById('speed-slider');
+        if (speedSlider) {
+            speedSlider.value = optimalParams.rotationSpeed;
+            const speedValueEl = document.getElementById('speed-value');
+            if (speedValueEl) {
+                speedValueEl.textContent = optimalParams.rotationSpeed;
+            }
+        }
+        
+        // Update capacity buttons
+        document.querySelectorAll('.capacity-btn').forEach(btn => {
+            if (btn.dataset.value === optimalParams.capacity) {
+                btn.classList.remove('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                btn.classList.add('bg-primary/10', 'border-primary/30', 'text-primary');
+            } else {
+                btn.classList.remove('bg-primary/10', 'border-primary/30', 'text-primary');
+                btn.classList.add('bg-surface-dark', 'border-white/10', 'text-slate-300');
+            }
+        });
+        
+        // Update operation mode buttons
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            if (btn.dataset.value === optimalParams.operationMode) {
+                btn.classList.remove('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                btn.classList.add('bg-primary/10', 'border-primary/30', 'text-primary');
+            } else {
+                btn.classList.remove('bg-primary/10', 'border-primary/30', 'text-primary');
+                btn.classList.add('bg-surface-dark', 'border-white/10', 'text-slate-300');
+            }
+        });
+        
+        // Update cooling buttons
+        document.querySelectorAll('.cooling-btn').forEach(btn => {
+            if (btn.dataset.value === optimalParams.cooling) {
+                btn.classList.remove('bg-surface-dark', 'border-white/10', 'text-slate-300');
+                btn.classList.add('bg-primary/10', 'border-primary/30', 'text-primary');
+            } else {
+                btn.classList.remove('bg-primary/10', 'border-primary/30', 'text-primary');
+                btn.classList.add('bg-surface-dark', 'border-white/10', 'text-slate-300');
+            }
+        });
+        
+        // Update fineness display
+        this.updateFineness(optimalParams.targetFineness);
+        
+        // Update recommendations
+        this.updateRecommendations();
+        
+        // Update ball speed
+        this.updateBallSpeed();
+        
+        // Show success message
+        alert('Parameters optimized successfully based on selected material!');
     }
 }
 
