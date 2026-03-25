@@ -1,0 +1,51 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@v5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rltgoDzvO"
+          SOURCE: "dist/"
+          REMOTE_HOST: "206.119.160.31"
+          REMOTE_USER: "root"
+          REMOTE_PORT: "22"
+          TARGET: "/var/www/stdmaterial"
+
+      - name: Clean up server
+        uses: appleboy/ssh-action@master
+        with:
+          host: "206.119.160.31"
+          username: "root"
+          password: "Fenix1983@"
+          script: |
+            # Clean old files
+            find /var/www/stdmaterial -type f -name "*.log" -delete
+            find /var/www/stdmaterial -type d -name "node_modules" -exec rm -rf {} \; 2>/dev/null
+            find /var/www/stdmaterial -type d -name ".git" -exec rm -rf {} \; 2>/dev/null
+
+            # Start service
+            cd /var/www/stdmaterial
+            npm run server
